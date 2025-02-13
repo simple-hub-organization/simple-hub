@@ -4,7 +4,6 @@ import 'dart:collection';
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
-import 'package:cybearjinni/presentation/molecules/molecules.dart';
 import 'package:flutter/material.dart';
 
 /// Show switch toggles in a container with the background color from smart area
@@ -42,14 +41,18 @@ class _SwitchMoleculeState extends State<SwitchMolecule> {
 
   @override
   Widget build(BuildContext context) {
-    return DeviceNameRowMolecule(
-      widget.entity.cbjEntityName.getOrCrash()!,
-      SwitchAtom(
-        variant: SwitchVariant.switchVariant,
-        onToggle: _changeAction,
-        action: widget.entity.switchState.action,
-        state: widget.entity.entityStateGRPC.state,
-      ),
+    return Column(
+      children: [
+        TextAtom(
+          widget.entity.cbjEntityName.getOrCrash()!,
+        ),
+        SwitchAtom(
+          variant: SwitchVariant.switchVariant,
+          onToggle: _changeAction,
+          action: widget.entity.switchState.action,
+          state: widget.entity.entityStateGRPC.state,
+        ),
+      ],
     );
   }
 }

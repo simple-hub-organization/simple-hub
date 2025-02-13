@@ -20,7 +20,6 @@ class EntitiesByAreaTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     final TextTheme textTheme = themeData.textTheme;
-    final ColorScheme colorScheme = themeData.colorScheme;
 
     return Column(
       children: <Widget>[
@@ -36,8 +35,7 @@ class EntitiesByAreaTab extends StatelessWidget {
               children: [
                 TextAtom(
                   'Areas',
-                  style: textTheme.headlineLarge!
-                      .copyWith(color: colorScheme.primary),
+                  style: textTheme.headlineLarge,
                 ),
                 const SeparatorAtom(variant: SeparatorVariant.farAppart),
                 MarginedExpandedAtom(

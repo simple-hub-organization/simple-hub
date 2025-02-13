@@ -120,9 +120,12 @@ dependencies:
   # Discover network info and configure themselves accordingly
   network_info_plus: ^4.1.0
   # Helps you discover open ports, devices on subnet and more.
-  network_tools: ^4.0.1
   # Querying information about the application package, such as CFBundleVersion
-  network_tools_flutter: ^1.0.4
+  network_tools_flutter:
+    path: "../../network_tools_flutter"
+    # git:
+    #  url: "https://github.com/guyluz11/network_tools_flutter.git"
+    #  ref: "adding_mdns_ios_support"
   package_info_plus: ^4.2.0
   # Finding commonly used locations on the filesystem
   path_provider: ^2.1.1
@@ -141,8 +144,6 @@ dependencies:
   # Plugin for launching a URL
   timezone: ^0.9.2
   url_launcher: ^6.2.1
-  # Simple, fast generation of RFC4122 UUIDs.
-  uuid: ^4.2.1
   # Get available wifi ssid list, user can connect to wifi with ssid and password, and create hotspot
   wifi_iot: ^0.3.18+1
   # Scan for nearby visible WiFi access points.

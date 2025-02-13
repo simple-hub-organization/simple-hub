@@ -18,6 +18,9 @@ class ScenesInFoldersTab extends StatelessWidget {
     BuildContext context,
     AreaEntity folderOfScenes,
   ) {
+    final ThemeData themeData = Theme.of(context);
+    final ColorScheme colorScheme = themeData.colorScheme;
+
     const double borderRadius = 5;
     return Container(
       decoration: BoxDecoration(
@@ -56,7 +59,7 @@ class ScenesInFoldersTab extends StatelessWidget {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.7),
+                color: colorScheme.primaryContainer.withOpacity(0.7),
                 borderRadius: const BorderRadius.only(
                   bottomRight: Radius.circular(borderRadius),
                   bottomLeft: Radius.circular(borderRadius),
@@ -65,7 +68,7 @@ class ScenesInFoldersTab extends StatelessWidget {
               child: TextAtom(
                 folderOfScenes.cbjEntityName.getOrCrash(),
                 style: TextStyle(
-                  color: Theme.of(context).textTheme.bodyLarge!.color,
+                  color: colorScheme.onPrimaryContainer,
                   fontSize: 30,
                 ),
                 textAlign: TextAlign.center,

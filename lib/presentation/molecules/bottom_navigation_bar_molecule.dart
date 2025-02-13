@@ -23,10 +23,10 @@ class BottomNavigationBarMolecule extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Align(
+        Align(
           alignment: Alignment.bottomLeft,
           child: Divider(
-            color: Color(0xFF98A3B9),
+            color: colorScheme.onBackground,
             height: 1,
             thickness: 0.5,
           ),
@@ -34,7 +34,7 @@ class BottomNavigationBarMolecule extends StatelessWidget {
         BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: true,
-          selectedItemColor: colorScheme.primary,
+          selectedItemColor: colorScheme.tertiary,
           unselectedItemColor: colorScheme.onSurfaceVariant,
           backgroundColor: colorScheme.surface,
           items: bottomNaviList,

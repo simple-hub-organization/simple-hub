@@ -185,6 +185,9 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
+    final ThemeData themeData = Theme.of(context);
+    final ColorScheme colorScheme = themeData.colorScheme;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -229,10 +232,10 @@ class _HomePageState extends State<HomePage> {
                         initializedScenes();
                       },
                       child: CircleAvatar(
-                        backgroundColor: Colors.blue.withOpacity(0.9),
-                        child: const FaIcon(
+                        backgroundColor: colorScheme.tertiaryContainer,
+                        child: FaIcon(
                           FontAwesomeIcons.plus,
-                          color: Colors.white,
+                          color: colorScheme.onTertiaryContainer,
                         ),
                       ),
                     ),

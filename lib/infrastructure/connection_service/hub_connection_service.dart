@@ -198,7 +198,7 @@ class _HubConnectionService implements ConnectionsService {
 
       // TODO: Search for hub
       final Stream<ActiveHost> devicesWithPort =
-          HostScanner.scanDevicesForSinglePort(
+          HostScannerService.instance.scanDevicesForSinglePort(
         subnet,
         hubPort,
 

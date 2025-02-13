@@ -3,6 +3,7 @@ import 'package:cybearjinni/domain/home_user/home_user_failures.dart';
 import 'package:cybearjinni/domain/home_user/home_user_validators.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+// ignore: depend_on_referenced_packages
 import 'package:uuid/uuid.dart';
 
 @immutable

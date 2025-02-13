@@ -5,6 +5,7 @@ import 'package:cybearjinni/domain/cbj_comp/cbj_comp_validators.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kt_dart/collection.dart';
+// ignore: depend_on_referenced_packages
 import 'package:uuid/uuid.dart';
 
 @immutable

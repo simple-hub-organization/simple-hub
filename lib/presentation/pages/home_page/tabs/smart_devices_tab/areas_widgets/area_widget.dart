@@ -64,14 +64,15 @@ class _AreaWidgetState extends State<AreaWidget> {
                     numberOfDevicesInTheArea >= 2
                         ? numberOfDevicesInTheArea.toString()
                         : '',
-                    style: textTheme.bodyLarge,
+                    style: textTheme.bodyLarge!
+                        .copyWith(color: colorScheme.secondary),
                   ),
                 ],
               ),
             ),
           ),
-          const SeparatorAtom(variant: SeparatorVariant.extenstionOfElement),
-          DevicesListView(
+          const SeparatorAtom(variant: SeparatorVariant.closeWidgets),
+          DevicesListViewOrganism(
             HashSet.from(widget.entities.values),
             (entity) {
               context.router.push(

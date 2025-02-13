@@ -10,16 +10,13 @@ class SeparatorAtom extends StatelessWidget {
   Widget build(BuildContext context) {
     double spacing;
     switch (variant) {
-      case SeparatorVariant.extenstionOfElement:
-        spacing = 2;
       case SeparatorVariant.reletedElements:
-        spacing = 5;
-      case SeparatorVariant.closeWidgets:
         spacing = 10;
+      case SeparatorVariant.closeWidgets:
       case SeparatorVariant.generalSpacing:
         spacing = AppThemeData.generalSpacing;
       case SeparatorVariant.farAppart:
-        spacing = 45;
+        spacing = 40;
     }
     return SizedBox(
       height: spacing,
@@ -29,7 +26,6 @@ class SeparatorAtom extends StatelessWidget {
 }
 
 enum SeparatorVariant {
-  extenstionOfElement,
   reletedElements,
   closeWidgets,
   generalSpacing,

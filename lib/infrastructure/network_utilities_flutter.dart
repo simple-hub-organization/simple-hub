@@ -12,10 +12,10 @@ class NetworkUtilitiesFlutter extends NetworkUtilities {
     int? firstHostId,
     int? lastHostId,
   }) =>
-      network_flutter.HostScannerFlutter.getAllPingableDevices(
+      network_flutter.HostScannerService.instance.getAllPingableDevices(
         subnet,
-        firstHostId: firstHostId ?? HostScanner.defaultFirstHostId,
-        lastHostId: lastHostId ?? HostScanner.defaultLastHostId,
+        firstHostId: firstHostId ?? HostScannerService.defaultFirstHostId,
+        lastHostId: lastHostId ?? HostScannerService.defaultLastHostId,
       );
 
   @override
@@ -24,13 +24,16 @@ class NetworkUtilitiesFlutter extends NetworkUtilities {
     required int port,
     required Duration timeout,
   }) =>
-      network_flutter.PortScannerFlutter.connectToPort(
+      network_flutter.PortScannerService.instance.connectToPort(
         address: address,
         port: port,
         timeout: timeout,
         activeHostsController: StreamController<network_flutter.ActiveHost>(),
       );
 
+  @override
+  Future configureNetworkTools(String dbDirectory) async =>
+      configureNetworkToolsFlutter(dbDirectory);
   // TODO: Add support for mdns using for ios
   //   mdnsSearch(){
 

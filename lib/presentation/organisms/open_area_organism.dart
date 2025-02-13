@@ -1,18 +1,22 @@
+import 'dart:collection';
+
+import 'package:auto_route/auto_route.dart';
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
+import 'package:cybearjinni/presentation/core/routes/app_router.gr.dart';
 import 'package:cybearjinni/presentation/molecules/molecules.dart';
 import 'package:cybearjinni/presentation/organisms/organisms.dart';
 import 'package:flutter/material.dart';
 
 class OpenAreaOrganism extends StatefulWidget {
   const OpenAreaOrganism({
-    required this.areaEntity,
+    required this.area,
     required this.entityTypes,
     required this.entities,
   });
 
   /// If it have value will only show Printers in this area
-  final AreaEntity areaEntity;
+  final AreaEntity area;
   final Set<EntityTypes> entityTypes;
   final Set<DeviceEntityBase> entities;
 
@@ -27,19 +31,39 @@ class _OpenAreaOrganismState extends State<OpenAreaOrganism> {
       return EmptyOpenAreaOrganism();
     }
 
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-      child: ListView.separated(
-        reverse: true,
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) {
-          final DeviceEntityBase device = widget.entities.elementAt(index);
+    final ThemeData themeData = Theme.of(context);
+    final ColorScheme colorScheme = themeData.colorScheme;
 
-          return DeviceByTypeMolecule(device);
-        },
-        itemCount: widget.entities.length,
-        separatorBuilder: (BuildContext context, int index) =>
-            const SeparatorAtom(variant: SeparatorVariant.farAppart),
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          ColoredBox(
+            color: colorScheme.onPrimary,
+            child: ExpansionTile(
+              backgroundColor: colorScheme.background,
+              title: Text(
+                '${widget.entities.length} ${widget.entities.first.entityTypes.type.name}',
+              ),
+              children: [
+                DevicesListViewOrganism(
+                  HashSet.from(widget.entities),
+                  (entity) {
+                    context.router.push(
+                      EntitiesInAreaRoute(
+                        entityTypes: entity,
+                        areaEntity: widget.area,
+                      ),
+                    );
+                  },
+                  varient: DevicesListViewOrganismVarient.grid,
+                ),
+              ],
+            ),
+          ),
+          const SeparatorAtom(),
+          DeviceByTypeMolecule(widget.entities.first),
+        ],
       ),
     );
   }

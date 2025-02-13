@@ -34,7 +34,8 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace "com.cybearjinni.app"
-    compileSdkVersion flutter.compileSdkVersion
+    // compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {

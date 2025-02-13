@@ -3,7 +3,6 @@ import 'dart:collection';
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
-import 'package:cybearjinni/presentation/molecules/molecules.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -97,14 +96,11 @@ class _RgbwLightMoleculeState extends State<RgbwLightMolecule> {
 
     return Column(
       children: [
-        DeviceNameRowMolecule(
-          widget.entity.cbjEntityName.getOrCrash()!,
-          SwitchAtom(
-            variant: SwitchVariant.light,
-            onToggle: _onChange,
-            action: widget.entity.lightSwitchState.action,
-            state: widget.entity.entityStateGRPC.state,
-          ),
+        SwitchAtom(
+          variant: SwitchVariant.light,
+          onToggle: _onChange,
+          action: widget.entity.lightSwitchState.action,
+          state: widget.entity.entityStateGRPC.state,
         ),
         const SeparatorAtom(variant: SeparatorVariant.reletedElements),
         LightColorMods(entity: widget.entity),
@@ -303,28 +299,38 @@ class _LightColorMods extends State<LightColorMods> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             OutlinedButton(
+              onPressed: () => setColorModeState(ColorMode.white),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: (colorMode == ColorMode.white)
+                    ? colorScheme.secondary
+                    : colorScheme.background,
+              ),
               child: TextAtom(
                 'White',
                 style: TextStyle(
                   color: (colorMode == ColorMode.white)
-                      ? colorScheme.primary
+                      ? colorScheme.onSecondary
                       : colorScheme.onBackground,
                   fontSize: 18,
                 ),
               ),
-              onPressed: () => setColorModeState(ColorMode.white),
             ),
             OutlinedButton(
+              onPressed: () => setColorModeState(ColorMode.rgb),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: (colorMode == ColorMode.rgb)
+                    ? colorScheme.secondary
+                    : colorScheme.background,
+              ),
               child: TextAtom(
                 'Color',
                 style: TextStyle(
                   color: (colorMode == ColorMode.rgb)
-                      ? colorScheme.primary
+                      ? colorScheme.onSecondary
                       : colorScheme.onBackground,
                   fontSize: 18,
                 ),
               ),
-              onPressed: () => setColorModeState(ColorMode.rgb),
             ),
           ],
         ),

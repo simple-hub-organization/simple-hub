@@ -169,7 +169,7 @@ class _SecurityBearConnectionRepository
       logger.i('Security Bear subnet IP $subnet');
 
       final Stream<ActiveHost> devicesWithPort =
-          HostScanner.scanDevicesForSinglePort(
+          HostScannerService.instance.scanDevicesForSinglePort(
         subnet,
         securityBearPort,
         resultsInAddressAscendingOrder: false,
@@ -291,7 +291,7 @@ class _SecurityBearConnectionRepository
       logger.i('Security Bear subnet IP search $subnet');
 
       final Stream<ActiveHost> devicesWithPort =
-          HostScanner.scanDevicesForSinglePort(
+          HostScannerService.instance.scanDevicesForSinglePort(
         subnet,
         securityBearPort,
         resultsInAddressAscendingOrder: false,

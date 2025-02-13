@@ -16,7 +16,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:location/location.dart';
 import 'package:network_info_plus/network_info_plus.dart';
-import 'package:network_tools/network_tools.dart';
+import 'package:network_tools_flutter/network_tools_flutter.dart';
 import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
 

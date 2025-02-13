@@ -3,7 +3,6 @@ import 'dart:collection';
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
-import 'package:cybearjinni/presentation/molecules/molecules.dart';
 import 'package:flutter/material.dart';
 
 /// Show light toggles in a container with the background color from smart area
@@ -32,14 +31,11 @@ class LightMolecule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DeviceNameRowMolecule(
-      entity.cbjEntityName.getOrCrash()!,
-      SwitchAtom(
-        variant: SwitchVariant.light,
-        onToggle: _onChange,
-        action: entity.lightSwitchState.action,
-        state: entity.entityStateGRPC.state,
-      ),
+    return SwitchAtom(
+      variant: SwitchVariant.light,
+      onToggle: _onChange,
+      action: entity.lightSwitchState.action,
+      state: entity.entityStateGRPC.state,
     );
   }
 }

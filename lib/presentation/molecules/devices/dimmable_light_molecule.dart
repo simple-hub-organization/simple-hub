@@ -3,7 +3,6 @@ import 'dart:collection';
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
-import 'package:cybearjinni/presentation/molecules/molecules.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -93,14 +92,14 @@ class _DimmableLightMoleculeState extends State<DimmableLightMolecule> {
 
     return Column(
       children: [
-        DeviceNameRowMolecule(
+        TextAtom(
           widget.entity.cbjEntityName.getOrCrash()!,
-          SwitchAtom(
-            variant: SwitchVariant.light,
-            action: widget.entity.lightSwitchState.action,
-            state: widget.entity.entityStateGRPC.state,
-            onToggle: _onChange,
-          ),
+        ),
+        SwitchAtom(
+          variant: SwitchVariant.light,
+          action: widget.entity.lightSwitchState.action,
+          state: widget.entity.entityStateGRPC.state,
+          onToggle: _onChange,
         ),
         const SizedBox(
           height: 3,

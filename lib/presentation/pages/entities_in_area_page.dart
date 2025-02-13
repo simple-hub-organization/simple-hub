@@ -72,10 +72,17 @@ class _EntitiesInAreaPageState extends State<EntitiesInAreaPage> {
     return PageOrganism(
       pageName: pageName,
       child: entities != null
-          ? OpenAreaOrganism(
-              areaEntity: widget.areaEntity,
-              entityTypes: widget.entityTypes,
-              entities: entities!,
+          ? Column(
+              children: [
+                Expanded(
+                  child: OpenAreaOrganism(
+                    area: widget.areaEntity,
+                    entityTypes: widget.entityTypes,
+                    entities: entities!,
+                  ),
+                ),
+                const SizedBox(height: 50),
+              ],
             )
           : const CircularProgressIndicatorAtom(),
     );
