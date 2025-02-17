@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cybearjinni/infrastructure/core/injection.dart';
 import 'package:cybearjinni/presentation/core/color_schemes.dart';
 import 'package:cybearjinni/presentation/core/routes/app_router.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -41,9 +40,9 @@ class AppWidget extends StatelessWidget {
         pageTransitionsTheme: pageTransitionsTheme(),
       ),
       title: 'CyBear Jinni App',
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
+      // localizationsDelegates: context.localizationDelegates,
+      // supportedLocales: context.supportedLocales,
+      // locale: context.locale,
       debugShowCheckedModeBanner: false,
     );
   }

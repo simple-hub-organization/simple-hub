@@ -3,7 +3,6 @@ import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/core/snack_bar_service.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:multi_select_flutter/multi_select_flutter.dart';
@@ -129,12 +128,18 @@ class _AddNewAreaFormState extends State<AddNewAreaForm> {
                     const SizedBox(
                       height: 30,
                     ),
+                    // MultiSelectDialogField(
+                    //   buttonText: const Text(
+                    //     'Select_Purposes_Of_The_Area',
+                    //   ).tr(),
                     MultiSelectDialogField(
                       buttonText: const Text(
                         'Select_Purposes_Of_The_Area',
-                      ).tr(),
-                      cancelText: const Text('CANCEL').tr(),
-                      confirmText: const Text('OK').tr(),
+                      ),
+                      // cancelText: const Text('CANCEL').tr(),
+                      cancelText: const Text('CANCEL'),
+                      // confirmText: const Text('OK').tr(),
+                      confirmText: const Text('OK'),
                       title: const TextAtom('Select'),
                       items:
                           purposesList.map((AreaPurposesTypes areaPurposeType) {

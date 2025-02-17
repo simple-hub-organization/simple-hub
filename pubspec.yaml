@@ -29,14 +29,16 @@ dependencies:
   # Utility classes to work with asynchronous computations.
   async: ^2.11.0
   # Declarative routing solution, where everything needed for navigation is automatically generated for you.
-  auto_route: ^7.8.4
+  auto_route: ^8.3.0
   # Automatically resizes text to fit perfectly within its bounds.
   auto_size_text: ^3.0.0
   bonsoir: ^5.1.1
   cbj_integrations_controller:
-    git: https://github.com/CyBear-Jinni/cbj_integrations_controller.git
+    #    git: https://github.com/CyBear-Jinni/cbj_integrations_controller.git
+    path: ../cbj_integrations_controller
   cbj_smart_device_flutter:
-    git: https://github.com/CyBear-Jinni/cbj_smart_device_flutter.git
+    #    git: https://github.com/CyBear-Jinni/cbj_smart_device_flutter.git
+    path: ../cbj_smart_device_flutter
   # Copy text from and to clipboard
   clipboard: ^0.1.3
   # Package to create, convert, alter, and compare colors in a variety of colorspaces.
@@ -54,8 +56,8 @@ dependencies:
   day_picker: ^2.2.0
   # Get current device information
   device_info_plus: ^9.1.0
-  # Internationalization (Easy translations)
-  easy_localization: ^3.0.3
+  #  # Internationalization (Easy translations)
+  #  easy_localization: ^3.0.7+1
   # An "expansion" on the Flutter SDK's standard ExpansionTile
   expansion_tile_card: ^3.0.0
   flutter:
@@ -63,7 +65,7 @@ dependencies:
   # HSV(HSB)/HSL/RGB/Material color picker
   flutter_colorpicker: ^1.0.3
   # A cross platform plugin for displaying local notifications.
-  flutter_local_notifications: ^16.1.0
+  flutter_local_notifications: ^18.0.1
   # An easy to implement custom switch
   flutter_switch: ^0.3.2
   # Getting the local timezone of the os.
@@ -71,9 +73,9 @@ dependencies:
   # Font Awesome Icon pack available as Flutter Icons.
   font_awesome_flutter: ^10.6.0
   # Annotations for freezed
-  freezed_annotation: ^2.4.1
+  freezed_annotation: ^2.4.4
   # Service locator
-  get_it: ^7.6.4
+  get_it: ^8.0.3
   # Google Mobile Ads
   google_mobile_ads: ^3.1.0
   # Secure authentication system for signing in with a Google account on Android and iOS
@@ -109,7 +111,7 @@ dependencies:
   # Handles getting a location on
   location: ^5.0.3
   # Small, easy to use and extensible logger which prints beautiful logs.
-  logger: ^2.0.2+1
+  logger: ^2.5.0
   # The Material Design Icons designed by the community for Flutter
   material_design_icons_flutter: ^7.0.7296
   # Creating multi-select widgets in a variety of ways
@@ -121,11 +123,11 @@ dependencies:
   network_info_plus: ^4.1.0
   # Helps you discover open ports, devices on subnet and more.
   # Querying information about the application package, such as CFBundleVersion
-  network_tools_flutter:
-    path: "../../network_tools_flutter"
-    # git:
-    #  url: "https://github.com/guyluz11/network_tools_flutter.git"
-    #  ref: "adding_mdns_ios_support"
+  #  network_tools_flutter:
+  #    path: "../../network_tools_flutter"
+  #   git:
+  #    url: "https://github.com/guyluz11/network_tools_flutter.git"
+  #    ref: "adding_mdns_ios_support"
   package_info_plus: ^4.2.0
   # Finding commonly used locations on the filesystem
   path_provider: ^2.1.1
@@ -151,9 +153,9 @@ dependencies:
 
 dev_dependencies:
   # Generator for auto_route library.
-  auto_route_generator: ^7.3.2
+  auto_route_generator: ^8.0.0
   # A build system for Dart code generation and modular compilation.
-  build_runner: ^2.4.6
+  build_runner: ^2.4.12
   # Package which simplifies the task of updating your Flutter app's launcher icon.
   flutter_launcher_icons: ^0.13.1
   # Code generator for unions/pattern-matching/copy.
