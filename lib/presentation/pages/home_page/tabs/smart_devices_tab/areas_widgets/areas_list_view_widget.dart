@@ -15,7 +15,7 @@ class AreasListViewWidget extends StatelessWidget {
   final HashMap<String, DeviceEntityBase> entities;
   final HashMap<String, AreaEntity> areas;
 
-  HashMap<String, Set<String>> initialzeEntitiesByAreas() {
+  HashMap<String, Set<String>> initializeEntitiesByAreas() {
     final HashMap<String, Set<String>> devicesByAreas = HashMap();
 
     devicesByAreas.addAll(
@@ -27,7 +27,7 @@ class AreasListViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HashMap<String, Set<String>> devicesByAreas =
-        initialzeEntitiesByAreas();
+        initializeEntitiesByAreas();
 
     return ListViewMolecule(
       ListViewVeriant.separated,

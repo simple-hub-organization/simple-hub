@@ -24,7 +24,7 @@ class _AddScenePageState extends State<AddScenePage> {
   @override
   void initState() {
     super.initState();
-    initialzeEntities();
+    initializeEntities();
   }
 
   String sceneName = '';
@@ -33,7 +33,7 @@ class _AddScenePageState extends State<AddScenePage> {
   /// List of devices with entities, will be treated as actions
   HashSet<RequestActionObject> entitiesWithActions = HashSet();
 
-  Future initialzeEntities() async {
+  Future initializeEntities() async {
     final HashMap<String, DeviceEntityBase> entitiesTemp =
         await ConnectionsService.instance.getEntities;
 

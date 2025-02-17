@@ -28,10 +28,10 @@ class _EntitiesInAreaPageState extends State<EntitiesInAreaPage> {
   void initState() {
     super.initState();
     showAllTypes = widget.entityTypes.isEmpty;
-    initialzeDevices();
+    initializeDevices();
   }
 
-  Future initialzeDevices() async {
+  Future initializeDevices() async {
     final Map<String, DeviceEntityBase> entitiesMap =
         await ConnectionsService.instance.getEntities;
     final Set<String> entityIdsInArea =

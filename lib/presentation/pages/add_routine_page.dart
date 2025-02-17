@@ -34,7 +34,7 @@ class _AddRoutinePageState extends State<AddRoutinePage> {
   @override
   void initState() {
     super.initState();
-    initialzeEntities();
+    initializeEntities();
   }
 
   String? routineName;
@@ -51,7 +51,7 @@ class _AddRoutinePageState extends State<AddRoutinePage> {
   bool isSubmitting = false;
   HashMap<String, DeviceEntityBase>? entities;
 
-  Future initialzeEntities() async {
+  Future initializeEntities() async {
     final HashMap<String, DeviceEntityBase> entitiesTemp =
         await ConnectionsService.instance.getEntities;
 

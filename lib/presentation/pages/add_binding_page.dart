@@ -28,7 +28,7 @@ class _AddBindingPageState extends State<AddBindingPage> {
   @override
   void initState() {
     super.initState();
-    initialzeEntities();
+    initializeEntities();
   }
 
   HashMap<String, DeviceEntityBase>? entities;
@@ -41,7 +41,7 @@ class _AddBindingPageState extends State<AddBindingPage> {
   bool showErrorMessages = false;
   bool isSubmitting = false;
 
-  Future initialzeEntities() async {
+  Future initializeEntities() async {
     final HashMap<String, DeviceEntityBase> entitiesTemp =
         await ConnectionsService.instance.getEntities;
 

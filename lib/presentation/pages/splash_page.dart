@@ -31,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
   Future initilizeApp() async {
     SystemCommandsBaseClassD.instance = AppCommands();
     await Hive.initFlutter();
-    await IDbRepository.instance.asyncConstactor();
+    await IDbRepository.instance.asyncConstructor();
     NetworksManager().loadFromDb();
     final bool sucess = await IManageNetworkRepository.instance.loadWifi();
     if (!sucess) {
