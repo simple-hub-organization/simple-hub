@@ -33,12 +33,9 @@ dependencies:
   # Automatically resizes text to fit perfectly within its bounds.
   auto_size_text: ^3.0.0
   bonsoir: ^5.1.1
-  cbj_integrations_controller:
-    #    git: https://github.com/CyBear-Jinni/cbj_integrations_controller.git
-    path: ../cbj_integrations_controller
   cbj_smart_device_flutter:
-    #    git: https://github.com/CyBear-Jinni/cbj_smart_device_flutter.git
-    path: ../cbj_smart_device_flutter
+    git: https://github.com/CyBear-Jinni/cbj_smart_device_flutter.git
+  #  path: ../cbj_smart_device_flutter
   # Copy text from and to clipboard
   clipboard: ^0.1.3
   # Package to create, convert, alter, and compare colors in a variety of colorspaces.
