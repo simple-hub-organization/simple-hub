@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_entity.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -65,7 +66,7 @@ class CBJCompCard extends StatelessWidget {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 Colors.greenAccent,
               ),
             ),

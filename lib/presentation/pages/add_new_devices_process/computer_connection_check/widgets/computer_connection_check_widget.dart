@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_entity.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_failures.dart';
@@ -202,7 +203,7 @@ class _ComputerConnectionCheckWidgetState
                         valueColor: const AlwaysStoppedAnimation(Colors.pink),
                         backgroundColor:
                             Theme.of(context).textTheme.bodyLarge!.color,
-                        borderColor: Colors.red.withOpacity(0.9),
+                        borderColor: Colors.red.withAlpha((0.9 * 255).toInt()),
                         borderWidth: 4.0,
                         center: const TextAtom(
                           'Loading...',

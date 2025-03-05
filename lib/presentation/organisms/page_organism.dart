@@ -24,7 +24,7 @@ class PageOrganism extends StatelessWidget {
               pageName: pageName,
               backgroundColor: topBarColor,
               leftIcon: FontAwesomeIcons.arrowLeft,
-              leftIconFunction: (_) => context.router.pop(),
+              leftIconFunction: (_) => context.router.maybePop(),
             ),
           ),
           Expanded(

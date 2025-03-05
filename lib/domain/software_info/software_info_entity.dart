@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/software_info/software_info_failures.dart';
 import 'package:cybearjinni/domain/software_info/software_info_value_objects.dart';

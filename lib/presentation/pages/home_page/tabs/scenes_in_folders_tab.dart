@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/core/routes/app_router.gr.dart';
@@ -33,14 +34,14 @@ class ScenesInFoldersTab extends StatelessWidget {
         ),
         borderRadius: const BorderRadius.all(Radius.circular(borderRadius)),
         border: Border.all(
-          color: Colors.black.withOpacity(0.7),
+          color: Colors.black.withAlpha((0.7 * 255).toInt()),
           width: 0.4,
         ),
       ),
       margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 5),
       child: TextButton(
         style: ButtonStyle(
-          padding: MaterialStateProperty.all<EdgeInsets>(
+          padding: WidgetStateProperty.all<EdgeInsets>(
             EdgeInsets.zero,
           ),
         ),
@@ -59,7 +60,8 @@ class ScenesInFoldersTab extends StatelessWidget {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                color: colorScheme.primaryContainer.withOpacity(0.7),
+                color:
+                    colorScheme.primaryContainer.withAlpha((0.7 * 255).toInt()),
                 borderRadius: const BorderRadius.only(
                   bottomRight: Radius.circular(borderRadius),
                   bottomLeft: Radius.circular(borderRadius),

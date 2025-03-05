@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_entity.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_failures.dart';
@@ -159,7 +160,7 @@ class _ConfigureNewCbjCompWidgetsState
             textEditingControllerTemp;
         widgetList.add(
           Container(
-            color: Colors.yellow.withOpacity(0.8),
+            color: Colors.yellow.withAlpha((0.8 * 255).toInt()),
             padding: const EdgeInsets.symmetric(vertical: 10),
             margin: const EdgeInsets.symmetric(vertical: 30),
             child: Column(
@@ -214,7 +215,7 @@ class _ConfigureNewCbjCompWidgetsState
                     ),
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.black.withOpacity(0.2),
+                      fillColor: Colors.black.withAlpha((0.2 * 255).toInt()),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
                           color: Theme.of(context).textTheme.bodyLarge!.color!,
@@ -244,7 +245,7 @@ class _ConfigureNewCbjCompWidgetsState
       } else {
         widgetList.add(
           Container(
-            color: Colors.grey.withOpacity(0.3),
+            color: Colors.grey.withAlpha((0.3 * 255).toInt()),
             padding: const EdgeInsets.symmetric(vertical: 30),
             margin: const EdgeInsets.only(top: 20),
             child: Row(
@@ -311,7 +312,7 @@ class _ConfigureNewCbjCompWidgetsState
                         valueColor: const AlwaysStoppedAnimation(Colors.pink),
                         backgroundColor:
                             Theme.of(context).textTheme.bodyLarge!.color,
-                        borderColor: Colors.red.withOpacity(0.9),
+                        borderColor: Colors.red.withAlpha((0.9 * 255).toInt()),
                         borderWidth: 4.0,
                         center: const TextAtom(
                           'Loading...',

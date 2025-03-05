@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/security_bear/i_security_bear_connection_repository.dart';
 import 'package:cybearjinni/domain/security_bear/security_bear_failures.dart';

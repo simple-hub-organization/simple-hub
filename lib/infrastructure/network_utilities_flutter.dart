@@ -1,8 +1,11 @@
 import 'dart:async';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
+// ignore: depend_on_referenced_packages a
 import 'package:network_tools_flutter/network_tools_flutter.dart'
     as network_flutter;
+// ignore: depend_on_referenced_packages a
 import 'package:network_tools_flutter/network_tools_flutter.dart';
 
 class NetworkUtilitiesFlutter extends NetworkUtilities {

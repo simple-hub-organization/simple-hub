@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -88,7 +89,7 @@ class _AddRoutinePageState extends State<AddRoutinePage> {
   }
 
   void backButtonFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override
@@ -135,7 +136,7 @@ class _AddRoutinePageState extends State<AddRoutinePage> {
                         return Container(
                           margin: const EdgeInsets.symmetric(vertical: 1),
                           child: ColoredBox(
-                            color: Colors.blue.withOpacity(0.3),
+                            color: Colors.blue.withAlpha((0.3 * 255).toInt()),
                             child: ListTile(
                               leading: const FaIcon(
                                 FontAwesomeIcons.lightbulb,
@@ -158,7 +159,8 @@ class _AddRoutinePageState extends State<AddRoutinePage> {
                   const SizedBox(height: 30),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.lightBlueAccent.withOpacity(0.5),
+                      color:
+                          Colors.lightBlueAccent.withAlpha((0.5 * 255).toInt()),
                       // Red border with the width is equal to 5
                       border: Border.all(),
                     ),
@@ -225,7 +227,8 @@ class _AddRoutinePageState extends State<AddRoutinePage> {
                   const SizedBox(height: 10),
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.lightBlueAccent.withOpacity(0.5),
+                      color:
+                          Colors.lightBlueAccent.withAlpha((0.5 * 255).toInt()),
                       // Red border with the width is equal to 5
                       border: Border.all(),
                     ),

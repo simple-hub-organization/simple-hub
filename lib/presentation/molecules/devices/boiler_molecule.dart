@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -29,7 +30,7 @@ class _BoilerMoleculeState extends State<BoilerMolecule> {
 
   void setEntityState(EntityActions action) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(

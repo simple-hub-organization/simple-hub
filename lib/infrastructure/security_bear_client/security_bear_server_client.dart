@@ -1,5 +1,6 @@
 import 'dart:async';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
 import 'package:grpc/grpc.dart';

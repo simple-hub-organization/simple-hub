@@ -93,7 +93,7 @@ class _ConnectToHomeWiFiWidgetState extends State<ConnectToHomeWiFiWidget> {
               ),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.greenAccent.withOpacity(0.3),
+                fillColor: Colors.greenAccent.withAlpha((0.3 * 255).toInt()),
                 prefixIcon: Icon(
                   Icons.wifi,
                   color: Theme.of(context).textTheme.bodyLarge!.color,
@@ -121,7 +121,7 @@ class _ConnectToHomeWiFiWidgetState extends State<ConnectToHomeWiFiWidget> {
               ),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Colors.greenAccent.withOpacity(0.3),
+                fillColor: Colors.greenAccent.withAlpha((0.3 * 255).toInt()),
                 prefixIcon: Icon(
                   Icons.vpn_key,
                   color: Theme.of(context).textTheme.bodyLarge!.color,
@@ -142,7 +142,7 @@ class _ConnectToHomeWiFiWidgetState extends State<ConnectToHomeWiFiWidget> {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 Colors.pinkAccent,
               ),
             ),

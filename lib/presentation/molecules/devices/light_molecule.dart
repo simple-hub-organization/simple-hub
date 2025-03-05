@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -18,7 +19,7 @@ class LightMolecule extends StatelessWidget {
 
   void setEntityState(EntityActions action) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(

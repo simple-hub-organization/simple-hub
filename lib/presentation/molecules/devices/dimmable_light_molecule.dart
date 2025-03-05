@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -72,7 +73,7 @@ class _DimmableLightMoleculeState extends State<DimmableLightMolecule> {
     HashMap<ActionValues, dynamic>? value,
   }) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -113,7 +114,7 @@ class _DimmableLightMoleculeState extends State<DimmableLightMolecule> {
               ),
               Expanded(
                 child: Slider(
-                  thumbColor: colorScheme.onBackground,
+                  thumbColor: colorScheme.onSurface,
                   activeColor: colorScheme.tertiary,
                   inactiveColor: colorScheme.outline,
                   value: brightness,

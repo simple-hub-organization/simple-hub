@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
@@ -94,7 +95,7 @@ class _CbjHubInNetworkWidgetState extends State<CbjHubInNetworkWidget> {
         ),
         TextButton(
           style: TextButton.styleFrom(
-            backgroundColor: Colors.white.withOpacity(0.8),
+            backgroundColor: Colors.white.withAlpha((0.8 * 255).toInt()),
           ),
           onPressed: () {
             _searchDevices();

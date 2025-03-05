@@ -8,7 +8,7 @@ class LoadingPageMolecule extends StatelessWidget {
     final ColorScheme colorScheme = themeData.colorScheme;
 
     return Scaffold(
-      backgroundColor: colorScheme.background,
+      backgroundColor: colorScheme.surface,
       body: const CircularProgressIndicatorAtom(),
     );
   }

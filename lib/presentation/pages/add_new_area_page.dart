@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -151,7 +152,7 @@ class _AddNewAreaFormState extends State<AddNewAreaForm> {
                           if (a[0] == a[0].toUpperCase()) {
                             areaNameEdited += ' ';
                           }
-                          // ignore: use_string_buffers
+                          // ignore: use_string_buffers a
                           areaNameEdited += a;
                         }
 
@@ -186,7 +187,7 @@ class _AddNewAreaFormState extends State<AddNewAreaForm> {
                         return;
                       }
 
-                      context.router.pop();
+                      context.router.maybePop();
                     },
                     child: const TextAtom('ADD'),
                   ),

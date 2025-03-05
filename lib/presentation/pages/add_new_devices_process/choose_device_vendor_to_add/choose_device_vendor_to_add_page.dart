@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 @RoutePage()
 class ChooseDeviceVendorToAddPage extends StatelessWidget {
   void backButtonFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override

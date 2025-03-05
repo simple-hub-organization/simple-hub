@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'dart:convert';
 import 'dart:io';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:cybearjinni/infrastructure/core/injection.dart';
@@ -13,14 +14,15 @@ import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc.dart';
 import 'package:location/location.dart';
 import 'package:network_info_plus/network_info_plus.dart';
+// ignore: depend_on_referenced_packages a
 import 'package:network_tools_flutter/network_tools_flutter.dart';
 import 'package:permission_handler/permission_handler.dart'
     as permission_handler;
 import 'package:rxdart/rxdart.dart';
 
 part 'package:cybearjinni/infrastructure/connection_service/app_connection_service.dart';
-part 'package:cybearjinni/infrastructure/connection_service/hub_connection_service.dart';
 part 'package:cybearjinni/infrastructure/connection_service/demo_connection_service.dart';
+part 'package:cybearjinni/infrastructure/connection_service/hub_connection_service.dart';
 part 'package:cybearjinni/infrastructure/connection_service/none_connection_service.dart';
 part 'package:cybearjinni/infrastructure/connection_service/remote_pipes_connection_service.dart';
 

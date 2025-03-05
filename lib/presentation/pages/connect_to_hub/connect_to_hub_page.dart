@@ -130,7 +130,8 @@ class ConnectToHubPage extends StatelessWidget {
                               child: RichText(
                                 text: TextSpan(
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: Colors.white
+                                        .withAlpha((0.9 * 255).toInt()),
                                   ),
                                   /*defining default style is optional */
                                   children: const <TextSpan>[
@@ -180,7 +181,8 @@ class ConnectToHubPage extends StatelessWidget {
                               child: RichText(
                                 text: TextSpan(
                                   style: TextStyle(
-                                    color: Colors.white.withOpacity(0.9),
+                                    color: Colors.white
+                                        .withAlpha((0.9 * 255).toInt()),
                                   ),
                                   children: const <TextSpan>[
                                     TextSpan(

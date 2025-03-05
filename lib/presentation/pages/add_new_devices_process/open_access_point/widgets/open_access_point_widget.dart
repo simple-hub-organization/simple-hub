@@ -82,7 +82,7 @@ class _OpenAccessPointWidgetState extends State<OpenAccessPointWidget> {
       case OpenAccessPointState.initial:
         return TextButton(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(
+            backgroundColor: WidgetStateProperty.all(
               Colors.greenAccent,
             ),
           ),
@@ -116,11 +116,14 @@ class _OpenAccessPointWidgetState extends State<OpenAccessPointWidget> {
                 height: 70,
                 child: TextButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
+                    backgroundColor: WidgetStateProperty.all(
                       Colors.black12,
                     ),
                   ),
                   onPressed: () {
+                    if (!mounted) {
+                      return;
+                    }
                     FlutterClipboard.copy('CyBear Jinni').then(
                       (value) => SnackBarService().show(
                         context,
@@ -157,7 +160,7 @@ class _OpenAccessPointWidgetState extends State<OpenAccessPointWidget> {
                 height: 70,
                 child: TextButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
+                    backgroundColor: WidgetStateProperty.all(
                       Colors.black12,
                     ),
                   ),
@@ -227,7 +230,7 @@ class _OpenAccessPointWidgetState extends State<OpenAccessPointWidget> {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 Colors.greenAccent,
               ),
             ),

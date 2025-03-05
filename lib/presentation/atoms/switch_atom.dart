@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:flutter/material.dart';
@@ -105,22 +106,22 @@ class _SwitchAtomState extends State<SwitchAtom> {
     //     borderRadius: 25.0,
     //     padding: 0.0,
     //     activeToggleColor: colorScheme.onPrimary,
-    //     inactiveToggleColor: colorScheme.surfaceVariant,
+    //     inactiveToggleColor: colorScheme.surfaceContainerHighest,
     //     activeSwitchBorder: Border.all(
-    //       color: colorScheme.onBackground,
+    //       color: colorScheme.onSurface,
     //     ),
     //     inactiveSwitchBorder: Border.all(
     //       color: colorScheme.outline,
     //     ),
     //     activeColor: colorScheme.secondary,
-    //     inactiveColor: colorScheme.onBackground,
+    //     inactiveColor: colorScheme.onSurface,
     //     activeIcon: Icon(
     //       activeIcon,
     //       color: colorScheme.secondary,
     //     ),
     //     inactiveIcon: Icon(
     //       inactiveIcon,
-    //       color: colorScheme.onBackground,
+    //       color: colorScheme.onSurface,
     //     ),
     //     onToggle: onToggle,
     //   ),

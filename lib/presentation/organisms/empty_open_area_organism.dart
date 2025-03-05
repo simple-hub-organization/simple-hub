@@ -19,7 +19,7 @@ class EmptyOpenAreaOrganism extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: context.router.pop,
+            onPressed: context.router.maybePop,
             child: TextAtom(
               'No device found',
               style: TextStyle(

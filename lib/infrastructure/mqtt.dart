@@ -1,8 +1,9 @@
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
 import 'package:mqtt_client/mqtt_client.dart';
 import 'package:mqtt_client/mqtt_server_client.dart';
-// ignore: implementation_imports
+// ignore: implementation_imports a
 import 'package:mqtt_client/src/observable/src/records.dart';
 
 class MqttServerRepository extends IMqttServerRepository {
