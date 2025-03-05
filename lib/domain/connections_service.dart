@@ -77,7 +77,7 @@ abstract interface class ConnectionsService {
 
   void setEntityState(RequestActionObject action);
 
-  Future setEtitiesToArea(String areaId, HashSet<String> entities);
+  Future setEntitiesToArea(String areaId, HashSet<String> entities);
 
   Future<HashMap<String, DeviceEntityBase>> get getEntities;
 

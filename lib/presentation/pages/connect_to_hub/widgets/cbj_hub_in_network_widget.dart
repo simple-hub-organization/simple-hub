@@ -39,8 +39,9 @@ class _CbjHubInNetworkWidgetState extends State<CbjHubInNetworkWidget> {
 
     ConnectionsService.setCurrentConnectionType(
       networkBssid: bssid,
-      connectionType: ConnectionType.appAsHub,
+      connectionType: ConnectionType.hub,
     );
+    ConnectionsService.instance.connect();
     bool foundEntity = false;
     ConnectionsService.instance.watchEntities().listen((event) {
       if (!mounted || foundEntity) {

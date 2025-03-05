@@ -36,17 +36,18 @@ class _LoginVendorPageState extends State<LoginVendorPage> {
   }
 
   Widget authTypeWidget() {
-    InsertloginMoleculeType type;
+    InsertLoginMoleculeType type;
     switch (widget.vendorInformation.loginType) {
       case VendorLoginTypes.notNeeded:
         return const TextAtom('Not needed');
       case VendorLoginTypes.authToken:
-        type = InsertloginMoleculeType.authToken;
+        type = InsertLoginMoleculeType.authToken;
       case VendorLoginTypes.apiKey:
-        type = InsertloginMoleculeType.apiKey;
-
+        type = InsertLoginMoleculeType.apiKey;
       case VendorLoginTypes.emailAndPassword:
-        type = InsertloginMoleculeType.emailAndPassword;
+        type = InsertLoginMoleculeType.emailAndPassword;
+      case VendorLoginTypes.addDeviceByPairingCode:
+        type = InsertLoginMoleculeType.addDeviceByPairingCode;
     }
     return InsertLoginMolecule(
       type: type,

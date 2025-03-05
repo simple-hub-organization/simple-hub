@@ -43,7 +43,7 @@ class _AppConnectionService implements ConnectionsService {
   }
 
   @override
-  Future setEtitiesToArea(String areaId, HashSet<String> entities) =>
+  Future setEntitiesToArea(String areaId, HashSet<String> entities) =>
       IcSynchronizer().setEtitiesToArea(areaId, entities);
 
   @override

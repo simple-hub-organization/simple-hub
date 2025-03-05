@@ -254,7 +254,7 @@ class _HubConnectionService implements ConnectionsService {
   Future setNewArea(AreaEntity area) async {}
 
   @override
-  Future setEtitiesToArea(String areaId, HashSet entities) async {}
+  Future setEntitiesToArea(String areaId, HashSet entities) async {}
 
   @override
   Future addScene(SceneCbjEntity scene) async {}

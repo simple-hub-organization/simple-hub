@@ -74,12 +74,12 @@ class _ChangeAreaForDevicesWidgetState
     });
   }
 
-  Future _addEtitiesToArea() async {
+  Future _addEntitiesToArea() async {
     final String? id = selectedArea?.uniqueId.getOrCrash();
     if (id == null) {
       return;
     }
-    ConnectionsService.instance.setEtitiesToArea(id, selectedEntities);
+    ConnectionsService.instance.setEntitiesToArea(id, selectedEntities);
   }
 
   void onAreaSelected(String? value) {
@@ -185,7 +185,7 @@ class _ChangeAreaForDevicesWidgetState
                     context,
                     'Changing devices for area',
                   );
-                  _addEtitiesToArea();
+                  _addEntitiesToArea();
                 },
                 child: const TextAtom(
                   'Save',

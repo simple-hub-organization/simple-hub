@@ -26,16 +26,16 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    initilizeApp();
+    initializeApp();
   }
 
-  Future initilizeApp() async {
+  Future initializeApp() async {
     SystemCommandsBaseClassD.instance = AppCommands();
     await Hive.initFlutter();
     await IDbRepository.instance.asyncConstructor();
     NetworksManager().loadFromDb();
-    final bool sucess = await IManageNetworkRepository.instance.loadWifi();
-    if (!sucess) {
+    final bool success = await IManageNetworkRepository.instance.loadWifi();
+    if (!success) {
       if (mounted) {
         permsissionsDialog(context);
       }
@@ -49,7 +49,7 @@ class _SplashPageState extends State<SplashPage> {
     await IcSynchronizer().loadAllFromDb();
     ConnectionsService.setCurrentConnectionType(
       networkBssid: bssid,
-      connectionType: ConnectionType.appAsHub,
+      connectionType: ConnectionType.hub,
     );
 
     ConnectionsService.instance.searchDevices();

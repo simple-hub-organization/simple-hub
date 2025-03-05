@@ -1,9 +1,4 @@
-import 'dart:collection';
-
 import 'package:auto_route/auto_route.dart';
-// ignore: depend_on_referenced_packages because this is our pacakge
-import 'package:cbj_integrations_controller/integrations_controller.dart';
-import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/core/routes/app_router.gr.dart';
 import 'package:cybearjinni/presentation/pages/introduction_screen/introductions_view_model_body/introduction_screen_body_about_page.dart';
@@ -116,15 +111,15 @@ class _IntroductionScreenBodyState extends State<IntroductionScreenBody> {
           style: textTheme.titleMedium!.copyWith(color: Colors.white),
         ),
         onDone: () async {
-          final HashMap<String, DeviceEntityBase> entities =
-              await ConnectionsService.instance.getEntities;
+          // final HashMap<String, DeviceEntityBase> entities =
+          //     await ConnectionsService.instance.getEntities;
           if (!mounted) {
             return;
           }
-          if (entities.isNotEmpty) {
-            context.router.replace(const HomeRoute());
-            return;
-          }
+          // if (entities.isNotEmpty) {
+          //   context.router.replace(const HomeRoute());
+          //   return;
+          // }
           context.router.replace(const ConnectToHubRoute());
         },
       ),

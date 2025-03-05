@@ -10,7 +10,7 @@ class InsertLoginMolecule extends StatefulWidget {
     required this.onChange,
   });
 
-  final InsertloginMoleculeType type;
+  final InsertLoginMoleculeType type;
   final VendorsAndServices vendorsAndServices;
   final Function(VendorLoginEntity) onChange;
 
@@ -71,17 +71,17 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
   @override
   Widget build(BuildContext context) {
     switch (widget.type) {
-      case InsertloginMoleculeType.authToken:
+      case InsertLoginMoleculeType.authToken:
         return TextFormFieldAtom(
           onChanged: onAuthTokenChange,
           labelText: 'Auth Token',
         );
-      case InsertloginMoleculeType.apiKey:
+      case InsertLoginMoleculeType.apiKey:
         return TextFormFieldAtom(
           onChanged: onApiKeyChange,
           labelText: 'Api Key',
         );
-      case InsertloginMoleculeType.emailAndPassword:
+      case InsertLoginMoleculeType.emailAndPassword:
         return Column(
           children: [
             TextFormFieldAtom(
@@ -94,12 +94,18 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
             ),
           ],
         );
+      case InsertLoginMoleculeType.addDeviceByPairingCode:
+        return TextFormFieldAtom(
+          onChanged: onApiKeyChange,
+          labelText: 'Pairing Code',
+        );
     }
   }
 }
 
-enum InsertloginMoleculeType {
+enum InsertLoginMoleculeType {
   authToken,
   apiKey,
   emailAndPassword,
+  addDeviceByPairingCode,
 }
