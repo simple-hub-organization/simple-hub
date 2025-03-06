@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package SecurityBearConnections;
+
+// The greeting service definition.
+service SecurityBear {
+  rpc SetWiFiInformation (SecurityBearSetup) returns (SBCommendStatus);
+
+  rpc SetFirebaseAccountAndSecurityBearSetup (SBFirebaseAccountAndSecurityBearSetup) returns (SBCommendStatus);
+
+  /// Get computer yaml and protoc version and more info about the computer
+  rpc getCompSecurityBearInfo (CompSecurityBearInfo) returns (CompSecurityBearInfo);
+}
+
+message SecurityBearSetup {
+  WiFiInformation wiFiFirstPriority = 3;
+  WiFiInformation wiFiSecondPriority = 4;
+}
+
+message WiFiInformation {
+  string wiFiName = 1;
+  string wiFiPassword = 2;
+}
+
+// Did the commend succeeded (true) or not (false)
+message SBCommendStatus {
+  bool success = 5;
+}
+
+
+message SBFirebaseAccountAndSecurityBearSetup  {
+  SBFirebaseAccountInformation sBFirebaseAccountInformation = 10;
+  SecurityBearSetup securityBearSetup = 11;
+}
+
+message SBFirebaseAccountInformation  {
+  string fireBaseProjectId = 6;
+  string fireBaseApiKey = 7;
+  string userEmail = 8;
+  string userPassword = 9;
+}
+
+message CompSecurityBearInfo {
+  CbjSecurityBearIno cbjInfo = 12;
+  CompSecurityBearSpecs compSpecs = 13;
+}
+
+message CbjSecurityBearIno {
+  string deviceName = 14;
+  string pubspecYamlVersion = 15;
+  string pubspecYamlBuildNumber = 23;
+  string protoLastGenDate = 16;
+  string dartSdkVersion = 24;
+}
+
+message CompSecurityBearSpecs {
+  string compId = 17;
+  string compUuid = 18;
+  string compOs = 19;
+  string compModel = 20;
+  string compType = 21;
+  string compIp = 22;
+
+}

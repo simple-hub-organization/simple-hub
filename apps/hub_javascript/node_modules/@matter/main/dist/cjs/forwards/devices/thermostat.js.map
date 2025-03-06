@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/forwards/devices/thermostat.ts"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAQA,sBAAO;AAEP,+BAAc,gCAVd;AAAA;AAAA;AAAA;AAAA;AAAA;",
+  "names": []
+}

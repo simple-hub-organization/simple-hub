@@ -1,0 +1,14 @@
+{
+    "name": "cbj_smart_home",
+    "version": "0.0.1",
+    "description": "See instructions: https://github.com/CyBear-Jinni/cbj_smart-home/blob/master/README.md",
+    "scripts": {
+        "install-melos": "dart pub global activate melos && dart pub get",
+        "bootstrap": "melos bootstrap",
+        "build_runner": "melos exec dart run build_runner build --delete-conflicting-outputs",
+        "clean": "melos clean",
+        "test": "melos exec flutter test",
+        "analyze": "melos exec flutter analyze",
+        "gen-protoc": "cd ../ProtoFiles && ./proto_script.sh"
+    }
+}

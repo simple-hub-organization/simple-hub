@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/behaviors/nitrogen-dioxide-concentration-measurement/NitrogenDioxideConcentrationMeasurementServer.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAQA,6DAAgE;AARhE;AAAA;AAAA;AAAA;AAAA;AAiBO,MAAM,sDAAsD,uGAAgD;AAAC;",
+  "names": []
+}

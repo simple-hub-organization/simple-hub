@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/behaviors/ota-software-update-requestor/OtaSoftwareUpdateRequestorInterface.ts"],
+  "mappings": "AAAA;AAAA;AAAA;AAAA;AAAA;",
+  "names": []
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/forwards/behaviors/access-control.ts"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAQA,sBAAO;AAEP,mCAAc,sCAVd;AAAA;AAAA;AAAA;AAAA;AAAA;",
+  "names": []
+}

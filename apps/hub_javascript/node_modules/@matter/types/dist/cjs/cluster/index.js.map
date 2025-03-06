@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../src/cluster/index.ts"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAOA,sBAAO;AAEP,4BAAc,yBATd;AAUA,4BAAc,+BAVd;AAWA,4BAAc,iCAXd;AAYA,4BAAc,6BAZd;AAaA,4BAAc,gCAbd;AAAA;AAAA;AAAA;AAAA;AAAA;",
+  "names": []
+}

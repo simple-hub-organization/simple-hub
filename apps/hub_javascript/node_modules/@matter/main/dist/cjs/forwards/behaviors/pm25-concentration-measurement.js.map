@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/forwards/behaviors/pm25-concentration-measurement.ts"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAQA,sBAAO;AAEP,mDAAc,sDAVd;AAAA;AAAA;AAAA;AAAA;AAAA;",
+  "names": []
+}

@@ -1,0 +1,23 @@
+name: cbj_smart-home
+
+packages:
+  - "../cbj_integrations_controller"
+  - "../cbj_smart-device"
+  - "../cbj_smart_device_flutter"
+  - "../cbj_app"
+  - "../cbj_hub"
+
+  # Not nesesery for regular builds
+  - "../security_bear"
+  - "../cbj_remote-pipes"
+  - "../cbj_remote-pipes_routing"
+
+dependencyOverridePaths:
+  - "../cbj_integrations_controller"
+  - "../cbj_smart-device"
+  - "../cbj_smart_device_flutter"
+  - "../security_bear"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true

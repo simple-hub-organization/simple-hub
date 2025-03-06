@@ -1,0 +1,108 @@
+name: cbj_integrations_controller
+description: A sample command-line application.
+version: 1.1.2
+# repository: https://github.com/CyBear-Jinni/cbj_integrations_controller
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+# Add regular dependencies here.
+dependencies:
+  # Contains utility classes in the style of dart:async to work with asynchronous computations.
+  async: ^2.11.0
+  # Discover and connect with Chromecast devices 
+  cast: 
+    git: 
+      url: "https://github.com/guyluz11/flutter_cast.git"
+      ref: "multicast_version"
+  collection: ^1.17.2
+  # Package to create, convert, alter, and compare colors in a variety of colorspaces.
+  color: ^3.0.0
+  # Collection of cyclic redundancy check (CRC) routines as Dart converters.
+  crclib: ^3.0.0
+  # Interact directly with eWeLink API
+  dart_ewelink_api:
+    git:
+      url: "https://github.com/guyluz11/dart_ewelink_api.git"
+      ref: "develop"
+  # Functional programming thingies, let you use multiple return types
+  dartz: ^0.10.1
+  # Annotations for freezed
+  freezed_annotation: ^2.4.1
+  # For the injection, allow accessing an object from anywhere in an App
+  get_it: ^8.0.3
+  # High performance, open-source universal RPC framework
+  grpc: ^3.2.4
+  # Lightweight and blazing fast key-value database
+  hive: ^2.2.3
+  # Library for making HTTP requests.
+  http: ^1.1.0
+  # Philips Hue API
+  hue_dart:
+      git:
+        url: "https://github.com/guyluz11/hue_dart.git"
+  # Convenient code generator for get_it
+  injectable: ^2.3.2
+  # Utility library that checks for an Active Internet connection
+  internet_connection_checker: ^1.0.0+1
+  # Extremely fast, easy to use, and fully async NoSQL database for Flutter.
+  isar: ^3.1.0+1
+  # Defines the annotations used by json_serializable to create code for JSON serialization and deserialization.
+  json_annotation: ^4.8.1
+  # Dart Build System builders for handling JSON.
+  json_serializable: ^6.7.1
+  # Port of Kotlin's Kotlin Standard library for Dart/Flutter projects
+  kt_dart: ^1.1.0
+  # Implementation of the LIFX HTTP API
+  lifx_http_api: ^0.0.17
+  # Small, easy to use and extensible logger which prints beautiful logs.
+  logger: ^2.0.2+1
+  meta: ^1.9.0
+  # A server and browser based MQTT client for Dart.
+  mi_iot_token: ^1.1.0
+  # Server and browser based MQTT client
+  mqtt_client: ^10.5.1
+  # Service discovery over multicast DNS (mDNS), Bonjour, and Avahi.
+  multicast_dns: ^0.3.2+8
+  # Helps you discover open ports, devices on subnet and more.
+  network_tools: ^5.0.5
+  # Interact directly with NodeRED API
+  nodered:
+    git: "https://github.com/guyluz11/nodered.git"
+  # Provides runtime support for a Dart implementation of protobufs.
+  protobuf: ^3.1.0
+  # Extends the capabilities of Dart Streams and StreamControllers.
+  rxdart: ^0.27.7
+  # Control Sensibo accessories 
+  sensibo: 
+    git: "https://github.com/CyBear-Jinni/sensibo.git"
+  # Communicate with Shelly smart devices
+  shelly:
+    git: "https://github.com/CyBear-Jinni/shelly.git"
+  # # Python Environment Manager and Executor for dart and flutter
+  # python_shell:
+  #   git: 'https://github.com/guyluz11/python_shell.dart.git'
+  # Control Switcher smart home accessories
+  switcher_dart: ^1.0.0
+  # Simple, fast generation of RFC4122 UUIDs.
+  uuid: ^4.2.1
+  wake_on_lan: ^4.1.1+3
+  # Dart library for controlling Yeelight products over LAN.
+  yeedart: ^0.3.2
+
+dev_dependencies:
+  # A build system for Dart code generation and modular compilation.
+  build_runner:
+
+  # A generator for injectable library
+  # Code generator for unions/pattern-matching/copy.
+  freezed: ^2.4.5
+  # Automatically generates Hive TypeAdapters to store any class
+  hive_generator: ^2.0.1
+  # Injectable is a convenient code generator for get_it.
+  injectable_generator: ^2.4.1
+  # Collection of lint rules for Dart and Flutter projects
+  lint: ^2.2.0
+  # A full featured library for writing and running Dart tests across platforms.
+  test: ^1.24.9

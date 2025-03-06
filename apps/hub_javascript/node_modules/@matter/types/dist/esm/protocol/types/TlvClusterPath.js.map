@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/protocol/types/TlvClusterPath.ts"],
+  "mappings": "AAAA;AAAA;AAAA;AAAA;AAAA;AAMA,SAAS,oBAAoB;AAC7B,SAAS,yBAAyB;AAClC,SAAS,iBAAiB;AAC1B,SAAS,UAAU,kBAAkB,qBAAqB;AAInD,MAAM,iBAAiB,cAAc;AAAA;AAAA,EAExC,QAAQ,iBAAiB,GAAG,SAAS;AAAA,EACrC,YAAY,SAAS,GAAG,iBAAiB;AAAA,EACzC,WAAW,SAAS,GAAG,YAAY;AACvC,CAAC;",
+  "names": []
+}

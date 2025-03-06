@@ -1,0 +1,30 @@
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hubs-loadbalancer
+#  annotations:
+#    service.beta.kubernetes.io/linode-loadbalancer-default-proxy-protocol: v2
+spec:
+  selector:
+    app: remote-pipes-routing
+#  sessionAffinity: ClientIP
+#  sessionAffinityConfig:
+#    clientIP:
+#      timeoutSeconds: 100
+  ports:
+    - protocol: TCP
+      port: 50056
+      targetPort: 50056
+  type: LoadBalancer
+
+#spec:
+#  rules:
+#    - host: test.g.com
+#      http:
+#        paths:
+#          - path: /
+#            backend:
+#              serviceName: homeservice-one-service
+#              servicePort: 3002

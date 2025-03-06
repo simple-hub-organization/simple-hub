@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/forwards/behaviors/device-energy-management.ts"],
+  "mappings": ";;;;;;;;;;;;;;;AAAA;AAAA;AAQA,sBAAO;AAEP,6CAAc,gDAVd;AAAA;AAAA;AAAA;AAAA;AAAA;",
+  "names": []
+}

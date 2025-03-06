@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/behavior/state/validation/conformance.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AASA,kCAA8B;AAT9B;AAAA;AAAA;AAAA;AAAA;AAiBO,SAAS,2BACZ,QACA,YACA,eACoC;AACpC,QAAM,eAAW,2CAAc,QAAQ,UAAU;AAEjD,MAAI,CAAC,YAAY,CAAC,eAAe;AAC7B,WAAO;AAAA,EACX;AAEA,SAAO,CAAC,OAAO,SAAS,aAAa;AACjC,eAAW,OAAO,SAAS,QAAQ;AACnC,QAAI,UAAU,QAAW;AACrB,sBAAgB,OAAO,SAAS,QAAQ;AAAA,IAC5C;AAAA,EACJ;AACJ;",
+  "names": []
+}

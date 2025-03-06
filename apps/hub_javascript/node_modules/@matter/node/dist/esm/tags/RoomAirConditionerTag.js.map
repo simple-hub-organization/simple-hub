@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../src/tags/RoomAirConditionerTag.ts"],
+  "mappings": "AAAA;AAAA;AAAA;AAAA;AAAA;AAQA,SAAS,yBAAyB;AAQ3B,MAAM,wBAAwB,kBAAkB;AAAA,EACnD,IAAI;AAAA,EACJ,MAAM,EAAE,YAAY,EAAE,IAAI,GAAK,OAAO,aAAa,GAAG,WAAW,EAAE,IAAI,GAAK,OAAO,YAAY,EAAE;AACrG,CAAC;",
+  "names": []
+}

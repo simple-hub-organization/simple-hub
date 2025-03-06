@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: remote-pipes-deployment-test
+  labels:
+    app: pod-test # this one needs to change dynamically
+spec:
+#  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-test
+  template:
+    metadata:
+      labels:
+        app: pod-test
+    spec:
+      containers:
+      - name: remote-pipes
+        image: guyluz11/cbj-rp-test
+        ports:
+        - containerPort: 50056

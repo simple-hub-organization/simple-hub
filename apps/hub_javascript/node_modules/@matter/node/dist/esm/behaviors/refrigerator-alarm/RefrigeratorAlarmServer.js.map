@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/behaviors/refrigerator-alarm/RefrigeratorAlarmServer.ts"],
+  "mappings": "AAAA;AAAA;AAAA;AAAA;AAAA;AAQA,SAAS,iCAAiC;AAKnC,MAAM,gCAAgC,0BAA0B;AAAC;",
+  "names": []
+}

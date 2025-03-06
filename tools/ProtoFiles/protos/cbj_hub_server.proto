@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+package CbjHub;
+
+/// The greeting service definition.
+service CbjHub {
+  /// Client side sending requests for the hub like turn entrance light on,
+  /// and updating about it status like client opened movie (for the hub to
+  /// process). Getting requests from the hub like play music on the phone, and
+  /// status of entities that have been changed like update layout to show
+  /// entrance lights on.
+  rpc ClientTransferEntities(stream ClientStatusRequests)
+      returns (stream RequestsAndStatusFromHub);
+
+  /// Hub side sending requests for the clients like turn on music, and updated
+  /// status of entities like entrance light got turned on. Getting request like
+  /// to turn on lights, and getting client updated status to process like
+  /// client opened a move.
+  rpc HubTransferEntities(stream RequestsAndStatusFromHub)
+      returns (stream ClientStatusRequests);
+
+  /// Get computer yaml and protoc version and more info about the computer
+  rpc getCompHubInfo(CompHubInfo) returns (CompHubInfo);
+}
+
+
+message ClientStatusRequests {
+  string sendingType = 41;
+  string allRemoteCommands = 42;
+}
+
+message RequestsAndStatusFromHub {
+  string sendingType = 43;
+  string allRemoteCommands = 44;
+}
+
+message AllRemoteCommands { SmartEntityInfo smartEntityInfo = 40; }
+
+message FirstSetupMessage {
+  CompHubInfo compInfo = 38;
+  CloudAccountInformation cloudAccountInformation = 39;
+}
+
+message CompHubInfo {
+  CbjHubIno cbjInfo = 47;
+  CompHubSpecs compSpecs = 21;
+}
+
+message CbjHubIno {
+  string entityName = 48;
+  string pubspecYamlVersion = 27;
+  string pubspecYamlBuildNumber = 51;
+  string protoLastGenDate = 49;
+  string dartSdkVersion = 52;
+}
+
+message CompHubSpecs {
+  string compId = 22;
+  string compUuid = 23;
+  string compOs = 24;
+  string compModel = 25;
+  string compType = 26;
+  string compIp = 50;
+}
+
+message MicrocontrollerSpecs {
+  string microcontrollerModel = 31;
+  string microcontrollerType = 32;
+  string softwareVersion = 33;
+}
+
+/// The request message containing the user's name.
+message SmartEntityInfo {
+  string id = 1;
+  string state = 3;
+  string defaultName = 14;
+  string areaId = 15;
+  string senderDeviceModel = 16;
+  string senderDeviceOs = 17;
+  string senderId = 18;
+  string serverTimeStamp = 19;
+  string stateMassage = 20;
+  MqttMassage mqttMassage = 43;
+
+  bool isComputer = 29;
+
+  CompHubSpecs compSpecs = 30;
+
+  MicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
+
+  EntityTypesActions entityTypesActions = 34;
+}
+
+/// The response message containing the greetings
+message SmartEntityStatus { bool onOffState = 4; }
+
+message MqttMassage {
+  string mqttTopic = 44;
+  string mqttMassage = 45;
+}
+
+/// Did the commend succeeded (true) or not (false)
+message CommendStatus { bool success = 5; }
+
+message SmartEntitiesUpdateDetails {
+  SmartEntityInfo smartEntity = 6;
+  string newName = 7;
+}
+
+message CloudAccountInformation {
+  string cloudProjectId = 8;
+  string cloudApiKey = 9;
+  string userEmail = 10;
+  string userPassword = 11;
+  string homeId = 12;
+}
+
+message EntityTypesActions {
+  string vendorsAndServices = 46;
+  string entityType = 35;
+  string entityAction = 36;
+  string entityStateGRPC = 37;
+}

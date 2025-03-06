@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/behaviors/illuminance-measurement/IlluminanceMeasurementServer.ts"],
+  "mappings": "AAAA;AAAA;AAAA;AAAA;AAAA;AAQA,SAAS,sCAAsC;AAKxC,MAAM,qCAAqC,+BAA+B;AAAC;",
+  "names": []
+}

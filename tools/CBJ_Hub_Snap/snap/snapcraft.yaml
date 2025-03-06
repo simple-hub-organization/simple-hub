@@ -1,0 +1,78 @@
+name: cbj-hub
+base: core20
+version: '1.4.4'
+summary: Hub to control smart device from different vendors with one app.
+description: |
+  CyBear Jinni Hub to control smart devices from different vendors with one easy-to-use app.
+
+  It is an open-source Hub that keeps your data local by default.
+
+  The Hub will extend the devices basic functionality by acting as a leader and sending signals
+  to the devices according to the logic you set it to be.
+
+  The functionality will include activating routines, saving different scense, binding devices so
+  that action in one device will trigger other actions in different devices and more.
+
+  You can control the Hub from your android phone
+
+  https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home
+
+  For the hub to work please install MQTT broker https://snapcraft.io/mosquitto and configure it to be open for requests.
+
+  If you have any questions you can ask in the CyBear Jinni discord server https://discord.gg/mUXfwUY.
+
+grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
+confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
+
+
+architectures:
+  - build-on: armhf
+    run-on: armhf
+
+  - build-on: arm64
+    run-on: arm64
+
+  - build-on: amd64
+    run-on: amd64
+
+parts:
+  scripts-files:
+    plugin: dump
+    source: .
+    override-build: |
+      rm README.md
+
+  cbj-hub:
+    source: https://github.com/CyBear-Jinni/cbj_hub.git
+    after:
+      - scripts-files
+    plugin: dump
+    override-build: |
+      mv ../../scripts-files/src/scripts .
+      scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
+
+      # We need to delete all the code from the dir after making the executable file, 
+      # currently all python file exist inside the project and referanced by directory so we can't
+      # rm -r All code from cbj_hub
+
+      snapcraftctl build
+
+    build-packages:
+      - wget
+      - unzip
+      - gcc
+      - g++
+    stage-packages:
+      - libatlas-base-dev
+      - libevent-dev
+      # For the ping command to work, become redundant if network-observe plug is introduced in the future
+      - iputils-ping
+      - python3
+
+apps:
+  cbj-hub:
+    command: CyBear-Jinni_Hub $SNAP
+    daemon: simple
+    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe]
+    # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
+

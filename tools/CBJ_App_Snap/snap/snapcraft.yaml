@@ -1,0 +1,50 @@
+name: cybear-jinni
+version: '1.4.1'
+summary: App to control your smart device through CyBear Jinni Hub
+description: |
+  A single app to control smart devices from different form factors through CyBear Jinni Hub.
+
+  CyBear Jinni app was created with the focus to be easy to use.
+
+  Supported smart devices in the local network will automatically get add to your app for you to control.
+
+  The app is also available for android
+
+  https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home
+
+  You can install the CyBear Jinni Hub from here
+
+  https://snapcraft.io/cbj-hub
+
+  This snap is using the network observe plugin in order to discover automatically the CyBear Jinni Hub.
+
+
+  If you have any questions you can ask in the CyBear Jinni discord server https://discord.gg/mUXfwUY.
+grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
+confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
+
+
+base: core18
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+
+parts:
+  cybear-jinni:
+    plugin: flutter
+    source: https://github.com/CyBear-Jinni/CBJ_App.git
+    flutter-target: lib/main.dart
+    override-build: |
+      flutter clean
+      rm -rf build
+      rm -rf linux/flutter/ephemeral/
+      flutter pub get
+      flutter pub run build_runner build --delete-conflicting-outputs
+      snapcraftctl build
+
+apps:
+  cybear-jinni:
+    command: CyBear-Jinni_App $SNAP
+    extensions: [flutter-stable]
+    plugs: [network, network-bind, network-manager, network-manager-observe, desktop-legacy, unity7]

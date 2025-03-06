@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/behaviors/channel/ChannelServer.ts"],
+  "mappings": "AAAA;AAAA;AAAA;AAAA;AAAA;AAQA,SAAS,uBAAuB;AAKzB,MAAM,sBAAsB,gBAAgB;AAAC;",
+  "names": []
+}

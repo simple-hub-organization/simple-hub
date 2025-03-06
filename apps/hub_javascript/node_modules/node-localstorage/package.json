@@ -1,0 +1,48 @@
+{
+  "name": "node-localstorage",
+  "version": "3.0.5",
+  "main": "./LocalStorage",
+  "description": "A drop-in substitute for the browser native localStorage API that runs on node.js.",
+  "keywords": [
+    "localStorage",
+    "Web Storage",
+    "node.js"
+  ],
+  "author": {
+    "name": "Larry Maccherone",
+    "url": "https://www.LinkedIn.com/in/LarryMaccherone/"
+  },
+  "homepage": "https://github.com/lmaccherone/node-localstorage",
+  "engines": {
+    "node": ">=0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/lmaccherone/node-localstorage.git"
+  },
+  "preferGlobal": false,
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "coffeetape": "^2.0.0",
+    "nyc": "^15.1.0",
+    "tap-nyc": "^1.0.3",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.6.6"
+  },
+  "scripts": {
+    "test": "npm run build && coffeetape test/*.coffee | tap-spec",
+    "coverage": "npm run build && nyc --reporter=lcov coffeetape test/*.coffee | tap-nyc",
+    "coverage:summary": "nyc report --reporter=text-summary",
+    "coverage:report": "python3 -m http.server 3000 -d coverage/lcov-report",
+    "publish:patch": "npm run test && npm version patch && npm publish",
+    "publish:minor": "npm run test && npm version minor && npm publish",
+    "publish:major": "npm run test && npm version major && npm publish",
+    "postpublish": "git push --tags",
+    "build": "coffee -c LocalStorage.coffee",
+    "prepublishOnly": "coffee -c LocalStorage.coffee"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "write-file-atomic": "^5.0.1"
+  }
+}
