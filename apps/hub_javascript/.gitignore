@@ -1,0 +1,39 @@
+# Node modules
+/node_modules/
+
+# TypeScript build output
+/dist/
+/build/
+
+# TypeScript declaration files
+/**/*.d.ts
+
+# Logs
+*.log
+*.log.*
+
+# Debug
+/.vscode/
+/.idea/
+/*.tsbuildinfo
+
+# Environment files
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NPM packages cache
+.npm/
+
+# Yarn cache
+.yarn/
+
+# Tye temporary files
+.tye/
+
+# PM2 logs
+pids/
+*.pid
+*.seed

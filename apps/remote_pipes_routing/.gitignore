@@ -1,0 +1,37 @@
+# See https://www.dartlang.org/guides/libraries/private-files
+
+# snapcraft related
+/parts/
+prime/
+stage/
+*.snap
+*_armhf.txt
+*_amd64.txt
+*_arm64.txt
+*_i386.txt
+Dart_Packages.xml
+
+
+
+
+# Cache and build files
+.packages
+.pub/
+build/
+ios/.generated/
+packages
+pubspec.lock
+.flutter-plugins
+.gradle
+.dart_tool
+
+# IDE local settings
+.atom/
+.idea
+.vscode/
+
+# Test token
+token.json
+
+# MacOS garbage
+.DS_Store
