@@ -57,6 +57,14 @@ The Hub talks to all the supported smart devices from different form factors and
 <img align="left" alt="Github" width="45px" src="https://seeklogo.com/images/G/github-colored-logo-FDDF6EB1F0-seeklogo.com.png" /></a>
 <br/><br/>
 
+## Instructions
+1. Install npm and node
+2. Run: `npm run install-melos`
+3. Run: `npm run bootstrap`
+4. 
+
+
+
 ## Disclaimers
 
 **Use at Your Own Risk,**
