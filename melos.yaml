@@ -1,4 +1,4 @@
-name: cbj_smart-home
+name: simple-hub
 
 packages:
   - "packages/integrations_controller"

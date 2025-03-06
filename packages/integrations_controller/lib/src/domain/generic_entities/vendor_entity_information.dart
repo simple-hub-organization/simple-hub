@@ -8,7 +8,7 @@ class VendorEntityInformation {
       VendorsAndServices.values.byName(json['vendorsAndServices'] as String),
       displayName: json['displayName'] as String,
       imageUrl: json['imageUrl'] as String,
-      urlToLoginCredentials: json['urlToLoginCredentials'] as String,
+      urlToLoginCredentials: json['urlToLoginCredentials'] as String?,
       loginType: VendorLoginTypes.values.byName(json['loginType'] as String),
     );
   }

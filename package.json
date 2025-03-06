@@ -1,7 +1,7 @@
 {
     "name": "simple-hub",
     "version": "0.0.1",
-    "description": "See instructions: https://github.com/CyBear-Jinni/cbj_smart-home/blob/master/README.md",
+    "description": "See instructions: https://github.com/simple-hub-organization/simple-hub/blob/master/README.md",
     "scripts": {
         "install-melos": "dart pub global activate melos && dart pub get",
         "bootstrap": "dart run melos bootstrap",

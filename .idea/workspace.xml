@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Change projects naming to fit monorepo">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Fixed some build errors">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/android/app/src/main/kotlin/com/cybearjinni/cbj_app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/src/main/kotlin/com/cybearjinni/app/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_action_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_action_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_routine_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_routine_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/site/android/app/src/main/kotlin/com/cybearjinni/CBJ_Site/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/site/android/app/src/main/kotlin/com/cybearjinni/cbj_site/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/android/app/src/main/kotlin/com/cybearjinni/site/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/site/android/app/src/main/kotlin/com/cybearjinni/cybear_jinni_site/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/melos.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/melos.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melos_cbj_smart-home.iml" beforeDir="false" afterPath="$PROJECT_DIR$/melos_simple-hub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/vendor_entity_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/vendor_entity_information.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/zrho/Documents/git/simple-hub/apps",
     "show.migrate.to.gradle.popup": "false"
@@ -63,7 +64,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.Flutter Run -&gt; 'simple_hub'">
+  <component name="RunManager" selected="Dart Command Line App.cbj_hub.dart">
     <configuration name="cbj_hub.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/apps/hub" />
@@ -112,13 +113,33 @@
       <option name="project" value="LOCAL" />
       <updated>1741276517732</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed some build errors">
+      <option name="closed" value="true" />
+      <created>1741277288967</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741277288967</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Uploading .gitignore" />
     <MESSAGE value="Uploading all the projects as is to create the monorepo" />
     <MESSAGE value="Change projects naming to fit monorepo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change projects naming to fit monorepo" />
+    <MESSAGE value="Fixed some build errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed some build errors" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>292</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
