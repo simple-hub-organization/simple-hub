@@ -19,6 +19,7 @@ import 'package:simple_hub/presentation/atoms/atoms.dart';
 import 'package:simple_hub/presentation/core/routes/app_router.gr.dart';
 import 'package:simple_hub/presentation/molecules/permissions_dialog_molecule.dart';
 
+@RoutePage()
 class SplashPage extends StatefulWidget {
   @override
   State<SplashPage> createState() => _SplashPageState();

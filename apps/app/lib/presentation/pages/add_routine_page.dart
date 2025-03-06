@@ -14,6 +14,8 @@ import 'package:simple_hub/presentation/core/routes/app_router.gr.dart';
 import 'package:simple_hub/presentation/core/snack_bar_service.dart';
 import 'package:simple_hub/presentation/molecules/molecules.dart';
 
+/// Page for adding new routine
+@RoutePage()
 class AddRoutinePage extends StatefulWidget {
   const AddRoutinePage({
     required this.daysToRepeat,

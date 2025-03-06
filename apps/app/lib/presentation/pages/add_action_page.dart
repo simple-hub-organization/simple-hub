@@ -8,6 +8,7 @@ import 'package:simple_hub/presentation/atoms/atoms.dart';
 import 'package:simple_hub/presentation/core/snack_bar_service.dart';
 import 'package:simple_hub/presentation/organisms/organisms.dart';
 
+@RoutePage()
 class AddActionPage extends StatefulWidget {
   const AddActionPage({required this.entities});
 
