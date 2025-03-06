@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
@@ -37,7 +38,7 @@ class PlusButtonPage extends StatelessWidget {
           TopBarMolecule(
             pageName: 'Add and Manage',
             leftIcon: FontAwesomeIcons.arrowLeft,
-            leftIconFunction: (_) => context.router.pop(),
+            leftIconFunction: (_) => context.router.maybePop(),
           ),
           SingleChildScrollView(
             child: Column(
@@ -64,11 +65,11 @@ class PlusButtonPage extends StatelessWidget {
                         height: 1,
                       ),
                       ColoredBox(
-                        color: Colors.teal.withOpacity(0.9),
+                        color: Colors.teal.withAlpha((0.9 * 255).toInt()),
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.solidLightbulb,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Manage Entities',
@@ -85,11 +86,11 @@ class PlusButtonPage extends StatelessWidget {
                         height: 1,
                       ),
                       ColoredBox(
-                        color: Colors.brown.withOpacity(0.9),
+                        color: Colors.brown.withAlpha((0.9 * 255).toInt()),
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.arrowRightToBracket,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Login To Vendor',
@@ -106,11 +107,11 @@ class PlusButtonPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 1),
                       ColoredBox(
-                        color: Colors.purple.withOpacity(0.7),
+                        color: Colors.purple.withAlpha((0.7 * 255).toInt()),
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.sitemap,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Add Automation',
@@ -127,11 +128,12 @@ class PlusButtonPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 1),
                       ColoredBox(
-                        color: Colors.indigoAccent.withOpacity(0.7),
+                        color:
+                            Colors.indigoAccent.withAlpha((0.7 * 255).toInt()),
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.camera,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Turn Phone To a Security Camera',
@@ -176,7 +178,7 @@ class PlusButtonPage extends StatelessWidget {
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.globe,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Comunication Method',
@@ -193,11 +195,11 @@ class PlusButtonPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 1),
                       ColoredBox(
-                        color: Colors.pink.withOpacity(0.9),
+                        color: Colors.pink.withAlpha((0.9 * 255).toInt()),
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.computer,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'All Entities in the network',
@@ -216,11 +218,12 @@ class PlusButtonPage extends StatelessWidget {
                           height: 1,
                         ),
                         ColoredBox(
-                          color: Colors.redAccent.withOpacity(0.9),
+                          color:
+                              Colors.redAccent.withAlpha((0.9 * 255).toInt()),
                           child: ListTile(
                             leading: Iconify(
                               SimpleIcons.node_red,
-                              color: colorScheme.background,
+                              color: colorScheme.surface,
                             ),
                             title: TextAtom(
                               'Open Node-RED of Hub',
@@ -264,7 +267,7 @@ class PlusButtonPage extends StatelessWidget {
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.info,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Software Info',
@@ -286,7 +289,7 @@ class PlusButtonPage extends StatelessWidget {
                         child: ListTile(
                           leading: FaIcon(
                             FontAwesomeIcons.personThroughWindow,
-                            color: colorScheme.background,
+                            color: colorScheme.surface,
                           ),
                           title: TextAtom(
                             'Log Out',

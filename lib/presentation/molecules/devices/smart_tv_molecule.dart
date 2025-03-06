@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -78,7 +79,7 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
     HashMap<ActionValues, dynamic>? value,
   }) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -118,8 +119,8 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
     ).show(context);
 
     setEntityState(
-      EntityProperties.speekers,
-      EntityActions.speek,
+      EntityProperties.speakers,
+      EntityActions.speak,
       value: HashMap.from({ActionValues.text: text}),
     );
   }
@@ -283,10 +284,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),
@@ -312,10 +313,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(variant: SeparatorVariant.closeWidgets),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),
@@ -341,10 +342,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),
@@ -370,10 +371,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),
@@ -399,10 +400,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),
@@ -428,10 +429,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),
@@ -457,10 +458,10 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                   const SeparatorAtom(variant: SeparatorVariant.closeWidgets),
                   TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.grey,
                       ),
-                      side: MaterialStateProperty.all(
+                      side: WidgetStateProperty.all(
                         BorderSide.lerp(
                           const BorderSide(color: Colors.white60),
                           const BorderSide(color: Colors.white60),

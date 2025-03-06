@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/core/routes/app_router.gr.dart';
@@ -13,7 +14,7 @@ import 'package:hexcolor/hexcolor.dart';
 @RoutePage()
 class PickRepeatTimePage extends StatelessWidget {
   void backButtonFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override
@@ -103,10 +104,10 @@ class PickRepeatTimePage extends StatelessWidget {
                         ),
                         TextButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(
-                              Colors.blue.withOpacity(0.5),
+                            backgroundColor: WidgetStateProperty.all(
+                              Colors.blue.withAlpha((0.5 * 255).toInt()),
                             ),
-                            side: MaterialStateProperty.all(
+                            side: WidgetStateProperty.all(
                               BorderSide.lerp(
                                 const BorderSide(),
                                 const BorderSide(),

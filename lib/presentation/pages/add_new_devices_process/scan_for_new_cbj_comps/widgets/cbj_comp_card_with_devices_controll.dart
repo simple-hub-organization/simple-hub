@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_entity.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -24,7 +25,7 @@ class CBJCompCardWithDevicesControll extends StatelessWidget {
           EntityTypes.undefined.toString()) {
         typesList.add(
           ColoredBox(
-            color: Colors.yellowAccent.withOpacity(0.3),
+            color: Colors.yellowAccent.withAlpha((0.3 * 255).toInt()),
             child: TextAtom(
               'Type: ${deviceEntity.entityTypes.getOrCrash()}',
               style: TextStyle(
@@ -36,7 +37,7 @@ class CBJCompCardWithDevicesControll extends StatelessWidget {
       } else {
         typesList.add(
           ColoredBox(
-            color: Colors.orange.withOpacity(0.3),
+            color: Colors.orange.withAlpha((0.3 * 255).toInt()),
             child: TextAtom(
               'Type ${deviceEntity.entityTypes.getOrCrash()} is not supported',
               style: TextStyle(
@@ -67,7 +68,7 @@ class CBJCompCardWithDevicesControll extends StatelessWidget {
         border: Border.all(
           color: Theme.of(context).textTheme.bodyLarge!.color!,
         ),
-        color: Colors.purpleAccent.withOpacity(0.2),
+        color: Colors.purpleAccent.withAlpha((0.2 * 255).toInt()),
       ),
       child: Column(
         children: [
@@ -89,7 +90,7 @@ class CBJCompCardWithDevicesControll extends StatelessWidget {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 Colors.greenAccent,
               ),
             ),

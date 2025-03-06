@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 @RoutePage()
 class ChooseAutomationTypeToAddPage extends StatelessWidget {
   void backButtonFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override

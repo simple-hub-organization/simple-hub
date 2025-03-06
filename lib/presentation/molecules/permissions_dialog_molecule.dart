@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cybearjinni/presentation/atoms/button_atom.dart';
 import 'package:cybearjinni/presentation/atoms/separator_atom.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 void permsissionsDialog(BuildContext context) => showDialog(
@@ -30,7 +29,8 @@ class PermsissionsDialogMolecule extends StatelessWidget {
               '2. Please make sure location is on and permission grented.',
               style: textTheme.labelLarge,
               textAlign: TextAlign.center,
-            ).tr(),
+              // ).tr(),
+            ),
             const SeparatorAtom(),
             ButtonWidgetAtom(
               variant: ButtonVariant.primary,

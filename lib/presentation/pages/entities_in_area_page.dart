@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/circular_progress_indicator_atom.dart';
@@ -28,10 +29,10 @@ class _EntitiesInAreaPageState extends State<EntitiesInAreaPage> {
   void initState() {
     super.initState();
     showAllTypes = widget.entityTypes.isEmpty;
-    initialzeDevices();
+    initializeDevices();
   }
 
-  Future initialzeDevices() async {
+  Future initializeDevices() async {
     final Map<String, DeviceEntityBase> entitiesMap =
         await ConnectionsService.instance.getEntities;
     final Set<String> entityIdsInArea =

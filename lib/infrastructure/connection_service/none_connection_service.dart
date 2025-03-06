@@ -41,7 +41,7 @@ class _NoneConnectionService implements ConnectionsService {
   Future setNewArea(AreaEntity area) async {}
 
   @override
-  Future setEtitiesToArea(String areaId, HashSet entities) async {}
+  Future setEntitiesToArea(String areaId, HashSet entities) async {}
 
   @override
   Future<HashMap<String, SceneCbjEntity>> get getScenes async => HashMap();

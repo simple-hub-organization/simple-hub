@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -65,7 +66,7 @@ class _RgbwLightMoleculeState extends State<RgbwLightMolecule> {
     HashMap<ActionValues, dynamic>? value,
   }) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -109,7 +110,7 @@ class _RgbwLightMoleculeState extends State<RgbwLightMolecule> {
             const FaIcon(FontAwesomeIcons.solidSun),
             Expanded(
               child: Slider(
-                thumbColor: colorScheme.onBackground,
+                thumbColor: colorScheme.onSurface,
                 activeColor: colorScheme.tertiary,
                 inactiveColor: colorScheme.outline,
                 value: brightness,
@@ -198,7 +199,7 @@ class _LightColorMods extends State<LightColorMods> {
     HashMap<ActionValues, dynamic>? value,
   }) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -254,7 +255,7 @@ class _LightColorMods extends State<LightColorMods> {
         ),
       ),
       child: Slider(
-        activeColor: Colors.black.withOpacity(0.8),
+        activeColor: Colors.black.withAlpha((0.8 * 255).toInt()),
         value: colorTemperature.toDouble(),
         min: 900,
         max: 10000,
@@ -303,14 +304,14 @@ class _LightColorMods extends State<LightColorMods> {
               style: OutlinedButton.styleFrom(
                 backgroundColor: (colorMode == ColorMode.white)
                     ? colorScheme.secondary
-                    : colorScheme.background,
+                    : colorScheme.surface,
               ),
               child: TextAtom(
                 'White',
                 style: TextStyle(
                   color: (colorMode == ColorMode.white)
                       ? colorScheme.onSecondary
-                      : colorScheme.onBackground,
+                      : colorScheme.onSurface,
                   fontSize: 18,
                 ),
               ),
@@ -320,14 +321,14 @@ class _LightColorMods extends State<LightColorMods> {
               style: OutlinedButton.styleFrom(
                 backgroundColor: (colorMode == ColorMode.rgb)
                     ? colorScheme.secondary
-                    : colorScheme.background,
+                    : colorScheme.surface,
               ),
               child: TextAtom(
                 'Color',
                 style: TextStyle(
                   color: (colorMode == ColorMode.rgb)
                       ? colorScheme.onSecondary
-                      : colorScheme.onBackground,
+                      : colorScheme.onSurface,
                   fontSize: 18,
                 ),
               ),

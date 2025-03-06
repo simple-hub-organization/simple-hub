@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/core/routes/app_router.gr.dart';
@@ -29,7 +30,7 @@ class VendorWidget extends StatelessWidget {
       },
       child: Container(
         height: 100,
-        color: HexColor('#C4C4C4').withOpacity(0.2),
+        color: HexColor('#C4C4C4').withAlpha((0.2 * 255).toInt()),
         padding: const EdgeInsets.symmetric(horizontal: 5),
         child: Row(
           children: [

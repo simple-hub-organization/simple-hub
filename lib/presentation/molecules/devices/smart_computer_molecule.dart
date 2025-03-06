@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/molecules/molecules.dart';
@@ -54,10 +55,10 @@ class _SmartComputerMoleculeState extends State<SmartComputerMolecule> {
         children: <Widget>[
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 Colors.grey,
               ),
-              side: MaterialStateProperty.all(
+              side: WidgetStateProperty.all(
                 BorderSide.lerp(
                   const BorderSide(color: Colors.white60),
                   const BorderSide(color: Colors.white60),
@@ -87,10 +88,10 @@ class _SmartComputerMoleculeState extends State<SmartComputerMolecule> {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 Colors.grey,
               ),
-              side: MaterialStateProperty.all(
+              side: WidgetStateProperty.all(
                 BorderSide.lerp(
                   const BorderSide(color: Colors.white60),
                   const BorderSide(color: Colors.white60),

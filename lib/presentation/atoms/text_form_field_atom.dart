@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class TextFormFieldAtom extends StatelessWidget {
@@ -17,7 +16,8 @@ class TextFormFieldAtom extends StatelessWidget {
     return TextFormField(
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
-        labelText: labelText?.tr(),
+        // labelText: labelText?.tr(),
+        labelText: labelText,
       ),
       autocorrect: false,
       onChanged: onChanged,

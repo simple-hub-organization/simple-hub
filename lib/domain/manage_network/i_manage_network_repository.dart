@@ -1,5 +1,6 @@
 import 'dart:io';
 
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/home_user/home_user_failures.dart';
 import 'package:cybearjinni/domain/manage_network/manage_network_entity.dart';

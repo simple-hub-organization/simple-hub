@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class InsertLoginMolecule extends StatefulWidget {
     required this.onChange,
   });
 
-  final InsertloginMoleculeType type;
+  final InsertLoginMoleculeType type;
   final VendorsAndServices vendorsAndServices;
   final Function(VendorLoginEntity) onChange;
 
@@ -45,6 +46,13 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
     widget.onChange(loginEntity);
   }
 
+  void onPairingCodeChange(String value) {
+    loginEntity =
+        loginEntityCopyWith(loginEntity: loginEntity, pairingCode: value);
+
+    widget.onChange(loginEntity);
+  }
+
   void onAuthTokenChange(String value) {
     loginEntity =
         loginEntityCopyWith(loginEntity: loginEntity, authToken: value);
@@ -58,6 +66,7 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
     String? authToken,
     String? email,
     String? password,
+    String? pairingCode,
   }) =>
       VendorLoginEntity(
         loginEntity.vendor,
@@ -65,22 +74,23 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
         authToken: authToken ?? loginEntity.authToken,
         email: email ?? loginEntity.email,
         password: password ?? loginEntity.password,
+        pairingCode: pairingCode ?? loginEntity.pairingCode,
       );
 
   @override
   Widget build(BuildContext context) {
     switch (widget.type) {
-      case InsertloginMoleculeType.authToken:
+      case InsertLoginMoleculeType.authToken:
         return TextFormFieldAtom(
           onChanged: onAuthTokenChange,
           labelText: 'Auth Token',
         );
-      case InsertloginMoleculeType.apiKey:
+      case InsertLoginMoleculeType.apiKey:
         return TextFormFieldAtom(
           onChanged: onApiKeyChange,
           labelText: 'Api Key',
         );
-      case InsertloginMoleculeType.emailAndPassword:
+      case InsertLoginMoleculeType.emailAndPassword:
         return Column(
           children: [
             TextFormFieldAtom(
@@ -93,12 +103,18 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
             ),
           ],
         );
+      case InsertLoginMoleculeType.addDeviceByPairingCode:
+        return TextFormFieldAtom(
+          onChanged: onPairingCodeChange,
+          labelText: 'Pairing Code',
+        );
     }
   }
 }
 
-enum InsertloginMoleculeType {
+enum InsertLoginMoleculeType {
   authToken,
   apiKey,
   emailAndPassword,
+  addDeviceByPairingCode,
 }

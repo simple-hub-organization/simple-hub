@@ -1,10 +1,10 @@
 import 'dart:collection';
 
 import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class BoilerMolecule extends StatefulWidget {
@@ -19,7 +19,8 @@ class BoilerMolecule extends StatefulWidget {
 class _BoilerMoleculeState extends State<BoilerMolecule> {
   Future _turnOnAllBoilers() async {
     FlushbarHelper.createLoading(
-      message: 'Turning_On_boiler'.tr(),
+      // message: 'Turning_On_boiler'.tr(),
+      message: 'Turning_On_boiler',
       linearProgressIndicator: const LinearProgressIndicator(),
     ).show(context);
 
@@ -29,7 +30,7 @@ class _BoilerMoleculeState extends State<BoilerMolecule> {
 
   void setEntityState(EntityActions action) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -42,7 +43,8 @@ class _BoilerMoleculeState extends State<BoilerMolecule> {
 
   Future _turnOffAllBoilers() async {
     FlushbarHelper.createLoading(
-      message: 'Turning_Off_boiler'.tr(),
+      // message: 'Turning_Off_boiler'.tr(),
+      message: 'Turning_Off_boiler',
       linearProgressIndicator: const LinearProgressIndicator(),
     ).show(context);
 

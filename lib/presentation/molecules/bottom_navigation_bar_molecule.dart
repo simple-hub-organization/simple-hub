@@ -26,7 +26,7 @@ class BottomNavigationBarMolecule extends StatelessWidget {
         Align(
           alignment: Alignment.bottomLeft,
           child: Divider(
-            color: colorScheme.onBackground,
+            color: colorScheme.onSurface,
             height: 1,
             thickness: 0.5,
           ),

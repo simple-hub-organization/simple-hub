@@ -14,7 +14,7 @@ class ComputerConnectionCheckPage extends StatelessWidget {
   final CbjCompEntity cbjCompEntity;
 
   void leftIconFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override

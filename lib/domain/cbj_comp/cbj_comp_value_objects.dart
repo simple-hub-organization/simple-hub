@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_errors.dart';
 import 'package:cybearjinni/domain/cbj_comp/cbj_comp_failures.dart';
@@ -5,7 +6,7 @@ import 'package:cybearjinni/domain/cbj_comp/cbj_comp_validators.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kt_dart/collection.dart';
-// ignore: depend_on_referenced_packages
+// ignore: depend_on_referenced_packages a
 import 'package:uuid/uuid.dart';
 
 @immutable

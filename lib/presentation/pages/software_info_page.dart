@@ -28,7 +28,7 @@ class SoftwareInfoPage extends StatelessWidget {
   }
 
   void leftIconFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override

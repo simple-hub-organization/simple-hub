@@ -51,8 +51,8 @@ class TopBarMolecule extends StatelessWidget {
     return SafeArea(
       child: ColoredBox(
         color: backgroundColor != null
-            ? backgroundColor!.withOpacity(0.72)
-            : colorScheme.background,
+            ? backgroundColor!.withAlpha((0.72 * 255).toInt())
+            : colorScheme.surface,
         child: Container(
           margin: const EdgeInsets.fromLTRB(9, 3, 9, 0),
           child: Row(
@@ -88,7 +88,7 @@ class TopBarMolecule extends StatelessWidget {
                         width: 70,
                         child: TextButton(
                           style: ButtonStyle(
-                            padding: MaterialStateProperty.all<EdgeInsets>(
+                            padding: WidgetStateProperty.all<EdgeInsets>(
                               EdgeInsets.zero,
                             ),
                           ),
@@ -104,7 +104,7 @@ class TopBarMolecule extends StatelessWidget {
                       width: 25,
                       child: TextButton(
                         style: ButtonStyle(
-                          padding: MaterialStateProperty.all<EdgeInsets>(
+                          padding: WidgetStateProperty.all<EdgeInsets>(
                             EdgeInsets.zero,
                           ),
                         ),

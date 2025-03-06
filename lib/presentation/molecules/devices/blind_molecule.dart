@@ -1,11 +1,11 @@
 import 'dart:collection';
 
 import 'package:another_flushbar/flushbar_helper.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/molecules/molecules.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -23,7 +23,8 @@ class BlindMolecule extends StatefulWidget {
 class _BlindMoleculeState extends State<BlindMolecule> {
   Future _moveUpAllBlinds() async {
     FlushbarHelper.createLoading(
-      message: 'Pulling_Up_all_blinds'.tr(),
+      // message: 'Pulling_Up_all_blinds'.tr(),
+      message: 'Pulling_Up_all_blinds',
       linearProgressIndicator: const LinearProgressIndicator(),
     ).show(context);
 
@@ -32,7 +33,7 @@ class _BlindMoleculeState extends State<BlindMolecule> {
 
   void setEntityState(EntityActions action) {
     final HashSet<String> uniqueIdByVendor =
-        HashSet.from([widget.entity.entitiyCbjUniqueId.getOrCrash()]);
+        HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -45,7 +46,8 @@ class _BlindMoleculeState extends State<BlindMolecule> {
 
   Future _stopAllBlinds(List<String> blindsIdToStop) async {
     FlushbarHelper.createLoading(
-      message: 'Stopping_all_blinds'.tr(),
+      // message: 'Stopping_all_blinds'.tr(),
+      message: 'Stopping_all_blinds',
       linearProgressIndicator: const LinearProgressIndicator(),
     ).show(context);
 
@@ -54,7 +56,8 @@ class _BlindMoleculeState extends State<BlindMolecule> {
 
   Future _moveDownAllBlinds(List<String> blindsIdToTurnDown) async {
     FlushbarHelper.createLoading(
-      message: 'Pulling_down_all_blinds'.tr(),
+      // message: 'Pulling_down_all_blinds'.tr(),
+      message: 'Pulling_down_all_blinds',
       linearProgressIndicator: const LinearProgressIndicator(),
     ).show(context);
 
@@ -91,10 +94,10 @@ class _BlindMoleculeState extends State<BlindMolecule> {
         children: [
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 colorScheme.surface,
               ),
-              side: MaterialStateProperty.all(
+              side: WidgetStateProperty.all(
                 BorderSide.lerp(
                   const BorderSide(color: Colors.white60),
                   const BorderSide(color: Colors.white60),
@@ -126,10 +129,10 @@ class _BlindMoleculeState extends State<BlindMolecule> {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 colorScheme.surface,
               ),
-              side: MaterialStateProperty.all(
+              side: WidgetStateProperty.all(
                 BorderSide.lerp(
                   const BorderSide(color: Colors.white60),
                   const BorderSide(color: Colors.white60),
@@ -161,10 +164,10 @@ class _BlindMoleculeState extends State<BlindMolecule> {
           ),
           TextButton(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 colorScheme.surface,
               ),
-              side: MaterialStateProperty.all(
+              side: WidgetStateProperty.all(
                 BorderSide.lerp(
                   const BorderSide(color: Colors.white60),
                   const BorderSide(color: Colors.white60),

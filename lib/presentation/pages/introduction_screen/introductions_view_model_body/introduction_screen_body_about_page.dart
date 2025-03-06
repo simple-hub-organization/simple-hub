@@ -13,7 +13,7 @@ class IntroductionScreenBodyAboutPage extends StatelessWidget {
         const SeparatorAtom(),
         Container(
           decoration: BoxDecoration(
-            color: colorScheme.background,
+            color: colorScheme.surface,
             border: Border.all(
               color: Theme.of(context).textTheme.bodyLarge!.color!,
             ),
@@ -38,8 +38,8 @@ class IntroductionScreenBodyAboutPage extends StatelessWidget {
                 ' a lot of extra functionality (very recommended).\n'
                 'You can create a Hub by following the simple documentation from the site.\n\n'
                 "Thanks for joining and let's continue to make the future better for everyone by choosing open-source technology.",
-                style: textTheme.bodyLarge!
-                    .copyWith(color: colorScheme.onBackground),
+                style:
+                    textTheme.bodyLarge!.copyWith(color: colorScheme.onSurface),
               ),
             ),
           ),

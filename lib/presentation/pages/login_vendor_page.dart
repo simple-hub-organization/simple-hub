@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -31,21 +32,22 @@ class _LoginVendorPageState extends State<LoginVendorPage> {
     );
 
     ConnectionsService.instance.loginVendor(loginEntity!);
-    context.router.pop();
+    context.router.maybePop();
   }
 
   Widget authTypeWidget() {
-    InsertloginMoleculeType type;
+    InsertLoginMoleculeType type;
     switch (widget.vendorInformation.loginType) {
       case VendorLoginTypes.notNeeded:
         return const TextAtom('Not needed');
       case VendorLoginTypes.authToken:
-        type = InsertloginMoleculeType.authToken;
+        type = InsertLoginMoleculeType.authToken;
       case VendorLoginTypes.apiKey:
-        type = InsertloginMoleculeType.apiKey;
-
+        type = InsertLoginMoleculeType.apiKey;
       case VendorLoginTypes.emailAndPassword:
-        type = InsertloginMoleculeType.emailAndPassword;
+        type = InsertLoginMoleculeType.emailAndPassword;
+      case VendorLoginTypes.addDeviceByPairingCode:
+        type = InsertLoginMoleculeType.addDeviceByPairingCode;
     }
     return InsertLoginMolecule(
       type: type,
@@ -111,17 +113,17 @@ class _LoginVendorPageState extends State<LoginVendorPage> {
               ),
             ),
           ),
-          if (widget.vendorInformation.urlToLoginCredantials != null)
+          if (widget.vendorInformation.urlToLoginCredentials != null)
             Container(
               alignment: Alignment.bottomRight,
               child: TextButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.pink),
+                  backgroundColor: WidgetStateProperty.all(Colors.pink),
                 ),
                 onPressed: () {
                   launchUrl(
                     Uri.parse(
-                      widget.vendorInformation.urlToLoginCredantials!,
+                      widget.vendorInformation.urlToLoginCredentials!,
                     ),
                   );
                 },

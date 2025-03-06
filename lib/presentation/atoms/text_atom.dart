@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class TextAtom extends StatelessWidget {
@@ -39,7 +38,8 @@ class TextAtom extends StatelessWidget {
     }
 
     return Text(
-      translate && text.isNotEmpty ? text.tr(args: translationArgs) : text,
+      // translate && text.isNotEmpty ? text.tr(args: translationArgs) : text,
+      text,
       style: tempStyle,
       maxLines: maxLines,
       overflow: overflow,

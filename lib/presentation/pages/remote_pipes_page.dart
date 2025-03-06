@@ -1,5 +1,6 @@
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
@@ -30,7 +31,7 @@ class RemotePipesPage extends StatelessWidget {
   }
 
   void leftIconFunction(BuildContext context) {
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override
@@ -83,7 +84,7 @@ class _RemotePipesWidgetState extends State<RemotePipesWidget> {
       connectionType: ConnectionType.remotePipes,
     );
     ConnectionsService.instance.connect(address: remotePipesDomainName);
-    context.router.pop();
+    context.router.maybePop();
   }
 
   @override

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
@@ -80,10 +81,10 @@ class _HomePageState extends State<HomePage> {
         areas!.addEntries([areaEntery]);
       });
     });
-    _initialzeAreas();
+    _initializeAreas();
   }
 
-  Future _initialzeAreas() async {
+  Future _initializeAreas() async {
     final HashMap<String, AreaEntity> areasTemp =
         await ConnectionsService.instance.getAreas;
     setState(() {
@@ -109,10 +110,10 @@ class _HomePageState extends State<HomePage> {
         entities!.addEntries([entityEntery]);
       });
     });
-    _initialzeEntities();
+    _initializeEntities();
   }
 
-  Future _initialzeEntities() async {
+  Future _initializeEntities() async {
     final HashMap<String, DeviceEntityBase> entitiesTemp =
         await ConnectionsService.instance.getEntities;
     entitiesTemp.removeWhere(
@@ -226,8 +227,8 @@ class _HomePageState extends State<HomePage> {
                         await context.router.push(const PlusButtonRoute());
                         areas = null;
                         entities = null;
-                        _initialzeAreas();
-                        _initialzeEntities();
+                        _initializeAreas();
+                        _initializeEntities();
 
                         initializedScenes();
                       },

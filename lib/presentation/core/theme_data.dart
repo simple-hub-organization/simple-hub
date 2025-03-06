@@ -62,8 +62,8 @@ class BackgroundGradient {
       colors: <Color>[
         Colors.deepPurple,
         Theme.of(context).colorScheme.secondary,
-        Colors.deepPurple.withOpacity(0.9),
-        Theme.of(context).colorScheme.secondary.withOpacity(0.9),
+        Colors.deepPurple.withAlpha((0.9 * 255).toInt()),
+        Theme.of(context).colorScheme.secondary.withAlpha((0.9 * 255).toInt()),
         Colors.deepPurple,
       ],
     );

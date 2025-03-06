@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:cbj_integrations_controller/integrations_controller.dart';
 import 'package:cybearjinni/domain/connections_service.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
@@ -58,7 +59,7 @@ class ConnectToHubMorePage extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: () async {
-                      context.router.pop();
+                      context.router.maybePop();
                     },
                     style: TextButton.styleFrom(
                       minimumSize: const Size(70, 30),
@@ -199,7 +200,7 @@ class _ConnectToHubMoreWidgetState extends State<ConnectToHubMoreWidget> {
                     child: RichText(
                       text: TextSpan(
                         style: TextStyle(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.white.withAlpha((0.9 * 255).toInt()),
                         ),
                         children: const <TextSpan>[
                           TextSpan(

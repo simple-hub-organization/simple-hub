@@ -40,7 +40,7 @@ class ButtonWidgetAtom extends StatelessWidget {
           style: FilledButton.styleFrom().copyWith(
             alignment: Alignment.center,
             backgroundColor: disabled
-                ? MaterialStateProperty.all(colorScheme.surfaceVariant)
+                ? WidgetStateProperty.all(colorScheme.surfaceContainerHighest)
                 : null,
           ),
           icon: Icon(icon),
