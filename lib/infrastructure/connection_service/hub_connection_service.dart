@@ -196,7 +196,6 @@ class _HubConnectionService implements ConnectionsService {
 
       logger.i('Hub Search subnet IP $subnet');
 
-      // TODO: Search for hub
       final Stream<ActiveHost> devicesWithPort =
           HostScannerService.instance.scanDevicesForSinglePort(
         subnet,
@@ -263,11 +262,51 @@ class _HubConnectionService implements ConnectionsService {
   Future activateScene(String id) async {}
 
   @override
-  Future loginVendor(VendorLoginEntity value) async {}
+  Future loginVendor(VendorLoginEntity value) async {
+    appMessagesToHub.sink.add(
+      ClientStatusRequests(
+        sendingType: SendingType.vendorLoginType.name,
+        allRemoteCommands: jsonEncode(value.toInfrastructure().toJson()),
+      ),
+    );
+  }
 
   @override
-  Future<List<VendorEntityInformation>> getVendors() async =>
-      IcSynchronizer().getVendors();
+  Future<List<VendorEntityInformation>> getVendors() async {
+    appMessagesToHub.sink.add(
+      ClientStatusRequests(
+        sendingType: SendingType.getAllSupportedVendors.name,
+      ),
+    );
+
+    List<VendorEntityInformation> vendorList = [];
+
+    await for (final RequestsAndStatusFromHub message
+        in hubMessagesToApp.stream) {
+      final SendingType sendingType =
+          SendingTypeExtension.fromString(message.sendingType);
+      if (sendingType != SendingType.getAllSupportedVendors) {
+        continue;
+      }
+
+      try {
+        final List<dynamic> decodedJson =
+            jsonDecode(jsonDecode(message.allRemoteCommands) as String)
+                as List<dynamic>;
+        vendorList = decodedJson
+            .map(
+              (e) =>
+                  VendorEntityInformation.fromJson(e as Map<String, dynamic>),
+            )
+            .toList();
+      } catch (e) {
+        logger.e('Error converting vendors\n$e');
+      }
+      break;
+    }
+
+    return vendorList;
+  }
 
   @override
   Future<bool> connect({String? address}) async {

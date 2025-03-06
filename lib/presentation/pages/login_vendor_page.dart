@@ -113,7 +113,7 @@ class _LoginVendorPageState extends State<LoginVendorPage> {
               ),
             ),
           ),
-          if (widget.vendorInformation.urlToLoginCredantials != null)
+          if (widget.vendorInformation.urlToLoginCredentials != null)
             Container(
               alignment: Alignment.bottomRight,
               child: TextButton(
@@ -123,7 +123,7 @@ class _LoginVendorPageState extends State<LoginVendorPage> {
                 onPressed: () {
                   launchUrl(
                     Uri.parse(
-                      widget.vendorInformation.urlToLoginCredantials!,
+                      widget.vendorInformation.urlToLoginCredentials!,
                     ),
                   );
                 },

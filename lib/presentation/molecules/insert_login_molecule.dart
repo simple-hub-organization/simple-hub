@@ -46,6 +46,13 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
     widget.onChange(loginEntity);
   }
 
+  void onPairingCodeChange(String value) {
+    loginEntity =
+        loginEntityCopyWith(loginEntity: loginEntity, pairingCode: value);
+
+    widget.onChange(loginEntity);
+  }
+
   void onAuthTokenChange(String value) {
     loginEntity =
         loginEntityCopyWith(loginEntity: loginEntity, authToken: value);
@@ -59,6 +66,7 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
     String? authToken,
     String? email,
     String? password,
+    String? pairingCode,
   }) =>
       VendorLoginEntity(
         loginEntity.vendor,
@@ -66,6 +74,7 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
         authToken: authToken ?? loginEntity.authToken,
         email: email ?? loginEntity.email,
         password: password ?? loginEntity.password,
+        pairingCode: pairingCode ?? loginEntity.pairingCode,
       );
 
   @override
@@ -96,7 +105,7 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
         );
       case InsertLoginMoleculeType.addDeviceByPairingCode:
         return TextFormFieldAtom(
-          onChanged: onApiKeyChange,
+          onChanged: onPairingCodeChange,
           labelText: 'Pairing Code',
         );
     }

@@ -9,12 +9,14 @@ import 'package:cybearjinni/domain/manage_network/i_manage_network_repository.da
 import 'package:cybearjinni/infrastructure/app_commands.dart';
 import 'package:cybearjinni/infrastructure/core/logger.dart';
 import 'package:cybearjinni/infrastructure/mqtt.dart';
+import 'package:cybearjinni/infrastructure/network_utilities_flutter.dart';
 import 'package:cybearjinni/presentation/atoms/atoms.dart';
 import 'package:cybearjinni/presentation/core/routes/app_router.gr.dart';
 import 'package:cybearjinni/presentation/molecules/permissions_dialog_molecule.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path_provider/path_provider.dart';
 
 @RoutePage()
 class SplashPage extends StatefulWidget {
@@ -30,6 +32,9 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future initializeApp() async {
+    await NetworkUtilitiesFlutter().configureNetworkTools(
+      (await getApplicationDocumentsDirectory()).path,
+    );
     SystemCommandsBaseClassD.instance = AppCommands();
     await Hive.initFlutter();
     await IDbRepository.instance.asyncConstructor();
