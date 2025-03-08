@@ -37,7 +37,11 @@ class HubJavascriptWebSocket {
 
           if (entity.entityStateGRPC.state ==
               EntityStateGRPC.addNewEntityFromJavascriptHub) {
-            connector.foundEntity(entity);
+            VendorsConnectorConjecture().foundEntityOfVendor(
+              vendorConnectorConjectureService: connector,
+              entity: entity,
+              entityCbjUniqueId: entity.entityCbjUniqueId.getOrCrash(),
+            );
           }
         } catch (e) {
           logger.e('Error $e');

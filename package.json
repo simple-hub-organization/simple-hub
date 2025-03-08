@@ -4,7 +4,10 @@
     "description": "See instructions: https://github.com/simple-hub-organization/simple-hub/blob/master/README.md",
     "scripts": {
         "install-melos": "dart pub global activate melos && dart pub get",
-        "bootstrap": "dart run melos bootstrap",
+        "bootstrap": "dart run melos bootstrap &&  npm install --prefix apps/hub_javascript",
+        "hub": "npm run start --prefix apps/hub_javascript & dart run apps/hub/bin/cbj_hub.dart",
+        "start-main": "npm run start --prefix apps/hub_javascript",
+        "start-javascript": "npm run start --prefix apps/hub_javascript",
         "build_runner": "dart run melos exec dart run build_runner build --delete-conflicting-outputs",
         "clean": "dart run melos clean",
         "test": "dart run melos exec flutter test",

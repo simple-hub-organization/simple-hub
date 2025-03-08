@@ -31,17 +31,17 @@ class RequestActionObjectDtos {
         jsonDecode(value) as Map<String, dynamic>,
       );
 
-  factory RequestActionObjectDtos.fromJson(Map<String, dynamic> json) {
-    return RequestActionObjectDtos(
-      entitiesId: jsonDecode(json['entitiesId'] as String) as List<String>,
-      property: json['property'] as String,
-      vendors: jsonDecode(json['vendors'] as String) as List<String>,
-      actionType: json['actionType'] as String,
-      value: HashMap<String, dynamic>.from(
-        jsonDecode(json['value'] as String) as Map<String, dynamic>,
-      ),
-    );
-  }
+  factory RequestActionObjectDtos.fromJson(Map<String, dynamic> json) =>
+      RequestActionObjectDtos(
+        entitiesId:
+            List<String>.from(jsonDecode(json['entitiesId'] as String) as List),
+        property: json['property'] as String,
+        vendors: List<String>.from(json['vendors'] as List),
+        actionType: json['actionType'] as String,
+        value: HashMap<String, dynamic>.from(
+          jsonDecode(json['value'] as String) as Map<String, dynamic>,
+        ),
+      );
 
   List<String> entitiesId;
   String property;
