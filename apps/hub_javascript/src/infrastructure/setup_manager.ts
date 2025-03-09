@@ -1,42 +1,39 @@
-import {matterAPI, MatterAPI} from './integrations/matter/matter_integration';
+import { matterAPI, MatterAPI } from './integrations/matter/matter_integration';
 import startWebSocketServer from './services/web_socket_server';
+import { loggerService } from './services/logger_service'; // Import the logger
 
-
-export async function main(){
-    await startIntegraions();
+export async function main() {
+    await startIntegrations();
     
     startWebSocketServer();
+    loggerService.log("WebSocket server started successfully.");
+
+    // Example logging (Uncomment when needed)
     
-    // // TODO: For new device    
     // matterAPI.commissionDevice("127.0.0.1", 5540, "MT:Y.K9042C00KA0648G00")
-    // .then(() => console.log("Commission device"))
-    // .catch(error => console.error("Error Commission:", error));
+    // .then(() => loggerService.log("Commission device successful"))
+    // .catch(error => loggerService.error("Error Commission:", error));
 
     // const nodeIdN = 123;
 
-    // // TODO: Get info of device by device id 
     // matterAPI.getDeviceInfo(nodeIdN)
-    // .then((info: string) => console.log("deviceInfo " + info))
-    // .catch(error => console.error("Error Commission:", error));
+    // .then((info: string) => loggerService.log("Device Info: " + info))
+    // .catch(error => loggerService.error("Error fetching device info:", error));
 
-    // // TODO: Set device state 
     // matterAPI.setDeviceOnOff(nodeIdN, true)
-    // .then(() => console.log("Change device state"))
-    // .catch(error => console.error("Error Commission:", error));
+    // .then(() => loggerService.log("Changed device state"))
+    // .catch(error => loggerService.error("Error changing device state:", error));
 
-
-    // // TODO: Listen for changes
     // matterAPI.listenForChanges(nodeIdN)
-    // .then(() => console.log("Change device state"))
-    // .catch(error => console.error("Error Commission:", error));
-
+    // .then(() => loggerService.log("Listening for device changes"))
+    // .catch(error => loggerService.error("Error listening for changes:", error));
 }
 
-async function startIntegraions(){
-
-    const matterApiFuture = matterAPI.start();
-    // Add here more integrations    
-    await matterApiFuture.then(() => console.log("Matter API initialized and running"))
-    .catch(error => console.error("Error initializing Matter API:", error));
-
+async function startIntegrations() {
+    try {
+        await matterAPI.start();
+        loggerService.log("Matter API initialized and running.");
+    } catch (error) {
+        loggerService.error("Error initializing Matter API:", error);
+    }
 }
