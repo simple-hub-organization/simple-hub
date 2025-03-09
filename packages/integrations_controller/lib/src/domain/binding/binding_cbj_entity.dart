@@ -1,7 +1,7 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/binding/value_objects_routine_cbj.dart';
 import 'package:integrations_controller/src/domain/core/value_objects.dart';
 import 'package:integrations_controller/src/infrastructure/bindings/binding_cbj_dtos.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'binding_cbj_entity.freezed.dart';
 

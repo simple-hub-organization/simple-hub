@@ -9,6 +9,7 @@ include: package:lint/analysis_options.yaml
 
 analyzer:
   errors:
+    document_ignores: ignore
     missing_required_param: error
     missing_return: error
     must_be_immutable: error

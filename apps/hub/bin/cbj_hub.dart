@@ -18,6 +18,7 @@ Future main(List<String> arguments) async {
     projectRootDirectoryPath: arguments.firstOrNull ?? Directory.current.path,
     env: Env.devPc,
   );
+  await IcSynchronizer().loadAllFromDb();
 
   BootUp();
 }

@@ -18,7 +18,7 @@ class EntitiesService {
   static final EntitiesService _instance =
       EntitiesService._singletonConstractor();
 
-  void addDiscovedEntity(HashMap<String, DeviceEntityBase> entities) {
+  void addDiscoveredEntity(HashMap<String, DeviceEntityBase> entities) {
     // final HashMap<String, DeviceEntityBase> newEntities = HashMap();
     // for (final MapEntry<String, DeviceEntityBase> entiery in entities.entries) {
     //   if (!entitiesMap.containsKey(entiery.key)) {

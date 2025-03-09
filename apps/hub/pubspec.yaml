@@ -11,9 +11,6 @@ environment:
 dependencies:
   # Contains utility classes in the style of dart:async to work with asynchronous computations.
   async: ^2.11.0
-  integrations_controller:
-    path: ../../packages/integrations_controller
-  #    git: https://github.com/CyBear-Jinni/integrations_controller.git
   # Package to create, convert, alter, and compare colors in a variety of colorspaces.
   color: ^3.0.0
   # Compute function made available for all non-Flutter Dart programs
@@ -34,6 +31,9 @@ dependencies:
   http: ^1.1.0
   # Convenient code generator for get_it
   injectable: ^2.3.2
+  integrations_controller:
+    path: ../../packages/integrations_controller
+  #    git: https://github.com/CyBear-Jinni/integrations_controller.git
   # Utility library that checks for an Active Internet connection
   internet_connection_checker: ^1.0.0+1
   # Extremely fast, easy to use, and fully async NoSQL database.

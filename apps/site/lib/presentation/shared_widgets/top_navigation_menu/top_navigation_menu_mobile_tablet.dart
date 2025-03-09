@@ -18,7 +18,7 @@ class TopNavigationMenuMobileTablet extends StatelessWidget {
               FontAwesomeIcons.bars,
               color: Theme.of(context).textTheme.bodyLarge!.color,
             ),
-          )
+          ),
         ],
       ),
     );

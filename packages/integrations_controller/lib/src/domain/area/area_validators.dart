@@ -1,5 +1,5 @@
-import 'package:integrations_controller/src/domain/area/area_failures.dart';
 import 'package:dartz/dartz.dart';
+import 'package:integrations_controller/src/domain/area/area_failures.dart';
 
 Either<AreaFailure<String>, String> validateAreaNotEmpty(String input) {
   if (input.isNotEmpty) {

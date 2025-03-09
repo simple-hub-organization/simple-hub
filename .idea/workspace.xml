@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="More naming change">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Fixed new entities from javascript hub to the hub not being added properly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/domain/software_info/i_software_info_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/domain/software_info/i_software_info_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/network_utilities_flutter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/network_utilities_flutter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/core/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/core/injection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/request_action_object_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/request_action_object_dtos.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/security_bear/lib/infrastructure/local_db/data_base_manager.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/my_singleton.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/my_singleton.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/new_home_page/widgets/home_page_second_part.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/new_home_page/widgets/home_page_second_part.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/new_home_page/widgets/home_page_thired_part.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/new_home_page/widgets/home_page_thired_part.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/new_home_page/widgets/new_home_page_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/new_home_page/widgets/new_home_page_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/navigation_drawer/navigation_drawer_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/navigation_drawer/navigation_drawer_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/top_navigation_menu/top_navigation_menu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/top_navigation_menu/top_navigation_menu.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/top_navigation_menu/top_navigation_menu_desktop.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/top_navigation_menu/top_navigation_menu_desktop.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/top_navigation_menu/top_navigation_menu_mobile_tablet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/presentation/shared_widgets/top_navigation_menu/top_navigation_menu_mobile_tablet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/analysis_options.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/analysis_options.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/button_object_u/button_with_light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/button_object_u/button_with_light_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/wish_classes_d/wish_classes_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/wish_classes_d/wish_classes_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Dart Command Line App.cbj_hub.dart.executor&quot;: &quot;Debug&quot;,
-    &quot;Flutter.Flutter Run -&gt; 'simple_hub'.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/zrho/Documents/git/simple-hub/apps&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Dart Command Line App.cbj_hub.dart.executor": "Debug",
+    "Flutter.Flutter Run -> 'simple_hub'.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/zrho/Documents/git/simple-hub/apps",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps" />
@@ -126,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741278023496</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed new entities from javascript hub to the hub not being added properly">
+      <option name="closed" value="true" />
+      <created>1741443165769</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741443165769</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,7 +159,8 @@
     <MESSAGE value="Change projects naming to fit monorepo" />
     <MESSAGE value="Fixed some build errors" />
     <MESSAGE value="More naming change" />
-    <option name="LAST_COMMIT_MESSAGE" value="More naming change" />
+    <MESSAGE value="Fixed new entities from javascript hub to the hub not being added properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed new entities from javascript hub to the hub not being added properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -181,9 +206,24 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_body.dart</url>
-          <line>115</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart</url>
+          <line>60</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart</url>
+          <line>58</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/local_db/local_db_hive_repository.dart</url>
+          <line>38</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart</url>
+          <line>20</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

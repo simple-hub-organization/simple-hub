@@ -10,7 +10,7 @@ import 'package:network_tools_flutter/network_tools_flutter.dart';
 
 class NetworkUtilitiesFlutter extends NetworkUtilities {
   @override
-  Stream<network_flutter.ActiveHost> getAllPingableDevicesAsyncImplementaion(
+  Stream<network_flutter.ActiveHost> getAllPingableDevicesAsyncImplementation(
     String subnet, {
     int? firstHostId,
     int? lastHostId,

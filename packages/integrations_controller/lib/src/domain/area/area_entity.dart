@@ -1,10 +1,10 @@
 import 'dart:collection';
 
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/area/area_failures.dart';
 import 'package:integrations_controller/src/domain/area/value_objects_area.dart';
 import 'package:integrations_controller/src/infrastructure/area/area_entity_dtos.dart';
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
-import 'package:dartz/dartz.dart';
 
 class AreaEntity {
   AreaEntity({

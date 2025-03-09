@@ -1,10 +1,10 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_dto_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_ac_entity/generic_ac_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_ac_entity/generic_ac_value_objects.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'generic_ac_device_dtos.freezed.dart';
 part 'generic_ac_device_dtos.g.dart';

@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:site/my_singleton.dart';
 import 'package:site/presentation/home_page/home_page.dart';
 import 'package:site/presentation/route_names.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// The specific look for the top navigation menu for tablet desktop
 class TopNavigationMenuDesktop extends StatelessWidget {
@@ -46,7 +46,7 @@ class TopNavigationMenuDesktop extends StatelessWidget {
                   ),
                   const SizedBox(
                     width: 40,
-                  )
+                  ),
                 ],
               ),
             ),
@@ -188,7 +188,7 @@ class TopNavigationMenuDesktop extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

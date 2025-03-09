@@ -20,5 +20,6 @@ class MySingleton {
   /// Set the current page name
   static Set<String>? setCurrentPageName(String currentPageName) {
     _currentPageName = currentPageName;
+    return null;
   }
 }

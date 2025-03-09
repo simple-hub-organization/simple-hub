@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:simple_hub/domain/security_bear/i_security_bear_connection_repository.dart';
 import 'package:simple_hub/domain/security_bear/security_bear_failures.dart';
 import 'package:simple_hub/domain/software_info/software_info_entity.dart';

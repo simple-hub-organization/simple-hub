@@ -32,10 +32,10 @@ class WishClassesD {
         {
           return TurnPinOnWiringPiSetupSys().turnThePinOn(pinNumber);
         }
-      default:
-        {
-          return TurnPinOnWiringPiSetupGpio().turnThePinOn(pinNumber);
-        }
+      // default:
+      //   {
+      //     return TurnPinOnWiringPiSetupGpio().turnThePinOn(pinNumber);
+      //   }
     }
   }
 
@@ -60,10 +60,10 @@ class WishClassesD {
         {
           return TurnPinOffWiringPiSetupSys().turnThePinOff(pinNumber);
         }
-      default:
-        {
-          return TurnPinOffWiringPiSetupGpio().turnThePinOff(pinNumber);
-        }
+      // default:
+      //   {
+      //     return TurnPinOffWiringPiSetupGpio().turnThePinOff(pinNumber);
+      //   }
     }
   }
 }

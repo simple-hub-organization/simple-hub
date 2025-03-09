@@ -216,14 +216,14 @@ class VendorsConnectorConjecture {
     required DeviceEntityBase entity,
     required String entityCbjUniqueId,
   }) async {
-    HashMap<String, DeviceEntityBase>? handeldEntities =
+    HashMap<String, DeviceEntityBase>? handledEntity =
         await vendorConnectorConjectureService.foundEntity(
       entity,
     );
 
-    if (handeldEntities == null) {
-      icLogger.i('Found unseported device $entityCbjUniqueId');
-      handeldEntities = handeldEntities =
+    if (handledEntity == null) {
+      icLogger.i('Found unsupported device $entityCbjUniqueId');
+      handledEntity = handledEntity =
           await UnseportedVendorOrDeviceConnectorConjecture().foundEntity(
         entity
           ..entityCbjUniqueId =
@@ -231,20 +231,20 @@ class VendorsConnectorConjecture {
       );
     }
 
-    if (handeldEntities == null || handeldEntities.isEmpty) {
+    if (handledEntity == null || handledEntity.isEmpty) {
       return;
     }
     for (final MapEntry<String, DeviceEntityBase> entity
-        in handeldEntities.entries) {
+        in handledEntity.entries) {
       entitiesToVendor.addEntries([
         MapEntry(entity.key, entity.value.cbjDeviceVendor.vendorsAndServices),
       ]);
     }
 
-    EntitiesService().addDiscovedEntity(handeldEntities);
+    EntitiesService().addDiscoveredEntity(handledEntity);
   }
 
-  HashMap<VendorsAndServices, List<int>>? portsToScen() {
+  HashMap<VendorsAndServices, List<int>>? portsToScan() {
     return VendorConnectorConjectureService.portsUsedByVendor;
   }
 

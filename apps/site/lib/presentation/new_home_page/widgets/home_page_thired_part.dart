@@ -1,13 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 import 'package:site/presentation/new_home_page/widgets/border_text_with_shadow.dart';
 import 'package:site/presentation/route_names.dart';
-import 'package:flutter/material.dart';
 
 class HomePageThiredPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-
     return Stack(
       children: [
         SizedBox.expand(

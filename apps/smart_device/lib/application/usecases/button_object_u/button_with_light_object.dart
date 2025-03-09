@@ -25,7 +25,7 @@ class ButtonWithLightObject extends ButtonObject {
 
   ///  The type of the smart device, Light, blinds, button etc
   @override
-  // ignore: overridden_fields
+  // ignore: overridden_fields a
   CbjDeviceTypes? smartDeviceType = CbjDeviceTypes.buttonWithLight;
 
   /// The light pin around the button.

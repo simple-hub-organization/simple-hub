@@ -1,5 +1,6 @@
 import 'dart:core';
 
+import 'package:color/color.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_blinds_entity/generic_blinds_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_boiler_entity/generic_boiler_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_light_entity/generic_light_entity.dart';
@@ -9,7 +10,6 @@ import 'package:integrations_controller/src/domain/generic_entities/generic_smar
 import 'package:integrations_controller/src/domain/generic_entities/generic_smart_plug_entity/generic_smart_plug_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_smart_tv_entity/generic_smart_tv_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_switch_entity/generic_switch_entity.dart';
-import 'package:color/color.dart';
 
 class SmartAreaObject {
   SmartAreaObject(

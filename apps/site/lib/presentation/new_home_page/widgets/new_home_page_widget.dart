@@ -1,17 +1,15 @@
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:site/application/new_home_page/new_home_page_bloc.dart';
 import 'package:site/presentation/new_home_page/widgets/home_page_first_part.dart';
 import 'package:site/presentation/new_home_page/widgets/home_page_second_part.dart';
 import 'package:site/presentation/new_home_page/widgets/home_page_thired_part.dart';
 import 'package:site/presentation/new_home_page/widgets/tab_indicator.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewHomePageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-
     return BlocBuilder<NewHomePageBloc, NewHomePageState>(
       builder: (context, state) {
         return state.map(

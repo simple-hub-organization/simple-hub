@@ -1,15 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 import 'package:site/presentation/home_page/widgets/easy_to_set_up_benefit_block.dart';
 import 'package:site/presentation/home_page/widgets/easy_to_use_benefit_block.dart';
 import 'package:site/presentation/home_page/widgets/privacy_and_open_source_benefit_block.dart';
 import 'package:site/presentation/new_home_page/widgets/border_text_with_shadow.dart';
-import 'package:flutter/material.dart';
 
 class HomePageSecondPart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final Size screenSize = MediaQuery.of(context).size;
-
     return Stack(
       children: [
         SizedBox.expand(

@@ -30,7 +30,7 @@ class DeviceEntityDtoBase {
         EntityTypesExtension.fromString(json['entityTypes'] as String);
 
     if (jsonDeviceDtoClass == (GenericLightDeviceDtos).toString() ||
-        type == EntityTypes) {
+        type == EntityTypes.light) {
       deviceEntityDtoAbstract = GenericLightDeviceDtos.fromJson(json);
     } else if (jsonDeviceDtoClass ==
             (GenericDimmableLightDeviceDtos).toString() ||

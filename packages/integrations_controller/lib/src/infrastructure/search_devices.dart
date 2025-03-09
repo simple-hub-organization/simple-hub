@@ -114,7 +114,7 @@ class SearchDevices {
 
     /// For port search
     final HashMap<VendorsAndServices, List<int>>? ports =
-        VendorsConnectorConjecture().portsToScen();
+        VendorsConnectorConjecture().portsToScan();
     final ReceivePort portReceivePort = ReceivePort();
     searchDevices = SendToIsolate(
       sendPort: portReceivePort.sendPort,

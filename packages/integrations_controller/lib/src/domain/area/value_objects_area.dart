@@ -1,9 +1,9 @@
+import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/area/area_errors.dart';
 import 'package:integrations_controller/src/domain/area/area_failures.dart';
 import 'package:integrations_controller/src/domain/area/area_validators.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
-import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 @immutable

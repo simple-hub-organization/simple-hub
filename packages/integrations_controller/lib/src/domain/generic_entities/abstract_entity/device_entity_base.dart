@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:collection';
 
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_dto_base.dart';
@@ -8,7 +9,6 @@ import 'package:integrations_controller/src/domain/generic_entities/abstract_ent
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/entity_type_utils.dart';
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
-import 'package:dartz/dartz.dart';
 import 'package:uuid/uuid.dart';
 
 /// We are using the term entity to describe individual integrations on a single device
