@@ -1,11 +1,11 @@
 import 'dart:async';
 
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_dimmable_light_entity/generic_dimmable_light_entity.dart';
 import 'package:integrations_controller/src/infrastructure/devices/lifx/lifx_connector_conjecture.dart';
-import 'package:dartz/dartz.dart';
 import 'package:lifx_http_api/lifx_http_api.dart';
 
 class LifxWhiteEntity extends GenericDimmableLightDE {

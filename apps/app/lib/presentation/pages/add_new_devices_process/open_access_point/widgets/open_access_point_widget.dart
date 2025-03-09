@@ -124,12 +124,15 @@ class _OpenAccessPointWidgetState extends State<OpenAccessPointWidget> {
                     if (!mounted) {
                       return;
                     }
-                    FlutterClipboard.copy('CyBear Jinni').then(
-                      (value) => SnackBarService().show(
+                    FlutterClipboard.copy('CyBear Jinni').then((value) {
+                      if (!mounted) {
+                        return;
+                      }
+                      SnackBarService().show(
                         context,
                         'Copy',
-                      ),
-                    );
+                      );
+                    });
                   },
                   child: const Column(
                     children: <Widget>[
@@ -166,10 +169,15 @@ class _OpenAccessPointWidgetState extends State<OpenAccessPointWidget> {
                   ),
                   onPressed: () {
                     FlutterClipboard.copy('CyBear Jinni').then(
-                      (value) => SnackBarService().show(
-                        context,
-                        'Copy',
-                      ),
+                      (value) {
+                        if (!mounted) {
+                          return;
+                        }
+                        SnackBarService().show(
+                          context,
+                          'Copy',
+                        );
+                      },
                     );
                   },
                   child: const Column(

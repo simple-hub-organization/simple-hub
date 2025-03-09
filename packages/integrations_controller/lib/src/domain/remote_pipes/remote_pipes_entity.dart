@@ -1,8 +1,8 @@
+import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_failures.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_value_objects.dart';
 import 'package:integrations_controller/src/infrastructure/remote_pipes/remote_pipes_dtos.dart';
-import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'remote_pipes_entity.freezed.dart';
 

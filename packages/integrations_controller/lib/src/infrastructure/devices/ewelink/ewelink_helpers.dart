@@ -1,11 +1,11 @@
 import 'dart:collection';
 
+import 'package:dart_ewelink_api/dart_ewelink_api.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_switch_entity/generic_switch_value_objects.dart';
 import 'package:integrations_controller/src/infrastructure/devices/ewelink/ewelink_switch/ewelink_switch_entity.dart';
-import 'package:dart_ewelink_api/dart_ewelink_api.dart';
 
 class EwelinkHelpers {
   static HashMap<String, DeviceEntityBase> addDiscoveredDevice(

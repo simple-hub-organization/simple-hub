@@ -1,7 +1,7 @@
+import 'package:grpc/grpc.dart';
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:smart_device/application/usecases/smart_server_u/smart_server_u.dart';
 import 'package:smart_device/utils.dart';
-import 'package:grpc/grpc.dart';
 
 class SmartClient {
   static ClientChannel? channel;

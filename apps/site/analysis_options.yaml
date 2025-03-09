@@ -6,6 +6,7 @@ analyzer:
     missing_required_param: error
     missing_return: error
     must_be_immutable: error
+    public_member_api_docs: ignore
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"

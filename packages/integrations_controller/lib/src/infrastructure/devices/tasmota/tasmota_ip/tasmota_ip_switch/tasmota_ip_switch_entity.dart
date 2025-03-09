@@ -1,12 +1,12 @@
 import 'dart:convert';
 
+import 'package:dartz/dartz.dart';
+import 'package:http/http.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_switch_entity/generic_switch_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_switch_entity/generic_switch_value_objects.dart';
-import 'package:dartz/dartz.dart';
-import 'package:http/http.dart';
 
 // TODO: Make the commends work, currently this object does not work
 // Toggle device on/off, the o is the number of output to toggle o=2 is the second

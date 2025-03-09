@@ -9,7 +9,7 @@ abstract class SystemCommandsBaseClassD {
 
   Future<String> getAllEtcReleaseFilesText();
 
-  Future<String?> getFileContent(fileFullPath);
+  Future<String?> getFileContent(String fileFullPath);
 
   Future<String?> getDeviceConfiguration();
 
@@ -22,5 +22,4 @@ abstract class SystemCommandsBaseClassD {
 //
 // /// Get Snap user common environment variable "SNAP_USER_COMMON"
 // Future<String> getSnapUserCommonEnvironmentVariable();
-
 }

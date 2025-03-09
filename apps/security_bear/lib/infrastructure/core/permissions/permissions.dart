@@ -1,26 +1,16 @@
 ///  This class save the state of each permission
 class Permission {
-  Permission(this._read, this._write, this._execute);
+  Permission({required this.read, required this.write, required this.execute});
 
-  bool _read = false;
-  bool _write = false;
-  bool _execute = false;
+  bool read = false;
+  bool write = false;
+  bool execute = false;
 
   //  Getters
 
-  bool getRead() => _read;
+  bool getRead() => read;
 
-  bool getWrite() => _write;
+  bool getWrite() => write;
 
-  bool getExecute() => _execute;
-
-  //  TODO: check if user have permissions to change permissions
-
-  //  Setters
-
-  void setRead(bool read) => _read = read;
-
-  void setWrite(bool write) => _write = write;
-
-  void setExecute(bool execute) => _execute = execute;
+  bool getExecute() => execute;
 }

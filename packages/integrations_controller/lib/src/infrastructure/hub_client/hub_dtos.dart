@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/hub/hub_entity.dart';
 import 'package:integrations_controller/src/domain/hub/hub_value_objects.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'hub_dtos.freezed.dart';
 part 'hub_dtos.g.dart';

@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
@@ -5,7 +6,6 @@ import 'package:integrations_controller/src/domain/generic_entities/abstract_ent
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/entity_type_utils.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_empty_entity/generic_empty_device_dtos.dart';
-import 'package:dartz/dartz.dart';
 
 /// Abstract smart GenericEmpty that exist inside a computer, the
 /// implementations will be actual GenericEmpty like blinds emptys and more

@@ -1,10 +1,10 @@
 import 'dart:collection';
 
+import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_errors.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_failures.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_validators.dart';
-import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 @immutable

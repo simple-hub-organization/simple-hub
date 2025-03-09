@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
@@ -6,7 +7,6 @@ import 'package:integrations_controller/src/domain/generic_entities/abstract_ent
 import 'package:integrations_controller/src/domain/generic_entities/entity_type_utils.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_smart_tv_entity/generic_smart_tv_device_dtos.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_smart_tv_entity/generic_smart_tv_value_objects.dart';
-import 'package:dartz/dartz.dart';
 
 /// Abstract smart GenericSmartTv that exist inside a computer, the
 /// implementations will be actual GenericSmartTv like blinds smartTvs and more

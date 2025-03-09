@@ -1,9 +1,9 @@
 import 'package:integrations_controller/integrations_controller.dart';
+import 'package:isar/isar.dart';
 import 'package:smart_device/core/my_singleton.dart';
 import 'package:smart_device/infrastructure/datasources/hive_d/hive_objects_d/isar_database_information_d.dart';
 import 'package:smart_device/infrastructure/datasources/hive_d/hive_objects_d/isar_devices_d.dart';
 import 'package:smart_device/utils.dart';
-import 'package:isar/isar.dart';
 
 class IsarD {
   factory IsarD() {

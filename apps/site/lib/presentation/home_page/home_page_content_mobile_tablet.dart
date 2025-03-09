@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
 import 'package:site/presentation/home_page/widgets/easy_to_set_up_benefit_block.dart';
 import 'package:site/presentation/home_page/widgets/easy_to_use_benefit_block.dart';
 import 'package:site/presentation/home_page/widgets/privacy_and_open_source_benefit_block.dart';
 import 'package:site/presentation/home_page/widgets/supported_vendors_tile_grid_view.dart';
 import 'package:site/presentation/route_names.dart';
 import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
-import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
@@ -55,7 +55,8 @@ class HomePageContentMobileTablet extends StatelessWidget {
                         children: <Widget>[
                           DecoratedBox(
                             decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.8),
+                              color: Colors.black
+                                ..withAlpha((0.8 * 255).toInt()),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(20),
                               ),
@@ -77,7 +78,8 @@ class HomePageContentMobileTablet extends StatelessWidget {
                           Container(
                             margin: const EdgeInsets.only(left: 170, top: 0.5),
                             decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.8),
+                              color: Colors.black
+                                ..withAlpha((0.8 * 255).toInt()),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(20),
                               ),
@@ -117,7 +119,7 @@ class HomePageContentMobileTablet extends StatelessWidget {
             children: <Widget>[
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10),
-                color: Colors.blue.withOpacity(0.1),
+                color: Colors.blue.withAlpha((0.1 * 255).toInt()),
                 height: 100.0,
                 child: Center(
                   child: RichText(
@@ -161,10 +163,10 @@ class HomePageContentMobileTablet extends StatelessWidget {
                   height: 370,
                   child: TextButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStateProperty.all(
                         Colors.black38,
                       ),
-                      padding: MaterialStateProperty.all<EdgeInsets>(
+                      padding: WidgetStateProperty.all<EdgeInsets>(
                         const EdgeInsets.all(30),
                       ),
                     ),
@@ -210,7 +212,7 @@ class HomePageContentMobileTablet extends StatelessWidget {
                 height: 500,
                 child: TextButton(
                   style: ButtonStyle(
-                    padding: MaterialStateProperty.all<EdgeInsets>(
+                    padding: WidgetStateProperty.all<EdgeInsets>(
                       EdgeInsets.zero,
                     ),
                   ),

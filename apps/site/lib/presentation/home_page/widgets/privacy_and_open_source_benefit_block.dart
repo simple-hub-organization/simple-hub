@@ -10,16 +10,17 @@ class PrivacyAndOpenSourceBenefitBlock extends StatelessWidget {
       hoverColor: Colors.white,
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all<OutlinedBorder>(
+          shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
           ),
-          padding: MaterialStateProperty.all<EdgeInsets>(
+          padding: WidgetStateProperty.all<EdgeInsets>(
             const EdgeInsets.all(30),
           ),
-          backgroundColor:
-              MaterialStateProperty.all<Color>(Colors.white.withOpacity(0.8)),
+          backgroundColor: WidgetStateProperty.all<Color>(
+            Colors.white.withAlpha((0.8 * 255).toInt()),
+          ),
         ),
         onPressed: () async {
           const String url = 'https://github.com/CyBear-Jinni';
@@ -54,15 +55,15 @@ class PrivacyAndOpenSourceBenefitBlock extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
               const SizedBox(
                 height: 30,
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const <Widget>[
+                children: <Widget>[
                   FaIcon(
                     FontAwesomeIcons.check,
                     color: Colors.green,
@@ -88,9 +89,9 @@ class PrivacyAndOpenSourceBenefitBlock extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Row(
+              const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const <Widget>[
+                children: <Widget>[
                   FaIcon(
                     FontAwesomeIcons.check,
                     color: Colors.green,

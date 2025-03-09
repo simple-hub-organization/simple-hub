@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:site/presentation/integrations_page/device_card.dart';
 import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
-import 'package:flutter/material.dart';
 
 /// Integrations page content for the mobile and tablet screen size
 class IntegrationsPageContentMobileTablet extends StatelessWidget {

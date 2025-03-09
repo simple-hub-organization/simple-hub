@@ -1,12 +1,12 @@
 import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:site/my_singleton.dart';
 import 'package:site/presentation/home_page/widgets/supported_vendors_tile_grid_view.dart';
 import 'package:site/presentation/new_home_page/widgets/border_text_with_shadow.dart';
 import 'package:site/presentation/route_names.dart';
-import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class HomePageFirstPart extends StatelessWidget {
@@ -144,7 +144,7 @@ class HomePageFirstPart extends StatelessWidget {
                     flex: 16,
                     child: TextButton(
                       style: ButtonStyle(
-                        padding: MaterialStateProperty.all<EdgeInsets>(
+                        padding: WidgetStateProperty.all<EdgeInsets>(
                           EdgeInsets.zero,
                         ),
                       ),
@@ -167,7 +167,8 @@ class HomePageFirstPart extends StatelessWidget {
                           ),
                           child: DecoratedBox(
                             decoration: BoxDecoration(
-                              color: Colors.grey.shade200.withOpacity(0.5),
+                              color: Colors.grey.shade200
+                                  .withAlpha((0.5 * 255).toInt()),
                             ),
                             child: Center(
                               child: Column(

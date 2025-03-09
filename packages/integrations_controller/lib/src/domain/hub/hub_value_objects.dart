@@ -1,7 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/hub/hub_errors.dart';
 import 'package:integrations_controller/src/domain/hub/hub_failures.dart';
 import 'package:integrations_controller/src/domain/hub/hub_validators.dart';
-import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 
 @immutable

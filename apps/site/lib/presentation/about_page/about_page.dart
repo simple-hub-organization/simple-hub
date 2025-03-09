@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:site/presentation/about_page/about_page_content.dart';
 import 'package:site/presentation/shared_widgets/navigation_drawer/navigation_drawer.dart';
 import 'package:site/presentation/shared_widgets/top_navigation_menu/top_navigation_menu.dart';
-import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 /// About the company and the people who work in it
 class AboutPage extends StatelessWidget {

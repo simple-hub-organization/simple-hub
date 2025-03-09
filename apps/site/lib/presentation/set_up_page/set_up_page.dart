@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:site/presentation/set_up_page/set_up_page_content.dart';
 import 'package:site/presentation/shared_widgets/navigation_drawer/navigation_drawer.dart';
 import 'package:site/presentation/shared_widgets/top_navigation_menu/top_navigation_menu.dart';
-import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 /// Page to show how to set up new CyBear Jinni in your home hub + app
 class SetUpPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class SetUpPage extends StatelessWidget {
             Theme.of(context).primaryColor,
             Theme.of(context).colorScheme.secondary,
             Theme.of(context).colorScheme.secondary,
-            Theme.of(context).primaryColor
+            Theme.of(context).primaryColor,
           ],
         ),
       ),

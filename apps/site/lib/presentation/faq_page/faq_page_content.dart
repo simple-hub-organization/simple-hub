@@ -1,7 +1,7 @@
-import 'package:site/presentation/faq_page/faq_page_content_desktop.dart';
-import 'package:site/presentation/faq_page/faq_page_content_mobile_tablet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:site/presentation/faq_page/faq_page_content_desktop.dart';
+import 'package:site/presentation/faq_page/faq_page_content_mobile_tablet.dart';
 
 /// Faq page content
 class FaqPageContent extends StatelessWidget {

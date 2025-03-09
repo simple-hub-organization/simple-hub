@@ -20,11 +20,11 @@ class HomePageThiredPart extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Flexible(
+            const Flexible(
               flex: 3,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   BorderTextWithShadow(
                     'How to Setup',
                     fontSize: 35,
@@ -63,9 +63,9 @@ class HomePageThiredPart extends StatelessWidget {
                                 const Icon(Icons.error),
                           ),
                           const SizedBox(height: 32),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               BorderTextWithShadow(
                                 'i. ',
                                 fontSize: 20,
@@ -82,9 +82,9 @@ class HomePageThiredPart extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               BorderTextWithShadow(
                                 'ii. ',
                                 fontSize: 20,
@@ -101,9 +101,9 @@ class HomePageThiredPart extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               BorderTextWithShadow(
                                 'iii. ',
                                 fontSize: 20,
@@ -141,9 +141,9 @@ class HomePageThiredPart extends StatelessWidget {
                                 const Icon(Icons.error),
                           ),
                           const SizedBox(height: 32),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               BorderTextWithShadow(
                                 'i. ',
                                 fontSize: 20,
@@ -160,9 +160,9 @@ class HomePageThiredPart extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               BorderTextWithShadow(
                                 'ii. ',
                                 fontSize: 20,
@@ -179,9 +179,9 @@ class HomePageThiredPart extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 10),
-                          Row(
+                          const Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
+                            children: [
                               BorderTextWithShadow(
                                 'iii. ',
                                 fontSize: 20,
@@ -199,11 +199,11 @@ class HomePageThiredPart extends StatelessWidget {
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ],

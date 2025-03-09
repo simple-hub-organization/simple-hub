@@ -23,7 +23,8 @@ class SystemCommandsManager {
       throw 'Mac os is currently not supported';
     } else {
       logger.w(
-          '${Platform.operatingSystem} os is not supported in SystemCommandsManager',);
+        '${Platform.operatingSystem} os is not supported in SystemCommandsManager',
+      );
       throw '${Platform.operatingSystem} os is not supported';
     }
   }
@@ -46,7 +47,7 @@ class SystemCommandsManager {
     return systemCommandsBaseClassD!.getAllEtcReleaseFilesText();
   }
 
-  Future<String?> getFileContent(fileFullPath) {
+  Future<String?> getFileContent(String fileFullPath) {
     return systemCommandsBaseClassD!.getFileContent(fileFullPath);
   }
 

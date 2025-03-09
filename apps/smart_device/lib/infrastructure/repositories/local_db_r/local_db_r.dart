@@ -136,7 +136,6 @@ class LocalDbR {
           );
         default:
           logger.i('Cannot add from local db, device type is not supported');
-          break;
       }
     }
     if (smartDeviceBaseAbstractList.isEmpty) {

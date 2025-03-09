@@ -1,3 +1,5 @@
+import 'package:color/color.dart';
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
@@ -5,8 +7,6 @@ import 'package:integrations_controller/src/domain/generic_entities/abstract_ent
 import 'package:integrations_controller/src/domain/generic_entities/generic_rgbw_light_entity/generic_rgbw_light_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_rgbw_light_entity/generic_rgbw_light_value_objects.dart';
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
-import 'package:color/color.dart';
-import 'package:dartz/dartz.dart';
 import 'package:shelly/shelly.dart';
 
 class ShellyColorLightEntity extends GenericRgbwLightDE {

@@ -1,10 +1,10 @@
 import 'dart:collection';
 
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/core/value_objects.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_entity.dart';
 import 'package:integrations_controller/src/domain/scene/value_objects_scene_cbj.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'scene_cbj_dtos.freezed.dart';
 part 'scene_cbj_dtos.g.dart';

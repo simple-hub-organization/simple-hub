@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_entity.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_value_objects.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'remote_pipes_dtos.freezed.dart';
 part 'remote_pipes_dtos.g.dart';

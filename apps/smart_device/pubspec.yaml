@@ -8,9 +8,6 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  integrations_controller:
-#    git: https://github.com/CyBear-Jinni/cbj_integrations_controller.git
-   path: ../../packages/integrations_controller
   # Functional programming thingies, let you use multiple return types
   dartz: ^0.10.1
   # Convert enum to string
@@ -19,6 +16,9 @@ dependencies:
   equatable: ^2.0.5
   # A high performance, open source, general RPC framework that puts mobile and HTTP/2 first.
   grpc: ^3.2.4
+  integrations_controller:
+    #    git: https://github.com/CyBear-Jinni/cbj_integrations_controller.git
+    path: ../../packages/integrations_controller
   # Checks for an internet connection by opening a socket
   internet_connection_checker: ^1.0.0+1
   # Extremely fast, easy to use, and fully async NoSQL database.

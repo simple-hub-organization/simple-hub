@@ -1,7 +1,7 @@
-// ignore: depend_on_referenced_packages because this is our pacakge
-import 'package:integrations_controller/integrations_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// ignore: depend_on_referenced_packages because this is our pacakge
+import 'package:integrations_controller/integrations_controller.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class EntitiesUtils {

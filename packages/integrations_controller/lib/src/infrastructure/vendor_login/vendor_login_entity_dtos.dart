@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/generic_entities/entity_type_utils.dart';
 import 'package:integrations_controller/src/domain/vendor_login_entity.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'vendor_login_entity_dtos.freezed.dart';
 part 'vendor_login_entity_dtos.g.dart';

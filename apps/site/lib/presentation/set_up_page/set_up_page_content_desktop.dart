@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 /// Set Up page content for the desktop
@@ -67,7 +67,7 @@ class SetUpPageContentDesktop extends StatelessWidget {
                     Container(
                       alignment: Alignment.topLeft,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black..withAlpha((0.3 * 255).toInt()),
                       ),
                       padding: const EdgeInsets.symmetric(
                         vertical: 50,
@@ -316,7 +316,7 @@ class SetUpPageContentDesktop extends StatelessWidget {
                                         const Icon(Icons.error),
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           const SizedBox(
@@ -369,7 +369,7 @@ class SetUpPageContentDesktop extends StatelessWidget {
                                         const Icon(Icons.error),
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           const SizedBox(
@@ -422,7 +422,7 @@ class SetUpPageContentDesktop extends StatelessWidget {
                                         const Icon(Icons.error),
                                   ),
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           const SizedBox(
@@ -469,7 +469,7 @@ class SetUpPageContentDesktop extends StatelessWidget {
                     Container(
                       alignment: Alignment.topLeft,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black..withAlpha((0.3 * 255).toInt()),
                       ),
                       padding: const EdgeInsets.symmetric(
                         vertical: 50,
@@ -568,7 +568,7 @@ class SetUpPageContentDesktop extends StatelessWidget {
                                     ),
                                   ),
                                 ],
-                              )
+                              ),
                             ],
                           ),
                         ],

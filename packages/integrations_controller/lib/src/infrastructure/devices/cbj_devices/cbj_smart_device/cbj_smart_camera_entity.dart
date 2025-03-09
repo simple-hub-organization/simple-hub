@@ -1,10 +1,10 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_security_camera_entity/generic_security_camera_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_security_camera_entity/generic_security_camera_value_objects.dart';
 import 'package:integrations_controller/src/infrastructure/devices/cbj_devices/cbj_smart_device_client/cbj_smart_device_client.dart';
-import 'package:dartz/dartz.dart';
 
 class CbjSecurityCameraEntity extends GenericSecurityCameraDE {
   CbjSecurityCameraEntity({

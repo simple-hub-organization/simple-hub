@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 import 'package:http/http.dart' as http;
+import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 
 abstract class SonoffApiDeviceAbstract {
   SonoffApiDeviceAbstract({

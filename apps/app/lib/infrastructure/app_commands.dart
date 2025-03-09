@@ -1,8 +1,8 @@
 import 'dart:io';
 
+import 'package:device_info_plus/device_info_plus.dart';
 // ignore: depend_on_referenced_packages because this is our pacakge
 import 'package:integrations_controller/integrations_controller.dart';
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AppCommands extends SystemCommandsBaseClassD {

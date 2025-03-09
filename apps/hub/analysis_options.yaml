@@ -13,7 +13,7 @@ analyzer:
     missing_required_param: error
     missing_return: error
     must_be_immutable: error
-    prefer_constructors_over_static_methods: ignore ignore ignore
+    prefer_constructors_over_static_methods: ignore
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"

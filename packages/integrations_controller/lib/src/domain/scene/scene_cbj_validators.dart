@@ -1,6 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/generic_entities/entity_type_utils.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_failures.dart';
-import 'package:dartz/dartz.dart';
 
 Either<SceneCbjFailure<String>, String> validateSceneNotEmpty(String input) {
   if (input.isNotEmpty) {

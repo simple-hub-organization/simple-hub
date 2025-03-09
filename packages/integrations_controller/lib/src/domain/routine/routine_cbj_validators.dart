@@ -1,6 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/generic_entities/entity_type_utils.dart';
 import 'package:integrations_controller/src/domain/routine/routine_cbj_failures.dart';
-import 'package:dartz/dartz.dart';
 
 Either<RoutineCbjFailure<String>, String> validateRoutineNotEmpty(
   String input,

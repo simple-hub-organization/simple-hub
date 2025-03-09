@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:site/presentation/route_names.dart';
 import 'package:site/presentation/shared_widgets/navigation_drawer/drawer_item_on_click_route_page.dart';
 import 'package:site/presentation/shared_widgets/navigation_drawer/navigation_drawer_header.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// Navigation drawer for small screen sizes, replace the top navigation menu
 class NavigationDrawerWidget extends StatelessWidget {
@@ -21,7 +21,7 @@ class NavigationDrawerWidget extends StatelessWidget {
             Theme.of(context).primaryColor,
             Theme.of(context).colorScheme.secondary,
             Theme.of(context).colorScheme.secondary,
-            Theme.of(context).primaryColor
+            Theme.of(context).primaryColor,
           ],
         ),
       ),

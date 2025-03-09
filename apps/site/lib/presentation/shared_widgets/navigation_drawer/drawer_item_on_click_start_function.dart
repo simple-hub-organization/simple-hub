@@ -1,5 +1,5 @@
-import 'package:site/presentation/shared_widgets/navigation_drawer/drawer_item.dart';
 import 'package:flutter/material.dart';
+import 'package:site/presentation/shared_widgets/navigation_drawer/drawer_item.dart';
 
 /// Adding on click start function to DrawerItem
 class DrawerItemOnClickStartFunction extends StatelessWidget {
@@ -17,16 +17,16 @@ class DrawerItemOnClickStartFunction extends StatelessWidget {
   final IconData icon;
 
   /// What function to run if clicked
-  final Function onClickFunction;
+  final Function(BuildContext c) onClickFunction;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
+        backgroundColor: WidgetStateProperty.all(
           Colors.black38,
         ),
-        padding: MaterialStateProperty.all<EdgeInsets>(
+        padding: WidgetStateProperty.all<EdgeInsets>(
           EdgeInsets.zero,
         ),
       ),

@@ -1,7 +1,7 @@
-import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 /// Faq page content for the mobile and tablet screen size
@@ -45,7 +45,7 @@ class FaqPageContentMobileTablet extends StatelessWidget {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black..withAlpha((0.3 * 255).toInt()),
                       ),
                       padding: const EdgeInsets.symmetric(
                         vertical: 50,

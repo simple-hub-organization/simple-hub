@@ -1,7 +1,7 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_smart_computer_entity/generic_smart_computer_validators.dart';
-import 'package:dartz/dartz.dart';
 
 class GenericSmartComputerSuspendState extends ValueObjectCore<String> {
   factory GenericSmartComputerSuspendState(String? input) {

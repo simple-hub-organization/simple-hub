@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 import 'package:crclib/crclib.dart';
+import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 
 class CbjDevicesApiObject {
   CbjDevicesApiObject({

@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:grpc/grpc.dart';
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_empty_entity/generic_empty_entity.dart';
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
-import 'package:grpc/grpc.dart';
 
 class CbjSmartDeviceClient {
   CbjSmartDeviceClient() {

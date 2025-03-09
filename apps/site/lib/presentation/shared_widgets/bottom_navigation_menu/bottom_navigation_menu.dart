@@ -1,7 +1,7 @@
-import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu_desktop.dart';
-import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu_mobile_tablet.dart';
 import 'package:flutter/widgets.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu_desktop.dart';
+import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu_mobile_tablet.dart';
 
 /// Bottom navigation menu for the site
 class BottomNavigationMenu extends StatelessWidget {

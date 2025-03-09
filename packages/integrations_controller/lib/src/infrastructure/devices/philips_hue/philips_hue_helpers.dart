@@ -1,5 +1,7 @@
 import 'dart:collection';
 
+import 'package:http/http.dart';
+import 'package:hue_dart/hue_dart.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
@@ -7,8 +9,6 @@ import 'package:integrations_controller/src/domain/generic_entities/generic_dimm
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 import 'package:integrations_controller/src/infrastructure/devices/philips_hue/philips_hue_api/philips_hue_api_light.dart';
 import 'package:integrations_controller/src/infrastructure/devices/philips_hue/philips_hue_e26/philips_hue_e26_entity.dart';
-import 'package:http/http.dart';
-import 'package:hue_dart/hue_dart.dart';
 
 class PhilipsHueHelpers {
   static Future<HashMap<String, DeviceEntityBase>> addDiscoveredDevice(

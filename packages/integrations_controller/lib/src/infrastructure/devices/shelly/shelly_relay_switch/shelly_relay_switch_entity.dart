@@ -1,12 +1,12 @@
 import 'dart:async';
 
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_switch_entity/generic_switch_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_switch_entity/generic_switch_value_objects.dart';
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
-import 'package:dartz/dartz.dart';
 import 'package:shelly/shelly.dart';
 
 class ShellyRelaySwitchEntity extends GenericSwitchDE {

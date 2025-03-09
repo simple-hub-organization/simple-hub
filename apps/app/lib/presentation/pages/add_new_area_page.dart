@@ -178,6 +178,9 @@ class _AddNewAreaFormState extends State<AddNewAreaForm> {
                 Expanded(
                   child: TextButton(
                     onPressed: () async {
+                      if (!mounted) {
+                        return;
+                      }
                       SnackBarService().show(
                         context,
                         'Adding area',
@@ -186,7 +189,7 @@ class _AddNewAreaFormState extends State<AddNewAreaForm> {
                       if (!mounted) {
                         return;
                       }
-
+                      // ignore: use_build_context_synchronously some bug in the analysis
                       context.router.maybePop();
                     },
                     child: const TextAtom('ADD'),

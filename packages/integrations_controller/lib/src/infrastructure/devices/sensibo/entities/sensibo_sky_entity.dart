@@ -1,9 +1,9 @@
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_ac_entity/generic_ac_entity.dart';
 import 'package:integrations_controller/src/infrastructure/devices/sensibo/sensibo_connector_conjecture.dart';
-import 'package:dartz/dartz.dart';
 import 'package:sensibo/sensibo.dart';
 
 class SensiboSkyEntity extends GenericAcDE {

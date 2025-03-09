@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
-import 'package:site/presentation/shared_widgets/navigation_drawer/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
+import 'package:site/presentation/shared_widgets/navigation_drawer/navigation_drawer.dart';
 
 /// About page content for the mobile and tablet screen size
 class AboutPageContentMobileTablet extends StatelessWidget {
@@ -21,7 +21,7 @@ class AboutPageContentMobileTablet extends StatelessWidget {
             Theme.of(context).primaryColor,
             Theme.of(context).colorScheme.secondary,
             Theme.of(context).colorScheme.secondary,
-            Theme.of(context).primaryColor
+            Theme.of(context).primaryColor,
           ],
         ),
       ),

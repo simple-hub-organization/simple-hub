@@ -1,8 +1,8 @@
 import 'dart:convert';
 
+import 'package:http/http.dart' as http;
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 import 'package:integrations_controller/src/infrastructure/devices/sonoff_diy/sonoff_diy_api/sonoff_diy_api_device_abstract.dart';
-import 'package:http/http.dart' as http;
 
 class SonoffDiyApiWallSwitch extends SonoffApiDeviceAbstract {
   SonoffDiyApiWallSwitch({

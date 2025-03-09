@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:site/presentation/shared_widgets/bottom_navigation_menu/bottom_navigation_menu.dart';
 
 /// About page content for the desktop
 class AboutPageContentDesktop extends StatelessWidget {
@@ -20,7 +20,7 @@ class AboutPageContentDesktop extends StatelessWidget {
             Theme.of(context).primaryColor,
             Theme.of(context).colorScheme.secondary,
             Theme.of(context).colorScheme.secondary,
-            Theme.of(context).primaryColor
+            Theme.of(context).primaryColor,
           ],
         ),
       ),
@@ -30,7 +30,7 @@ class AboutPageContentDesktop extends StatelessWidget {
           child: Scaffold(
             drawer:
                 sizingInformation.deviceScreenType == DeviceScreenType.mobile
-                    ? NavigationDrawer(
+                    ? const NavigationDrawer(
                         children: [],
                       )
                     : null,

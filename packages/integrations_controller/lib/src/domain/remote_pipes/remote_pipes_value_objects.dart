@@ -1,8 +1,8 @@
+import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_errors.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_failures.dart';
 import 'package:integrations_controller/src/domain/remote_pipes/remote_pipes_validators.dart';
-import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 @immutable
 abstract class RemotePipesValueObjectAbstract<T> {

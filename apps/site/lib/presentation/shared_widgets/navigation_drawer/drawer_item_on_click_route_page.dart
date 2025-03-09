@@ -1,5 +1,5 @@
-import 'package:site/presentation/shared_widgets/navigation_drawer/drawer_item.dart';
 import 'package:flutter/material.dart';
+import 'package:site/presentation/shared_widgets/navigation_drawer/drawer_item.dart';
 
 /// Adding on click and dark background functionality to DrawerItem
 class DrawerItemOnClickRoutePage extends StatelessWidget {
@@ -19,10 +19,10 @@ class DrawerItemOnClickRoutePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
+        backgroundColor: WidgetStateProperty.all(
           Colors.black38,
         ),
-        padding: MaterialStateProperty.all<EdgeInsets>(
+        padding: WidgetStateProperty.all<EdgeInsets>(
           EdgeInsets.zero,
         ),
       ),

@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:site/presentation/home_page/home_page_content.dart';
 import 'package:site/presentation/shared_widgets/navigation_drawer/navigation_drawer.dart';
 import 'package:site/presentation/shared_widgets/top_navigation_menu/top_navigation_menu.dart';
-import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 /// Home and lending page of the site
 class HomePage extends StatelessWidget {
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
             Theme.of(context).primaryColor,
             Theme.of(context).colorScheme.secondary,
             Theme.of(context).colorScheme.secondary,
-            Theme.of(context).primaryColor
+            Theme.of(context).primaryColor,
           ],
         ),
       ),

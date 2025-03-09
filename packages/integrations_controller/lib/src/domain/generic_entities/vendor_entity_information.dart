@@ -2,6 +2,13 @@ import 'package:integrations_controller/src/domain/core/request_action_types.dar
 
 /// Moving here values that need to be sheard with the app as well as the vendor connector conjecture.
 class VendorEntityInformation {
+  VendorEntityInformation(
+    this.vendorsAndServices, {
+    required this.displayName,
+    required this.imageUrl,
+    required this.loginType,
+    this.urlToLoginCredentials,
+  });
   /// Create object from JSON
   factory VendorEntityInformation.fromJson(Map<String, dynamic> json) {
     return VendorEntityInformation(
@@ -12,13 +19,6 @@ class VendorEntityInformation {
       loginType: VendorLoginTypes.values.byName(json['loginType'] as String),
     );
   }
-  VendorEntityInformation(
-    this.vendorsAndServices, {
-    required this.displayName,
-    required this.imageUrl,
-    required this.loginType,
-    this.urlToLoginCredentials,
-  });
 
   final VendorsAndServices vendorsAndServices;
   final String displayName;

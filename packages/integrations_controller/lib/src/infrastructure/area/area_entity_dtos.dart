@@ -1,7 +1,7 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/area/area_entity.dart';
 import 'package:integrations_controller/src/domain/area/value_objects_area.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'area_entity_dtos.freezed.dart';
 part 'area_entity_dtos.g.dart';

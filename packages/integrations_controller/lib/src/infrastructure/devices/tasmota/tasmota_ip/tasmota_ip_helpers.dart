@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:convert';
 
+import 'package:http/http.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
@@ -8,7 +9,6 @@ import 'package:integrations_controller/src/domain/generic_entities/generic_swit
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
 import 'package:integrations_controller/src/infrastructure/devices/tasmota/tasmota_ip/tasmota_ip_api/tasmota_ip_api_components.dart';
 import 'package:integrations_controller/src/infrastructure/devices/tasmota/tasmota_ip/tasmota_ip_switch/tasmota_ip_switch_entity.dart';
-import 'package:http/http.dart';
 
 class TasmotaIpHelpers {
   static Future<HashMap<String, DeviceEntityBase>> addDiscoveredDevice(

@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:cast/cast.dart';
+import 'package:dartz/dartz.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/core_failures.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/value_objects_core.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_smart_tv_entity/generic_smart_tv_entity.dart';
-import 'package:dartz/dartz.dart';
 
 class ChromeCastEntity extends GenericSmartTvDE {
   ChromeCastEntity({

@@ -63,10 +63,9 @@ class CommonBashCommandsD implements SystemCommandsBaseClassD {
   }
 
   @override
-  Future<String?> getFileContent(fileFullPath) async {
-    final String fileContent =
-        await Process.run('cat', <String>[fileFullPath.toString()])
-            .then((ProcessResult result) {
+  Future<String?> getFileContent(String fileFullPath) async {
+    final String fileContent = await Process.run('cat', <String>[fileFullPath])
+        .then((ProcessResult result) {
       return result.stdout.toString();
     });
 
