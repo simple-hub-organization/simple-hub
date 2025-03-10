@@ -16,9 +16,23 @@
       <excludeFolder url="file://$MODULE_DIR$/apps/remote_pipes_routing/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/apps/remote_pipes_routing/build" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/app/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/hub/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/hub/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/hub/build" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/security_bear/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/security_bear/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/security_bear/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/integrations_controller/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/integrations_controller/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/integrations_controller/build" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/smart_device_flutter/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/smart_device_flutter/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/packages/smart_device_flutter/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

@@ -6,7 +6,7 @@ architecture="$(uname -m)"
 
 echo "architecture: ${architecture}"
 
-dartSdkPath="https://storage.googleapis.com/dart-archive/channels/stable/release/2.18.2/sdk/dartsdk-linux-" # Sdk url: https://dart.dev/tools/sdk/archive
+dartSdkPath="https://storage.googleapis.com/dart-archive/channels/stable/release/3.6.0/sdk/dartsdk-linux-" # Sdk url: https://dart.dev/tools/sdk/archive
 
 case ${architecture} in
 "arm" | "armv7l")

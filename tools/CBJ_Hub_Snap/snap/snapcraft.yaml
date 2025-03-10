@@ -1,5 +1,5 @@
 name: cbj-hub
-base: core20
+base: core22
 version: '1.4.4'
 summary: Hub to control smart device from different vendors with one app.
 description: |
@@ -36,22 +36,140 @@ architectures:
     run-on: amd64
 
 parts:
-  scripts-files:
+  mosquitto:
+    plugin: nil
+    stage-packages:
+      - mosquitto
+
+  node-red:
+    plugin: nil
+    stage-packages:
+      - node-red
+      - nodejs
+
+
+  scripts-files-security-bear:
     plugin: dump
     source: .
     override-build: |
       rm README.md
 
-  cbj-hub:
-    source: https://github.com/CyBear-Jinni/cbj_hub.git
+  security-bear:
+    source: ../../../apps/security_bear
     after:
-      - scripts-files
+      - scripts-files-security-bear
     plugin: dump
     override-build: |
-      mv ../../scripts-files/src/scripts .
-      scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
+      mv ../../scripts-files-security-bear/src/scripts .
 
-      # We need to delete all the code from the dir after making the executable file, 
+      echo "Making native executable of the project"
+      
+      scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture.
+      
+      unzip dartsdk-*.zip
+      rm dartsdk-*.zip
+      
+      
+      dart-sdk/bin/pub get --no-precompile
+      dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
+      
+      dart-sdk/bin/dart compile exe bin/main.dart -o Security-Bear
+      
+      rm -r dart-sdk/
+      rm -r security_bear
+
+      snapcraftctl build
+
+    build-packages:
+      - wget
+      - unzip
+      - git
+    stage-packages:
+      - crda
+      - iputils-arping
+      - iw
+      - libbluetooth3
+      - libcap2-bin
+      - libfribidi0
+      - libgudev-1.0-0
+      - libjansson4
+      - libmbim-glib4
+      - libmbim-proxy
+      - libmm-glib0
+      - libndp0
+      - libnewt0.52
+      - libnl-3-200
+      - libnl-genl-3-200
+      - libnm0
+      - libpam-cap
+      - libpcap0.8
+      - libpcsclite1
+      - libpipeline1
+      - libpolkit-agent-1-0
+      - libpolkit-gobject-1-0
+      - libqmi-glib5
+      - libqmi-proxy
+      - libslang2
+      - libteamdctl0
+      - libusb-1.0-0
+      - modemmanager
+      - policykit-1
+      - ppp
+      - pptp-linux
+      - usb-modeswitch
+      - usb-modeswitch-data
+      - wireless-regdb
+      - wpasupplicant
+      - libatm1
+
+      - network-manager-pptp
+      - network-manager
+
+      - wireless-tools
+
+  scripts-files-hub:
+    plugin: dump
+    source: .
+    override-build: |
+      rm README.md
+
+  hub-js:
+    plugin: nodejs
+    source: ../../../apps/hub_javascript
+    node-engine: 18
+    npm-install-parameters: ["--omit=dev"]  # Install only production dependencies
+    stage-packages:
+      - nodejs
+      - npm
+
+  cbj-hub:
+    source: ../../../apps/hub
+    after:
+      - scripts-files-hub
+    plugin: dump
+    override-build: |
+      mv ../../scripts-files-hub/src/scripts .
+  
+      
+      echo "Making native executable of the project"
+      
+      scripts/bashScripts/dartSdkDownload.sh # Downloading dart-sdk for the correct architecture.
+      
+      unzip dartsdk-*.zip
+      rm dartsdk-*.zip
+      
+      dart-sdk/bin/dart pub get --no-precompile
+      dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
+      
+      #chmod -R +rx dart-sdk/
+      dart-sdk/bin/dart compile exe bin/cbj_hub.dart -o CyBear-Jinni_Hub
+      # sudo dart-sdk/bin/dart bin/cbj_hub.dart .
+      
+      rm -r dart-sdk/
+      rm -r hub
+    
+
+  # We need to delete all the code from the dir after making the executable file,
       # currently all python file exist inside the project and referanced by directory so we can't
       # rm -r All code from cbj_hub
 
@@ -70,9 +188,41 @@ parts:
       - python3
 
 apps:
+
+  mosquitto:
+    command: usr/sbin/mosquitto
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind]
+
+  node-red:
+    command: usr/bin/node-red
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind]
+
+  security-bear:
+    command: Security-Bear $SNAP
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind, network-manager, network-observe]
+
+  hub-js:
+    command: node src/app.ts
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind]
+
+
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
+    install-mode: enable
+    restart-condition: always
     plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe]
     # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
 
