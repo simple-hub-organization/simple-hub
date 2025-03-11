@@ -42,37 +42,18 @@ parts:
       - node-red
       - nodejs
 
-
-  scripts-files-security-bear:
-    plugin: dump
-    source: .
-    override-build: |
-      rm README.md
-
   security-bear:
     source: ../../apps/security_bear
     after:
       - scripts-files-security-bear
-    plugin: dump
+    plugin: nil
     override-build: |
-      mv ../../scripts-files-security-bear/src/scripts .
-
-      echo "Making native executable of the project"
       
-      scripts/bashScripts/dartSdkDownload.sh  # Downloading dart-sdk for the correct architecture.
-      
-      unzip dartsdk-*.zip
-      rm dartsdk-*.zip
-      
-      
-      dart-sdk/bin/pub get --no-precompile
-      dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
-      
-      dart-sdk/bin/dart compile exe bin/main.dart -o Security-Bear
-      
-      rm -r dart-sdk/
-      rm -r security_bear
-
+      PROJECT_PATH="../../apps/security_bear"
+      MAIN_FILE="bin/main.dart"
+      EXECUTABLE_NAME ="Security-Bear"
+  
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       snapcraftctl build
 
     build-packages:
@@ -122,11 +103,6 @@ parts:
 
       - wireless-tools
 
-  scripts-files-hub:
-    plugin: dump
-    source: .
-    override-build: |
-      rm README.md
 
   hub-js:
     source: ../../apps/hub_javascript
@@ -142,36 +118,15 @@ parts:
       - npm
 
   cbj-hub:
-    source: ../../apps/hub
     after:
       - scripts-files-hub
-    plugin: dump
+    plugin: nil
     override-build: |
-      mv ../../scripts-files-hub/src/scripts .
-  
+      PROJECT_PATH="../../apps/hub"
+      MAIN_FILE="bin/cbj_hub.dart"
+      EXECUTABLE_NAME ="CyBear-Jinni_Hub"
       
-      echo "Making native executable of the project"
-      
-      scripts/bashScripts/dartSdkDownload.sh # Downloading dart-sdk for the correct architecture.
-      
-      unzip dartsdk-*.zip
-      rm dartsdk-*.zip
-      
-      dart-sdk/bin/dart pub get --no-precompile
-      dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
-      
-      #chmod -R +rx dart-sdk/
-      dart-sdk/bin/dart compile exe bin/cbj_hub.dart -o CyBear-Jinni_Hub
-      # sudo dart-sdk/bin/dart bin/cbj_hub.dart .
-      
-      rm -r dart-sdk/
-      rm -r hub
-    
-
-      # We need to delete all the code from the dir after making the executable file,
-      # currently all python file exist inside the project and referanced by directory so we can't
-      # rm -r All code from cbj_hub
-
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       snapcraftctl build
 
     build-packages:
