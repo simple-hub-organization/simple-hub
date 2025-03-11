@@ -1,33 +1,37 @@
-  {
+{
     "name": "hub_js",
     "version": "0.0.1",
     "description": "CyBear Jinni hub helper in javascript in order to use javascript dependencies",
     "main": "index.js// Ch",
     "scripts": {
-      "start": "ts-node src/app.ts"
+        "start": "ts-node src/app.ts"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/guyluz11/hub_js.git"
+        "type": "git",
+        "url": "git+https://github.com/guyluz11/hub_js.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/guyluz11/hub_js/issues"
+        "url": "https://github.com/guyluz11/hub_js/issues"
     },
     "engines": {
-      "node": ">=18.0.0"
+        "node": ">=18.0.0"
     },
     "homepage": "https://github.com/guyluz11/hub_js#readme",
     "dependencies": {
-      "@matter/main": "^0.11.9",
-      "@project-chip/matter.js": "^0.11.9",
-      "ws": "^8.18.1"
+        "@matter/main": "^0.11.9",
+        "@project-chip/matter.js": "^0.11.9",
+        "express": "^4.21.2",
+        "uuid": "^11.1.0",
+        "ws": "^8.18.1"
     },
     "devDependencies": {
-      "@types/node": "^22.13.5",
-      "@types/uuid": "^10.0.0",
-      "@types/ws": "^8.5.14",
-      "typescript": "^5.7.3"
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.13.10",
+        "@types/uuid": "^10.0.0",
+        "@types/ws": "^8.5.14",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2"
     }
-  }
+}

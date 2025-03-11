@@ -43,9 +43,6 @@ parts:
       - nodejs
 
   security-bear:
-    source: ../../apps/security_bear
-    after:
-      - scripts-files-security-bear
     plugin: nil
     override-build: |
       
@@ -105,21 +102,29 @@ parts:
 
 
   hub-js:
-    source: ../../apps/hub_javascript
     plugin: nil
     override-build: |
-      curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-      apt-get install -y nodejs
-      npm install -g npm@latest
+      PROJECT_PATH="../../apps/hub_javascript"
+      MAIN_FILE="src/app.ts"
+      EXECUTABLE_NAME="hub-js"
+      
+      cp -r "$PROJECT_PATH" .
+      
+      cd hub_javascript
+      npm install
+      npx tsc
+      rm -r src
+      
+
     build-packages:
       - curl
+      - nodejs
+      - npm
     stage-packages:
       - nodejs
       - npm
 
   cbj-hub:
-    after:
-      - scripts-files-hub
     plugin: nil
     override-build: |
       PROJECT_PATH="../../apps/hub"
@@ -165,7 +170,7 @@ apps:
     plugs: [network, network-bind, network-manager, network-observe]
 
   hub-js:
-    command: node src/app.ts
+    command: node hub_javascript/dist/app.js
     daemon: simple
     install-mode: enable
     restart-condition: always
