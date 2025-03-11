@@ -26,14 +26,9 @@ confinement: strict  # devmode/classic/strict, use 'strict' once you have the ri
 
 
 architectures:
-  - build-on: armhf
-    run-on: armhf
-
-  - build-on: arm64
-    run-on: arm64
-
-  - build-on: amd64
-    run-on: amd64
+  - armhf
+  - arm64
+  - amd64
 
 parts:
   mosquitto:
@@ -55,7 +50,7 @@ parts:
       rm README.md
 
   security-bear:
-    source: ../../../apps/security_bear
+    source: ../../apps/security_bear
     after:
       - scripts-files-security-bear
     plugin: dump
@@ -134,16 +129,20 @@ parts:
       rm README.md
 
   hub-js:
-    plugin: nodejs
-    source: ../../../apps/hub_javascript
-    node-engine: 18
-    npm-install-parameters: ["--omit=dev"]  # Install only production dependencies
+    source: ../../apps/hub_javascript
+    plugin: nil
+    override-build: |
+      curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+      apt-get install -y nodejs
+      npm install -g npm@latest
+    build-packages:
+      - curl
     stage-packages:
       - nodejs
       - npm
 
   cbj-hub:
-    source: ../../../apps/hub
+    source: ../../apps/hub
     after:
       - scripts-files-hub
     plugin: dump
@@ -169,7 +168,7 @@ parts:
       rm -r hub
     
 
-  # We need to delete all the code from the dir after making the executable file,
+      # We need to delete all the code from the dir after making the executable file,
       # currently all python file exist inside the project and referanced by directory so we can't
       # rm -r All code from cbj_hub
 
