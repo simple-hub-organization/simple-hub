@@ -37,18 +37,28 @@ parts:
       - mosquitto
 
   node-red:
-    plugin: nil
+    plugin: npm
+    npm-include-node: true
+    npm-node-version: 18.20.6
+    source: .
+    override-build: |
+      set -eux
+      npm install -g node-red
+      mkdir -p $SNAPCRAFT_PART_INSTALL/bin
+      ln -s $(npm root -g)/../bin/node-red $SNAPCRAFT_PART_INSTALL/bin/node-red
+    build-packages:
+      - nodejs
     stage-packages:
-      - node-red
       - nodejs
 
   security-bear:
-    plugin: nil
+    plugin: dump
+    source: https://github.com/simple-hub-organization/simple-hub.git
     override-build: |
-      
-      PROJECT_PATH="../../apps/security_bear"
+      echo "Security Bear build"
+      PROJECT_PATH="~/parts/security-bear/build/apps/hub/security_bear"
       MAIN_FILE="bin/main.dart"
-      EXECUTABLE_NAME ="Security-Bear"
+      EXECUTABLE_NAME="Security-Bear"
   
       scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       snapcraftctl build
@@ -58,7 +68,6 @@ parts:
       - unzip
       - git
     stage-packages:
-      - crda
       - iputils-arping
       - iw
       - libbluetooth3
@@ -102,9 +111,12 @@ parts:
 
 
   hub-js:
-    plugin: nil
+    source: https://github.com/simple-hub-organization/simple-hub.git
+    plugin: npm
+    npm-include-node: true
+    npm-node-version: 18.20.6
     override-build: |
-      PROJECT_PATH="../../apps/hub_javascript"
+      PROJECT_PATH="~/parts/hub-js/build/apps/hub_javascript"
       MAIN_FILE="src/app.ts"
       EXECUTABLE_NAME="hub-js"
       
@@ -114,24 +126,26 @@ parts:
       npm install
       npx tsc
       rm -r src
-      
+      cd ..
 
     build-packages:
       - curl
       - nodejs
-      - npm
     stage-packages:
       - nodejs
-      - npm
 
   cbj-hub:
-    plugin: nil
+    source: https://github.com/simple-hub-organization/simple-hub.git
+    plugin: dump
     override-build: |
-      PROJECT_PATH="../../apps/hub"
+      PROJECT_PATH="~/parts/cbj-hub/build/apps/hub"
       MAIN_FILE="bin/cbj_hub.dart"
-      EXECUTABLE_NAME ="CyBear-Jinni_Hub"
-      
-      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
+      EXECUTABLE_NAME="CyBear-Jinni_Hub"
+      echo "We are here"
+      pwd
+      ls -la
+      cd ~/project/
+      scripts/bashScripts/nativeExecutableMaker.sh $PROJECT_PATH $MAIN_FILE $EXECUTABLE_NAME
       snapcraftctl build
 
     build-packages:
@@ -144,7 +158,6 @@ parts:
       - libevent-dev
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
-      - python3
 
 apps:
 
@@ -156,7 +169,7 @@ apps:
     plugs: [network, network-bind]
 
   node-red:
-    command: usr/bin/node-red
+    command: node-red
     daemon: simple
     install-mode: enable
     restart-condition: always
