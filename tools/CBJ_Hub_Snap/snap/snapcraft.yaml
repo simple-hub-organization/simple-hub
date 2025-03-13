@@ -49,17 +49,17 @@ parts:
     plugin: nil
     source: .
     after:
-      - cbj-hub
+      - hub
     override-build: |
       
       echo "Security Bear build"
-      PROJECT_PATH="$HOME/parts/cbj-hub/build/apps/security_bear"
+      PROJECT_PATH="$HOME/parts/hub/build/apps/security_bear"
       MAIN_FILE="bin/main.dart"
       EXECUTABLE_NAME="Security-Bear"
       
       cd $HOME/project/
       scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
-      mv "$PROJECT_PATH/$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
+      mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
 
     build-packages:
@@ -108,14 +108,14 @@ parts:
 
   hub-js:
     after:
-      - cbj-hub
+      - hub
     plugin: npm
     source: .
     npm-include-node: true
     npm-node-version: 18.20.6
     override-build: |
       set -x
-      PROJECT_PATH="$HOME/parts/cbj-hub/build/apps/hub_javascript"
+      PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
       MAIN_FILE="src/app.ts"
       EXECUTABLE_NAME="hub-js"
       cp -r "$PROJECT_PATH" .
@@ -124,6 +124,8 @@ parts:
       rm -rf node_modules/
       npm install --omit=optional
       npx tsc
+      npm install -g pkg
+
 
     build-packages:
       - curl
@@ -132,27 +134,27 @@ parts:
     stage-packages:
       - nodejs
 
-  cbj-hub:
+  hub:
     source: https://github.com/simple-hub-organization/simple-hub.git
     plugin: dump
     override-build: |
       
-      rm -rf "$HOME/parts/cbj-hub/build/tools/CBJ_App_Snap"
-      rm -rf "$HOME/parts/cbj-hub/build/tools/CBJ_Smart-Device-Snap"
-      rm -rf "$HOME/parts/cbj-hub/build/tools/cbj-kubernetes-files"
-      rm -rf "$HOME/parts/cbj-hub/build/apps/smart_device"
-      rm -rf "$HOME/parts/cbj-hub/build/apps/site"
-      rm -rf "$HOME/parts/cbj-hub/build/apps/remote_pipes_routing"
-      rm -rf "$HOME/parts/cbj-hub/build/apps/remote-pipes"
-      rm -rf "$HOME/parts/cbj-hub/build/node_modules"
-      rm -rf "$HOME/parts/cbj-hub/build/.idea"
+      rm -rf "$HOME/parts/hub/build/tools/CBJ_App_Snap"
+      rm -rf "$HOME/parts/hub/build/tools/CBJ_Smart-Device-Snap"
+      rm -rf "$HOME/parts/hub/build/tools/cbj-kubernetes-files"
+      rm -rf "$HOME/parts/hub/build/apps/smart_device"
+      rm -rf "$HOME/parts/hub/build/apps/site"
+      rm -rf "$HOME/parts/hub/build/apps/remote_pipes_routing"
+      rm -rf "$HOME/parts/hub/build/apps/remote-pipes"
+      rm -rf "$HOME/parts/hub/build/node_modules"
+      rm -rf "$HOME/parts/hub/build/.idea"
       
-      PROJECT_PATH="$HOME/parts/cbj-hub/build/apps/hub"
+      PROJECT_PATH="$HOME/parts/hub/build/apps/hub"
       MAIN_FILE="bin/cbj_hub.dart"
       EXECUTABLE_NAME="CyBear-Jinni_Hub"
       cd $HOME/project/
       scripts/bashScripts/nativeExecutableMaker.sh $PROJECT_PATH $MAIN_FILE $EXECUTABLE_NAME
-      mv "$PROJECT_PATH/$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
+      mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
 
     build-packages:
@@ -190,14 +192,15 @@ apps:
     plugs: [network, network-bind, network-manager, network-observe]
 
   hub-js:
-    command: node hub_javascript/dist/app.js
+    command: /usr/bin/node hub_javascript/dist/app.js
     daemon: simple
     install-mode: enable
     restart-condition: always
     plugs: [network, network-bind]
+#    environment:
+#      PATH: "$SNAP/usr/bin:$PATH"
 
-
-  cbj-hub:
+  hub:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
     install-mode: enable
