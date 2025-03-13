@@ -12,12 +12,17 @@ if [[ -z "$PROJECT_PATH" || -z "$MAIN_FILE" || -z "$EXECUTABLE_NAME" ]]; then
     exit 1
 fi
 
+rm -f dartsdk-*.zip
+
 scripts/bashScripts/dartSdkDownload.sh # Downloading dart-sdk for the correct architecture.
 
-unzip dartsdk-*.zip
+unzip -o dartsdk-*.zip
 rm dartsdk-*.zip
 
+rm -f "$PROJECT_PATH/pubspec.lock"
+
 dart-sdk/bin/dart pub get --no-precompile --directory="$PROJECT_PATH"
+dart-sdk/bin/dart run build_runner clean --directory="$PROJECT_PATH"
 dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs --directory="$PROJECT_PATH"
 
 dart-sdk/bin/dart compile exe "$PROJECT_PATH/$MAIN_FILE" -o "$EXECUTABLE_NAME"
