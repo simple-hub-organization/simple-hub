@@ -19,4 +19,4 @@ dependencies:
 
 dev_dependencies:
   # Collection of lint rules for Dart and Flutter projects
-  lint: ^1.10.0
+  lint: ^2.2.0
