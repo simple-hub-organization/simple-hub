@@ -1,5 +1,5 @@
 # Node modules
-/node_modules/
+node_modules/
 
 # TypeScript build output
 /dist/
@@ -37,3 +37,24 @@ Thumbs.db
 pids/
 *.pid
 *.seed
+
+# Ignore logs and debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ignore environment variables
+.env.local
+.env.*.local
+
+# Ignore build artifacts
+dist/
+build/
+out/
+
+# Ignore editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo

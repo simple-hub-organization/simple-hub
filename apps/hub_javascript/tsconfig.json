@@ -12,8 +12,10 @@
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": false,
-    "declaration": false
+    "declaration": false,
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo"
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts", "coverage"]
 }

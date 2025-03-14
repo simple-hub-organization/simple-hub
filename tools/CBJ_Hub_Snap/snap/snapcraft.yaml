@@ -118,13 +118,24 @@ parts:
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
       MAIN_FILE="src/app.ts"
       EXECUTABLE_NAME="hub-js"
+      cd $HOME/project/
+      
       cp -r "$PROJECT_PATH" .
       
       cd hub_javascript
       rm -rf node_modules/
-      npm install --omit=optional
-      npx tsc
-      npm install -g pkg
+      rm -rf dist/
+      rm -rf package-lock.json
+      npm install 
+      npm install typescript@5.8.2 -g
+      echo
+      NODE_OPTIONS="--max-old-space-size=4096" npx tsc
+      #      npx tsc 
+
+      #      npm install -g pkg
+      cd ..
+      mv hub_javascript "$SNAPCRAFT_PART_INSTALL/"
+      
 
 
     build-packages:

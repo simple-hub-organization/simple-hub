@@ -49,7 +49,7 @@ class HubJavascriptWebSocket {
         }
       },
       onError: (error) {
-        logger.e('Error: $error');
+        logger.e('Error hub javascript: $error');
       },
       onDone: () {
         logger.i('Connection closed');
