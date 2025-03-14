@@ -2,7 +2,7 @@
     "name": "hub_js",
     "version": "0.0.1",
     "description": "CyBear Jinni hub helper in javascript in order to use javascript dependencies",
-    "main": "index.js// Ch",
+    "main": "src/app.js",
     "scripts": {
         "start": "ts-node src/app.ts"
     },
@@ -31,6 +31,7 @@
         "@types/node": "^22.13.10",
         "@types/uuid": "^10.0.0",
         "@types/ws": "^8.5.14",
+        "pkg": "^5.8.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.8.2"
     }

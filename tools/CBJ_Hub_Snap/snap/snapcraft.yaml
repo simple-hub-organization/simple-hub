@@ -112,7 +112,7 @@ parts:
     plugin: npm
     source: .
     npm-include-node: true
-    npm-node-version: 18.20.6
+    npm-node-version: "node"
     override-build: |
       set -x
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
@@ -159,6 +159,8 @@ parts:
       rm -rf "$HOME/parts/hub/build/apps/remote-pipes"
       rm -rf "$HOME/parts/hub/build/node_modules"
       rm -rf "$HOME/parts/hub/build/.idea"
+      rm -rf "$HOME/parts/hub/build/package.json"
+      rm -rf "$HOME/parts/hub/build/package-lock.json"
       
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub"
       MAIN_FILE="bin/cbj_hub.dart"
@@ -208,8 +210,8 @@ apps:
     install-mode: enable
     restart-condition: always
     plugs: [network, network-bind]
-#    environment:
-#      PATH: "$SNAP/usr/bin:$PATH"
+    #    environment:
+    #      PATH: "$SNAP/usr/bin:$PATH"
 
   hub:
     command: CyBear-Jinni_Hub $SNAP
