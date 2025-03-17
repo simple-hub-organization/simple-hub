@@ -26,24 +26,32 @@ confinement: strict  # devmode/classic/strict, use 'strict' once you have the ri
 
 
 parts:
-  mosquitto:
-    plugin: nil
-    stage-packages:
-      - mosquitto
-
-  node-red:
-    plugin: npm
-    npm-include-node: true
-    npm-node-version: 18.20.6
+  dependent-snaps:
     source: .
-    override-build: |
-      set -eux
-      npm install -g node-red
-      ln -s $(npm root -g)/../bin/node-red $SNAPCRAFT_PART_INSTALL/node-red
-    build-packages:
-      - nodejs
+    plugin: nil
+    stage-snaps:
+      - mosquitto
+      - node-red
     stage-packages:
-      - nodejs
+      - python3
+      - libatomic1
+      - ca-certificates
+      - libcjson1
+      - libssl3t64
+      - libwebsockets19t64
+#      - libc6-armhf   # For ARMv7 architecture (32-bit)
+#      - libc6-arm64   # For ARMv8 architecture (64-bit)
+#      - libc.musl     # If using musl libraries
+#      - libatomic1    # As a common dependency for atomic operations
+
+#  node: # We dump in a specific version of node/npm from upstream.
+#    plugin: dump
+#    source:
+#      - on amd64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-x64.tar.gz
+#      - on armhf: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-armv7l.tar.gz
+#      - on arm64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-arm64.tar.gz
+#      - on s390x: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-s390x.tar.gz
+#      # - on ppc64el: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-ppc64le.tar.gz
 
   security-bear:
     plugin: nil
@@ -51,12 +59,12 @@ parts:
     after:
       - hub
     override-build: |
-      
+
       echo "Security Bear build"
       PROJECT_PATH="$HOME/parts/hub/build/apps/security_bear"
       MAIN_FILE="bin/main.dart"
       EXECUTABLE_NAME="Security-Bear"
-      
+
       cd $HOME/project/
       scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
@@ -107,49 +115,40 @@ parts:
       - wireless-tools
 
   hub-js:
-    after:
-      - hub
-    plugin: npm
+    #    after: [node, hub, dependent-snaps]
+    after: [hub, dependent-snaps]
+    plugin: nil
     source: .
-    npm-include-node: true
-    npm-node-version: "node"
     override-build: |
       set -x
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
       MAIN_FILE="src/app.ts"
       EXECUTABLE_NAME="hub-js"
       cd $HOME/project/
-      
+
       cp -r "$PROJECT_PATH" .
-      
+
       cd hub_javascript
       rm -rf node_modules/
       rm -rf dist/
       rm -rf package-lock.json
-      npm install 
-      npm install typescript@5.8.2 -g
-      echo
-      NODE_OPTIONS="--max-old-space-size=4096" npx tsc
-      #      npx tsc 
-
-      #      npm install -g pkg
+      npm config set registry https://registry.npmjs.org/
+      npm install
+      #      npx tsc
       cd ..
       mv hub_javascript "$SNAPCRAFT_PART_INSTALL/"
-      
-
 
     build-packages:
       - curl
-      - nodejs
-      - npm
-    stage-packages:
-      - nodejs
+#    stage-packages:
+#      - python3
+#      - libatomic1
 
   hub:
     source: https://github.com/simple-hub-organization/simple-hub.git
     plugin: dump
     override-build: |
-      
+
       rm -rf "$HOME/parts/hub/build/tools/CBJ_App_Snap"
       rm -rf "$HOME/parts/hub/build/tools/CBJ_Smart-Device-Snap"
       rm -rf "$HOME/parts/hub/build/tools/cbj-kubernetes-files"
@@ -161,7 +160,8 @@ parts:
       rm -rf "$HOME/parts/hub/build/.idea"
       rm -rf "$HOME/parts/hub/build/package.json"
       rm -rf "$HOME/parts/hub/build/package-lock.json"
-      
+      rm -rf "$HOME/parts/hub/build/README.md"
+
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub"
       MAIN_FILE="bin/cbj_hub.dart"
       EXECUTABLE_NAME="CyBear-Jinni_Hub"
@@ -182,20 +182,11 @@ parts:
       - iputils-ping
 
 apps:
-
-  mosquitto:
-    command: usr/sbin/mosquitto
-    daemon: simple
-    install-mode: enable
-    restart-condition: always
-    plugs: [network, network-bind]
-
-  node-red:
-    command: node-red
-    daemon: simple
-    install-mode: enable
-    restart-condition: always
-    plugs: [network, network-bind]
+#  npm:
+#    command: bin/npm
+#    plugs:
+#      - home
+#      - network
 
   security-bear:
     command: Security-Bear $SNAP
@@ -204,14 +195,12 @@ apps:
     restart-condition: always
     plugs: [network, network-bind, network-manager, network-observe]
 
-  hub-js:
-    command: /usr/bin/node hub_javascript/dist/app.js
-    daemon: simple
-    install-mode: enable
-    restart-condition: always
-    plugs: [network, network-bind]
-    #    environment:
-    #      PATH: "$SNAP/usr/bin:$PATH"
+#  hub-js:
+#    command: tools/CBJ_Hub_Snap/scripts/bashScripts/start_hub_js.sh
+#    daemon: simple
+#    install-mode: enable
+#    restart-condition: always
+#    plugs: [network, network-bind]
 
   hub:
     command: CyBear-Jinni_Hub $SNAP
@@ -221,3 +210,18 @@ apps:
     plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe]
     # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
 
+  node-red:
+    command: bin/startNR
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs:
+      - network
+      - network-bind
+
+  mosquitto:
+    command: launcher.sh
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [ home, network, network-bind ]
