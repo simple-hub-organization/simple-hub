@@ -1,6 +1,5 @@
-import {matterAPI, MatterAPI} from './integrations/matter/matter_integration';
-import startWebSocketServer from './services/web_socket_server';
-
+import {matterAPI} from './integrations/matter/matter_integration.js';
+import startWebSocketServer from './services/web_socket_server.js';
 
 export async function main(){
     await startIntegraions();
@@ -16,7 +15,7 @@ export async function main(){
 
     // // TODO: Get info of device by device id 
     // matterAPI.getDeviceInfo(nodeIdN)
-    // .then((info: string) => console.log("deviceInfo " + info))
+    // .then((info) => console.log("deviceInfo " + info))
     // .catch(error => console.error("Error Commission:", error));
 
     // // TODO: Set device state 
@@ -24,19 +23,15 @@ export async function main(){
     // .then(() => console.log("Change device state"))
     // .catch(error => console.error("Error Commission:", error));
 
-
     // // TODO: Listen for changes
     // matterAPI.listenForChanges(nodeIdN)
     // .then(() => console.log("Change device state"))
     // .catch(error => console.error("Error Commission:", error));
-
 }
 
 async function startIntegraions(){
-
     const matterApiFuture = matterAPI.start();
     // Add here more integrations    
     await matterApiFuture.then(() => console.log("Matter API initialized and running"))
     .catch(error => console.error("Error initializing Matter API:", error));
-
-}
+} 

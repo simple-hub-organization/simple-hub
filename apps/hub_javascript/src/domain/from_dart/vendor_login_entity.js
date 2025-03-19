@@ -1,28 +1,11 @@
-import { VendorsAndServices } from "./request_action_types";
+import { VendorsAndServices } from "./request_action_types.js";
 
 export class VendorLoginEntity {
-    vendor: VendorsAndServices;
-    apiKey?: string;
-    authToken?: string;
-    pairingCode?: string;
-    email?: string;
-    password?: string;
-    ip?: string;
-    port?: string;
-    static event: string = 'setUpDevice';
-
+    static event = 'setUpDevice';
     
     constructor(
-        vendor: VendorsAndServices,
-        options?: {
-            apiKey?: string;
-            authToken?: string;
-            pairingCode?: string;
-            email?: string;
-            password?: string;
-            ip?: string;
-            port?: string;
-        }
+        vendor,
+        options
     ) {
         this.vendor = vendor;
         this.apiKey = options?.apiKey;
@@ -34,7 +17,7 @@ export class VendorLoginEntity {
         this.port = options?.port;
     }
 
-    static fromJson(json: any): VendorLoginEntity {
+    static fromJson(json) {
         return new VendorLoginEntity(json.vendor, {
             apiKey: json.credentials.apiKey,
             authToken: json.credentials.authToken,
@@ -45,4 +28,4 @@ export class VendorLoginEntity {
             port: json.credentials.port,
         });
     }
-}
+} 

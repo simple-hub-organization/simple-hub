@@ -4,29 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Trying to fix snap">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="WIP node-red is working">
+      <change afterPath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/scripts/bashScripts/start_hub_js.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/.bin/tsc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/.bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/.bin/tsserver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/constants.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/constants.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/crypto.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/crypto.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/module.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/module.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/node/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/uuid/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/uuid/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/ws/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/@types/ws/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/typescript/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/typescript/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/typescript/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/typescript/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/node_modules/typescript/ThirdPartyNoticeText.txt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/node_modules/typescript/ThirdPartyNoticeText.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/remote-pipes/melos_remote_pipes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote-pipes/melos_remote_pipes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/melos_simple-hub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/melos_simple-hub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/app.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +22,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "guyluz11"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;guyluz11&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
       <list>
@@ -53,12 +35,12 @@
       </list>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/simple-hub-organization/simple-hub.git",
-    "accountId": "8ba83b48-3d44-4c79-a80e-18570d54799e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/simple-hub-organization/simple-hub.git&quot;,
+    &quot;accountId&quot;: &quot;8ba83b48-3d44-4c79-a80e-18570d54799e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -84,16 +66,18 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/zrho/Documents/git/simple-hub/apps&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/guyc/Documents/git/simple-hub/apps/hub_javascript/src&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/hub_javascript/src" />
+      <recent name="$PROJECT_DIR$/tools/CBJ_Hub_Snap/heree" />
+      <recent name="$PROJECT_DIR$/tools/CBJ_Hub_Snap" />
       <recent name="$PROJECT_DIR$/apps" />
       <recent name="$PROJECT_DIR$/tools" />
-      <recent name="$PROJECT_DIR$/packages" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -236,8 +220,66 @@
       <option name="project" value="LOCAL" />
       <updated>1741906185653</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Removing node_modules folder">
+      <option name="closed" value="true" />
+      <created>1741917285670</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741917285670</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Removing node_modules folder">
+      <option name="closed" value="true" />
+      <created>1741917431011</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741917431011</updated>
+    </task>
+    <task id="LOCAL-00016" summary="WIP snapcraft cbj_javascript">
+      <option name="closed" value="true" />
+      <created>1741988697609</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1741988697609</updated>
+    </task>
+    <task id="LOCAL-00017" summary="WIP snapcraft cbj_javascript">
+      <option name="closed" value="true" />
+      <created>1741988876671</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1741988876671</updated>
+    </task>
+    <task id="LOCAL-00018" summary="WIP snapcraft cbj_javascript">
+      <option name="closed" value="true" />
+      <created>1741991782300</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1741991782300</updated>
+    </task>
+    <task id="LOCAL-00019" summary="WIP node-red is working">
+      <option name="closed" value="true" />
+      <created>1742229379238</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1742229379238</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -263,7 +305,10 @@
     <MESSAGE value="Fixed security bear missing dev dependency freez" />
     <MESSAGE value="Snap getting built successfully" />
     <MESSAGE value="Trying to fix snap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix snap" />
+    <MESSAGE value="Removing node_modules folder" />
+    <MESSAGE value="WIP snapcraft cbj_javascript" />
+    <MESSAGE value="WIP node-red is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP node-red is working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

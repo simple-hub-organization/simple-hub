@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "description": "CyBear Jinni hub helper in javascript in order to use javascript dependencies",
     "main": "src/app.js",
+    "type": "module",
     "scripts": {
         "start": "ts-node src/app.ts"
     },

@@ -44,14 +44,14 @@ parts:
 #      - libc.musl     # If using musl libraries
 #      - libatomic1    # As a common dependency for atomic operations
 
-#  node: # We dump in a specific version of node/npm from upstream.
-#    plugin: dump
-#    source:
-#      - on amd64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-x64.tar.gz
-#      - on armhf: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-armv7l.tar.gz
-#      - on arm64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-arm64.tar.gz
-#      - on s390x: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-s390x.tar.gz
-#      # - on ppc64el: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-ppc64le.tar.gz
+  node: # We dump in a specific version of node/npm from upstream.
+    plugin: dump
+    source:
+      - on amd64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-x64.tar.gz
+      - on armhf: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-armv7l.tar.gz
+      - on arm64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-arm64.tar.gz
+      - on s390x: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-s390x.tar.gz
+      # - on ppc64el: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-ppc64le.tar.gz
 
   security-bear:
     plugin: nil
@@ -115,8 +115,7 @@ parts:
       - wireless-tools
 
   hub-js:
-    #    after: [node, hub, dependent-snaps]
-    after: [hub, dependent-snaps]
+    after: [node, hub, dependent-snaps]
     plugin: nil
     source: .
     override-build: |
@@ -134,7 +133,7 @@ parts:
       rm -rf package-lock.json
       npm config set registry https://registry.npmjs.org/
       npm install
-      #      npx tsc
+      #      0
       cd ..
       mv hub_javascript "$SNAPCRAFT_PART_INSTALL/"
 
@@ -182,11 +181,11 @@ parts:
       - iputils-ping
 
 apps:
-#  npm:
-#    command: bin/npm
-#    plugs:
-#      - home
-#      - network
+  npm:
+    command: bin/npm
+    plugs:
+      - home
+      - network
 
   security-bear:
     command: Security-Bear $SNAP
@@ -195,12 +194,12 @@ apps:
     restart-condition: always
     plugs: [network, network-bind, network-manager, network-observe]
 
-#  hub-js:
-#    command: tools/CBJ_Hub_Snap/scripts/bashScripts/start_hub_js.sh
-#    daemon: simple
-#    install-mode: enable
-#    restart-condition: always
-#    plugs: [network, network-bind]
+  hub-js:
+    command: "$SNAP"/bin/node "$SNAP"/hub_javascript/src/app.js
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind]
 
   hub:
     command: CyBear-Jinni_Hub $SNAP
