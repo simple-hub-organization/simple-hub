@@ -26,32 +26,23 @@ confinement: strict  # devmode/classic/strict, use 'strict' once you have the ri
 
 
 parts:
-  dependent-snaps:
+
+  include-snaps:
     source: .
     plugin: nil
     stage-snaps:
-      - mosquitto
       - node-red
+      - mosquitto
     stage-packages:
+      - python3
+      - libatomic1
       - python3
       - libatomic1
       - ca-certificates
       - libcjson1
       - libssl3t64
       - libwebsockets19t64
-#      - libc6-armhf   # For ARMv7 architecture (32-bit)
-#      - libc6-arm64   # For ARMv8 architecture (64-bit)
-#      - libc.musl     # If using musl libraries
-#      - libatomic1    # As a common dependency for atomic operations
 
-  node: # We dump in a specific version of node/npm from upstream.
-    plugin: dump
-    source:
-      - on amd64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-x64.tar.gz
-      - on armhf: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-armv7l.tar.gz
-      - on arm64: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-arm64.tar.gz
-      - on s390x: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-s390x.tar.gz
-      # - on ppc64el: https://nodejs.org/dist/v20.18.3/node-v20.18.3-linux-ppc64le.tar.gz
 
   security-bear:
     plugin: nil
@@ -59,7 +50,6 @@ parts:
     after:
       - hub
     override-build: |
-
       echo "Security Bear build"
       PROJECT_PATH="$HOME/parts/hub/build/apps/security_bear"
       MAIN_FILE="bin/main.dart"
@@ -115,7 +105,7 @@ parts:
       - wireless-tools
 
   hub-js:
-    after: [node, hub, dependent-snaps]
+    after: [include-snaps, hub]
     plugin: nil
     source: .
     override-build: |
@@ -123,7 +113,7 @@ parts:
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
       MAIN_FILE="src/app.ts"
       EXECUTABLE_NAME="hub-js"
-      cd $HOME/project/
+      cd $SNAPCRAFT_PART_INSTALL
 
       cp -r "$PROJECT_PATH" .
 
@@ -131,11 +121,11 @@ parts:
       rm -rf node_modules/
       rm -rf dist/
       rm -rf package-lock.json
-      npm config set registry https://registry.npmjs.org/
+      #      npm config set registry https://registry.npmjs.org/
       npm install
       #      0
       cd ..
-      mv hub_javascript "$SNAPCRAFT_PART_INSTALL/"
+      #      mv hub_javascript "$SNAPCRAFT_PART_INSTALL/"
 
     build-packages:
       - curl
@@ -195,7 +185,7 @@ apps:
     plugs: [network, network-bind, network-manager, network-observe]
 
   hub-js:
-    command: "$SNAP"/bin/node "$SNAP"/hub_javascript/src/app.js
+    command: tools/CBJ_Hub_Snap/scripts/bashScripts/start_hub_js.sh
     daemon: simple
     install-mode: enable
     restart-condition: always

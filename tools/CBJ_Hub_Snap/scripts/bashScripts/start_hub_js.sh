@@ -1,4 +1,3 @@
 #!/bin/sh
 
-
-"$SNAP"/bin/node hub_javascript/dist/app.js
+"$SNAP"/bin/node hub_javascript/src/app.js
