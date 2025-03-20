@@ -170,6 +170,7 @@ export class DeviceEntityNotAbstract extends DeviceEntityBase {
   toJSON() {
     return {
       uniqueId: this.uniqueId,
+      id: this.uniqueId,
       entityUniqueId: this.entityUniqueId,
       cbjEntityName: this.cbjEntityName,
       entityOriginalName: this.entityOriginalName,

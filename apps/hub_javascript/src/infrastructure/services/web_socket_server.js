@@ -1,4 +1,4 @@
-import WebSocket from 'ws';
+import { WebSocketServer } from 'ws';
 import { matterAPI } from '../integrations/matter/matter_integration.js';
 import { loggerService } from './logger_service.js';
 import { VendorLoginEntity } from '../../domain/from_dart/vendor_login_entity.js';
@@ -7,7 +7,7 @@ import { RequestActionObject } from '../../domain/from_dart/request_action_objec
 import { DeviceEntityNotAbstract } from '../../domain/from_dart/device_entity_base.js';
 
 const startWebSocketServer = (port = 9080) => {
-  const wss = new WebSocket.Server({ port: port });
+  const wss = new WebSocketServer({ port: port });
   loggerService.log('Server started');
 
   wss.on('connection', (ws) => {
