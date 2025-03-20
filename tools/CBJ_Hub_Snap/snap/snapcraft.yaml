@@ -169,6 +169,8 @@ parts:
       - libevent-dev
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
+      # For arp command to work
+      - net-tools
 
 apps:
   npm:
