@@ -24,6 +24,13 @@ description: |
 grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
 confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
 
+platforms:
+  armhf:
+    build-on: armhf
+  arm64:
+    build-on: arm64
+  amd64:
+    build-on: amd64
 
 parts:
 
@@ -31,7 +38,9 @@ parts:
     source: .
     plugin: nil
     stage-snaps:
+    # https://github.com/dceejay/nodered.snap/tree/master/snap
       - node-red
+    # https://github.com/eclipse-mosquitto/mosquitto/blob/master/snap/snapcraft.yaml
       - mosquitto
     stage-packages:
       - python3
