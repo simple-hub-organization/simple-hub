@@ -33,14 +33,13 @@ platforms:
     build-on: amd64
 
 parts:
-
   include-snaps:
     source: .
     plugin: nil
     stage-snaps:
-    # https://github.com/dceejay/nodered.snap/tree/master/snap
+      # https://github.com/dceejay/nodered.snap/tree/master/snap
       - node-red
-    # https://github.com/eclipse-mosquitto/mosquitto/blob/master/snap/snapcraft.yaml
+      # https://github.com/eclipse-mosquitto/mosquitto/blob/master/snap/snapcraft.yaml
       - mosquitto
     stage-packages:
       - python3
@@ -60,12 +59,14 @@ parts:
       - hub
     override-build: |
       echo "Security Bear build"
-      PROJECT_PATH="$HOME/parts/hub/build/apps/security_bear"
-      MAIN_FILE="bin/main.dart"
-      EXECUTABLE_NAME="Security-Bear"
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/../../hub/build/apps/security_bear"
+      
+      MAIN_FILE=bin/main.dart
+      EXECUTABLE_NAME=Security-Bear
 
-      cd $HOME/project/
-      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
+      cd "$SNAPCRAFT_PROJECT_DIR"      
+      
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME" "$SNAPCRAFT_PROJECT_DIR"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
 
@@ -89,7 +90,6 @@ parts:
       - libnl-genl-3-200
       - libnm0
       - libpam-cap
-      - libpcap0.8
       - libpcsclite1
       - libpolkit-agent-1-0
       - libpolkit-gobject-1-0
@@ -106,12 +106,12 @@ parts:
       - usb-modeswitch-data
       - wireless-regdb
       - wpasupplicant
-      - libatm1
-
       - network-manager-pptp
       - network-manager
 
       - wireless-tools
+    #      - libatm1
+    #  - libpcap0.8 // Maybe should be libpcap
 
   hub-js:
     after: [include-snaps, hub]
@@ -119,10 +119,11 @@ parts:
     source: .
     override-build: |
       set -x
-      PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
-      MAIN_FILE="src/app.ts"
-      EXECUTABLE_NAME="hub-js"
-      cd $SNAPCRAFT_PART_INSTALL
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/../../hub/build/apps/hub_javascript"
+      
+      MAIN_FILE=src/app.ts
+      EXECUTABLE_NAME=hub-js
+      cd "$SNAPCRAFT_PART_INSTALL"
 
       cp -r "$PROJECT_PATH" .
 
@@ -138,35 +139,51 @@ parts:
 
     build-packages:
       - curl
-#    stage-packages:
-#      - python3
-#      - libatomic1
+  #    stage-packages:
+  #      - python3
+  #      - libatomic1
 
   hub:
     source: https://github.com/simple-hub-organization/simple-hub.git
     plugin: dump
     override-build: |
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_App_Snap"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_Smart-Device-Snap"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/cbj-kubernetes-files"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/smart_device"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/site"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/remote_pipes_routing"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/remote-pipes"
+      rm -rf "$SNAPCRAFT_PART_BUILD/node_modules"
+      rm -rf "$SNAPCRAFT_PART_BUILD/.idea"
+      rm -rf "$SNAPCRAFT_PART_BUILD/package.json"
+      rm -rf "$SNAPCRAFT_PART_BUILD/package-lock.json"
+      rm -rf "$SNAPCRAFT_PART_BUILD/README.md"
 
-      rm -rf "$HOME/parts/hub/build/tools/CBJ_App_Snap"
-      rm -rf "$HOME/parts/hub/build/tools/CBJ_Smart-Device-Snap"
-      rm -rf "$HOME/parts/hub/build/tools/cbj-kubernetes-files"
-      rm -rf "$HOME/parts/hub/build/apps/smart_device"
-      rm -rf "$HOME/parts/hub/build/apps/site"
-      rm -rf "$HOME/parts/hub/build/apps/remote_pipes_routing"
-      rm -rf "$HOME/parts/hub/build/apps/remote-pipes"
-      rm -rf "$HOME/parts/hub/build/node_modules"
-      rm -rf "$HOME/parts/hub/build/.idea"
-      rm -rf "$HOME/parts/hub/build/package.json"
-      rm -rf "$HOME/parts/hub/build/package-lock.json"
-      rm -rf "$HOME/parts/hub/build/README.md"
-
-      PROJECT_PATH="$HOME/parts/hub/build/apps/hub"
-      MAIN_FILE="bin/cbj_hub.dart"
-      EXECUTABLE_NAME="CyBear-Jinni_Hub"
-      cd $HOME/project/
-      scripts/bashScripts/nativeExecutableMaker.sh $PROJECT_PATH $MAIN_FILE $EXECUTABLE_NAME
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/hub"
+      MAIN_FILE=bin/cbj_hub.dart
+      EXECUTABLE_NAME=CyBear-Jinni_Hub
+      cd "$SNAPCRAFT_PROJECT_DIR"
+      
+      #      # Define output file
+      #      OUTPUT_FILE="directory_contents.txt"
+      #      
+      #      # Get the current directory path
+      #      CURRENT_DIR=$(pwd)
+      #      
+      #      # Write to file
+      #      echo "Current Directory: $CURRENT_DIR" > "$OUTPUT_FILE"
+      #      echo "" >> "$OUTPUT_FILE"
+      #      echo "Files inside:" >> "$OUTPUT_FILE"
+      #      ls -la >> "$OUTPUT_FILE"
+      #      
+      #      # Print confirmation
+      #      echo "Directory contents saved to $OUTPUT_FILE"
+      
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME" "$SNAPCRAFT_PROJECT_DIR"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
+    
 
     build-packages:
       - wget

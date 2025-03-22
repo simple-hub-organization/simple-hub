@@ -5,7 +5,7 @@ echo "Making native executable of the project"
 PROJECT_PATH="$1"
 MAIN_FILE="$2"
 EXECUTABLE_NAME="$3"
-CURRENT_PATH="$HOME/project/"
+CURRENT_PATH="$4"
 
 if [[ -z "$PROJECT_PATH" || -z "$MAIN_FILE" || -z "$EXECUTABLE_NAME" ]]; then
     echo "Error: Missing arguments!"
