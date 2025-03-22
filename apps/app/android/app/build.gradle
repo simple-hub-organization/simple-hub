@@ -33,7 +33,7 @@ if (keystorePropertiesFile.exists()) {
 
 
 android {
-    namespace "com.cybearjinni.app"
+    namespace "com.mysimplehub.app"
     // compileSdkVersion flutter.compileSdkVersion
     compileSdkVersion 34
     ndkVersion flutter.ndkVersion
@@ -52,7 +52,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.cybearjinni.app"
+        applicationId "com.mysimplehub"
         minSdkVersion 22
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()

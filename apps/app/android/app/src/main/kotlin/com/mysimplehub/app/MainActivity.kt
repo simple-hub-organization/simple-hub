@@ -1,4 +1,4 @@
-package com.cybearjinni.app
+package com.mysimplehub.app
 
 import io.flutter.embedding.android.FlutterActivity
 

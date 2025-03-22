@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(runner LANGUAGES CXX)
 
-set(BINARY_NAME "CyBear-Jinni_App")
-set(APPLICATION_ID "com.cybearjinni.app")
+set(BINARY_NAME "Simple Hub")
+set(APPLICATION_ID "com.mysimplehub.app")
 
 cmake_policy(SET CMP0063 NEW)
 

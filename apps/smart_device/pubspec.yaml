@@ -1,7 +1,7 @@
 name: smart_device
 description: Creating CyBear Jinni Smart Devices
 version: 1.0.7
-homepage: https://cybearjinni.com
+homepage: https://mysimplehub.com
 publish_to: 'none'
 
 environment:

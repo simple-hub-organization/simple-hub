@@ -4,12 +4,25 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="WIP node-red is working">
-      <change afterPath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/scripts/bashScripts/start_hub_js.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Updating the snapcraft scripts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/app.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/.github/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/.github/CODE_OF_CONDUCT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/app/src/main/kotlin/com/cybearjinni/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/src/main/kotlin/com/mysimplehub/app/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/linux/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/linux/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/macos/Runner/Configs/AppInfo.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/macos/Runner/Configs/AppInfo.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/windows/runner/Runner.rc" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/runner/Runner.rc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/windows/runner/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/runner/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/remote-pipes/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote-pipes/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/remote_pipes_routing/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote_pipes_routing/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +98,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Dart Command Line App.main.dart">
+  <component name="RunManager" selected="Dart Command Line App.cbj_hub.dart">
     <configuration name="cbj_hub.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/apps/hub" />
@@ -102,8 +115,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Dart Command Line App.main.dart" />
         <item itemvalue="Dart Command Line App.cbj_hub.dart" />
+        <item itemvalue="Dart Command Line App.main.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +281,63 @@
       <option name="project" value="LOCAL" />
       <updated>1742229379238</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Converting hub_javascript to javascript">
+      <option name="closed" value="true" />
+      <created>1742411508608</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1742411508608</updated>
+    </task>
+    <task id="LOCAL-00021" summary="wip making hub-js work">
+      <option name="closed" value="true" />
+      <created>1742427550527</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1742427550527</updated>
+    </task>
+    <task id="LOCAL-00022" summary="wip making hub-js work">
+      <option name="closed" value="true" />
+      <created>1742428400458</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1742428400458</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Fixed missing code in hub_javascript">
+      <option name="closed" value="true" />
+      <created>1742478331754</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1742478331754</updated>
+    </task>
+    <task id="LOCAL-00024" summary="working in the snap">
+      <option name="closed" value="true" />
+      <created>1742480574596</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1742480574596</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Try to fix build">
+      <option name="closed" value="true" />
+      <created>1742486643815</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1742486643815</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Updating the snapcraft scripts">
+      <option name="closed" value="true" />
+      <created>1742654206766</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1742654206766</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -308,16 +377,17 @@
     <MESSAGE value="Removing node_modules folder" />
     <MESSAGE value="WIP snapcraft cbj_javascript" />
     <MESSAGE value="WIP node-red is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP node-red is working" />
+    <MESSAGE value="Converting hub_javascript to javascript" />
+    <MESSAGE value="wip making hub-js work" />
+    <MESSAGE value="Fixed missing code in hub_javascript" />
+    <MESSAGE value="working in the snap" />
+    <MESSAGE value="Try to fix build" />
+    <MESSAGE value="Updating the snapcraft scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating the snapcraft scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub/widgets/cbj_hub_in_network_widget.dart</url>
-          <line>54</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/entities_in_network_page.dart</url>
           <line>25</line>
@@ -347,31 +417,6 @@
           <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/entities_in_area_page.dart</url>
           <line>35</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart</url>
-          <line>116</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart</url>
-          <line>60</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart</url>
-          <line>58</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/local_db/local_db_hive_repository.dart</url>
-          <line>38</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart</url>
-          <line>20</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

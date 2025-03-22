@@ -92,7 +92,7 @@ BEGIN
             VALUE "CompanyName", "com.cybear-jinni.smart-home" "\0"
             VALUE "FileDescription", "A new Flutter project." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "cbj_app" "\0"
+            VALUE "InternalName", "com.mysimplehub" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2021 com.cybear-jinni.smart-home. All rights reserved." "\0"
             VALUE "OriginalFilename", "cbj_app.exe" "\0"
             VALUE "ProductName", "cbj_app" "\0"

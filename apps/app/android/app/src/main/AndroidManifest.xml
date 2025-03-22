@@ -25,7 +25,7 @@
 
 
     <application
-        android:label="CyBear Jinni"
+        android:label="Simple Hub"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

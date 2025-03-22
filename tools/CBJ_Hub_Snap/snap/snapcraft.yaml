@@ -111,7 +111,7 @@ parts:
 
       - wireless-tools
     #      - libatm1
-    #  - libpcap0.8 // Maybe should be libpcap
+    #  - libpcap0.8
 
   hub-js:
     after: [include-snaps, hub]
@@ -183,7 +183,6 @@ parts:
       scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME" "$SNAPCRAFT_PROJECT_DIR"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
-    
 
     build-packages:
       - wget
@@ -197,6 +196,8 @@ parts:
       - iputils-ping
       # For arp command to work
       - net-tools
+      - coreutils
+      - iputils-ping
 
 apps:
   npm:
@@ -224,7 +225,7 @@ apps:
     daemon: simple
     install-mode: enable
     restart-condition: always
-    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe]
+    plugs: [network, network-bind, network-observe, home, hardware-observe, system-observe, avahi-control, avahi-observe]
     # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
 
   node-red:

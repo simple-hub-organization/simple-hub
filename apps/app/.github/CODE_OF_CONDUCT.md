@@ -31,7 +31,7 @@ Unacceptable behavior includes, but is not limited to:
 
 ## Reporting and Enforcement
 
-If you witness or experience unacceptable behavior, please report it promptly to the project maintainers at email address - cybearjinni@gmail.com . All reports will be treated with confidentiality and will be taken seriously.
+If you witness or experience unacceptable behavior, please report it promptly to the project maintainers at email address - mysimplehub@gmail.com . All reports will be treated with confidentiality and will be taken seriously.
 
 The project maintainers will investigate the issue and may take appropriate action, such as warnings, temporary suspensions, or permanent bans, as deemed necessary. Our goal is to maintain a respectful and safe environment for everyone.
 

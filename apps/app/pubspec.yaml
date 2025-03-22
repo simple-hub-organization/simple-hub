@@ -1,7 +1,7 @@
 name: simple_hub
-description: CyBear Jinni app to interact with your CyBear Jinni Smart Devices
+description: Smart Home app to interact with your Smart Devices
 version: 1.4.11+75
-homepage: https://cybearjinni.com
+homepage: https://mysimplehub.com
 
 publish_to: 'none'
 

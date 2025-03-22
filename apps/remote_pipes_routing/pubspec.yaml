@@ -1,7 +1,7 @@
 name: remote_pipes_router
 description: A simple command-line application.
 version: 1.0.1
-homepage: https://cybearjinni.com
+homepage: https://mysimplehub.com
 
 environment:
   sdk: ^2.18.2
