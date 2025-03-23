@@ -6,6 +6,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   bonsoir_windows
   connectivity_plus
   file_selector_windows
+  flutter_timezone
   isar_flutter_libs
   nsd_windows
   permission_handler_windows

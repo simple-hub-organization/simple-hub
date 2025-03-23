@@ -4,25 +4,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Updating the snapcraft scripts">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Removed dump from snapcraft as this is now a monorepo.&#10;Improved readability and maintenance of snapcraft with nativeExecutableMaker.sh for all dart projects">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/.github/CODE_OF_CONDUCT.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/.github/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/app/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/android/app/src/main/kotlin/com/cybearjinni/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/app/src/main/kotlin/com/mysimplehub/app/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/linux/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/linux/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/macos/Runner/Configs/AppInfo.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/macos/Runner/Configs/AppInfo.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/linux/flutter/generated_plugins.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/windows/runner/Runner.rc" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/runner/Runner.rc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/windows/runner/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/runner/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/remote-pipes/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote-pipes/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/remote_pipes_routing/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote_pipes_routing/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/site/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,18 +76,18 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/guyc/Documents/git/simple-hub/apps/hub_javascript/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/zrho/Documents/git/simple-hub/apps/app/android&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/app/android" />
       <recent name="$PROJECT_DIR$/apps/hub_javascript/src" />
       <recent name="$PROJECT_DIR$/tools/CBJ_Hub_Snap/heree" />
       <recent name="$PROJECT_DIR$/tools/CBJ_Hub_Snap" />
       <recent name="$PROJECT_DIR$/apps" />
-      <recent name="$PROJECT_DIR$/tools" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -98,7 +95,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Dart Command Line App.cbj_hub.dart">
+  <component name="RunManager" selected="Flutter.Flutter Run -&gt; 'simple_hub'">
     <configuration name="cbj_hub.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/apps/hub" />

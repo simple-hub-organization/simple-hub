@@ -1,6 +1,6 @@
 name: simple_hub
 description: Smart Home app to interact with your Smart Devices
-version: 1.4.11+75
+version: 1.0.0+1
 homepage: https://mysimplehub.com
 
 publish_to: 'none'
@@ -63,7 +63,7 @@ dependencies:
   # An easy to implement custom switch
   flutter_switch: ^0.3.2
   # Getting the local timezone of the os.
-  flutter_timezone: ^1.0.8
+  flutter_timezone: ^4.1.0
   # Font Awesome Icon pack available as Flutter Icons.
   font_awesome_flutter: ^10.6.0
   # Annotations for freezed

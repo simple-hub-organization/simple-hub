@@ -198,6 +198,8 @@ parts:
       - net-tools
       - coreutils
       - iputils-ping
+      - mdns-scan
+      - avahi-utils
 
 apps:
   npm:
