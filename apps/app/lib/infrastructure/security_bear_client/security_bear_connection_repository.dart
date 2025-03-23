@@ -104,7 +104,7 @@ class _SecurityBearConnectionRepository
   ) async {
     ConnectivityResult? connectivityResult;
     try {
-      connectivityResult = await Connectivity().checkConnectivity();
+      connectivityResult = (await Connectivity().checkConnectivity()).first;
     } catch (e) {
       logger.w('Cant check connectivity this is probably PC, error\n$e');
     }

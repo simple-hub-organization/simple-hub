@@ -1,2 +1,0 @@
-/home/zrho/Documents/git/simple-hub/apps/app/android/app/.cxx/RelWithDebInfo/164y1z4a/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/home/zrho/Documents/git/simple-hub/apps/app/android/app/.cxx/RelWithDebInfo/164y1z4a/armeabi-v7a/CMakeFiles/edit_cache.dir
