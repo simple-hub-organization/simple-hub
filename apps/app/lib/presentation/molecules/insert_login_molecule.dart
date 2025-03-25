@@ -53,6 +53,18 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
     widget.onChange(loginEntity);
   }
 
+  void onIpChange(String value) {
+    loginEntity = loginEntityCopyWith(loginEntity: loginEntity, ip: value);
+
+    widget.onChange(loginEntity);
+  }
+
+  void onPortChange(String value) {
+    loginEntity = loginEntityCopyWith(loginEntity: loginEntity, port: value);
+
+    widget.onChange(loginEntity);
+  }
+
   void onAuthTokenChange(String value) {
     loginEntity =
         loginEntityCopyWith(loginEntity: loginEntity, authToken: value);
@@ -67,6 +79,8 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
     String? email,
     String? password,
     String? pairingCode,
+    String? ip,
+    String? port,
   }) =>
       VendorLoginEntity(
         loginEntity.vendor,
@@ -75,6 +89,8 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
         email: email ?? loginEntity.email,
         password: password ?? loginEntity.password,
         pairingCode: pairingCode ?? loginEntity.pairingCode,
+        ip: ip ?? loginEntity.ip,
+        port: port ?? loginEntity.port,
       );
 
   @override
@@ -103,10 +119,27 @@ class _InsertLoginMoleculeState extends State<InsertLoginMolecule> {
             ),
           ],
         );
-      case InsertLoginMoleculeType.addDeviceByPairingCode:
+      case InsertLoginMoleculeType.pairingCode:
         return TextFormFieldAtom(
           onChanged: onPairingCodeChange,
           labelText: 'Pairing Code',
+        );
+      case InsertLoginMoleculeType.ipPortPairingCode:
+        return Column(
+          children: [
+            TextFormFieldAtom(
+              onChanged: onIpChange,
+              labelText: 'IP',
+            ),
+            TextFormFieldAtom(
+              onChanged: onPairingCodeChange,
+              labelText: 'Pairing Code',
+            ),
+            TextFormFieldAtom(
+              onChanged: onPortChange,
+              labelText: 'Port',
+            ),
+          ],
         );
     }
   }
@@ -116,5 +149,6 @@ enum InsertLoginMoleculeType {
   authToken,
   apiKey,
   emailAndPassword,
-  addDeviceByPairingCode,
+  pairingCode,
+  ipPortPairingCode,
 }

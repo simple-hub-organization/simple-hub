@@ -21,13 +21,14 @@ export class RequestActionObject {
     // Static method to create an instance from JSON
     static fromJson(json) {
         const ids = JSON.parse(json.entitiesId);
-
+        const valuesMap =  new Map(Object.entries(JSON.parse(json.value)))
+        
         return new RequestActionObject(
             new Set(ids),
             json.property,
             json.actionType,
             json.vendors ? new Set(json.vendors) : undefined,
-            new Map(Object.entries(json.value).map(([key, val]) => [key, val]))
+            valuesMap
         );
     }
 

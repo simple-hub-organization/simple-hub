@@ -1,5 +1,6 @@
 import { WebSocketServer } from 'ws';
 import { matterAPI } from '../integrations/matter/matter_integration.js';
+import { SonyBraviaAPI } from '../integrations/sony/sony_integration.js';
 import { loggerService } from './logger_service.js';
 import { VendorLoginEntity } from '../../domain/from_dart/vendor_login_entity.js';
 import { EntityActions, EntityTypes, VendorsAndServices } from '../../domain/from_dart/request_action_types.js';
@@ -29,7 +30,7 @@ const startWebSocketServer = (port = 9080) => {
         }
         else if (data.event === RequestActionObject.event) {
           await setEntityState(data);
-          responses = ['{"resonse":"ok"}'];
+          responses = ['{"response":"ok"}'];
         }
       } catch (error) {
         console.error('Invalid message format:', error);
@@ -56,6 +57,23 @@ const startWebSocketServer = (port = 9080) => {
       const deviceId = await matterAPI.commissionDevice(vendorLogin.pairingCode);
       return matterAPI.getEntitiesForId(deviceId);      
     }
+    else if(vendorLogin.vendor === VendorsAndServices.Sony) {
+      if(vendorLogin.ip === undefined) {
+        return [];
+      }
+      const connected = await SonyBraviaAPI.connectDevice(
+        vendorLogin.ip,
+        vendorLogin.port,
+        vendorLogin.password
+      );
+      if(vendorLogin.password == undefined){
+        vendorLogin.password = '0000'
+      }
+      if (connected) {
+        return SonyBraviaAPI.getEntitiesForId(vendorLogin);
+      }
+      return [];
+    }
     return [];
   }
 
@@ -67,6 +85,9 @@ const startWebSocketServer = (port = 9080) => {
 
     if (requestAction.vendors?.has(VendorsAndServices.Matter)) {
       return matterAPI.setStateByAction(requestAction);
+    }
+    else if (requestAction.vendors?.has(VendorsAndServices.Sony)) {
+      return SonyBraviaAPI.setStateByAction(requestAction);
     }
   }
 

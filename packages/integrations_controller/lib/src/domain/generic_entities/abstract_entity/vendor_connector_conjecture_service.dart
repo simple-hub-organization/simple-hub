@@ -128,6 +128,8 @@ abstract class VendorConnectorConjectureService {
     return vendorEntityMap;
   }
 
+  Future<void> addMoreInformationOnEntity(DeviceEntityBase entity) async {}
+
   /// Converting new entity that got found into its vendor type
   Future<HashMap<String, DeviceEntityBase>> newEntityToVendorDevice(
     DeviceEntityBase entity, {
@@ -178,8 +180,12 @@ abstract class VendorConnectorConjectureService {
           vendorLoginService.email!,
           vendorLoginService.password!,
         );
-      case VendorLoginTypes.addDeviceByPairingCode:
+      case VendorLoginTypes.pairingCode:
         if (vendorLoginService.pairingCode == null) {
+          return;
+        }
+      case VendorLoginTypes.ipPairingCodePort:
+        if (vendorLoginService.ip == null) {
           return;
         }
         addDevice(vendorLoginService);

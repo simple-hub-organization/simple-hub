@@ -74,6 +74,7 @@ enum VendorsAndServices {
   jinniAssistant,
   apple,
   matter,
+  sony,
 }
 
 extension VendorsAndServicesExtension on VendorsAndServices {
@@ -140,6 +141,8 @@ enum EntityActions {
   play,
   volumeUp,
   volumeDown,
+  mute,
+  unMute,
   skipForeword,
   skipBackward,
   skipNextVid,
@@ -206,6 +209,9 @@ enum ActionValues {
 
   /// In Duration data type
   transitionDuration,
+  ip,
+  passsword,
+  port,
 }
 
 extension ActionValuesExtension on ActionValues {
@@ -222,7 +228,8 @@ enum VendorLoginTypes {
   authToken,
   apiKey,
   emailAndPassword,
-  addDeviceByPairingCode
+  pairingCode,
+  ipPairingCodePort,
 }
 
 /// Being added to send data for explain the type that was sent

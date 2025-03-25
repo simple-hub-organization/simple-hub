@@ -126,7 +126,9 @@ abstract class GenericSmartTvDeviceDtos
       deviceNetworkLastUpdate:
           DeviceNetworkLastUpdate(value: deviceNetworkLastUpdate),
       compUuid: DeviceCompUuid(compUuid),
-      smartTvSwitchState: GenericSmartTvSwitchState(smartTvSwitchState),
+      smartTvSwitchState: smartTvSwitchState == null
+          ? null
+          : GenericSmartTvSwitchState(smartTvSwitchState),
       pausePlayState: pausePlayState == null
           ? null
           : GenericSmartTvPausePlayState(pausePlayState),

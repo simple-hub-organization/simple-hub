@@ -46,6 +46,7 @@ export const VendorsAndServices = {
     JinniAssistant: "jinniAssistant",
     Apple: "apple",
     Matter: "matter",
+    Sony: "sony"
 };
 
 export function vendorsAndServicesFromString(typeAsString) {
@@ -89,6 +90,8 @@ export const EntityActions = {
     ItIsTrue: "itIsTrue",
     PausePlay: "pausePlay",
     ChangeVolume: "changeVolume",
+    Mute: "mute",
+    UnMute: "unMute",
     Jump: "jump",
     Skip: "skip",
     Pause: "pause",

@@ -4,42 +4,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Changing app name to Simple Hub and domain to com.mysimplehub.app">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="wip adding Sony Bravia TV support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/domain/connections_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/domain/connections_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/app_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/app_connection_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/demo_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/demo_connection_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/none_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/none_connection_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/remote_pipes_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/remote_pipes_connection_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/scene_atom.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/scene_atom.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/scenes_grid_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/scenes_grid_molecule.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_scene_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_scene_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/tabs/scenes_in_folders_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/tabs/scenes_in_folders_tab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/scenes_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/scenes_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/hub_server/hub_server_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/hub_server/hub_server_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/site/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/request_action_types.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/request_action_types.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/value_objects.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/value_objects.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/scene_cbj_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/scene_cbj_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/value_objects_scene_cbj.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/value_objects_scene_cbj.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/area/area_entity_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/area/area_entity_dtos.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/automations_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/automations_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_converter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_converter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.freezed.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/smart_device_flutter/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smart_device_flutter/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/smart_device_flutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smart_device_flutter/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/smart_tv_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/smart_tv_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_entities/sony_bravia_smart_tv_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_entities/sony_bravia_smart_tv_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/request_action_object.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/request_action_object.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/integrations/sony/sony_integration.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/integrations/sony/sony_integration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/services/web_socket_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/services/web_socket_server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,37 +55,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Dart Command Line App.cbj_hub.dart.executor": "Debug",
-    "Dart Command Line App.main.dart.executor": "Debug",
-    "Flutter.Flutter Run -> 'simple_hub'.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "io.flutter.reload.alreadyRun": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/zrho/Documents/git/simple-hub/apps/app/android",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Dart Command Line App.cbj_hub.dart.executor&quot;: &quot;Debug&quot;,
+    &quot;Dart Command Line App.main.dart.executor&quot;: &quot;Debug&quot;,
+    &quot;Flutter.Flutter Run -&gt; 'simple_hub'.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/guyc/Documents/git/simple-hub/apps/hub/lib/infrastructure/devices/sony&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony" />
       <recent name="$PROJECT_DIR$/apps/app/android" />
       <recent name="$PROJECT_DIR$/apps/hub_javascript/src" />
       <recent name="$PROJECT_DIR$/tools/CBJ_Hub_Snap/heree" />
       <recent name="$PROJECT_DIR$/tools/CBJ_Hub_Snap" />
-      <recent name="$PROJECT_DIR$/apps" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -118,7 +93,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Dart Command Line App.cbj_hub.dart">
+  <component name="RunManager" selected="Flutter.Flutter Run -&gt; 'simple_hub'">
     <configuration name="cbj_hub.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/apps/hub" />
@@ -359,7 +334,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742725911434</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fixing hub app connection">
+      <option name="closed" value="true" />
+      <created>1742905937736</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1742905937736</updated>
+    </task>
+    <task id="LOCAL-00029" summary="wip adding Sony Bravia TV support">
+      <option name="closed" value="true" />
+      <created>1742912318443</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1742912318443</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -406,7 +397,9 @@
     <MESSAGE value="Try to fix build" />
     <MESSAGE value="Updating the snapcraft scripts" />
     <MESSAGE value="Working on releasing the app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on releasing the app" />
+    <MESSAGE value="Fixing hub app connection" />
+    <MESSAGE value="wip adding Sony Bravia TV support" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip adding Sony Bravia TV support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -448,41 +441,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
-          <line>95</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
-          <line>445</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart</url>
-          <line>95</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
-          <line>462</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
-          <line>453</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart</url>
-          <line>127</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart</url>
-          <line>53</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
           <line>231</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
@@ -490,6 +448,26 @@
           <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
           <line>241</line>
           <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/generic_smart_tv_entity/generic_smart_tv_device_dtos.g.dart</url>
+          <line>8</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_entities/sony_bravia_smart_tv_entity.dart</url>
+          <line>88</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart</url>
+          <line>211</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart</url>
+          <line>44</line>
+          <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

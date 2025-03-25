@@ -63,6 +63,30 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
     );
   }
 
+  Future onTV() async {
+    FlushbarHelper.createLoading(
+      message: 'Turning on the TV',
+      linearProgressIndicator: const LinearProgressIndicator(),
+    ).show(context);
+
+    setEntityState(
+      EntityProperties.smartTvSwitchState,
+      EntityActions.on,
+    );
+  }
+
+  Future offTV() async {
+    FlushbarHelper.createLoading(
+      message: 'Turning off the TV',
+      linearProgressIndicator: const LinearProgressIndicator(),
+    ).show(context);
+
+    setEntityState(
+      EntityProperties.smartTvSwitchState,
+      EntityActions.off,
+    );
+  }
+
   void onPause() {
     FlushbarHelper.createLoading(
       message: 'Close open app',
@@ -331,6 +355,64 @@ class _SmartTvMoleculeState extends State<SmartTvMolecule> {
                       ),
                       child: TextAtom(
                         'Up',
+                        style: TextStyle(
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SeparatorAtom(),
+                  TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(
+                        Colors.grey,
+                      ),
+                      side: WidgetStateProperty.all(
+                        BorderSide.lerp(
+                          const BorderSide(color: Colors.white60),
+                          const BorderSide(color: Colors.white60),
+                          22,
+                        ),
+                      ),
+                    ),
+                    onPressed: offTV,
+                    child: Tab(
+                      icon: FaIcon(
+                        FontAwesomeIcons.toggleOff,
+                        color: Theme.of(context).textTheme.bodyLarge!.color,
+                      ),
+                      child: TextAtom(
+                        'Off',
+                        style: TextStyle(
+                          color: Theme.of(context).textTheme.bodyLarge!.color,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SeparatorAtom(),
+                  TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(
+                        Colors.grey,
+                      ),
+                      side: WidgetStateProperty.all(
+                        BorderSide.lerp(
+                          const BorderSide(color: Colors.white60),
+                          const BorderSide(color: Colors.white60),
+                          22,
+                        ),
+                      ),
+                    ),
+                    onPressed: onTV,
+                    child: Tab(
+                      icon: FaIcon(
+                        FontAwesomeIcons.toggleOn,
+                        color: Theme.of(context).textTheme.bodyLarge!.color,
+                      ),
+                      child: TextAtom(
+                        'On',
                         style: TextStyle(
                           color: Theme.of(context).textTheme.bodyLarge!.color,
                           fontSize: 16,

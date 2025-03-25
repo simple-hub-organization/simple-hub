@@ -23,6 +23,7 @@
     "dependencies": {
         "@matter/main": "^0.11.9",
         "@project-chip/matter.js": "^0.11.9",
+        "bravia": "^1.3.3",
         "express": "^4.21.2",
         "uuid": "^11.1.0",
         "ws": "^8.18.1"

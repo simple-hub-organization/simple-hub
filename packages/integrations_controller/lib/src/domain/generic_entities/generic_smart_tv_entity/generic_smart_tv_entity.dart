@@ -136,7 +136,7 @@ class GenericSmartTvDE extends DeviceEntityBase {
       lastResponseFromDeviceTimeStamp:
           lastResponseFromDeviceTimeStamp.getOrCrash(),
       entityCbjUniqueId: entityCbjUniqueId.getOrCrash(),
-      smartTvSwitchState: smartTvSwitchState!.getOrCrash(),
+      smartTvSwitchState: smartTvSwitchState?.getOrCrash(),
       cbjDeviceVendor: cbjDeviceVendor.getOrCrash(),
       deviceVendor: deviceVendor.getOrCrash(),
       deviceNetworkLastUpdate: deviceNetworkLastUpdate.getOrCrash(),

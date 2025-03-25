@@ -28,7 +28,7 @@ class HubJavascriptWebSocket {
           onError: _handleError,
           onDone: _onDone,
         );
-        await completer.future; // Wait until stream closes before retrying
+        await completer.future;
       } catch (e) {
         logger.e('Failed to connect: $e');
         await _delayReconnect();
@@ -41,9 +41,8 @@ class HubJavascriptWebSocket {
     try {
       final Map<String, dynamic> jsonData =
           jsonDecode(messageAsString) as Map<String, dynamic>;
-      final DeviceEntityBase entity;
-
-      entity = DeviceEntityDtoBase.fromJson(jsonData).toDomain();
+      final DeviceEntityBase entity =
+          DeviceEntityDtoBase.fromJson(jsonData).toDomain();
 
       final VendorConnectorConjectureService? connector =
           VendorsConnectorConjecture().getVendorConnectorConjecture(

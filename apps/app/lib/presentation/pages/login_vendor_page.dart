@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages because this is our pacakge
+// ignore: depend_on_referenced_packages because this is our package
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:simple_hub/domain/connections_service.dart';
 import 'package:simple_hub/presentation/atoms/atoms.dart';
@@ -46,8 +46,10 @@ class _LoginVendorPageState extends State<LoginVendorPage> {
         type = InsertLoginMoleculeType.apiKey;
       case VendorLoginTypes.emailAndPassword:
         type = InsertLoginMoleculeType.emailAndPassword;
-      case VendorLoginTypes.addDeviceByPairingCode:
-        type = InsertLoginMoleculeType.addDeviceByPairingCode;
+      case VendorLoginTypes.pairingCode:
+        type = InsertLoginMoleculeType.pairingCode;
+      case VendorLoginTypes.ipPairingCodePort:
+        type = InsertLoginMoleculeType.ipPortPairingCode;
     }
     return InsertLoginMolecule(
       type: type,

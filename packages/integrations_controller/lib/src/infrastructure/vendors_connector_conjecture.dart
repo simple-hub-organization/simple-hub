@@ -54,6 +54,9 @@ class VendorsConnectorConjecture {
           .instanceMapByType[vendorLoginService.vendor]
           ?.login(vendorLoginService);
 
+  // When vendor need more information from entity it using this list
+  List<DeviceEntityBase> moreInformationForEntity = [];
+
   /// Getting ActiveHost that contain MdnsInfo property and activate it inside
   /// The correct company.
   Future setMdnsDevice(GenericUnsupportedDE entity) async {
@@ -138,6 +141,19 @@ class VendorsConnectorConjecture {
   }
 
   Future setHostNameDeviceByCompany(GenericUnsupportedDE entity) async {
+    // For existing entities that require more data from the scan
+    for (final DeviceEntityBase requestEntity in moreInformationForEntity) {
+      if (entity.deviceLastKnownIp.getOrCrash() ==
+          requestEntity.deviceLastKnownIp.getOrCrash()) {
+        sendMoreInformationForRequestedDevice(
+          entity: entity,
+          vendor: requestEntity.cbjDeviceVendor.vendorsAndServices,
+          entityUniqueId: requestEntity.entityCbjUniqueId,
+        );
+        return;
+      }
+    }
+
     final String? deviceHostNameLowerCase =
         entity.deviceHostName.getOrCrash()?.toLowerCase();
     if (deviceHostNameLowerCase == null || deviceHostNameLowerCase.isEmpty) {
@@ -149,9 +165,9 @@ class VendorsConnectorConjecture {
     for (final MapEntry<VendorsAndServices,
             VendorConnectorConjectureService> vendorAndInstance
         in VendorConnectorConjectureService.instanceMapByType.entries) {
-      for (final String adeviceHostNameLowerCase
+      for (final String deviceHostNameLowerCase
           in vendorAndInstance.value.deviceHostNameLowerCaseList) {
-        if (deviceHostNameLowerCase.contains(adeviceHostNameLowerCase)) {
+        if (deviceHostNameLowerCase.contains(deviceHostNameLowerCase)) {
           companyConnectorConjecture = vendorAndInstance.value;
           break;
         }
@@ -170,6 +186,21 @@ class VendorsConnectorConjecture {
       entity: entity,
       entityCbjUniqueId: deviceHostNameLowerCase,
     );
+  }
+
+  Future sendMoreInformationForRequestedDevice({
+    required DeviceEntityBase entity,
+    required VendorsAndServices vendor,
+    required CoreUniqueId entityUniqueId,
+  }) async {
+    entity.entityCbjUniqueId = entityUniqueId;
+    entity.cbjDeviceVendor = CbjDeviceVendor(vendor);
+    final VendorConnectorConjectureService? vendorConnectorConjectureService =
+        getVendorConnectorConjecture(vendor);
+    if (vendorConnectorConjectureService == null) {
+      return;
+    }
+    vendorConnectorConjectureService.addMoreInformationOnEntity(entity);
   }
 
   Future setHostNameDeviceByPort(

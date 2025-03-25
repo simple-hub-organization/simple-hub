@@ -17,7 +17,7 @@ class MatterConnectorConjecture extends VendorConnectorConjectureService {
               'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.5oTC_gXhq0Tm5U-jFh8MQAHaFj%26pid%3DApi&f=1&ipt=3784aeff30dcaabb602b299e96c2a280e4bfdd0d309fcc3d54d006c04743cdb9&ipo=images',
           uniqeMdnsList: ['_matter._tcp', '_matterc._udp'],
           uniqueIdentifierNameInMdns: ['matter'],
-          loginType: VendorLoginTypes.addDeviceByPairingCode,
+          loginType: VendorLoginTypes.pairingCode,
         );
 
   static final MatterConnectorConjecture _instance =
