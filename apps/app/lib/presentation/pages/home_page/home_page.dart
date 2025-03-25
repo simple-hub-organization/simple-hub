@@ -28,7 +28,9 @@ class _HomePageState extends State<HomePage> {
 
     _watchEntities();
     _watchAreas();
-    initializedScenes();
+    _watchScenes();
+
+    ConnectionsService.instance.requestAreaEntitiesScenes();
   }
 
   @override
@@ -39,10 +41,11 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  HashMap<String, SceneCbjEntity>? scenes;
+  HashMap<String, SceneEntity>? scenes;
 
   StreamSubscription<MapEntry<String, DeviceEntityBase>>? entitiesStream;
   StreamSubscription<MapEntry<String, AreaEntity>>? areasStream;
+  StreamSubscription<MapEntry<String, SceneEntity>>? scenesStream;
 
   HashMap<String, AreaEntity>? areas;
   HashMap<String, DeviceEntityBase>? entities;
@@ -53,18 +56,17 @@ class _HomePageState extends State<HomePage> {
   PageController? _pageController;
 
   Future initializedScenes() async {
-    final HashMap<String, SceneCbjEntity> scenecsTemp =
+    final HashMap<String, SceneEntity> scenesTemp =
         await ConnectionsService.instance.getScenes;
 
     setState(() {
-      if (scenecsTemp.isNotEmpty) {
+      if (scenesTemp.isNotEmpty) {
         _currentTabNum = 0;
       } else {
         _currentTabNum = 1;
       }
-      _pageController = PageController(initialPage: _currentTabNum!);
 
-      scenes = scenecsTemp;
+      scenes = scenesTemp;
     });
   }
 
@@ -81,7 +83,30 @@ class _HomePageState extends State<HomePage> {
         areas!.addEntries([areaEntery]);
       });
     });
-    _initializeAreas();
+  }
+
+  Future _watchScenes() async {
+    await scenesStream?.cancel();
+
+    scenesStream = ConnectionsService.instance.watchScenes().listen((scene) {
+      if (!mounted) {
+        return;
+      }
+      if (_currentTabNum == null) {
+        if (scene.value.uniqueId.getOrCrash() ==
+            UniqueId.empty().getOrCrash()) {
+          _currentTabNum = 1;
+        } else {
+          _currentTabNum = 0;
+        }
+        _pageController = PageController(initialPage: _currentTabNum!);
+      }
+
+      setState(() {
+        scenes ??= HashMap();
+        scenes!.addEntries([scene]);
+      });
+    });
   }
 
   Future _initializeAreas() async {
@@ -100,8 +125,7 @@ class _HomePageState extends State<HomePage> {
     entitiesStream = ConnectionsService.instance
         .watchEntities()
         .listen((MapEntry<String, DeviceEntityBase> entityEntery) {
-      if (!mounted ||
-          unSupportedEntityType(entityEntery.value.entityTypes.type)) {
+      if (!mounted) {
         return;
       }
 
@@ -110,7 +134,6 @@ class _HomePageState extends State<HomePage> {
         entities!.addEntries([entityEntery]);
       });
     });
-    _initializeEntities();
   }
 
   Future _initializeEntities() async {

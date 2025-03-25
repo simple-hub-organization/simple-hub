@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SceneCbjDtos _$SceneCbjDtosFromJson(Map<String, dynamic> json) {
-  return _SceneCbjDtos.fromJson(json);
+SceneDtos _$SceneDtosFromJson(Map<String, dynamic> json) {
+  return _SceneDtos.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SceneCbjDtos {
+mixin _$SceneDtos {
 // @JsonKey(ignore: true)
   String get uniqueId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -39,21 +39,20 @@ mixin _$SceneCbjDtos {
   String? get image => throw _privateConstructorUsedError;
   String? get lastDateOfExecute => throw _privateConstructorUsedError;
 
-  /// Serializes this SceneCbjDtos to a JSON map.
+  /// Serializes this SceneDtos to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of SceneCbjDtos
+  /// Create a copy of SceneDtos
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SceneCbjDtosCopyWith<SceneCbjDtos> get copyWith =>
+  $SceneDtosCopyWith<SceneDtos> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SceneCbjDtosCopyWith<$Res> {
-  factory $SceneCbjDtosCopyWith(
-          SceneCbjDtos value, $Res Function(SceneCbjDtos) then) =
-      _$SceneCbjDtosCopyWithImpl<$Res, SceneCbjDtos>;
+abstract class $SceneDtosCopyWith<$Res> {
+  factory $SceneDtosCopyWith(SceneDtos value, $Res Function(SceneDtos) then) =
+      _$SceneDtosCopyWithImpl<$Res, SceneDtos>;
   @useResult
   $Res call(
       {String uniqueId,
@@ -75,16 +74,16 @@ abstract class $SceneCbjDtosCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SceneCbjDtosCopyWithImpl<$Res, $Val extends SceneCbjDtos>
-    implements $SceneCbjDtosCopyWith<$Res> {
-  _$SceneCbjDtosCopyWithImpl(this._value, this._then);
+class _$SceneDtosCopyWithImpl<$Res, $Val extends SceneDtos>
+    implements $SceneDtosCopyWith<$Res> {
+  _$SceneDtosCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SceneCbjDtos
+  /// Create a copy of SceneDtos
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -176,11 +175,11 @@ class _$SceneCbjDtosCopyWithImpl<$Res, $Val extends SceneCbjDtos>
 }
 
 /// @nodoc
-abstract class _$$SceneCbjDtosImplCopyWith<$Res>
-    implements $SceneCbjDtosCopyWith<$Res> {
-  factory _$$SceneCbjDtosImplCopyWith(
-          _$SceneCbjDtosImpl value, $Res Function(_$SceneCbjDtosImpl) then) =
-      __$$SceneCbjDtosImplCopyWithImpl<$Res>;
+abstract class _$$SceneDtosImplCopyWith<$Res>
+    implements $SceneDtosCopyWith<$Res> {
+  factory _$$SceneDtosImplCopyWith(
+          _$SceneDtosImpl value, $Res Function(_$SceneDtosImpl) then) =
+      __$$SceneDtosImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -203,14 +202,14 @@ abstract class _$$SceneCbjDtosImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SceneCbjDtosImplCopyWithImpl<$Res>
-    extends _$SceneCbjDtosCopyWithImpl<$Res, _$SceneCbjDtosImpl>
-    implements _$$SceneCbjDtosImplCopyWith<$Res> {
-  __$$SceneCbjDtosImplCopyWithImpl(
-      _$SceneCbjDtosImpl _value, $Res Function(_$SceneCbjDtosImpl) _then)
+class __$$SceneDtosImplCopyWithImpl<$Res>
+    extends _$SceneDtosCopyWithImpl<$Res, _$SceneDtosImpl>
+    implements _$$SceneDtosImplCopyWith<$Res> {
+  __$$SceneDtosImplCopyWithImpl(
+      _$SceneDtosImpl _value, $Res Function(_$SceneDtosImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SceneCbjDtos
+  /// Create a copy of SceneDtos
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -232,7 +231,7 @@ class __$$SceneCbjDtosImplCopyWithImpl<$Res>
     Object? image = freezed,
     Object? lastDateOfExecute = freezed,
   }) {
-    return _then(_$SceneCbjDtosImpl(
+    return _then(_$SceneDtosImpl(
       uniqueId: null == uniqueId
           ? _value.uniqueId
           : uniqueId // ignore: cast_nullable_to_non_nullable
@@ -303,8 +302,8 @@ class __$$SceneCbjDtosImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SceneCbjDtosImpl extends _SceneCbjDtos {
-  _$SceneCbjDtosImpl(
+class _$SceneDtosImpl extends _SceneDtos {
+  _$SceneDtosImpl(
       {required this.uniqueId,
       required this.name,
       required this.backgroundColor,
@@ -324,8 +323,8 @@ class _$SceneCbjDtosImpl extends _SceneCbjDtos {
       : _entitiesWithAutomaticPurpose = entitiesWithAutomaticPurpose,
         super._();
 
-  factory _$SceneCbjDtosImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SceneCbjDtosImplFromJson(json);
+  factory _$SceneDtosImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SceneDtosImplFromJson(json);
 
 // @JsonKey(ignore: true)
   @override
@@ -370,14 +369,14 @@ class _$SceneCbjDtosImpl extends _SceneCbjDtos {
 
   @override
   String toString() {
-    return 'SceneCbjDtos(uniqueId: $uniqueId, name: $name, backgroundColor: $backgroundColor, entityStateGRPC: $entityStateGRPC, senderDeviceOs: $senderDeviceOs, senderDeviceModel: $senderDeviceModel, senderId: $senderId, compUuid: $compUuid, stateMassage: $stateMassage, areaPurposeType: $areaPurposeType, entitiesWithAutomaticPurpose: $entitiesWithAutomaticPurpose, nodeRedFlowId: $nodeRedFlowId, firstNodeId: $firstNodeId, iconCodePoint: $iconCodePoint, image: $image, lastDateOfExecute: $lastDateOfExecute)';
+    return 'SceneDtos(uniqueId: $uniqueId, name: $name, backgroundColor: $backgroundColor, entityStateGRPC: $entityStateGRPC, senderDeviceOs: $senderDeviceOs, senderDeviceModel: $senderDeviceModel, senderId: $senderId, compUuid: $compUuid, stateMassage: $stateMassage, areaPurposeType: $areaPurposeType, entitiesWithAutomaticPurpose: $entitiesWithAutomaticPurpose, nodeRedFlowId: $nodeRedFlowId, firstNodeId: $firstNodeId, iconCodePoint: $iconCodePoint, image: $image, lastDateOfExecute: $lastDateOfExecute)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SceneCbjDtosImpl &&
+            other is _$SceneDtosImpl &&
             (identical(other.uniqueId, uniqueId) ||
                 other.uniqueId == uniqueId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -432,24 +431,24 @@ class _$SceneCbjDtosImpl extends _SceneCbjDtos {
       image,
       lastDateOfExecute);
 
-  /// Create a copy of SceneCbjDtos
+  /// Create a copy of SceneDtos
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SceneCbjDtosImplCopyWith<_$SceneCbjDtosImpl> get copyWith =>
-      __$$SceneCbjDtosImplCopyWithImpl<_$SceneCbjDtosImpl>(this, _$identity);
+  _$$SceneDtosImplCopyWith<_$SceneDtosImpl> get copyWith =>
+      __$$SceneDtosImplCopyWithImpl<_$SceneDtosImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SceneCbjDtosImplToJson(
+    return _$$SceneDtosImplToJson(
       this,
     );
   }
 }
 
-abstract class _SceneCbjDtos extends SceneCbjDtos {
-  factory _SceneCbjDtos(
+abstract class _SceneDtos extends SceneDtos {
+  factory _SceneDtos(
       {required final String uniqueId,
       required final String name,
       required final String backgroundColor,
@@ -465,11 +464,11 @@ abstract class _SceneCbjDtos extends SceneCbjDtos {
       final String? firstNodeId,
       final String? iconCodePoint,
       final String? image,
-      final String? lastDateOfExecute}) = _$SceneCbjDtosImpl;
-  _SceneCbjDtos._() : super._();
+      final String? lastDateOfExecute}) = _$SceneDtosImpl;
+  _SceneDtos._() : super._();
 
-  factory _SceneCbjDtos.fromJson(Map<String, dynamic> json) =
-      _$SceneCbjDtosImpl.fromJson;
+  factory _SceneDtos.fromJson(Map<String, dynamic> json) =
+      _$SceneDtosImpl.fromJson;
 
 // @JsonKey(ignore: true)
   @override
@@ -505,10 +504,10 @@ abstract class _SceneCbjDtos extends SceneCbjDtos {
   @override
   String? get lastDateOfExecute;
 
-  /// Create a copy of SceneCbjDtos
+  /// Create a copy of SceneDtos
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SceneCbjDtosImplCopyWith<_$SceneCbjDtosImpl> get copyWith =>
+  _$$SceneDtosImplCopyWith<_$SceneDtosImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

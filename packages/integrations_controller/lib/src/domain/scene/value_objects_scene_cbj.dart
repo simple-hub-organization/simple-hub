@@ -2,10 +2,9 @@ import 'dart:collection';
 
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:integrations_controller/integrations_controller.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_errors.dart';
-import 'package:integrations_controller/src/domain/scene/scene_cbj_failures.dart';
 import 'package:integrations_controller/src/domain/scene/scene_cbj_validators.dart';
-import 'package:uuid/uuid.dart';
 
 @immutable
 abstract class ValueObjectScenesCbj<T> {
@@ -36,25 +35,6 @@ abstract class ValueObjectScenesCbj<T> {
 
   @override
   int get hashCode => value.hashCode;
-}
-
-class SceneUniqueId extends ValueObjectScenesCbj<String> {
-  factory SceneUniqueId() {
-    return SceneUniqueId._(right(const Uuid().v1()));
-  }
-
-  factory SceneUniqueId.fromUniqueString(String uniqueId) {
-    return SceneUniqueId._(right(uniqueId));
-  }
-
-  factory SceneUniqueId.discoveredSceneId() {
-    return SceneUniqueId._(right('00000000-0000-0000-0000-000000000000'));
-  }
-
-  const SceneUniqueId._(this.value);
-
-  @override
-  final Either<SceneCbjFailure<String>, String> value;
 }
 
 class SceneCbjName extends ValueObjectScenesCbj<String> {

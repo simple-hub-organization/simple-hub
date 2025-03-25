@@ -6,7 +6,7 @@ import 'package:simple_hub/presentation/atoms/atoms.dart';
 class ScenesGridMolecule extends StatefulWidget {
   const ScenesGridMolecule({required this.scenes});
 
-  final List<SceneCbjEntity> scenes;
+  final List<SceneEntity> scenes;
 
   @override
   State<ScenesGridMolecule> createState() => _ScenesGridMoleculeState();
@@ -38,7 +38,7 @@ class _ScenesGridMoleculeState extends State<ScenesGridMolecule> {
     return GridView.builder(
       reverse: true,
       itemBuilder: (context, index) {
-        final SceneCbjEntity sceneCbj = widget.scenes[index];
+        final SceneEntity sceneCbj = widget.scenes[index];
         return SceneAtom(sceneCbj);
       },
       itemCount: widget.scenes.length,

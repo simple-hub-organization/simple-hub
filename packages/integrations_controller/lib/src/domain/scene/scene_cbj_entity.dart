@@ -4,8 +4,8 @@ import 'package:integrations_controller/src/domain/core/value_objects.dart';
 import 'package:integrations_controller/src/domain/scene/value_objects_scene_cbj.dart';
 import 'package:integrations_controller/src/infrastructure/scenes/scene_cbj_dtos.dart';
 
-class SceneCbjEntity {
-  const SceneCbjEntity({
+class SceneEntity {
+  const SceneEntity({
     /// The unique id of the scene, will alsow be used as the flow/tab id.
     required this.uniqueId,
 
@@ -54,7 +54,7 @@ class SceneCbjEntity {
   final AreaPurposesTypes areaPurposeType;
   final EntitiesWithAutomaticPurpose entitiesWithAutomaticPurpose;
 
-  SceneCbjEntity copyWith({
+  SceneEntity copyWith({
     UniqueId? uniqueId,
     SceneCbjName? name,
     SceneCbjBackgroundColor? backgroundColor,
@@ -73,7 +73,7 @@ class SceneCbjEntity {
     AreaPurposesTypes? areaPurposeType,
     EntitiesWithAutomaticPurpose? entitiesWithAutomaticPurpose,
   }) =>
-      SceneCbjEntity(
+      SceneEntity(
         uniqueId: uniqueId ?? this.uniqueId,
         name: name ?? this.name,
         backgroundColor: backgroundColor ?? this.backgroundColor,
@@ -94,7 +94,7 @@ class SceneCbjEntity {
             entitiesWithAutomaticPurpose ?? this.entitiesWithAutomaticPurpose,
       );
 
-  SceneCbjDtos toInfrastructure() => SceneCbjDtos(
+  SceneDtos toInfrastructure() => SceneDtos(
         uniqueId: uniqueId.getOrCrash(),
         name: name.getOrCrash(),
         backgroundColor: backgroundColor.getOrCrash(),

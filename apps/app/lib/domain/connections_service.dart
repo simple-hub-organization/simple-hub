@@ -73,7 +73,7 @@ abstract interface class ConnectionsService {
 
   Future<bool> connect({String? address});
 
-  Future searchDevices();
+  Future<Either<HubFailures, Unit>> searchDevices();
 
   void setEntityState(RequestActionObject action);
 
@@ -87,17 +87,21 @@ abstract interface class ConnectionsService {
 
   Stream<MapEntry<String, AreaEntity>> watchAreas();
 
+  Stream<MapEntry<String, SceneEntity>> watchScenes();
+
   Future dispose();
 
   Future setNewArea(AreaEntity area);
 
-  Future<HashMap<String, SceneCbjEntity>> get getScenes;
+  Future<HashMap<String, SceneEntity>> get getScenes;
 
   Future activateScene(String id);
 
-  Future addScene(SceneCbjEntity scene);
+  Future addScene(SceneEntity scene);
 
   Future loginVendor(VendorLoginEntity value);
 
   Future<List<VendorEntityInformation>> getVendors();
+
+  Future requestAreaEntitiesScenes();
 }

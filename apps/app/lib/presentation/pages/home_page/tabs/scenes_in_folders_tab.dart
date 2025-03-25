@@ -12,7 +12,7 @@ import 'package:simple_hub/presentation/molecules/molecules.dart';
 class ScenesInFoldersTab extends StatelessWidget {
   const ScenesInFoldersTab({required this.scenes, this.areas});
 
-  final HashMap<String, SceneCbjEntity>? scenes;
+  final HashMap<String, SceneEntity>? scenes;
   final HashMap<String, AreaEntity>? areas;
 
   Widget scenesFoldersWidget(

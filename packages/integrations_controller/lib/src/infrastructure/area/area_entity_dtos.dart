@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:integrations_controller/src/domain/area/area_entity.dart';
 import 'package:integrations_controller/src/domain/area/value_objects_area.dart';
@@ -46,6 +48,8 @@ abstract class AreaEntityDtos implements _$AreaEntityDtos {
 
   factory AreaEntityDtos.fromJson(Map<String, dynamic> json) =>
       _$AreaEntityDtosFromJson(json);
+
+  String toJsonString() => jsonEncode(toJson());
 
   AreaEntity toDomain() {
     return AreaEntity(

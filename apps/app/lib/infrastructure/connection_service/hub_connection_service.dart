@@ -23,6 +23,7 @@ class _HubConnectionService implements ConnectionsService {
 
   StreamController<MapEntry<String, DeviceEntityBase>>? entitiesStream;
   StreamController<MapEntry<String, AreaEntity>>? areasStream;
+  StreamController<MapEntry<String, SceneEntity>>? scenesStream;
 
   BehaviorSubject<RequestsAndStatusFromHub> hubMessagesToApp =
       BehaviorSubject<RequestsAndStatusFromHub>();
@@ -42,7 +43,7 @@ class _HubConnectionService implements ConnectionsService {
     appMessagesToHub.sink.add(
       ClientStatusRequests(sendingType: SendingType.allEntities.name),
     );
-    final HashMap<String, DeviceEntityBase> entities = HashMap();
+    HashMap<String, DeviceEntityBase> entities = HashMap();
 
     await for (final RequestsAndStatusFromHub message
         in hubMessagesToApp.stream) {
@@ -53,17 +54,7 @@ class _HubConnectionService implements ConnectionsService {
       }
 
       try {
-        final Map<String, String> entitiesMap = Map<String, String>.from(
-          jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
-        );
-        entities.addEntries(
-          entitiesMap.entries.map(
-            (e) => MapEntry(
-              e.key,
-              DeviceHelper.convertJsonStringToDomain(e.value),
-            ),
-          ),
-        );
+        entities = entitiesJsonToMap(message);
       } catch (e) {
         logger.e('Error converting entities\n$e');
       }
@@ -79,7 +70,7 @@ class _HubConnectionService implements ConnectionsService {
       ClientStatusRequests(sendingType: SendingType.allAreas.name),
     );
 
-    final HashMap<String, AreaEntity> areas = HashMap();
+    HashMap<String, AreaEntity> areas = HashMap();
 
     await for (final RequestsAndStatusFromHub message
         in hubMessagesToApp.stream) {
@@ -90,19 +81,7 @@ class _HubConnectionService implements ConnectionsService {
       }
 
       try {
-        final Map<String, String> entitiesMap = Map<String, String>.from(
-          jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
-        );
-        areas.addEntries(
-          entitiesMap.entries.map(
-            (e) => MapEntry(
-              e.key,
-              AreaEntityDtos.fromJson(
-                jsonDecode(e.value) as Map<String, dynamic>,
-              ).toDomain(),
-            ),
-          ),
-        );
+        areas = areasJsonToMap(message);
       } catch (e) {
         logger.e('Error converting areas\n$e');
       }
@@ -113,12 +92,12 @@ class _HubConnectionService implements ConnectionsService {
   }
 
   @override
-  Future<HashMap<String, SceneCbjEntity>> get getScenes async {
+  Future<HashMap<String, SceneEntity>> get getScenes async {
     appMessagesToHub.sink.add(
       ClientStatusRequests(sendingType: SendingType.allScenes.name),
     );
 
-    final HashMap<String, SceneCbjEntity> scenesMap = HashMap();
+    HashMap<String, SceneEntity> scenesMap = HashMap();
 
     await for (final RequestsAndStatusFromHub message
         in hubMessagesToApp.stream) {
@@ -129,18 +108,7 @@ class _HubConnectionService implements ConnectionsService {
       }
 
       try {
-        final Map<String, String> entities = Map<String, String>.from(
-          jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
-        );
-        scenesMap.addEntries(
-          entities.entries.map(
-            (e) => MapEntry(
-              e.key,
-              SceneCbjDtos.fromJson(jsonDecode(e.value) as Map<String, dynamic>)
-                  .toDomain(),
-            ),
-          ),
-        );
+        scenesMap = sceneJsonToMap(message);
       } catch (e) {
         logger.e('Error converting scenes\n$e');
       }
@@ -151,7 +119,7 @@ class _HubConnectionService implements ConnectionsService {
   }
 
   @override
-  Future searchDevices() async {
+  Future<Either<HubFailures, Unit>> searchDevices() async {
     try {
       final Either<HubFailures, Unit> locationRequest =
           await askLocationPermissionAndLocationOn();
@@ -162,13 +130,14 @@ class _HubConnectionService implements ConnectionsService {
 
       logger.i('searchForHub');
       String? appDeviceIp;
-      if (await Connectivity().checkConnectivity() == ConnectivityResult.wifi &&
-          !kIsWeb) {
+      final List<ConnectivityResult> connectivityList =
+          await Connectivity().checkConnectivity();
+      if (connectivityList.first == ConnectivityResult.wifi && !kIsWeb) {
         final NetworkInfo networkInfo = NetworkInfo();
         networkName = await networkInfo.getWifiName();
         appDeviceIp = await networkInfo.getWifiIP();
       } else {
-        return false;
+        return left(const HubFailures.unexpected());
         // if (deviceIpOnTheNetwork == null) {
         //   // Issue https://github.com/CyBear-Jinni/cbj_app/issues/256
         //   return left(
@@ -189,7 +158,7 @@ class _HubConnectionService implements ConnectionsService {
         // }
       }
       if (appDeviceIp == null) {
-        return false;
+        return left(const HubFailures.unexpected());
       }
       final String subnet =
           appDeviceIp.substring(0, appDeviceIp.lastIndexOf('.'));
@@ -209,7 +178,7 @@ class _HubConnectionService implements ConnectionsService {
       await for (final ActiveHost activeHost in devicesWithPort) {
         logger.i('Found Cbj Hub device: ${activeHost.address}');
         hubIp = activeHost.address;
-        return true;
+        return right(unit);
         // if (networkBSSID != null && networkName != null) {
         // return insertHubInfo(
         //   networkIp: activeHost.address,
@@ -221,6 +190,7 @@ class _HubConnectionService implements ConnectionsService {
     } catch (e) {
       logger.w('Exception searchForHub\n$e');
     }
+    return left(const HubFailures.unexpected());
   }
 
   @override
@@ -242,6 +212,14 @@ class _HubConnectionService implements ConnectionsService {
   }
 
   @override
+  Stream<MapEntry<String, SceneEntity>> watchScenes() {
+    scenesStream?.close();
+
+    scenesStream = StreamController.broadcast();
+    return scenesStream!.stream;
+  }
+
+  @override
   Stream<MapEntry<String, AreaEntity>> watchAreas() {
     areasStream?.close();
 
@@ -250,13 +228,29 @@ class _HubConnectionService implements ConnectionsService {
   }
 
   @override
-  Future setNewArea(AreaEntity area) async {}
+  Future setNewArea(AreaEntity area) async {
+    appMessagesToHub.sink.add(
+      ClientStatusRequests(
+        sendingType: SendingType.areaType.name,
+        allRemoteCommands: area.toInfrastructure().toJsonString(),
+      ),
+    );
+  }
 
   @override
-  Future setEntitiesToArea(String areaId, HashSet entities) async {}
+  Future setEntitiesToArea(String areaId, HashSet entities) async {
+    appMessagesToHub.sink.add(
+      ClientStatusRequests(
+        sendingType: SendingType.setEntitiesForArea.name,
+        allRemoteCommands: jsonEncode(
+          {"areaId": areaId, "entities": entities.toList()},
+        ),
+      ),
+    );
+  }
 
   @override
-  Future addScene(SceneCbjEntity scene) async {}
+  Future addScene(SceneEntity scene) async {}
 
   @override
   Future activateScene(String id) async {}
@@ -310,7 +304,7 @@ class _HubConnectionService implements ConnectionsService {
 
   @override
   Future<bool> connect({String? address}) async {
-    searchDevices();
+    await searchDevices();
     if (hubIp == null) {
       return false;
     }
@@ -425,5 +419,113 @@ class _HubConnectionService implements ConnectionsService {
       logger.e('Caught error while stream with hub\n$e');
       await channel?.shutdown();
     }
+  }
+
+  @override
+  Future requestAreaEntitiesScenes() async {
+    appMessagesToHub.sink.add(
+      ClientStatusRequests(sendingType: SendingType.firstConnection.name),
+    );
+    final Set<SendingType> foundedTypes = {};
+
+    await for (final RequestsAndStatusFromHub message
+        in hubMessagesToApp.stream) {
+      final SendingType sendingType =
+          SendingTypeExtension.fromString(message.sendingType);
+      try {
+        if (sendingType == SendingType.areaType) {
+          final AreaEntity area = AreaEntityDtos.fromJson(
+            jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
+          ).toDomain();
+          areasStream?.add(MapEntry(area.uniqueId.getOrCrash(), area));
+
+          foundedTypes.add(SendingType.areaType);
+        }
+
+        if (sendingType == SendingType.sceneType) {
+          final SceneEntity scene = SceneDtos.fromJson(
+            jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
+          ).toDomain();
+          scenesStream?.add(MapEntry(scene.uniqueId.getOrCrash(), scene));
+          foundedTypes.add(SendingType.sceneType);
+        }
+
+        if (sendingType == SendingType.entityType) {
+          final DeviceEntityBase device =
+              DeviceHelper.convertJsonStringToDomain(
+            message.allRemoteCommands,
+          );
+          entitiesStream?.add(MapEntry(device.uniqueId.getOrCrash(), device));
+          foundedTypes.add(SendingType.entityType);
+        }
+
+        if (foundedTypes.length == 3) {
+          return;
+        }
+        continue;
+      } catch (e) {
+        logger.e('Error converting scenes\n$e');
+      }
+      break;
+    }
+  }
+
+  HashMap<String, SceneEntity> sceneJsonToMap(
+    RequestsAndStatusFromHub sceneJson,
+  ) {
+    final Map<String, String> entities = Map<String, String>.from(
+      jsonDecode(sceneJson.allRemoteCommands) as Map<String, dynamic>,
+    );
+    final HashMap<String, SceneEntity> scenesMap = HashMap();
+
+    scenesMap.addEntries(
+      entities.entries.map(
+        (e) => MapEntry(
+          e.key,
+          SceneDtos.fromJson(
+            jsonDecode(e.value) as Map<String, dynamic>,
+          ).toDomain(),
+        ),
+      ),
+    );
+    return scenesMap;
+  }
+
+  HashMap<String, AreaEntity> areasJsonToMap(RequestsAndStatusFromHub message) {
+    final Map<String, String> entitiesMap = Map<String, String>.from(
+      jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
+    );
+    final HashMap<String, AreaEntity> areas = HashMap();
+
+    areas.addEntries(
+      entitiesMap.entries.map(
+        (e) => MapEntry(
+          e.key,
+          AreaEntityDtos.fromJson(
+            jsonDecode(e.value) as Map<String, dynamic>,
+          ).toDomain(),
+        ),
+      ),
+    );
+    return areas;
+  }
+
+  HashMap<String, DeviceEntityBase> entitiesJsonToMap(
+    RequestsAndStatusFromHub message,
+  ) {
+    final Map<String, String> entitiesMap = Map<String, String>.from(
+      jsonDecode(message.allRemoteCommands) as Map<String, dynamic>,
+    );
+    final HashMap<String, DeviceEntityBase> entities = HashMap();
+
+    entities.addEntries(
+      entitiesMap.entries.map(
+        (e) => MapEntry(
+          e.key,
+          DeviceHelper.convertJsonStringToDomain(e.value),
+        ),
+      ),
+    );
+    return entities;
   }
 }

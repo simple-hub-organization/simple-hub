@@ -21,7 +21,7 @@ class NodeRedConverter {
   static const String bindingsTopicTypeName = 'bindings';
   static const String nodeRedPluginsApi = 'nodeRedPluginsApi';
 
-  static SceneCbjEntity convertToSceneNodes({
+  static SceneEntity convertToSceneNodes({
     required String nodeName,
     required Set<MapEntry<DeviceEntityBase, MapEntry<String?, String?>>>
         devicesPropertyAction,
@@ -52,7 +52,7 @@ class NodeRedConverter {
       nodes = '[${startingSceneNode.value}, $nodes, $brokerNode]';
     }
 
-    return SceneCbjEntity(
+    return SceneEntity(
       uniqueId: UniqueId(),
       name: SceneCbjName(nodeName),
       backgroundColor: SceneCbjBackgroundColor(sceneColor),

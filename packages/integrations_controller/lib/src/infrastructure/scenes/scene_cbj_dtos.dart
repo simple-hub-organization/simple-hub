@@ -10,8 +10,8 @@ part 'scene_cbj_dtos.freezed.dart';
 part 'scene_cbj_dtos.g.dart';
 
 @freezed
-abstract class SceneCbjDtos implements _$SceneCbjDtos {
-  factory SceneCbjDtos({
+abstract class SceneDtos implements _$SceneDtos {
+  factory SceneDtos({
     // @JsonKey(ignore: true)
     required String uniqueId,
     required String name,
@@ -30,12 +30,12 @@ abstract class SceneCbjDtos implements _$SceneCbjDtos {
     String? image,
     String? lastDateOfExecute,
     // required ServerTimestampConverter() FieldValue serverTimeStamp,
-  }) = _SceneCbjDtos;
+  }) = _SceneDtos;
 
-  SceneCbjDtos._();
+  SceneDtos._();
 
-  factory SceneCbjDtos.fromDomain(SceneCbjEntity sceneCbj) {
-    return SceneCbjDtos(
+  factory SceneDtos.fromDomain(SceneEntity sceneCbj) {
+    return SceneDtos(
       uniqueId: sceneCbj.uniqueId.getOrCrash(),
       name: sceneCbj.name.getOrCrash(),
       backgroundColor: sceneCbj.backgroundColor.getOrCrash(),
@@ -56,13 +56,13 @@ abstract class SceneCbjDtos implements _$SceneCbjDtos {
     );
   }
 
-  factory SceneCbjDtos.fromJson(Map<String, dynamic> json) =>
-      _$SceneCbjDtosFromJson(json);
+  factory SceneDtos.fromJson(Map<String, dynamic> json) =>
+      _$SceneDtosFromJson(json);
 
-  final String deviceDtoClassInstance = (SceneCbjDtos).toString();
+  final String deviceDtoClassInstance = (SceneDtos).toString();
 
-  SceneCbjEntity toDomain() {
-    return SceneCbjEntity(
+  SceneEntity toDomain() {
+    return SceneEntity(
       uniqueId: UniqueId.fromUniqueString(uniqueId),
       name: SceneCbjName(name),
       backgroundColor: SceneCbjBackgroundColor(backgroundColor),

@@ -4,16 +4,42 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Working on releasing the app">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Changing app name to Simple Hub and domain to com.mysimplehub.app">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/android/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/security_bear_client/security_bear_connection_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/security_bear_client/security_bear_connection_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/domain/connections_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/domain/connections_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/app_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/app_connection_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/demo_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/demo_connection_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/none_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/none_connection_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/remote_pipes_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/remote_pipes_connection_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/scene_atom.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/scene_atom.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/scenes_grid_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/scenes_grid_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_scene_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_scene_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/tabs/scenes_in_folders_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/tabs/scenes_in_folders_tab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/scenes_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/scenes_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/hub_server/hub_server_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/hub_server/hub_server_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/site/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/request_action_types.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/request_action_types.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/value_objects.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/core/value_objects.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/scene_cbj_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/scene_cbj_entity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/value_objects_scene_cbj.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/scene/value_objects_scene_cbj.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/area/area_entity_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/area/area_entity_dtos.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/automations_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/automations_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_converter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_converter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/node_red/node_red_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smart_device_flutter/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smart_device_flutter/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/smart_device_flutter/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smart_device_flutter/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,15 +118,10 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter.Flutter Run -&gt; 'simple_hub'">
+  <component name="RunManager" selected="Dart Command Line App.cbj_hub.dart">
     <configuration name="cbj_hub.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/apps/hub/bin/cbj_hub.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/apps/hub" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/apps/security_bear/bin/main.dart" />
-      <option name="workingDirectory" value="$PROJECT_DIR$/apps/security_bear" />
       <method v="2" />
     </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
@@ -110,7 +131,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Dart Command Line App.cbj_hub.dart" />
-        <item itemvalue="Dart Command Line App.main.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -412,14 +432,64 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/change_area_for_devices_page.dart</url>
-          <line>69</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub/widgets/cbj_hub_in_network_widget.dart</url>
+          <line>45</line>
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/entities_in_area_page.dart</url>
-          <line>35</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>190</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dev/network_tools-5.0.6/lib/src/services/impls/host_scanner_service_impl.dart</url>
+          <line>308</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>95</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>445</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart</url>
+          <line>95</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>462</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>453</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/home_page.dart</url>
+          <line>127</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart</url>
+          <line>53</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>231</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/hub_connection_service.dart</url>
+          <line>241</line>
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

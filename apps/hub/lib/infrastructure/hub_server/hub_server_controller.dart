@@ -73,10 +73,10 @@ class _HubServerController extends IHubServerController {
   /// HubRequestsToApp stream
   @override
   Future sendAllScenesFromHubRequestsStream() async {
-    final Map<String, SceneCbjEntity> allScenes = IcSynchronizer().getScenes();
+    final Map<String, SceneEntity> allScenes = IcSynchronizer().getScenes();
 
     if (allScenes.isNotEmpty) {
-      allScenes.map((String id, SceneCbjEntity d) {
+      allScenes.map((String id, SceneEntity d) {
         final RequestsAndStatusFromHub request = RequestsAndStatusFromHub(
           sendingType: SendingType.sceneType.name,
           allRemoteCommands: jsonEncode(d.toInfrastructure().toJson()),
@@ -85,28 +85,30 @@ class _HubServerController extends IHubServerController {
         return MapEntry(id, jsonEncode(d.toInfrastructure().toJson()));
       });
     } else {
-      // logger.w("Can't find any scenes in the local DB, sending empty");
-      // final SceneCbjEntity emptyScene = SceneCbjEntity(
-      //   uniqueId: UniqueId(),
-      //   name: SceneCbjName('Empty'),
-      //   backgroundColor: SceneCbjBackgroundColor(000.toString()),
-      //   image: SceneCbjBackgroundImage(null),
-      //   iconCodePoint: SceneCbjIconCodePoint(null),
-      //   automationString: SceneCbjAutomationString(null),
-      //   nodeRedFlowId: SceneCbjNodeRedFlowId(null),
-      //   firstNodeId: SceneCbjFirstNodeId(null),
-      //   lastDateOfExecute: SceneCbjLastDateOfExecute(null),
-      //   entityStateGRPC:
-      //       SceneCbjDeviceStateGRPC(EntityStateGRPC.ack.toString()),
-      //   senderDeviceModel: SceneCbjSenderDeviceModel(null),
-      //   senderDeviceOs: SceneCbjSenderDeviceOs(null),
-      //   senderId: SceneCbjSenderId(null),
-      //   compUuid: SceneCbjCompUuid(null),
-      //   stateMassage: SceneCbjStateMassage(null),
-      //   actions: [],
-      // );
-      // HubRequestsToApp.streamRequestsToApp.sink
-      // .add(emptyScene.toInfrastructure());
+      final SceneEntity emptyScene = SceneEntity(
+        uniqueId: UniqueId.empty(),
+        name: SceneCbjName('Empty'),
+        backgroundColor: SceneCbjBackgroundColor(000.toString()),
+        image: SceneCbjBackgroundImage(null),
+        iconCodePoint: SceneCbjIconCodePoint(null),
+        nodeRedFlowId: SceneCbjNodeRedFlowId(null),
+        firstNodeId: SceneCbjFirstNodeId(null),
+        lastDateOfExecute: SceneCbjLastDateOfExecute(null),
+        entityStateGRPC: SceneCbjDeviceStateGRPC(EntityStateGRPC.ack.name),
+        senderDeviceModel: SceneCbjSenderDeviceModel(null),
+        senderDeviceOs: SceneCbjSenderDeviceOs(null),
+        senderId: SceneCbjSenderId(null),
+        compUuid: SceneCbjCompUuid(null),
+        stateMassage: SceneCbjStateMassage(null),
+        actions: [],
+        areaPurposeType: AreaPurposesTypes.undefined,
+        entitiesWithAutomaticPurpose: EntitiesWithAutomaticPurpose(HashSet()),
+      );
+      final RequestsAndStatusFromHub request = RequestsAndStatusFromHub(
+        sendingType: SendingType.sceneType.name,
+        allRemoteCommands: jsonEncode(emptyScene.toInfrastructure().toJson()),
+      );
+      HubRequestsToApp.stream.sink.add(request);
     }
   }
 

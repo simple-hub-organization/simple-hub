@@ -21,7 +21,8 @@ class _DemoConnectionService implements ConnectionsService {
   Future<HashMap<String, AreaEntity>> get getAreas async => HashMap();
 
   @override
-  Future searchDevices() async {}
+  Future<Either<HubFailures, Unit>> searchDevices() async =>
+      left(const HubFailures.unexpected());
 
   @override
   void setEntityState(RequestActionObject action) {}
@@ -49,10 +50,10 @@ class _DemoConnectionService implements ConnectionsService {
   Future setEntitiesToArea(String areaId, HashSet entities) async {}
 
   @override
-  Future addScene(SceneCbjEntity scene) async {}
+  Future addScene(SceneEntity scene) async {}
 
   @override
-  Future<HashMap<String, SceneCbjEntity>> get getScenes async => HashMap();
+  Future<HashMap<String, SceneEntity>> get getScenes async => HashMap();
 
   @override
   Future activateScene(String id) async {}
@@ -66,4 +67,16 @@ class _DemoConnectionService implements ConnectionsService {
 
   @override
   Future<bool> connect({String? address}) async => true;
+
+  @override
+  Future requestAreaEntitiesScenes() {
+    // TODO: implement findHub
+    throw UnimplementedError();
+  }
+  
+  @override
+  Stream<MapEntry<String, SceneEntity>> watchScenes() {
+    // TODO: implement watchScenes
+    throw UnimplementedError();
+  }
 }

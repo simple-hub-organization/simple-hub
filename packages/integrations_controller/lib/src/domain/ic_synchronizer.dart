@@ -92,10 +92,10 @@ class IcSynchronizer {
       IAreaRepository.instance.setEtitiesToArea(area, entities);
 
   //  ------------------ AutomationService --------------------
-  HashMap<String, SceneCbjEntity> getScenes() =>
+  HashMap<String, SceneEntity> getScenes() =>
       AutomationService().getScenes();
 
-  Future addScene(SceneCbjEntity scene) async {
+  Future addScene(SceneEntity scene) async {
     IAreaRepository.instance.addSceneToDiscover(scene.uniqueId.getOrCrash());
     AutomationService().addScene(scene);
   }

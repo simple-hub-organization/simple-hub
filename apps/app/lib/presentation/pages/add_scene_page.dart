@@ -44,7 +44,7 @@ class _AddScenePageState extends State<AddScenePage> {
   }
 
   Future _sendSceneToHub() async {
-    final SceneCbjEntity scene = SceneCbjEntity(
+    final SceneEntity scene = SceneEntity(
       uniqueId: UniqueId(),
       name: SceneCbjName(sceneName),
       backgroundColor: SceneCbjBackgroundColor(Colors.red.toString()),

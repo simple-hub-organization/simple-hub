@@ -6,8 +6,8 @@ part of 'scene_cbj_dtos.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SceneCbjDtosImpl _$$SceneCbjDtosImplFromJson(Map<String, dynamic> json) =>
-    _$SceneCbjDtosImpl(
+_$SceneDtosImpl _$$SceneDtosImplFromJson(Map<String, dynamic> json) =>
+    _$SceneDtosImpl(
       uniqueId: json['uniqueId'] as String,
       name: json['name'] as String,
       backgroundColor: json['backgroundColor'] as String,
@@ -29,7 +29,7 @@ _$SceneCbjDtosImpl _$$SceneCbjDtosImplFromJson(Map<String, dynamic> json) =>
       lastDateOfExecute: json['lastDateOfExecute'] as String?,
     );
 
-Map<String, dynamic> _$$SceneCbjDtosImplToJson(_$SceneCbjDtosImpl instance) =>
+Map<String, dynamic> _$$SceneDtosImplToJson(_$SceneDtosImpl instance) =>
     <String, dynamic>{
       'uniqueId': instance.uniqueId,
       'name': instance.name,

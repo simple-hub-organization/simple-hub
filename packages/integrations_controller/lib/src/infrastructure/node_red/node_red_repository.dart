@@ -30,7 +30,7 @@ class NodeRedRepository {
   // List<String> bindingsList = [];
 
   /// Function to create new scene in Node-RED
-  Future<String> createNewNodeRedScene(SceneCbjEntity sceneCbj) async {
+  Future<String> createNewNodeRedScene(SceneEntity sceneCbj) async {
     // final String flowId = sceneCbj.uniqueId.getOrCrash();
 
     try {

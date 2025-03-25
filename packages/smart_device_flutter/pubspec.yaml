@@ -17,7 +17,7 @@ dependencies:
   grpc: ^3.2.4
   image_picker: ^1.0.4
   camera: ^0.10.5+5
-  network_tools_flutter: ^2.0.3
+  network_tools_flutter: ^2.0.7
   path_provider: ^2.1.1
   # Simple, fast generation of RFC4122 UUIDs.
   uuid: ^4.2.1

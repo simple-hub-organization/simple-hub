@@ -105,12 +105,12 @@ class _RemotePipesConnectionService implements ConnectionsService {
   }
 
   @override
-  Future<HashMap<String, SceneCbjEntity>> get getScenes async {
+  Future<HashMap<String, SceneEntity>> get getScenes async {
     appMessagesToHub.sink.add(
       ClientStatusRequests(sendingType: SendingType.allScenes.name),
     );
 
-    final HashMap<String, SceneCbjEntity> scenesMap = HashMap();
+    final HashMap<String, SceneEntity> scenesMap = HashMap();
 
     await for (final RequestsAndStatusFromHub message
         in hubMessagesToApp.stream) {
@@ -128,7 +128,7 @@ class _RemotePipesConnectionService implements ConnectionsService {
           entities.entries.map(
             (e) => MapEntry(
               e.key,
-              SceneCbjDtos.fromJson(jsonDecode(e.value) as Map<String, dynamic>)
+              SceneDtos.fromJson(jsonDecode(e.value) as Map<String, dynamic>)
                   .toDomain(),
             ),
           ),
@@ -143,7 +143,8 @@ class _RemotePipesConnectionService implements ConnectionsService {
   }
 
   @override
-  Future searchDevices() async {}
+  Future<Either<HubFailures, Unit>> searchDevices() async =>
+      left(const HubFailures.unexpected());
 
   @override
   void setEntityState(RequestActionObject action) {
@@ -178,7 +179,7 @@ class _RemotePipesConnectionService implements ConnectionsService {
   Future setEntitiesToArea(String areaId, HashSet entities) async {}
 
   @override
-  Future addScene(SceneCbjEntity scene) async {}
+  Future addScene(SceneEntity scene) async {}
 
   @override
   Future activateScene(String id) async {}
@@ -236,5 +237,17 @@ class _RemotePipesConnectionService implements ConnectionsService {
       logger.e('Caught error while stream with hub\n$e');
       await channel?.shutdown();
     }
+  }
+
+  @override
+  Future requestAreaEntitiesScenes() {
+    // TODO: implement findHub
+    throw UnimplementedError();
+  }
+  
+  @override
+  Stream<MapEntry<String, SceneEntity>> watchScenes() {
+    // TODO: implement watchScenes
+    throw UnimplementedError();
   }
 }

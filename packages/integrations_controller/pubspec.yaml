@@ -66,7 +66,7 @@ dependencies:
   # Service discovery over multicast DNS (mDNS), Bonjour, and Avahi.
   multicast_dns: ^0.3.2+8
   # Helps you discover open ports, devices on subnet and more.
-  network_tools: ^5.0.5
+  network_tools: ^5.0.6
   # Interact directly with NodeRED API
   nodered:
     git: "https://github.com/guyluz11/nodered.git"

@@ -58,7 +58,7 @@ class _SplashPageState extends State<SplashPage> {
       connectionType: ConnectionType.hub,
     );
 
-    ConnectionsService.instance.searchDevices();
+    // ConnectionsService.instance.searchDevices();
 
     // TODO: Only here so that app will not crash
     MqttServerRepository();
@@ -74,6 +74,20 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
     if (entities.isNotEmpty) {
+      final String? bssid = NetworksManager().currentNetwork?.bssid;
+      if (bssid == null) {
+        logger.e('Please set up network');
+        return;
+      }
+
+      ConnectionsService.setCurrentConnectionType(
+        networkBssid: bssid,
+        connectionType: ConnectionType.hub,
+      );
+      await ConnectionsService.instance.connect();
+      if (!mounted) {
+        return;
+      }
       context.router.replace(const HomeRoute());
       return;
     }

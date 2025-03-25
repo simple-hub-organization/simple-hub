@@ -15,12 +15,14 @@ class _AppConnectionService implements ConnectionsService {
       IcSynchronizer().getAreas();
 
   @override
-  Future searchDevices() async =>
-      searchDevicesInstance = (searchDevicesInstance ?? SearchDevices())
-        ..startSearchIsolate(
-          networkUtilitiesType: NetworkUtilitiesFlutter(),
-          systemCommands: SystemCommandsBaseClassD.instance,
-        );
+  Future<Either<HubFailures, Unit>> searchDevices() async {
+    searchDevicesInstance = (searchDevicesInstance ?? SearchDevices())
+      ..startSearchIsolate(
+        networkUtilitiesType: NetworkUtilitiesFlutter(),
+        systemCommands: SystemCommandsBaseClassD.instance,
+      );
+    return right(unit);
+  }
 
   @override
   Stream<MapEntry<String, DeviceEntityBase>> watchEntities() =>
@@ -47,14 +49,14 @@ class _AppConnectionService implements ConnectionsService {
       IcSynchronizer().setEtitiesToArea(areaId, entities);
 
   @override
-  Future<HashMap<String, SceneCbjEntity>> get getScenes async =>
+  Future<HashMap<String, SceneEntity>> get getScenes async =>
       IcSynchronizer().getScenes();
 
   @override
   Future activateScene(String id) => IcSynchronizer().activateScene(id);
 
   @override
-  Future addScene(SceneCbjEntity scene) => IcSynchronizer().addScene(scene);
+  Future addScene(SceneEntity scene) => IcSynchronizer().addScene(scene);
 
   @override
   Future loginVendor(VendorLoginEntity value) async =>
@@ -66,4 +68,16 @@ class _AppConnectionService implements ConnectionsService {
 
   @override
   Future<bool> connect({String? address}) async => true;
+
+  @override
+  Future requestAreaEntitiesScenes() {
+    // TODO: implement findHub
+    throw UnimplementedError();
+  }
+  
+  @override
+  Stream<MapEntry<String, SceneEntity>> watchScenes() {
+    // TODO: implement watchScenes
+    throw UnimplementedError();
+  }
 }

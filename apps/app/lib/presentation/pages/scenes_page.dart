@@ -22,7 +22,7 @@ class ScenesPage extends StatefulWidget {
 }
 
 class _ScenesPageState extends State<ScenesPage> {
-  HashMap<String, SceneCbjEntity>? scenes;
+  HashMap<String, SceneEntity>? scenes;
 
   @override
   void initState() {
@@ -31,12 +31,12 @@ class _ScenesPageState extends State<ScenesPage> {
   }
 
   Future _initialized() async {
-    final HashMap<String, SceneCbjEntity> scenecsTemp =
+    final HashMap<String, SceneEntity> scenecsTemp =
         await ConnectionsService.instance.getScenes;
 
-    final HashMap<String, SceneCbjEntity> scenesInArea = HashMap.fromEntries(
+    final HashMap<String, SceneEntity> scenesInArea = HashMap.fromEntries(
       widget.area.scenesId.getOrCrash().map((e) {
-        final SceneCbjEntity? scene = scenecsTemp[e];
+        final SceneEntity? scene = scenecsTemp[e];
         if (scene == null) {
           return null;
         }

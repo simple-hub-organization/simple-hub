@@ -282,6 +282,7 @@ enum SendingType {
   allScenes,
   getAllSupportedVendors,
   setEntitiesAction,
+  setEntitiesForArea,
   ;
 }
 

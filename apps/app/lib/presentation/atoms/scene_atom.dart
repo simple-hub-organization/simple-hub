@@ -9,14 +9,14 @@ import 'package:simple_hub/presentation/core/snack_bar_service.dart';
 class SceneAtom extends StatefulWidget {
   const SceneAtom(this.currentScene);
 
-  final SceneCbjEntity currentScene;
+  final SceneEntity currentScene;
 
   @override
   State<SceneAtom> createState() => _SceneAtomState();
 }
 
 class _SceneAtomState extends State<SceneAtom> {
-  late SceneCbjEntity sceneCbj;
+  late SceneEntity sceneCbj;
 
   Future _activateScene() async => ConnectionsService.instance
       .activateScene(widget.currentScene.uniqueId.getOrCrash());

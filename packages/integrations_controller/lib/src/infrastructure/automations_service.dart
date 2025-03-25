@@ -13,11 +13,11 @@ class AutomationService {
       AutomationService._singletonConstructor();
 
   /// {SceneId, SceneEntity}
-  final HashMap<String, SceneCbjEntity> _scenes = HashMap();
+  final HashMap<String, SceneEntity> _scenes = HashMap();
 
-  HashMap<String, SceneCbjEntity> getScenes() => _scenes;
+  HashMap<String, SceneEntity> getScenes() => _scenes;
 
-  void addScene(SceneCbjEntity scene) {
+  void addScene(SceneEntity scene) {
     _scenes.addEntries([MapEntry(scene.uniqueId.getOrCrash(), scene)]);
     saveScenesToDb();
   }
@@ -29,7 +29,7 @@ class AutomationService {
   void loadScenesFromDb(String homeId) {
     final List<String> scenesString = IDbRepository.instance.getScenes(homeId);
     for (final String sceneString in scenesString) {
-      final SceneCbjEntity scene = SceneCbjDtos.fromJson(
+      final SceneEntity scene = SceneDtos.fromJson(
         jsonDecode(sceneString) as Map<String, dynamic>,
       ).toDomain();
       _scenes.addEntries([MapEntry(scene.uniqueId.getOrCrash(), scene)]);
@@ -39,7 +39,7 @@ class AutomationService {
   void saveScenesToDb() {
     final List<String> automationsJsonString = [];
 
-    for (final SceneCbjEntity scene in _scenes.values) {
+    for (final SceneEntity scene in _scenes.values) {
       final String sceneAsJsonString =
           jsonEncode(scene.toInfrastructure().toJson());
       automationsJsonString.add(sceneAsJsonString);
@@ -50,7 +50,7 @@ class AutomationService {
   }
 
   Future activateScene(String id) async {
-    final SceneCbjEntity? scene = _scenes[id];
+    final SceneEntity? scene = _scenes[id];
     if (scene == null) {
       return;
     }
@@ -91,7 +91,7 @@ class AutomationService {
     required String sceneId,
     required Set<String> entities,
   }) {
-    final SceneCbjEntity? sceneCopy = _scenes[sceneId];
+    final SceneEntity? sceneCopy = _scenes[sceneId];
 
     if (sceneCopy == null) {
       return;
@@ -111,7 +111,7 @@ class AutomationService {
     required String sceneId,
     required Set<String> entities,
   }) {
-    final SceneCbjEntity? sceneCopy = _scenes[sceneId];
+    final SceneEntity? sceneCopy = _scenes[sceneId];
 
     if (sceneCopy == null) {
       return;
@@ -132,7 +132,7 @@ class AutomationService {
   ) async {
     final HashSet<String> scenesId = HashSet();
     for (final AreaPurposesTypes purposesType in areaPurposes) {
-      final SceneCbjEntity scene = SceneCbjEntity(
+      final SceneEntity scene = SceneEntity(
         uniqueId: UniqueId(),
         name: SceneCbjName(purposesType.name),
         backgroundColor: SceneCbjBackgroundColor('#985dc7'),

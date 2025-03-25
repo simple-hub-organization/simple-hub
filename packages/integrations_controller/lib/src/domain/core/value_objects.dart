@@ -45,6 +45,10 @@ class UniqueId extends ValueObject<String> {
     return UniqueId._(right(uniqueId));
   }
 
+  factory UniqueId.empty() {
+    return UniqueId._(right('00000000-0000-0000-0000-000000000000'));
+  }
+
   const UniqueId._(this.value);
 
   @override
