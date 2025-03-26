@@ -11,9 +11,10 @@ import 'package:simple_hub/presentation/atoms/atoms.dart';
 /// Show light toggles in a container with the background color from smart area
 /// object
 class RgbwLightMolecule extends StatefulWidget {
-  const RgbwLightMolecule(this.entity);
+  const RgbwLightMolecule(this.entity, {this.entitiesId = const []});
 
   final GenericRgbwLightDE entity;
+  final List<String> entitiesId;
 
   @override
   State<RgbwLightMolecule> createState() => _RgbwLightMoleculeState();
@@ -67,6 +68,7 @@ class _RgbwLightMoleculeState extends State<RgbwLightMolecule> {
   }) {
     final HashSet<String> uniqueIdByVendor =
         HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
+    uniqueIdByVendor.addAll(widget.entitiesId);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(
@@ -104,7 +106,10 @@ class _RgbwLightMoleculeState extends State<RgbwLightMolecule> {
           state: widget.entity.entityStateGRPC.state,
         ),
         const SeparatorAtom(variant: SeparatorVariant.reletedElements),
-        LightColorMods(entity: widget.entity),
+        LightColorMods(
+          entity: widget.entity,
+          entitiesId: widget.entitiesId,
+        ),
         Row(
           children: [
             const FaIcon(FontAwesomeIcons.solidSun),
@@ -140,9 +145,11 @@ class LightColorMods extends StatefulWidget {
     this.brightness = 100,
     this.colorTemperature = 4500,
     this.hsvColor,
+    this.entitiesId = const [],
   });
 
   final GenericRgbwLightDE entity;
+  final List<String> entitiesId;
   final int colorTemperature;
   final HSVColor? hsvColor;
   final double brightness;
@@ -200,6 +207,7 @@ class _LightColorMods extends State<LightColorMods> {
   }) {
     final HashSet<String> uniqueIdByVendor =
         HashSet.from([widget.entity.entityCbjUniqueId.getOrCrash()]);
+    uniqueIdByVendor.addAll(widget.entitiesId);
 
     ConnectionsService.instance.setEntityState(
       RequestActionObject(

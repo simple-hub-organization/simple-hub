@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="wip adding Sony Bravia TV support">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Adding Sony Bravia TV support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/smart_tv_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/smart_tv_molecule.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_entities/sony_bravia_smart_tv_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_entities/sony_bravia_smart_tv_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/request_action_object.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/request_action_object.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/integrations/sony/sony_integration.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/integrations/sony/sony_integration.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/services/web_socket_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/services/web_socket_server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/device_by_type_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/device_by_type_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/rgb_light_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/rgb_light_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/organisms/open_area_organism.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/organisms/open_area_organism.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,30 +49,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Dart Command Line App.cbj_hub.dart.executor&quot;: &quot;Debug&quot;,
-    &quot;Dart Command Line App.main.dart.executor&quot;: &quot;Debug&quot;,
-    &quot;Flutter.Flutter Run -&gt; 'simple_hub'.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/guyc/Documents/git/simple-hub/apps/hub/lib/infrastructure/devices/sony&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Dart Command Line App.cbj_hub.dart.executor": "Debug",
+    "Dart Command Line App.main.dart.executor": "Debug",
+    "Flutter.Flutter Run -> 'simple_hub'.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/guyc/Documents/git/simple-hub/apps/hub/lib/infrastructure/devices/sony",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false",
+    "structure.view.defaults.are.configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony" />
@@ -350,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742912318443</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Adding Sony Bravia TV support">
+      <option name="closed" value="true" />
+      <created>1742994384215</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1742994384216</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -399,7 +402,8 @@
     <MESSAGE value="Working on releasing the app" />
     <MESSAGE value="Fixing hub app connection" />
     <MESSAGE value="wip adding Sony Bravia TV support" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip adding Sony Bravia TV support" />
+    <MESSAGE value="Adding Sony Bravia TV support" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Sony Bravia TV support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -468,6 +472,26 @@
           <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart</url>
           <line>44</line>
           <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/rgb_light_molecule.dart</url>
+          <line>68</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart</url>
+          <line>9</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart</url>
+          <line>10</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart</url>
+          <line>8</line>
+          <option name="timeStamp" value="144" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

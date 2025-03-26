@@ -147,8 +147,8 @@ class _HubServerController extends IHubServerController {
 
   @override
   Future sendAllScenes() async {
-    final Map<String, DeviceEntityBase> automations =
-        await IcSynchronizer().getEntities();
+    final HashMap<String, SceneEntity> automations =
+        IcSynchronizer().getScenes();
 
     final Map<String, String> entityIdEntityAsString = automations.map(
       (key, value) =>

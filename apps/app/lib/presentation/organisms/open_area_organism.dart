@@ -63,7 +63,12 @@ class _OpenAreaOrganismState extends State<OpenAreaOrganism> {
             ),
           ),
           const SeparatorAtom(),
-          DeviceByTypeMolecule(widget.entities.first),
+          DeviceByTypeMolecule(
+            widget.entities.first,
+            entitiesId: widget.entities
+                .map((toElement) => toElement.entityCbjUniqueId.getOrCrash())
+                .toList(),
+          ),
         ],
       ),
     );
