@@ -20,6 +20,7 @@ abstract class VendorConnectorConjectureService {
     this.mdnsList = const [],
     this.uniqueIdentifierNameInMdns = const [],
     this.deviceHostNameLowerCaseList = const [],
+    this.deviceUpnpNameLowerCaseList = const [],
   }) {
     vendorEntityInformation = VendorEntityInformation(
       vendorsAndServices,
@@ -102,6 +103,9 @@ abstract class VendorConnectorConjectureService {
 
   @nonVirtual
   final List<String> uniqueIdentifierNameInMdns;
+
+  @nonVirtual
+  final List<String> deviceUpnpNameLowerCaseList;
 
   Future<HashMap<String, DeviceEntityBase>?> foundEntity(
     DeviceEntityBase entity,

@@ -139,7 +139,9 @@ parts:
 
     build-packages:
       - curl
-  #    stage-packages:
+      - libavahi-compat-libdnssd-dev
+    stage-packages:
+      - libavahi-compat-libdnssd-dev
   #      - python3
   #      - libatomic1
 

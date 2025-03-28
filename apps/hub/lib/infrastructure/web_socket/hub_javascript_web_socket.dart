@@ -61,7 +61,7 @@ class HubJavascriptWebSocket {
         );
       }
     } catch (e) {
-      logger.e('Error processing message: $e');
+      logger.e('Error processing hub javascript web socket, message: $e');
       return;
     }
   }

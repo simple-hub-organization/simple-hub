@@ -2,15 +2,11 @@ import 'dart:collection';
 import 'dart:io';
 import 'dart:isolate';
 
-import 'package:integrations_controller/src/domain/core/request_action_types.dart';
-import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
+import 'package:integrations_controller/integrations_controller.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_empty_entity/generic_empty_entity.dart';
-import 'package:integrations_controller/src/domain/i_network_utilities.dart';
 import 'package:integrations_controller/src/infrastructure/core/utils.dart';
-import 'package:integrations_controller/src/infrastructure/shared_variables.dart';
-import 'package:integrations_controller/src/infrastructure/system_commands/system_commands_base_class_d.dart';
-import 'package:integrations_controller/src/infrastructure/vendors_connector_conjecture.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:upnp2/upnp.dart';
 
 class SendToIsolate {
   SendToIsolate({
@@ -59,9 +55,57 @@ class SearchDevices {
         SharedVariables().getProjectRootDirectoryPath()?.contains('snap') ??
             false;
 
-    /// For mdns search
+    _searchAllMdnsDevicesAndSetThemUpIsolate(
+      projectPath: projectPath,
+      networkUtilitiesType: networkUtilitiesType,
+      isSnap: isSnap,
+      systemCommands: systemCommands,
+      networkUtilitiesTypeTemp: networkUtilitiesTypeTemp,
+      systemCommandsTemp: systemCommandsTemp,
+    );
+
+    // TODO: Host name from ip does not work on Android https://github.com/dart-lang/sdk/issues/54435
+    if (!Platform.isAndroid) {
+      _pingSearchIsolate(
+        projectPath: projectPath,
+        networkUtilitiesType: networkUtilitiesType,
+        isSnap: isSnap,
+        systemCommands: systemCommands,
+        networkUtilitiesTypeTemp: networkUtilitiesTypeTemp,
+        systemCommandsTemp: systemCommandsTemp,
+      );
+    }
+
+    _portSearchIsolate(
+      projectPath: projectPath,
+      networkUtilitiesType: networkUtilitiesType,
+      isSnap: isSnap,
+      systemCommands: systemCommands,
+      networkUtilitiesTypeTemp: networkUtilitiesTypeTemp,
+      systemCommandsTemp: systemCommandsTemp,
+    );
+
+    _upnpSearchIsolate(
+      projectPath: projectPath,
+      networkUtilitiesType: networkUtilitiesType,
+      isSnap: isSnap,
+      systemCommands: systemCommands,
+      networkUtilitiesTypeTemp: networkUtilitiesTypeTemp,
+      systemCommandsTemp: systemCommandsTemp,
+    );
+  }
+
+  /// For mdns search
+  Future _searchAllMdnsDevicesAndSetThemUpIsolate({
+    required String projectPath,
+    required INetworkUtilities? networkUtilitiesType,
+    required bool isSnap,
+    required SystemCommandsBaseClassD? systemCommands,
+    required INetworkUtilities networkUtilitiesTypeTemp,
+    SystemCommandsBaseClassD? systemCommandsTemp,
+  }) async {
     final mdnsReceivePort = ReceivePort();
-    SendToIsolate searchDevices = SendToIsolate(
+    final SendToIsolate searchDevices = SendToIsolate(
       sendPort: mdnsReceivePort.sendPort,
       projectPath: projectPath,
       networkUtilitiesType: networkUtilitiesTypeTemp,
@@ -83,40 +127,55 @@ class SearchDevices {
       icLogger.f('Mdns isolate had crashed $event');
     });
     isolates.add(mdnsIsolate);
+  }
 
-    // TODO: Host name from ip does not work on Android https://github.com/dart-lang/sdk/issues/54435
-    if (!Platform.isAndroid) {
-      /// For ping search
-      final ReceivePort pingReceivePort = ReceivePort();
-      searchDevices = SendToIsolate(
-        sendPort: pingReceivePort.sendPort,
-        projectPath: projectPath,
-        networkUtilitiesType: networkUtilitiesTypeTemp,
-        isSnap: isSnap,
-        systemCommands: systemCommandsTemp,
-      );
+  /// For ping search
+  Future _pingSearchIsolate({
+    required String projectPath,
+    required INetworkUtilities? networkUtilitiesType,
+    required bool isSnap,
+    required SystemCommandsBaseClassD? systemCommands,
+    required INetworkUtilities networkUtilitiesTypeTemp,
+    SystemCommandsBaseClassD? systemCommandsTemp,
+  }) async {
+    final ReceivePort pingReceivePort = ReceivePort();
+    final SendToIsolate searchDevices = SendToIsolate(
+      sendPort: pingReceivePort.sendPort,
+      projectPath: projectPath,
+      networkUtilitiesType: networkUtilitiesTypeTemp,
+      isSnap: isSnap,
+      systemCommands: systemCommandsTemp,
+    );
 
-      final Isolate pingIsolate = await Isolate.spawn(
-        _searchPingableDevicesAndSetThemUpByHostName,
-        searchDevices,
-      );
+    final Isolate pingIsolate = await Isolate.spawn(
+      _searchPingableDevicesAndSetThemUpByHostName,
+      searchDevices,
+    );
 
-      pingReceivePort.listen((data) {
-        if (data is GenericUnsupportedDE) {
-          VendorsConnectorConjecture().setHostNameDeviceByCompany(data);
-        }
-      });
-      pingIsolate.errors.listen((event) {
-        icLogger.f('Ping isolate had crashed $event');
-      });
-      isolates.add(pingIsolate);
-    }
+    pingReceivePort.listen((data) {
+      if (data is GenericUnsupportedDE) {
+        VendorsConnectorConjecture().setHostNameDeviceByCompany(data);
+      }
+    });
+    pingIsolate.errors.listen((event) {
+      icLogger.f('Ping isolate had crashed $event');
+    });
+    isolates.add(pingIsolate);
+  }
 
-    /// For port search
+  /// For port search
+  Future _portSearchIsolate({
+    required String projectPath,
+    required INetworkUtilities? networkUtilitiesType,
+    required bool isSnap,
+    required SystemCommandsBaseClassD? systemCommands,
+    required INetworkUtilities networkUtilitiesTypeTemp,
+    SystemCommandsBaseClassD? systemCommandsTemp,
+  }) async {
     final HashMap<VendorsAndServices, List<int>>? ports =
         VendorsConnectorConjecture().portsToScan();
     final ReceivePort portReceivePort = ReceivePort();
-    searchDevices = SendToIsolate(
+    final SendToIsolate searchDevices = SendToIsolate(
       sendPort: portReceivePort.sendPort,
       projectPath: projectPath,
       networkUtilitiesType: networkUtilitiesTypeTemp,
@@ -142,6 +201,40 @@ class SearchDevices {
       icLogger.f('Port isolate had crashed $event');
     });
     isolates.add(portIsolate);
+  }
+
+  /// For UPnP search
+  Future _upnpSearchIsolate({
+    required String projectPath,
+    required INetworkUtilities? networkUtilitiesType,
+    required bool isSnap,
+    required SystemCommandsBaseClassD? systemCommands,
+    required INetworkUtilities networkUtilitiesTypeTemp,
+    SystemCommandsBaseClassD? systemCommandsTemp,
+  }) async {
+    final receivePort = ReceivePort();
+    final SendToIsolate searchDevices = SendToIsolate(
+      sendPort: receivePort.sendPort,
+      projectPath: projectPath,
+      networkUtilitiesType: networkUtilitiesTypeTemp,
+      isSnap: isSnap,
+      systemCommands: systemCommandsTemp,
+    );
+    final Isolate mdnsIsolate = await Isolate.spawn(
+      _searchAllUpnpDevicesAndSetThemUp,
+      searchDevices,
+    );
+
+    receivePort.listen((data) {
+      if (data is GenericUnsupportedDE) {
+        VendorsConnectorConjecture().setUpnpDevice(data);
+      }
+    });
+
+    mdnsIsolate.errors.listen((event) {
+      icLogger.f('Mdns isolate had crashed $event');
+    });
+    isolates.add(mdnsIsolate);
   }
 
   Future _searchAllMdnsDevicesAndSetThemUp(
@@ -183,6 +276,98 @@ class SearchDevices {
     } catch (e) {
       icLogger.e('Mdns search error\n$e');
     }
+  }
+
+  Future _searchAllUpnpDevicesAndSetThemUp(
+    SendToIsolate sendToIsolate,
+  ) async {
+    final SendPort sendPort = sendToIsolate.sendPort;
+    try {
+      while (true) {
+        final disc = DeviceDiscoverer();
+        const int port = 1900;
+        await disc.start(ipv6: false);
+        await for (final DiscoveredClient client
+            in disc.quickDiscoverClients()) {
+          try {
+            final DeviceEntityBase? temp =
+                await pnpToDeviceEntity(client, port);
+            if (temp == null) {
+              continue;
+            }
+            sendPort.send(temp);
+          } catch (e, stack) {
+            print('ERROR: $e - ${client.location}');
+            print(stack);
+          }
+        }
+
+        final disc2 = DeviceDiscoverer();
+        const int port2 = 52323;
+        await disc2.start(ipv6: false, port: port2);
+        await for (final DiscoveredClient client
+            in disc2.quickDiscoverClients()) {
+          try {
+            final DeviceEntityBase? temp =
+                await pnpToDeviceEntity(client, port2);
+            if (temp == null) {
+              continue;
+            }
+            sendPort.send(temp);
+          } catch (e, stack) {
+            print('ERROR: $e - ${client.location}');
+            print(stack);
+          }
+        }
+        await Future.delayed(const Duration(seconds: 10));
+      }
+    } catch (e) {
+      icLogger.e('Mdns search error\n$e');
+    }
+  }
+
+  Future<DeviceEntityBase?> pnpToDeviceEntity(
+      DiscoveredClient client, int port) async {
+    final device = await client.getDevice();
+    if (device == null) {
+      return null;
+    }
+    final Uri? uri = Uri.tryParse(device.url ?? '');
+    final String host = uri?.host ?? '';
+
+    return GenericUnsupportedDE(
+      uniqueId: CoreUniqueId(),
+      entityUniqueId: EntityUniqueId(device.uuid),
+      cbjDeviceVendor: CbjDeviceVendor(VendorsAndServices.undefined),
+      cbjEntityName: CbjEntityName(
+        value: device.friendlyName,
+      ),
+      deviceVendor: DeviceVendor(value: device.manufacturer),
+      deviceNetworkLastUpdate: DeviceNetworkLastUpdate(),
+      stateMassage: DeviceStateMassage(value: ''),
+      senderDeviceOs: DeviceSenderDeviceOs(''),
+      senderDeviceModel: DeviceSenderDeviceModel(''),
+      senderId: DeviceSenderId(),
+      compUuid: DeviceCompUuid(''),
+      entityStateGRPC: EntityState.state(EntityStateGRPC.undefined),
+      entityOriginalName: EntityOriginalName(device.friendlyName ?? ''),
+      deviceOriginalName: DeviceOriginalName(value: device.friendlyName),
+      powerConsumption: DevicePowerConsumption(''),
+      deviceUniqueId: DeviceUniqueId(device.uuid),
+      devicePort: DevicePort(value: port.toString()),
+      deviceLastKnownIp: DeviceLastKnownIp(value: host),
+      deviceHostName: DeviceHostName(value: ''),
+      deviceMdns: DeviceMdns(value: ''),
+      srvResourceRecord: DeviceSrvResourceRecord(input: ''),
+      srvTarget: DeviceSrvTarget(input: ''),
+      ptrResourceRecord: DevicePtrResourceRecord(input: ''),
+      mdnsServiceType: DeviceMdnsServiceType(input: ''),
+      devicesMacAddress: DevicesMacAddress(value: ''),
+      entityKey: EntityKey(''),
+      requestTimeStamp: RequestTimeStamp(''),
+      lastResponseFromDeviceTimeStamp: LastResponseFromDeviceTimeStamp(''),
+      entityCbjUniqueId: CoreUniqueId(),
+    );
   }
 
   /// Get all the host names in the connected networks and try to add the device

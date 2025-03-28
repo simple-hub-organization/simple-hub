@@ -40,19 +40,20 @@ class SonyHelpers {
         smartTvSwitchState: entity.smartTvSwitchState,
       );
 
-      VendorsConnectorConjecture().moreInformationForEntity.add(sonyDE);
-      Future.delayed(const Duration(minutes: 5), () {
-        VendorsConnectorConjecture()
-            .moreInformationForEntity
-            .removeWhere((entity) {
-          if (entity.entityCbjUniqueId.getOrCrash() ==
-              sonyDE.entityCbjUniqueId.getOrCrash()) {
-            return true;
-          }
-          return false;
+      if (sonyDE.devicesMacAddress.getOrCrash() == null) {
+        VendorsConnectorConjecture().moreInformationForEntity.add(sonyDE);
+        Future.delayed(const Duration(minutes: 5), () {
+          VendorsConnectorConjecture()
+              .moreInformationForEntity
+              .removeWhere((entity) {
+            if (entity.entityCbjUniqueId.getOrCrash() ==
+                sonyDE.entityCbjUniqueId.getOrCrash()) {
+              return true;
+            }
+            return false;
+          });
         });
-      });
-
+      }
       return HashMap()
         ..addEntries([
           MapEntry(entity.entityCbjUniqueId.getOrCrash(), sonyDE),

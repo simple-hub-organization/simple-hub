@@ -15,6 +15,7 @@ export class VendorLoginEntity {
         this.password = options?.password;
         this.ip = options?.ip;
         this.port = options?.port;
+        this.deviceUniqueId = options.deviceUniqueId;
     }
 
     static fromJson(json) {
@@ -26,6 +27,7 @@ export class VendorLoginEntity {
             password: json.credentials.password,
             ip: json.credentials.ip,
             port: json.credentials.port,
+            deviceUniqueId: json.credentials.deviceUniqueId,
         });
     }
 } 

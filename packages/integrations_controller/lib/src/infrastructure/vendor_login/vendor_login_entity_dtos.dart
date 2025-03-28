@@ -41,6 +41,10 @@ abstract class VendorLoginEntityDtos implements _$VendorLoginEntityDtos {
       credentials.addEntries([MapEntry('port', loginEntity.port)]);
     }
 
+    if (loginEntity.deviceUniqueId != null) {
+      credentials.addEntries([MapEntry('deviceUniqueId', loginEntity.port)]);
+    }
+
     return VendorLoginEntityDtos(
       vendor: loginEntity.vendor.name,
       credentials: credentials,
@@ -62,6 +66,7 @@ abstract class VendorLoginEntityDtos implements _$VendorLoginEntityDtos {
       password: credentials['password'] as String?,
       ip: credentials['ip'] as String?,
       port: credentials['port'] as String?,
+      deviceUniqueId: credentials['deviceUniqueId'] as String?,
     );
   }
 }

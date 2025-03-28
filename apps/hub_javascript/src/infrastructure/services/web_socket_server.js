@@ -23,13 +23,17 @@ const startWebSocketServer = (port = 9080) => {
         loggerService.log(`Received: ${data}`);
 
         if (data.event === VendorLoginEntity.event) {
-          const entities = await setupDevice(data);
+         const vendorLogin = VendorLoginEntity.fromJson(data);
+
+          const entities = await setupDevice(vendorLogin);
           entities.forEach((entity) => {
+            entity.deviceUniqueId = vendorLogin.deviceUniqueId
             responses.push(JSON.stringify(entity.toJSON()));
           });
         }
         else if (data.event === RequestActionObject.event) {
-          await setEntityState(data);
+          const requestAction = RequestActionObject.fromJson(data);
+          await setEntityState(requestAction);
           responses = ['{"response":"ok"}'];
         }
       } catch (error) {
@@ -43,8 +47,7 @@ const startWebSocketServer = (port = 9080) => {
     });
   });
 
-  async function setupDevice(data) {
-    const vendorLogin = VendorLoginEntity.fromJson(data);
+  async function setupDevice(vendorLogin) {
 
     if(vendorLogin.vendor === undefined) {
       return [];
@@ -77,8 +80,7 @@ const startWebSocketServer = (port = 9080) => {
     return [];
   }
 
-  async function setEntityState(data) {
-    const requestAction = RequestActionObject.fromJson(data);
+  async function setEntityState(requestAction) {
     if (requestAction.vendors?.size === 0) {
       return;
     }

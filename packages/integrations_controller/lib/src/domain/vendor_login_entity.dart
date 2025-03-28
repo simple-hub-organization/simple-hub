@@ -11,6 +11,7 @@ class VendorLoginEntity {
     this.password,
     this.ip,
     this.port,
+    this.deviceUniqueId,
   });
 
   VendorsAndServices vendor;
@@ -21,6 +22,7 @@ class VendorLoginEntity {
   final String? password;
   final String? ip;
   final String? port;
+  final String? deviceUniqueId;
   static String event = 'setUpDevice';
 
   VendorLoginEntityDtos toInfrastructure() {
@@ -39,13 +41,16 @@ class VendorLoginEntity {
       credentials.addEntries([MapEntry('email', email)]);
     }
     if (password != null) {
-      credentials.addEntries([MapEntry('password', email)]);
+      credentials.addEntries([MapEntry('password', password)]);
     }
     if (ip != null) {
       credentials.addEntries([MapEntry('ip', ip)]);
     }
     if (port != null) {
-      credentials.addEntries([MapEntry('password', port)]);
+      credentials.addEntries([MapEntry('port', port)]);
+    }
+    if (deviceUniqueId != null) {
+      credentials.addEntries([MapEntry('deviceUniqueId', deviceUniqueId)]);
     }
 
     return VendorLoginEntityDtos(

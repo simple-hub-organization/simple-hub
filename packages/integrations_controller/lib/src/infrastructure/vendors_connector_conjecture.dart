@@ -140,6 +140,38 @@ class VendorsConnectorConjecture {
     );
   }
 
+  void setUpnpDevice(GenericUnsupportedDE entity) {
+    final String? friendlyName =
+        entity.deviceOriginalName.getOrCrash()?.toLowerCase();
+    final String? manufacturer =
+        entity.deviceVendor.getOrCrash()?.toLowerCase();
+    VendorConnectorConjectureService? vendorConjecture;
+
+    for (final VendorConnectorConjectureService connectorConjecture
+        in VendorConnectorConjectureService.instanceMapByType.values) {
+      for (String upnpName in connectorConjecture.deviceUpnpNameLowerCaseList) {
+        if ((friendlyName?.contains(upnpName) ?? false) ||
+            (manufacturer?.contains(upnpName) ?? false)) {
+          vendorConjecture = connectorConjecture;
+          break;
+        }
+      }
+      if (vendorConjecture != null) {
+        break;
+      }
+    }
+    if (vendorConjecture == null) {
+      icLogger.w(
+          'No Vendor Connector Conjecture for pnp $friendlyName $manufacturer');
+      return;
+    }
+    foundEntityOfVendor(
+      entity: entity,
+      vendorConnectorConjectureService: vendorConjecture,
+      entityCbjUniqueId: entity.getCbjEntityId,
+    );
+  }
+
   Future setHostNameDeviceByCompany(GenericUnsupportedDE entity) async {
     // For existing entities that require more data from the scan
     for (final DeviceEntityBase requestEntity in moreInformationForEntity) {
