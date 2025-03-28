@@ -111,8 +111,6 @@ dependencies:
   # Creating multi-select widgets in a variety of ways
   mqtt_client: ^10.0.0
   multi_select_flutter: ^4.1.3
-  # Service discovery over multicast DNS (mDNS), Bonjour, and Avahi.
-  multicast_dns: ^0.3.2+4
   # Discover network info and configure themselves accordingly
   network_info_plus: ^6.1.3
   # Helps you discover open ports, devices on subnet and more.

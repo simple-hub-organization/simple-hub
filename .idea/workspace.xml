@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Adding Sony Bravia TV support">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Added support for UPnP search">
+      <change afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/vendor_login_entity.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/vendor_login_entity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/services/web_socket_server.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/infrastructure/services/web_socket_server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/vendor_login_entity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/vendor_login_entity.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendor_login/vendor_login_entity_dtos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendor_login/vendor_login_entity_dtos.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tools/CBJ_Hub_Snap/snap/snapcraft.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/device_entity_base.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub_javascript/src/domain/from_dart/device_entity_base.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +18,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -358,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742994384216</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added support for UPnP search">
+      <option name="closed" value="true" />
+      <created>1743165869319</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1743165869319</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -383,7 +387,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Uploading .gitignore" />
     <MESSAGE value="Uploading all the projects as is to create the monorepo" />
     <MESSAGE value="Change projects naming to fit monorepo" />
     <MESSAGE value="Fixed some build errors" />
@@ -408,7 +411,8 @@
     <MESSAGE value="Fixing hub app connection" />
     <MESSAGE value="wip adding Sony Bravia TV support" />
     <MESSAGE value="Adding Sony Bravia TV support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Sony Bravia TV support" />
+    <MESSAGE value="Added support for UPnP search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added support for UPnP search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -464,16 +468,6 @@
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_entities/sony_bravia_smart_tv_entity.dart</url>
-          <line>88</line>
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart</url>
-          <line>45</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/rgb_light_molecule.dart</url>
           <line>68</line>
           <option name="timeStamp" value="136" />
@@ -492,11 +486,6 @@
           <url>file://$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/scenes/scene_cbj_dtos.g.dart</url>
           <line>8</line>
           <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart</url>
-          <line>48</line>
-          <option name="timeStamp" value="175" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

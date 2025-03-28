@@ -147,7 +147,7 @@ export class DeviceEntityNotAbstract extends DeviceEntityBase {
       srvTarget: '',
       ptrResourceRecord: '',
       mdnsServiceType: '',
-      devicesMacAddress: '',
+      devicesMacAddress: undefined,
       entityKey: '',
       requestTimeStamp: '',
       lastResponseFromDeviceTimeStamp: '',
