@@ -54,21 +54,20 @@ class DeviceHelperMethods {
       logger.i('Got From App');
       final SendingType sendingType =
           SendingTypeExtension.fromString(clientStatusRequests.sendingType);
+      final Map<String, dynamic> decoded;
+      if (clientStatusRequests.allRemoteCommands.isEmpty) {
+        decoded = {};
+      } else {
+        decoded = jsonDecode(clientStatusRequests.allRemoteCommands)
+            as Map<String, dynamic>;
+      }
 
       switch (sendingType) {
         case SendingType.routineType:
-          final Map<String, dynamic> jsonRoutineFromJsonString =
-              jsonDecode(clientStatusRequests.allRemoteCommands)
-                  as Map<String, dynamic>;
-
-          return RoutineCbjDtos.fromJson(jsonRoutineFromJsonString);
-
+          return RoutineCbjDtos.fromJson(decoded);
         case SendingType.vendorLoginType:
           final VendorLoginEntityDtos dtoEntity =
-              VendorLoginEntityDtos.fromJson(
-            jsonDecode(clientStatusRequests.allRemoteCommands)
-                as Map<String, dynamic>,
-          );
+              VendorLoginEntityDtos.fromJson(decoded);
           return IcSynchronizer().loginVendor(dtoEntity.toDomain());
         case SendingType.firstConnection:
           HubRequestsToApp.stream.sink.add(
@@ -79,8 +78,8 @@ class DeviceHelperMethods {
 
           IHubServerController.instance.sendAllAreasFromHubRequestsStream();
           IHubServerController.instance.sendAllEntitiesFromHubRequestsStream();
-          IHubServerController.instance.sendAllScenesFromHubRequestsStream();
-          return;
+          return IHubServerController.instance
+              .sendAllScenesFromHubRequestsStream();
         case SendingType.allEntities:
           return IHubServerController.instance.sendAllEntities();
         case SendingType.allAreas:
@@ -89,30 +88,22 @@ class DeviceHelperMethods {
           return IHubServerController.instance.sendAllScenes();
         case SendingType.setEntitiesAction:
           final RequestActionObject action =
-              RequestActionObjectDtos.fromJsonString(
-            clientStatusRequests.allRemoteCommands,
-          ).toDomain();
-          IcSynchronizer().setEntitiesState(action);
-          return;
+              RequestActionObjectDtos.fromJson(decoded).toDomain();
+          return IcSynchronizer().setEntitiesState(action);
         case SendingType.getAllSupportedVendors:
           return IHubServerController.instance.sendAllVendors();
         case SendingType.areaType:
-          final AreaEntityDtos area = AreaEntityDtos.fromJson(
-            jsonDecode(clientStatusRequests.allRemoteCommands)
-                as Map<String, dynamic>,
-          );
-          IcSynchronizer().setNewArea(area.toDomain());
-          return;
+          final AreaEntityDtos area = AreaEntityDtos.fromJson(decoded);
+          return IcSynchronizer().setNewArea(area.toDomain());
         case SendingType.setEntitiesForArea:
-          final Map<String, dynamic> decoded =
-              jsonDecode(clientStatusRequests.allRemoteCommands)
-                  as Map<String, dynamic>;
           final String areaId = decoded["areaId"] as String;
           final HashSet<String> entities =
               HashSet<String>.from(decoded["entities"] as List);
 
-          IcSynchronizer().setEtitiesToArea(areaId, entities);
-          return;
+          return IcSynchronizer().setEtitiesToArea(areaId, entities);
+
+        case SendingType.activateScenes:
+          return IcSynchronizer().activateScene(decoded['id'] as String);
         case SendingType.remotePipesInformation:
         // final Map<String, dynamic> jsonDecoded =
         //     jsonDecode(clientStatusRequests.allRemoteCommands)

@@ -253,17 +253,20 @@ class _HubConnectionService implements ConnectionsService {
   Future addScene(SceneEntity scene) async {}
 
   @override
-  Future activateScene(String id) async {}
-
+  Future activateScene(String id) async => appMessagesToHub.sink.add(
+        ClientStatusRequests(
+          sendingType: SendingType.activateScenes.name,
+          allRemoteCommands: jsonEncode({'id': id}),
+        ),
+      );
   @override
-  Future loginVendor(VendorLoginEntity value) async {
-    appMessagesToHub.sink.add(
-      ClientStatusRequests(
-        sendingType: SendingType.vendorLoginType.name,
-        allRemoteCommands: jsonEncode(value.toInfrastructure().toJson()),
-      ),
-    );
-  }
+  Future loginVendor(VendorLoginEntity value) async =>
+      appMessagesToHub.sink.add(
+        ClientStatusRequests(
+          sendingType: SendingType.vendorLoginType.name,
+          allRemoteCommands: jsonEncode(value.toInfrastructure().toJson()),
+        ),
+      );
 
   @override
   Future<List<VendorEntityInformation>> getVendors() async {

@@ -250,6 +250,7 @@ enum SendingType {
   mqttMassageType,
 
   /// Scenes
+  // Maybe should get deprecated
   sceneType,
 
   /// Schedule
@@ -290,6 +291,7 @@ enum SendingType {
   getAllSupportedVendors,
   setEntitiesAction,
   setEntitiesForArea,
+  activateScenes,
   ;
 }
 
