@@ -5,6 +5,10 @@ import 'package:simple_hub/presentation/core/color_schemes.dart';
 import 'package:simple_hub/presentation/core/routes/app_router.dart';
 
 class AppWidget extends StatelessWidget {
+  const AppWidget({super.key, this.debugBanner = true});
+
+  final bool debugBanner;
+
   PageTransitionsTheme pageTransitionsTheme() {
     const PageTransitionsBuilder transition = ZoomPageTransitionsBuilder();
 
@@ -43,7 +47,7 @@ class AppWidget extends StatelessWidget {
       // localizationsDelegates: context.localizationDelegates,
       // supportedLocales: context.supportedLocales,
       // locale: context.locale,
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: debugBanner,
     );
   }
 }

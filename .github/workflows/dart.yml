@@ -2,18 +2,23 @@ name: Dart CI
 
 on:
   push:
-    branches: [ master, dev ]
+    #    branches: [ master, dev ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, dev ]
+    #    branches: [ master, dev ]
+    branches: [ master ]
   workflow_dispatch:
 
 env:
-  flutter_channel: 'stable' # or: 'dev' or 'beta'
-  flutter_version: '3.16.5'
+  flutter_channel: 'stable'
+  flutter_version: '3.27.1'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/app
 
     steps:
       - uses: actions/checkout@v3
@@ -29,5 +34,7 @@ jobs:
           distribution: 'zulu'
       - name: Install dependencies
         run: flutter pub get
+      - name: Run Flutter analysis
+        run: flutter analyze
       - name: Run tests
-        run: dart test
+        run: flutter test

@@ -1,10 +1,9 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_hub/infrastructure/core/injection.dart';
 import 'package:simple_hub/presentation/core/app_widget.dart';
 import 'package:simple_hub/presentation/core/routes/app_router.dart';
 
-Future<Unit> main() async {
+Future<void> main({bool debugBanner = true}) async {
   configureDependencies(EnvApp.dev);
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +12,7 @@ Future<Unit> main() async {
   getIt.registerSingleton<AppRouter>(AppRouter());
 
   runApp(
-    AppWidget(),
+    AppWidget(debugBanner: debugBanner),
 
     /// Use https://lingohub.com/developers/supported-locales/language-designators-with-regions
     /// Or https://www.contentstack.com/docs/developers/multilingual-content/list-of-supported-languages/
@@ -48,5 +47,4 @@ Future<Unit> main() async {
     //   child: AppWidget(),
     // ),
   );
-  return unit;
 }

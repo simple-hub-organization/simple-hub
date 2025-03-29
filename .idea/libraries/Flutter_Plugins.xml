@@ -100,6 +100,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/camera_avfoundation-0.9.18+11" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/url_launcher_web-2.0.13" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/webview_flutter-4.10.0" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/packages/integration_test" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
