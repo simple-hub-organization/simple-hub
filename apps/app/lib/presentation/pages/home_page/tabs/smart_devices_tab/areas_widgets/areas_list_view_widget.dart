@@ -49,11 +49,11 @@ class AreasListViewWidget extends StatelessWidget {
           areas: areas,
           entities: HashMap.fromEntries(
             entitiesInTheArea.map((e) {
-              final DeviceEntityBase? eneity = entities[e];
-              if (eneity == null) {
+              final DeviceEntityBase? entity = entities[e];
+              if (entity == null) {
                 return null;
               }
-              return MapEntry(e, eneity);
+              return MapEntry(e, entity);
             }).nonNulls,
           ),
         );

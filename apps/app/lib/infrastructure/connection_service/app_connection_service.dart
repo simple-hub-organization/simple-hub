@@ -18,7 +18,7 @@ class _AppConnectionService implements ConnectionsService {
   Future<Either<HubFailures, Unit>> searchDevices() async {
     searchDevicesInstance = (searchDevicesInstance ?? SearchDevices())
       ..startSearchIsolate(
-        networkUtilitiesType: NetworkUtilitiesFlutter(),
+        networkUtilitiesType: INetworkUtilities.instance,
         systemCommands: SystemCommandsBaseClassD.instance,
       );
     return right(unit);

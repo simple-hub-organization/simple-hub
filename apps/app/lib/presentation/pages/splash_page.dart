@@ -33,9 +33,13 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future initializeApp() async {
-    await NetworkUtilitiesFlutter().configureNetworkTools(
-      (await getApplicationDocumentsDirectory()).path,
-    );
+    // Set if not running as test
+    if (INetworkUtilities.instance.runtimeType == NetworkUtilities) {
+      INetworkUtilities.instance = NetworkUtilitiesFlutter();
+      await INetworkUtilities.instance.configureNetworkTools(
+        (await getApplicationDocumentsDirectory()).path,
+      );
+    }
     SystemCommandsBaseClassD.instance = AppCommands();
     await Hive.initFlutter();
     await IDbRepository.instance.asyncConstructor();
@@ -53,7 +57,7 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
     await IcSynchronizer().loadAllFromDb();
-    if (ConnectionsService.getCurrentConnectionType() != ConnectionType.none) {
+    if (ConnectionsService.getCurrentConnectionType() == ConnectionType.none) {
       ConnectionsService.setCurrentConnectionType(
         networkBssid: bssid,
         connectionType: ConnectionType.hub,
@@ -81,7 +85,7 @@ class _SplashPageState extends State<SplashPage> {
         logger.e('(_navigate) Please set up network');
         return;
       }
-      if (ConnectionsService.getCurrentConnectionType() !=
+      if (ConnectionsService.getCurrentConnectionType() ==
           ConnectionType.none) {
         ConnectionsService.setCurrentConnectionType(
           networkBssid: bssid,

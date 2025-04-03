@@ -7,7 +7,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:grpc/grpc.dart';
-// ignore: depend_on_referenced_packages because this is our pacakge
+// ignore: depend_on_referenced_packages because this is our package
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:location/location.dart';
 import 'package:network_info_plus/network_info_plus.dart';

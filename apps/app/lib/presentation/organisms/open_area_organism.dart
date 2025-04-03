@@ -57,7 +57,7 @@ class _OpenAreaOrganismState extends State<OpenAreaOrganism> {
                       ),
                     );
                   },
-                  varient: DevicesListViewOrganismVarient.grid,
+                  variant: DevicesListViewOrganismVarient.grid,
                 ),
               ],
             ),

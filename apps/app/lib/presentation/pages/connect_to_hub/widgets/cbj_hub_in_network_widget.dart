@@ -36,11 +36,13 @@ class _CbjHubInNetworkWidgetState extends State<CbjHubInNetworkWidget> {
       logger.e('Please set up network');
       return;
     }
+    if (ConnectionsService.getCurrentConnectionType() == ConnectionType.none) {
+      ConnectionsService.setCurrentConnectionType(
+        networkBssid: bssid,
+        connectionType: ConnectionType.hub,
+      );
+    }
 
-    ConnectionsService.setCurrentConnectionType(
-      networkBssid: bssid,
-      connectionType: ConnectionType.hub,
-    );
     ConnectionsService.instance.connect();
     bool foundEntity = false;
     ConnectionsService.instance.watchEntities().listen((event) {

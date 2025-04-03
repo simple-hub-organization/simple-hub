@@ -41,34 +41,18 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  HashMap<String, SceneEntity>? scenes;
-
   StreamSubscription<MapEntry<String, DeviceEntityBase>>? entitiesStream;
   StreamSubscription<MapEntry<String, AreaEntity>>? areasStream;
   StreamSubscription<MapEntry<String, SceneEntity>>? scenesStream;
 
-  HashMap<String, AreaEntity>? areas;
-  HashMap<String, DeviceEntityBase>? entities;
+  HashMap<String, SceneEntity> scenes = HashMap();
+  HashMap<String, AreaEntity> areas = HashMap();
+  HashMap<String, DeviceEntityBase> entities = HashMap();
 
   /// Tab num, value will be the default tab to show
   int? _currentTabNum;
 
   PageController? _pageController;
-
-  Future initializedScenes() async {
-    final HashMap<String, SceneEntity> scenesTemp =
-        await ConnectionsService.instance.getScenes;
-
-    setState(() {
-      if (scenesTemp.isNotEmpty) {
-        _currentTabNum = 0;
-      } else {
-        _currentTabNum = 1;
-      }
-
-      scenes = scenesTemp;
-    });
-  }
 
   Future _watchAreas() async {
     await areasStream?.cancel();
@@ -79,8 +63,7 @@ class _HomePageState extends State<HomePage> {
       }
 
       setState(() {
-        areas ??= HashMap();
-        areas!.addEntries([areaEntery]);
+        areas.addEntries([areaEntery]);
       });
     });
   }
@@ -103,19 +86,8 @@ class _HomePageState extends State<HomePage> {
       }
 
       setState(() {
-        scenes ??= HashMap();
-        scenes!.addEntries([scene]);
+        scenes.addEntries([scene]);
       });
-    });
-  }
-
-  Future _initializeAreas() async {
-    final HashMap<String, AreaEntity> areasTemp =
-        await ConnectionsService.instance.getAreas;
-    setState(() {
-      areas ??= HashMap();
-
-      areas!.addAll(areasTemp);
     });
   }
 
@@ -130,9 +102,31 @@ class _HomePageState extends State<HomePage> {
       }
 
       setState(() {
-        entities ??= HashMap();
-        entities!.addEntries([entityEntery]);
+        entities.addEntries([entityEntery]);
       });
+    });
+  }
+
+  Future initializedScenes() async {
+    final HashMap<String, SceneEntity> scenesTemp =
+        await ConnectionsService.instance.getScenes;
+
+    setState(() {
+      if (scenesTemp.isNotEmpty) {
+        _currentTabNum = 0;
+      } else {
+        _currentTabNum = 1;
+      }
+
+      scenes = scenesTemp;
+    });
+  }
+
+  Future _initializeAreas() async {
+    final HashMap<String, AreaEntity> areasTemp =
+        await ConnectionsService.instance.getAreas;
+    setState(() {
+      areas.addAll(areasTemp);
     });
   }
 
@@ -145,8 +139,7 @@ class _HomePageState extends State<HomePage> {
           value.entityTypes.type == EntityTypes.emptyEntity,
     );
     setState(() {
-      entities ??= HashMap();
-      entities!.addAll(entitiesTemp);
+      entities.addAll(entitiesTemp);
     });
   }
 
@@ -201,9 +194,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     if (_currentTabNum == null ||
         _pageController == null ||
-        entities == null ||
-        areas == null ||
-        scenes == null) {
+        entities.isEmpty ||
+        areas.isEmpty ||
+        scenes.isEmpty) {
       return const Scaffold(
         body: CircularProgressIndicatorAtom(),
       );
@@ -225,7 +218,7 @@ class _HomePageState extends State<HomePage> {
               controller: _pageController,
               children: [
                 ScenesInFoldersTab(areas: areas, scenes: scenes),
-                EntitiesByAreaTab(areas: areas!, entities: entities!),
+                EntitiesByAreaTab(areas: areas, entities: entities),
                 // BindingsPage(),
               ],
             ),
@@ -248,11 +241,8 @@ class _HomePageState extends State<HomePage> {
                     GestureDetector(
                       onTap: () async {
                         await context.router.push(const PlusButtonRoute());
-                        areas = null;
-                        entities = null;
                         _initializeAreas();
                         _initializeEntities();
-
                         initializedScenes();
                       },
                       child: CircleAvatar(
