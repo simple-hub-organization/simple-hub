@@ -297,8 +297,8 @@ class SearchDevices {
             }
             sendPort.send(temp);
           } catch (e, stack) {
-            print('ERROR: $e - ${client.location}');
-            print(stack);
+            icLogger.e('ERROR: $e - ${client.location}');
+            icLogger.e(stack);
           }
         }
 
@@ -315,8 +315,8 @@ class SearchDevices {
             }
             sendPort.send(temp);
           } catch (e, stack) {
-            print('ERROR: $e - ${client.location}');
-            print(stack);
+            icLogger.e('ERROR: $e - ${client.location}');
+            icLogger.e(stack);
           }
         }
         await Future.delayed(const Duration(seconds: 10));
@@ -327,7 +327,9 @@ class SearchDevices {
   }
 
   Future<DeviceEntityBase?> pnpToDeviceEntity(
-      DiscoveredClient client, int port) async {
+    DiscoveredClient client,
+    int port,
+  ) async {
     final device = await client.getDevice();
     if (device == null) {
       return null;

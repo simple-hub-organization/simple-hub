@@ -129,6 +129,10 @@ dependencies:
   protobuf: ^3.1.0
   # A wrapper around InheritedWidget to make them easier to use and more reusable.
   provider: ^6.1.1
+  rounded_loading_button_plus:
+    git:
+      url: https://github.com/guyluz11/flutter_rounded_loading_button_plus.git
+      ref: border_color
   # Implementation of the popular reactiveX api for asynchronous programming
   rxdart: ^0.27.7
   # Reading and writing simple key-value pairs
@@ -141,6 +145,7 @@ dependencies:
   # Plugin for launching a URL
   timezone: ^0.10.0
   url_launcher: ^6.2.1
+  vibration: ^2.0.1
   # Get available wifi ssid list, user can connect to wifi with ssid and password, and create hotspot
   wifi_iot: ^0.3.18+1
   # Scan for nearby visible WiFi access points.

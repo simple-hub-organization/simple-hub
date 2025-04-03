@@ -149,7 +149,8 @@ class VendorsConnectorConjecture {
 
     for (final VendorConnectorConjectureService connectorConjecture
         in VendorConnectorConjectureService.instanceMapByType.values) {
-      for (String upnpName in connectorConjecture.deviceUpnpNameLowerCaseList) {
+      for (final String upnpName
+          in connectorConjecture.deviceUpnpNameLowerCaseList) {
         if ((friendlyName?.contains(upnpName) ?? false) ||
             (manufacturer?.contains(upnpName) ?? false)) {
           vendorConjecture = connectorConjecture;
@@ -162,7 +163,8 @@ class VendorsConnectorConjecture {
     }
     if (vendorConjecture == null) {
       icLogger.w(
-          'No Vendor Connector Conjecture for pnp $friendlyName $manufacturer');
+        'No Vendor Connector Conjecture for pnp $friendlyName $manufacturer',
+      );
       return;
     }
     foundEntityOfVendor(

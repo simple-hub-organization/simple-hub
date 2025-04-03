@@ -139,7 +139,7 @@ class NetworkActions {
   }
 
   ///  Return list of available networks to the device
-  Future<List<String>> getAvailableNetworksList() async {
+  Future<List<String>> getAvailableNetworksList() {
 //    Not Working with snap from apt
     return Process.run('nmcli', <String>['-t', '-f', 'ssid', 'dev', 'wifi'])
         .then((ProcessResult results) {
@@ -152,7 +152,7 @@ class NetworkActions {
   }
 
   ///  Connect to the WiFi
-  Future<String> connectToWiFi(String ssid, String pass) async {
+  Future<String> connectToWiFi(String ssid, String pass) {
     // Not Working with snap from apt
 
     // TODO check if can be replaced with commands from https://pub.dev/packages/nm/changelog
@@ -177,7 +177,7 @@ class NetworkActions {
 
   ///  Check if connected to network,
   ///  if there is a connection than return network name
-  Future<String> getConnectedNetworkName() async {
+  Future<String> getConnectedNetworkName() {
     return Process.run('iwgetid', <String>['-r']).then((ProcessResult results) {
       logger.i('Currently connected to: ${results.stdout}');
       return results.stdout.toString().replaceAll('\n', '');

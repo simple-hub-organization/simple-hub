@@ -16,12 +16,14 @@ import 'package:wifi_iot/wifi_iot.dart';
 
 part 'package:simple_hub/infrastructure/manage_wifi_repository.dart';
 
-abstract interface class IManageNetworkRepository {
+abstract class IManageNetworkRepository {
   static IManageNetworkRepository? _instance;
 
   static IManageNetworkRepository get instance {
     return _instance ??= _ManageWiFiRepository();
   }
+
+  static set instance(IManageNetworkRepository value) => _instance = value;
 
   static ManageNetworkEntity? manageWiFiEntity;
 

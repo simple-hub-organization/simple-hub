@@ -4,24 +4,78 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Re added support for auto generated scenes for area by purpose">
-      <change afterPath="$PROJECT_DIR$/.github/CODE_OF_CONDUCT.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.github/workflows/cd.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/app/integration_driver/integration_test_driver.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/app/integration_test/app_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/app/integration_test/general_functions.dart" afterDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment=" Controlling multiple lights at the same time">
+      <change afterPath="$PROJECT_DIR$/apps/app/integration_test/domain_test/test_location_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/app/integration_test/domain_test/test_manage_network_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/app/integration_test/domain_test/test_network_manager.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/app/lib/domain/controllers/controllers.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/app/lib/domain/controllers/vibration_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/vibration_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/network_manager_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/.github/ISSUE_TEMPLATE/bug.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/bug.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/.github/ISSUE_TEMPLATE/feature_request.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/ISSUE_TEMPLATE/feature_request.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/.github/workflows/dart.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/dart.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/core/app_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/core/app_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/integration_test/app_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/integration_test/app_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/integration_test/general_functions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/integration_test/general_functions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/domain/manage_network/i_manage_network_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/domain/manage_network/i_manage_network_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/app_connection_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/connection_service/app_connection_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/manage_wifi_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/manage_wifi_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/network_utilities_flutter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/network_utilities_flutter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/button_atom.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/button_atom.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/separator_atom.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/separator_atom.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/switch_atom.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/atoms/switch_atom.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/core/routes/app_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/core/routes/app_router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/rgb_light_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/devices/rgb_light_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/list_view_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/list_view_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/permissions_dialog_molecule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/molecules/permissions_dialog_molecule.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_action_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/add_action_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/comunication_method_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/communication_method_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub/connect_to_hub_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub/connect_to_hub_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub/widgets/cbj_hub_in_network_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub/widgets/cbj_hub_in_network_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub_more_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/connect_to_hub_more_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/tabs/smart_devices_tab/entities_by_area_tab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/home_page/tabs/smart_devices_tab/entities_by_area_tab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/plus_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/plus_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/remote_pipes_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/remote_pipes_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/application/boot_up.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/application/boot_up.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/core/initialize_integrations_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/core/initialize_integrations_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/remote-pipes/lib/infrastructure/hube_server/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote-pipes/lib/infrastructure/hube_server/smart_server_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/remote_pipes_routing/lib/infrastructure/hube_server/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/remote_pipes_routing/lib/infrastructure/hube_server/smart_server_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/security_bear/lib/features/security_bear/application/usecases/core_u/security_bear_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/security_bear/lib/features/security_bear/application/usecases/core_u/security_bear_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/security_bear/lib/features/security_bear/application/usecases/network_actions/network_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/security_bear/lib/features/security_bear/application/usecases/network_actions/network_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/security_bear/lib/infrastructure/local_db/local_db_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/security_bear/lib/infrastructure/local_db/local_db_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/local_db_u/local_db_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/local_db_u/local_db_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_base.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_dynamic_abstract.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_simple_abstract.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/abstracts_devices/smart_device_static_abstract.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/boiler_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/boiler_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/light_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/smart_camera_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/smart_camera_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/smart_computer_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/simple_devices/smart_computer_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_device_objects_u/static_devices/blinds_object.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_server_u/smart_server_u.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/application/usecases/smart_server_u/smart_server_u.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/getting_signals_from_pins/listen_to_pin_high_wiring_pi_setup_phys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/getting_signals_from_pins/listen_to_pin_high_wiring_pi_setup_phys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup_gpio.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup_gpio.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup_phys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup_phys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup_sys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/offSignal/turn_pin_on_wiring_pi_setup_sys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup_gpio.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup_gpio.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup_phys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup_phys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup_sys.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/core_d/manage_physical_components/pins_datasource/sending_signals_to_pins/onSignal/turn_pin_on_wiring_pi_setup_sys.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/wish_classes_d/wish_classes_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/wish_classes_d/wish_classes_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/networks_manager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/networks_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/area/area_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/area/area_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/automations_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/automations_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +93,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -47,6 +106,13 @@
     &quot;assignee&quot;: &quot;guyluz11&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/simple-hub-organization/simple-hub.git&quot;,
@@ -66,7 +132,8 @@
   "keyToString": {
     "Dart Command Line App.cbj_hub.dart.executor": "Debug",
     "Dart Command Line App.main.dart.executor": "Debug",
-    "Flutter Test.tests in app_test.dart.executor": "Run",
+    "Flutter Test.tests in app_test.dart.executor": "Debug",
+    "Flutter Test.tests in integration_test.executor": "Run",
     "Flutter.Flutter Run -> 'simple_hub'.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -75,11 +142,10 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "ci/cd__app__upload__to__play__store",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/zrho/Documents/git/simple-hub/apps/app",
+    "last_opened_file_path": "/home/guyc/Documents/git/simple-hub/apps/app/lib/domain/controllers",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -90,13 +156,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/app/lib/domain/controllers" />
+      <recent name="$PROJECT_DIR$/apps/app/lib/infrastructure" />
+      <recent name="$PROJECT_DIR$/apps/app/lib/domain" />
+      <recent name="$PROJECT_DIR$/apps/app/integration_test/domain_test" />
       <recent name="$PROJECT_DIR$/apps/app" />
-      <recent name="$PROJECT_DIR$/.github/workflows" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony" />
-      <recent name="$PROJECT_DIR$/apps/app/android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/app/lib/domain/controllers" />
       <recent name="$PROJECT_DIR$/apps/app/integration_test" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps" />
@@ -118,9 +185,15 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="tests in integration_test" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testDir" value="$PROJECT_DIR$/apps/app/integration_test" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Flutter Test.tests in app_test.dart" />
+        <item itemvalue="Flutter Test.tests in integration_test" />
         <item itemvalue="Dart Command Line App.cbj_hub.dart" />
       </list>
     </recent_temporary>
@@ -502,6 +575,11 @@
           <url>file://$PROJECT_DIR$/apps/hub/lib/infrastructure/remote_pipes/device_helper_methods.dart</url>
           <line>137</line>
           <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$USER_HOME$/programs/flutter/packages/flutter_test/lib/src/binding.dart</url>
+          <line>1069</line>
+          <option name="timeStamp" value="151" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

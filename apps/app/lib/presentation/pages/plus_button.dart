@@ -15,7 +15,7 @@ import 'package:simple_hub/presentation/molecules/molecules.dart';
 class PlusButtonPage extends StatelessWidget {
   Future _logout(BuildContext context) async {
     context.router.replace(const ConnectToHubRoute());
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
       logger.e('Please set up network');
       return;
@@ -142,7 +142,7 @@ class PlusButtonPage extends StatelessWidget {
                                   Theme.of(context).textTheme.bodyLarge!.color,
                             ),
                           ),
-                          onTap: () async {
+                          onTap: () {
                             context.router
                                 .push(const SmartCameraContainerRoute());
                             // await IHubConnectionRepository.instance
@@ -189,7 +189,7 @@ class PlusButtonPage extends StatelessWidget {
                           ),
                           onTap: () {
                             context.router
-                                .push(const ComunicationMethodRoute());
+                                .push(const CommunicationMethodRoute());
                           },
                         ),
                       ),

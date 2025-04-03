@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:simple_hub/infrastructure/core/logger.dart';
+import 'package:simple_hub/presentation/atoms/atoms.dart';
 
 class GeneralFunctions {
   static final IntegrationTestWidgetsFlutterBinding binding =
@@ -23,5 +25,16 @@ class GeneralFunctions {
     final List<int> bytes = await binding.takeScreenshot(screenshotName);
     await file.writeAsBytes(bytes);
     logger.i('Screenshot saved: ${file.path}');
+  }
+
+  static Future clickButton({
+    required WidgetTester tester,
+    required String text,
+    Type buttonType = ButtonAtom,
+  }) async {
+    final Finder nextButtonFinder = find.widgetWithText(buttonType, text);
+    expect(nextButtonFinder, findsOneWidget);
+    await tester.tap(nextButtonFinder);
+    await tester.pumpAndSettle();
   }
 }

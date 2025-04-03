@@ -17,7 +17,7 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBase {
   Future<String> executeActionString(
     String cbjDeviceActionstring,
     CbjDeviceStateGRPC deviceState,
-  ) async {
+  ) {
     final CbjDeviceActions? deviceAction =
         convertWishStringToWishesObject(cbjDeviceActionstring);
     return executeDeviceAction(deviceAction!, deviceState);
@@ -27,7 +27,7 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBase {
   Future<String> executeDeviceAction(
     CbjDeviceActions deviceAction,
     CbjDeviceStateGRPC deviceState,
-  ) async {
+  ) {
     return wishInSimpleClass(deviceAction, deviceState);
   }
 
@@ -35,7 +35,7 @@ abstract class SmartDeviceSimpleAbstract extends SmartDeviceBase {
   Future<String> wishInSimpleClass(
     CbjDeviceActions deviceAction,
     CbjDeviceStateGRPC deviceState,
-  ) async {
+  ) {
     return wishInBaseClass(deviceAction, deviceState);
   }
 }

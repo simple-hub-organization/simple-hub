@@ -8,35 +8,35 @@ import 'package:simple_hub/presentation/core/routes/app_router.gr.dart';
 import 'package:simple_hub/presentation/organisms/organisms.dart';
 
 @RoutePage()
-class ComunicationMethodPage extends StatelessWidget {
+class CommunicationMethodPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
-      return const TextAtom('Please set up network');
+      return const TextAtom('(CommunicationMethodPage) Please set up network');
     }
 
     return PageOrganism(
-      pageName: 'Comunication type',
+      pageName: 'Communication type',
       child: Column(
         children: [
-          const TextAtom('Chose comunication Method'),
+          const TextAtom('Chose communication Method'),
           TextAtom(
-            'Current comunication: ${ConnectionsService.getCurrentConnectionType()}',
+            'Current communication: ${ConnectionsService.getCurrentConnectionType()}',
           ),
           Expanded(
             child: Column(
               children: [
-                ButtonWidgetAtom(
-                  variant: ButtonVariant.primary,
+                ButtonAtom(
+                  variant: ButtonVariant.highEmphasisFilled,
                   text: 'App as a Hub',
                   onPressed: () => ConnectionsService.setCurrentConnectionType(
                     networkBssid: bssid,
                     connectionType: ConnectionType.appAsHub,
                   ),
                 ),
-                ButtonWidgetAtom(
-                  variant: ButtonVariant.primary,
+                ButtonAtom(
+                  variant: ButtonVariant.highEmphasisFilled,
                   text: 'Hub',
                   onPressed: () {
                     ConnectionsService.setCurrentConnectionType(
@@ -46,8 +46,8 @@ class ComunicationMethodPage extends StatelessWidget {
                     ConnectionsService.instance.connect();
                   },
                 ),
-                ButtonWidgetAtom(
-                  variant: ButtonVariant.primary,
+                ButtonAtom(
+                  variant: ButtonVariant.highEmphasisFilled,
                   text: 'Demo',
                   onPressed: () => ConnectionsService.setCurrentConnectionType(
                     networkBssid: bssid,
@@ -57,8 +57,8 @@ class ComunicationMethodPage extends StatelessWidget {
               ],
             ),
           ),
-          ButtonWidgetAtom(
-            variant: ButtonVariant.primary,
+          ButtonAtom(
+            variant: ButtonVariant.highEmphasisFilled,
             text: 'Insert Remote Pipes',
             onPressed: () {
               context.router.push(const RemotePipesRoute());

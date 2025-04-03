@@ -50,7 +50,8 @@ class EntitiesService {
           jsonEncode(entity.toInfrastructure().toJson());
       entitiesJsonString.add(entityAsJsonString);
     }
-    final String homeBoxName = NetworksManager().currentNetwork!.uniqueId;
+    final String homeBoxName =
+        NetworksManager.instance.currentNetwork!.uniqueId;
 
     IDbRepository.instance.saveEntities(homeBoxName, entitiesJsonString);
   }

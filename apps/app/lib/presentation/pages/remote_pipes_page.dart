@@ -74,7 +74,7 @@ class _RemotePipesWidgetState extends State<RemotePipesWidget> {
     if (remotePipesDomainName == null || remotePipesDomainName!.isEmpty) {
       return;
     }
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
       logger.e('Please set up network');
       return;

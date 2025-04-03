@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages because this is our pacakge
+// ignore: depend_on_referenced_packages because this is our package
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:simple_hub/domain/connections_service.dart';
 import 'package:simple_hub/infrastructure/core/logger.dart';
@@ -31,7 +31,7 @@ class _CbjHubInNetworkWidgetState extends State<CbjHubInNetworkWidget> {
     setState(() {
       loading = true;
     });
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
       logger.e('Please set up network');
       return;

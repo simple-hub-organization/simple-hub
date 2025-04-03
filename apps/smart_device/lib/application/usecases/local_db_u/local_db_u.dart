@@ -9,11 +9,11 @@ class LocalDbU {
 
   late LocalDbE _localDbE;
 
-  Future<List<SmartDeviceBaseAbstract>?> getListOfSmartDevices() async {
+  Future<List<SmartDeviceBaseAbstract>?> getListOfSmartDevices() {
     return _localDbE.getListOfSmartDevices();
   }
 
-  Future<FirebaseAccountsInformationD?> getListOfDatabaseInformation() async {
+  Future<FirebaseAccountsInformationD?> getListOfDatabaseInformation() {
     return _localDbE.getListOfDatabaseInformation();
   }
 }

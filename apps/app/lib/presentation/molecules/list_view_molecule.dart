@@ -11,7 +11,7 @@ class ListViewMolecule extends StatelessWidget {
     this.reverse = false,
     this.physics,
     this.shrinkWrap = false,
-    this.separatorVariant = SeparatorVariant.reletedElements,
+    this.separatorVariant = SeparatorVariant.relatedElements,
   });
 
   final int itemCount;

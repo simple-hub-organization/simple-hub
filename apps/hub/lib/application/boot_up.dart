@@ -12,7 +12,7 @@ class BootUp {
     HubVendorsConnectorConjecture();
 
     HubJavascriptWebSocket.instance.connect();
-    NetworksManager();
+    NetworksManager.instance;
     SearchDevices()
         .startSearchIsolate(networkUtilitiesType: NetworkUtilities());
 

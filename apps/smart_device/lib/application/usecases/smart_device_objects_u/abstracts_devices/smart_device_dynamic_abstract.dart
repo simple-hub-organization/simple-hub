@@ -18,7 +18,7 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   Future<String> executeActionString(
     String wishString,
     CbjDeviceStateGRPC deviceState,
-  ) async {
+  ) {
     final CbjDeviceActions deviceAction =
         convertWishStringToWishesObject(wishString)!;
     return executeDeviceAction(deviceAction, deviceState);
@@ -28,7 +28,7 @@ abstract class SmartDeviceDynamicAbstract extends SmartDeviceSimpleAbstract {
   Future<String> executeDeviceAction(
     CbjDeviceActions deviceAction,
     CbjDeviceStateGRPC deviceState,
-  ) async {
+  ) {
     return _wishInDynamicClass(deviceAction, deviceState);
   }
 

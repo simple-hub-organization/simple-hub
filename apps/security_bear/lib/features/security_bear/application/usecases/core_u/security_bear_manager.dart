@@ -8,10 +8,10 @@ import 'package:security_bear/utils.dart';
 
 /// This class is where all the program start after the main file
 class SecurityBearManagerU {
-
   SecurityBearManagerU() {
     securityBearMainAsync();
   }
+
   /// Port for the security bear server to get opened on
   static late int securityBearServerPort;
 
@@ -19,7 +19,9 @@ class SecurityBearManagerU {
       NetworkEntity(networkName: 'CyBear Jinni', networkPass: 'CyBear Jinni');
 
   final NetworkEntity secondNetworkDefault = NetworkEntity(
-      networkName: 'CyBear_Jinni Jinni', networkPass: 'CyBear_Jinni Jinni',);
+    networkName: 'CyBear_Jinni Jinni',
+    networkPass: 'CyBear_Jinni Jinni',
+  );
 
   Future<void> securityBearMainAsync() async {
     logger.i('Device local IP: ${await getIps()}');
@@ -44,7 +46,7 @@ class SecurityBearManagerU {
 
   ///  This function will create the server in case there is connection
   Future<void> createServer() async {
-    final server = Server([SecurityBearServerU()]);
+    final server = Server.create(services: [SecurityBearServerU()]);
     if (currentEnv == Env.prod) {
       securityBearServerPort = 50052;
     } else {

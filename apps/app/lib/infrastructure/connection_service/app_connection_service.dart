@@ -7,11 +7,11 @@ class _AppConnectionService implements ConnectionsService {
   SearchDevices? searchDevicesInstance;
 
   @override
-  Future<HashMap<String, DeviceEntityBase>> get getEntities async =>
+  Future<HashMap<String, DeviceEntityBase>> get getEntities =>
       IcSynchronizer().getEntities();
 
   @override
-  Future<HashMap<String, AreaEntity>> get getAreas async =>
+  Future<HashMap<String, AreaEntity>> get getAreas =>
       IcSynchronizer().getAreas();
 
   @override
@@ -59,7 +59,7 @@ class _AppConnectionService implements ConnectionsService {
   Future addScene(SceneEntity scene) => IcSynchronizer().addScene(scene);
 
   @override
-  Future loginVendor(VendorLoginEntity value) async =>
+  Future loginVendor(VendorLoginEntity value) =>
       IcSynchronizer().loginVendor(value);
 
   @override
@@ -74,7 +74,7 @@ class _AppConnectionService implements ConnectionsService {
     // TODO: implement findHub
     throw UnimplementedError();
   }
-  
+
   @override
   Stream<MapEntry<String, SceneEntity>> watchScenes() {
     // TODO: implement watchScenes

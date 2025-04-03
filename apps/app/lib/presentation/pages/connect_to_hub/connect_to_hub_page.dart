@@ -213,18 +213,11 @@ class ConnectToHubPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        TextButton(
-                          onPressed: () async {
-                            context.router.push(const ConnectToHubMoreRoute());
-                          },
-                          style: TextButton.styleFrom(
-                            minimumSize: const Size(70, 30),
-                            backgroundColor: HexColor('#985dc7'),
-                          ),
-                          child: const TextAtom(
-                            'More',
-                            style: TextStyle(color: Colors.white),
-                          ),
+                        ButtonAtom(
+                          variant: ButtonVariant.lowEmphasisText,
+                          onPressed: () => context.router
+                              .push(const ConnectToHubMoreRoute()),
+                          text: 'More',
                         ),
                       ],
                     ),

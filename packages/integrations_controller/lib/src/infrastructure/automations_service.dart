@@ -44,7 +44,8 @@ class AutomationService {
           jsonEncode(scene.toInfrastructure().toJson());
       automationsJsonString.add(sceneAsJsonString);
     }
-    final String homeBoxName = NetworksManager().currentNetwork!.uniqueId;
+    final String homeBoxName =
+        NetworksManager.instance.currentNetwork!.uniqueId;
 
     IDbRepository.instance.saveScenes(homeBoxName, automationsJsonString);
   }

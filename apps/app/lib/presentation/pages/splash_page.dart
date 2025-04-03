@@ -39,7 +39,7 @@ class _SplashPageState extends State<SplashPage> {
     SystemCommandsBaseClassD.instance = AppCommands();
     await Hive.initFlutter();
     await IDbRepository.instance.asyncConstructor();
-    NetworksManager().loadFromDb();
+    NetworksManager.instance.loadFromDb();
     final bool success = await IManageNetworkRepository.instance.loadWifi();
     if (!success) {
       if (mounted) {
@@ -47,16 +47,18 @@ class _SplashPageState extends State<SplashPage> {
       }
       return;
     }
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
-      logger.e('Please set up network');
+      logger.e('(initializeApp) Please set up network');
       return;
     }
     await IcSynchronizer().loadAllFromDb();
-    ConnectionsService.setCurrentConnectionType(
-      networkBssid: bssid,
-      connectionType: ConnectionType.hub,
-    );
+    if (ConnectionsService.getCurrentConnectionType() != ConnectionType.none) {
+      ConnectionsService.setCurrentConnectionType(
+        networkBssid: bssid,
+        connectionType: ConnectionType.hub,
+      );
+    }
 
     // ConnectionsService.instance.searchDevices();
 
@@ -74,16 +76,18 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
     if (entities.isNotEmpty) {
-      final String? bssid = NetworksManager().currentNetwork?.bssid;
+      final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
       if (bssid == null) {
-        logger.e('Please set up network');
+        logger.e('(_navigate) Please set up network');
         return;
       }
-
-      ConnectionsService.setCurrentConnectionType(
-        networkBssid: bssid,
-        connectionType: ConnectionType.hub,
-      );
+      if (ConnectionsService.getCurrentConnectionType() !=
+          ConnectionType.none) {
+        ConnectionsService.setCurrentConnectionType(
+          networkBssid: bssid,
+          connectionType: ConnectionType.hub,
+        );
+      }
       await ConnectionsService.instance.connect();
       if (!mounted) {
         return;
@@ -95,6 +99,8 @@ class _SplashPageState extends State<SplashPage> {
       context.router.replace(const ConnectToHubRoute());
       return;
     }
+    logger.i('Route to route page');
+
     context.router.replace(const IntroductionRouteRoute());
     return;
   }

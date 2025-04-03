@@ -26,7 +26,7 @@ class IcSynchronizer {
 
   // Networks are beiseparatelyng loaded separately before calling this function
   Future loadAllFromDb() async {
-    final String? homeId = NetworksManager().currentNetwork?.uniqueId;
+    final String? homeId = NetworksManager.instance.currentNetwork?.uniqueId;
     if (homeId == null) {
       return;
     }
@@ -92,8 +92,7 @@ class IcSynchronizer {
       IAreaRepository.instance.setEtitiesToArea(area, entities);
 
   //  ------------------ AutomationService --------------------
-  HashMap<String, SceneEntity> getScenes() =>
-      AutomationService().getScenes();
+  HashMap<String, SceneEntity> getScenes() => AutomationService().getScenes();
 
   Future addScene(SceneEntity scene) async {
     IAreaRepository.instance.addSceneToDiscover(scene.uniqueId.getOrCrash());

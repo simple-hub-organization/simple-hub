@@ -359,7 +359,7 @@ class CbjSmartDeviceServerU extends CbjSmartDeviceConnectionsServiceBase {
   Future<CbjCommendStatus> setCompInfo(
     ServiceCall call,
     CbjCompSmartDeviceInfo request,
-  ) async {
+  ) {
     logger.i('setCompInfo');
 
     return setCompHelper(request);

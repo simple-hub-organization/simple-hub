@@ -91,7 +91,7 @@ class _AddActionPageState extends State<AddActionPage> {
                       );
                     }).toList(),
                   ),
-                  const SeparatorAtom(variant: SeparatorVariant.farAppart),
+                  const SeparatorAtom(variant: SeparatorVariant.farApart),
                   DropdownButton<String>(
                     dropdownColor: Colors.black,
                     style: const TextStyle(color: Colors.white),
@@ -120,7 +120,7 @@ class _AddActionPageState extends State<AddActionPage> {
                           ),
                         ],
                   ),
-                  const SeparatorAtom(variant: SeparatorVariant.farAppart),
+                  const SeparatorAtom(variant: SeparatorVariant.farApart),
                   DropdownButton<String>(
                     dropdownColor: Colors.black,
                     style: const TextStyle(color: Colors.white),
@@ -150,7 +150,7 @@ class _AddActionPageState extends State<AddActionPage> {
                             ),
                           ],
                   ),
-                  const SeparatorAtom(variant: SeparatorVariant.farAppart),
+                  const SeparatorAtom(variant: SeparatorVariant.farApart),
                   const TextAtom('Field value'),
                   const SeparatorAtom(),
                   DropdownButton<String>(
@@ -193,7 +193,7 @@ class _AddActionPageState extends State<AddActionPage> {
                 ],
               ),
             ),
-            const SeparatorAtom(variant: SeparatorVariant.farAppart),
+            const SeparatorAtom(variant: SeparatorVariant.farApart),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
