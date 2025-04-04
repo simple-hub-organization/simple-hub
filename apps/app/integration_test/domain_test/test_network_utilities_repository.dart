@@ -11,23 +11,19 @@ class TestNetworkUtilitiesRepository extends INetworkUtilities {
   Future configureNetworkTools(String dbDirectory) async {}
 
   @override
-  Future<GenericUnsupportedDE?> deviceFromPort(String address, int port) async {
-    return null;
-  }
+  Future<GenericUnsupportedDE?> deviceFromPort(
+          String address, int port) async =>
+      null;
 
   @override
   Stream<DeviceEntityBase> getAllPingableDevicesAsync(String subnet,
-      {int? firstHostId, int? lastHostId}) {
-    return const Stream.empty();
-  }
+          {int? firstHostId, int? lastHostId}) =>
+      const Stream.empty();
 
   @override
-  Stream<DeviceEntityBase> scanDevicesForSinglePort(String subnet, int port) {
-    return const Stream.empty();
-  }
+  Stream<DeviceEntityBase> scanDevicesForSinglePort(String subnet, int port) =>
+      const Stream.empty();
 
   @override
-  Stream<DeviceEntityBase> searchMdnsDevices() {
-    return const Stream.empty();
-  }
+  Stream<DeviceEntityBase> searchMdnsDevices() => const Stream.empty();
 }

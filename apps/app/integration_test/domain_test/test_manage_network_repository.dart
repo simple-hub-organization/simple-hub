@@ -32,8 +32,5 @@ class TestIManageNetworkRepository extends IManageNetworkRepository {
 
   @override
   Stream<Either<HomeUserFailures, KtList<ManageNetworkEntity>>>
-      scanWiFiNetworks() {
-    // TODO: implement scanWiFiNetworks
-    throw UnimplementedError();
-  }
+      scanWiFiNetworks() => const Stream.empty();
 }

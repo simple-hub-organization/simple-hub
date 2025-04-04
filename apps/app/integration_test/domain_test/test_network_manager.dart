@@ -10,7 +10,6 @@ class TestNetworkManagerRepository extends NetworksManager {
   void addNetwork(NetworkObject network) {}
 
   @override
-  // TODO: implement currentNetwork
   NetworkObject? get currentNetwork => NetworkObject(
         ssid: 'ssid',
         bssid: 'bssid',

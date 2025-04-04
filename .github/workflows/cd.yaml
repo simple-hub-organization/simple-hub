@@ -29,7 +29,9 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         working-directory: frontend
-        run: flutter pub get
+        run: |
+          dart run build_runner build --delete-conflicting-outputs
+          flutter pub get
 
       # Open ios simulator
       - uses: futureware-tech/simulator-action@v4
