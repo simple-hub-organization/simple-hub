@@ -53,9 +53,6 @@ class VendorsConnectorConjecture extends VendorConnectorConjectureController {
           .instanceMapByType[vendorLoginService.vendor]
           ?.login(vendorLoginService);
 
-  // When vendor need more information from entity it using this list
-  @override
-  List<DeviceEntityBase> moreInformationForEntity = [];
 
   /// Getting ActiveHost that contain MdnsInfo property and activate it inside
   /// The correct company.

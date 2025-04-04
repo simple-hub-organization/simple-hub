@@ -18,7 +18,6 @@ import 'package:permission_handler/permission_handler.dart'
 import 'package:rxdart/rxdart.dart';
 import 'package:simple_hub/infrastructure/core/injection.dart';
 import 'package:simple_hub/infrastructure/core/logger.dart';
-import 'package:simple_hub/infrastructure/network_utilities_flutter.dart';
 
 part 'package:simple_hub/infrastructure/connection_service/app_connection_service.dart';
 part 'package:simple_hub/infrastructure/connection_service/demo_connection_service.dart';

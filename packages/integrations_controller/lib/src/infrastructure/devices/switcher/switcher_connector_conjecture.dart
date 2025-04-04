@@ -6,7 +6,6 @@ import 'package:integrations_controller/src/domain/core/request_action_types.dar
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart';
 import 'package:integrations_controller/src/infrastructure/devices/switcher/switcher_helpers.dart';
-import 'package:integrations_controller/src/infrastructure/vendors_connector_conjecture.dart';
 import 'package:switcher_dart/switcher_dart.dart';
 
 class SwitcherConnectorConjecture extends VendorConnectorConjectureService {
