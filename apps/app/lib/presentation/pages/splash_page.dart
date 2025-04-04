@@ -5,7 +5,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-// ignore: depend_on_referenced_packages because this is our pacakge
+// ignore: depend_on_referenced_packages because this is our package
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:integrations_controller/src/infrastructure/node_red/node_red_repository.dart';
 import 'package:path_provider/path_provider.dart';
@@ -33,6 +33,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future initializeApp() async {
+    VendorConnectorConjectureController.instance.asyncConstructor();
     // Set if not running as test
     if (INetworkUtilities.instance.runtimeType == NetworkUtilities) {
       INetworkUtilities.instance = NetworkUtilitiesFlutter();

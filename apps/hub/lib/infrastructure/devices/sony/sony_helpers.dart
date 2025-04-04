@@ -41,10 +41,10 @@ class SonyHelpers {
       );
 
       if (sonyDE.devicesMacAddress.getOrCrash() == null) {
-        VendorsConnectorConjecture().moreInformationForEntity.add(sonyDE);
+        VendorConnectorConjectureController.instance.moreInformationForEntity
+            .add(sonyDE);
         Future.delayed(const Duration(minutes: 5), () {
-          VendorsConnectorConjecture()
-              .moreInformationForEntity
+          VendorConnectorConjectureController.instance.moreInformationForEntity
               .removeWhere((entity) {
             if (entity.entityCbjUniqueId.getOrCrash() ==
                 sonyDE.entityCbjUniqueId.getOrCrash()) {

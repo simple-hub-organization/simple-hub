@@ -45,7 +45,8 @@ class HubJavascriptWebSocket {
           DeviceEntityDtoBase.fromJson(jsonData).toDomain();
 
       final VendorConnectorConjectureService? connector =
-          VendorsConnectorConjecture().getVendorConnectorConjecture(
+          VendorConnectorConjectureController.instance
+              .getVendorConnectorConjecture(
         entity.cbjDeviceVendor.vendorsAndServices,
       );
       if (connector == null) {
@@ -54,7 +55,7 @@ class HubJavascriptWebSocket {
 
       if (entity.entityStateGRPC.state ==
           EntityStateGRPC.addNewEntityFromJavascriptHub) {
-        VendorsConnectorConjecture().foundEntityOfVendor(
+        VendorConnectorConjectureController.instance.foundEntityOfVendor(
           vendorConnectorConjectureService: connector,
           entity: entity,
           entityCbjUniqueId: entity.entityCbjUniqueId.getOrCrash(),

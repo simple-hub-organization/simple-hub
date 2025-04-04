@@ -2,16 +2,12 @@ import 'package:hub/infrastructure/devices/matter/matter_connector_conjecture.da
 import 'package:hub/infrastructure/devices/sony/sony_connector_conjecture.dart';
 import 'package:integrations_controller/integrations_controller.dart';
 
-class HubVendorsConnectorConjecture {
-  factory HubVendorsConnectorConjecture() => _instance;
-
-  HubVendorsConnectorConjecture._singletonConstructor() {
-    VendorsConnectorConjecture();
-
+class HubVendorsConnectorConjecture extends VendorsConnectorConjecture {
+  @override
+  Future asyncConstructor() async {
+    VendorConnectorConjectureController.instance = this;
+    VendorsConnectorConjecture().asyncConstructor();
     MatterConnectorConjecture();
     SonyConnectorConjecture();
   }
-
-  static final HubVendorsConnectorConjecture _instance =
-      HubVendorsConnectorConjecture._singletonConstructor();
 }

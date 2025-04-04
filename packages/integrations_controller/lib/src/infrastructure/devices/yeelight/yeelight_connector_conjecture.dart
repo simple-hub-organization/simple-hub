@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:io';
 
+import 'package:integrations_controller/src/domain/controllers/controllers.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart';
 import 'package:integrations_controller/src/infrastructure/devices/yeelight/yeelight_helpers.dart';
-import 'package:integrations_controller/src/infrastructure/vendors_connector_conjecture.dart';
 import 'package:yeedart/yeedart.dart';
 
 class YeelightConnectorConjecture extends VendorConnectorConjectureService {
@@ -54,7 +54,7 @@ class YeelightConnectorConjecture extends VendorConnectorConjectureService {
 
     for (final MapEntry<String, DeviceEntityBase> entery
         in enitityList.entries) {
-      await VendorsConnectorConjecture().foundEntityOfVendor(
+      await VendorConnectorConjectureController.instance.foundEntityOfVendor(
         vendorConnectorConjectureService: this,
         entity: entery.value,
         entityCbjUniqueId: entery.value.entityCbjUniqueId.getOrCrash(),

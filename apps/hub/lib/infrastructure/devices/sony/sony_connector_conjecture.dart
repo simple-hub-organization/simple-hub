@@ -80,7 +80,8 @@ class SonyConnectorConjecture extends VendorConnectorConjectureService {
 
     entityToChange?.devicesMacAddress = entity.devicesMacAddress;
 
-    VendorsConnectorConjecture().moreInformationForEntity.removeWhere((entity) {
+    VendorConnectorConjectureController.instance.moreInformationForEntity
+        .removeWhere((entity) {
       if (entity.entityCbjUniqueId.getOrCrash() ==
           entityToChange?.entityCbjUniqueId.getOrCrash()) {
         return true;

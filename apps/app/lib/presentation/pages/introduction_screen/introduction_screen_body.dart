@@ -71,7 +71,7 @@ class _IntroductionScreenBodyState extends State<IntroductionScreenBody> {
                       child: Column(
                         children: [
                           TextAtom(
-                            'CyBear Jinni',
+                            'Simple Hub',
                             style: textTheme.displaySmall!
                                 .copyWith(color: Colors.white),
                           ),
