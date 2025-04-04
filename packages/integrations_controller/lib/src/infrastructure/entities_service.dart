@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:convert';
 
+import 'package:integrations_controller/src/domain/controllers/controllers.dart';
 import 'package:integrations_controller/src/domain/core/request_action_object.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/vendor_connector_conjecture_service.dart';
@@ -8,7 +9,6 @@ import 'package:integrations_controller/src/domain/i_local_db_repository.dart';
 import 'package:integrations_controller/src/domain/ic_synchronizer.dart';
 import 'package:integrations_controller/src/domain/networks_manager.dart';
 import 'package:integrations_controller/src/infrastructure/devices/device_helper/device_helper.dart';
-import 'package:integrations_controller/src/infrastructure/vendors_connector_conjecture.dart';
 
 class EntitiesService {
   factory EntitiesService() => _instance;
@@ -37,10 +37,10 @@ class EntitiesService {
   }
 
   void setEntitiesState(RequestActionObject action) =>
-      VendorsConnectorConjecture().setEntitiesState(action);
+      VendorConnectorConjectureController.instance.setEntitiesState(action);
 
   HashMap<String, DeviceEntityBase> getEntities() =>
-      VendorsConnectorConjecture().getEntities();
+      VendorConnectorConjectureController.instance.getEntities();
 
   void saveToDb() {
     final List<String> entitiesJsonString = [];
@@ -50,7 +50,8 @@ class EntitiesService {
           jsonEncode(entity.toInfrastructure().toJson());
       entitiesJsonString.add(entityAsJsonString);
     }
-    final String homeBoxName = NetworksManager().currentNetwork!.uniqueId;
+    final String homeBoxName =
+        NetworksManager.instance.currentNetwork!.uniqueId;
 
     IDbRepository.instance.saveEntities(homeBoxName, entitiesJsonString);
   }
@@ -62,14 +63,15 @@ class EntitiesService {
       final DeviceEntityBase entity =
           DeviceHelper.convertJsonStringToDomain(entityString);
       final VendorConnectorConjectureService? vendor =
-          VendorsConnectorConjecture().getVendorConnectorConjecture(
+          VendorConnectorConjectureController.instance
+              .getVendorConnectorConjecture(
         entity.cbjDeviceVendor.vendorsAndServices,
       );
       if (vendor == null) {
         return;
       }
       // entitiesMap.addEntries([MapEntry(entity.getCbjEntityId, entity)]);
-      VendorsConnectorConjecture().loadEntitiesFromDb(
+      VendorConnectorConjectureController.instance.loadEntitiesFromDb(
         vendorConnectorConjectureService: vendor,
         entity: entity,
         entityCbjUniqueId: entity.getCbjEntityId,

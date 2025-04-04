@@ -129,6 +129,10 @@ dependencies:
   protobuf: ^3.1.0
   # A wrapper around InheritedWidget to make them easier to use and more reusable.
   provider: ^6.1.1
+  rounded_loading_button_plus:
+    git:
+      url: https://github.com/guyluz11/flutter_rounded_loading_button_plus.git
+      ref: border_color
   # Implementation of the popular reactiveX api for asynchronous programming
   rxdart: ^0.27.7
   # Reading and writing simple key-value pairs
@@ -141,6 +145,7 @@ dependencies:
   # Plugin for launching a URL
   timezone: ^0.10.0
   url_launcher: ^6.2.1
+  vibration: ^2.0.1
   # Get available wifi ssid list, user can connect to wifi with ssid and password, and create hotspot
   wifi_iot: ^0.3.18+1
   # Scan for nearby visible WiFi access points.
@@ -154,14 +159,14 @@ dev_dependencies:
   # Package which simplifies the task of updating your Flutter app's launcher icon.
   flutter_launcher_icons: ^0.14.3
   # Code generator for unions/pattern-matching/copy.
+  flutter_test:
+    sdk: flutter
   freezed: ^2.4.5
   # Convenient code generator for get_it.
   injectable_generator: ^2.4.1
+  integration_test:
+    sdk: flutter
   # Code generator for the Isar Database. Finds classes annotated with @Collection.
   isar_generator: ^3.1.0+1
   # Collection of lint rules for Dart and Flutter projects.
-  lint: ^2.2.0
-  #  # Mock framework with APIs for Fakes, Mocks, behavior verification, and stubbing.
-  #  mockito: ^5.3.0
-  # A full featured library for writing and running Dart tests across platforms.
-  test: ^1.24.9
+  lint: ^2.8.0

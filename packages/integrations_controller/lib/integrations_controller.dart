@@ -2,6 +2,7 @@ export 'src/domain/area/area_entity.dart';
 export 'src/domain/area/area_failures.dart';
 export 'src/domain/area/value_objects_area.dart';
 export 'src/domain/binding/i_binding_cbj_repository.dart';
+export 'src/domain/controllers/controllers.dart';
 export 'src/domain/core/request_action_object.dart';
 export 'src/domain/core/request_action_object_dtos.dart';
 export 'src/domain/core/request_action_types.dart';

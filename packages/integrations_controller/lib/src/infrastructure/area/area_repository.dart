@@ -106,7 +106,8 @@ class _AreaRepository implements IAreaRepository {
           jsonEncode(area.toInfrastructure().toJson());
       areasJsonString.add(areaAsJsonString);
     }
-    final String? homeBoxName = NetworksManager().currentNetwork?.uniqueId;
+    final String? homeBoxName =
+        NetworksManager.instance.currentNetwork?.uniqueId;
     if (homeBoxName == null) {
       return false;
     }

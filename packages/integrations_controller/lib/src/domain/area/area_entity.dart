@@ -25,8 +25,8 @@ class AreaEntity {
   });
 
   factory AreaEntity.empty() => AreaEntity(
-        uniqueId: AreaUniqueId(),
-        cbjEntityName: AreaDefaultName('Empty Area Name'),
+        uniqueId: AreaUniqueId.discovered(),
+        cbjEntityName: AreaDefaultName('New Devices'),
         background: AreaBackground(
           'https://live.staticflickr.com/5220/5486044345_f67abff3e9_h.jpg',
         ),
@@ -63,6 +63,18 @@ class AreaEntity {
       entitiesId = AreaEntitiesId(tempList);
     } catch (e) {
       icLogger.e('addDeviceId will not work if list got created with const');
+    }
+  }
+
+  /// Will add new scene id to the scenes in the area list
+  void addScenesId(HashSet<String> scenesIdTemp) {
+    final Set<String> tempList = {};
+    tempList.addAll(scenesId.getOrCrash());
+    tempList.addAll(scenesIdTemp);
+    try {
+      scenesId = AreaScenesId(tempList);
+    } catch (e) {
+      icLogger.e('addSceneId will not work if list got created with const');
     }
   }
 

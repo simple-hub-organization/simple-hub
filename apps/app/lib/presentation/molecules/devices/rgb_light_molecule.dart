@@ -105,7 +105,7 @@ class _RgbwLightMoleculeState extends State<RgbwLightMolecule> {
           action: widget.entity.lightSwitchState.action,
           state: widget.entity.entityStateGRPC.state,
         ),
-        const SeparatorAtom(variant: SeparatorVariant.reletedElements),
+        const SeparatorAtom(variant: SeparatorVariant.relatedElements),
         LightColorMods(
           entity: widget.entity,
           entitiesId: widget.entitiesId,
@@ -303,7 +303,7 @@ class _LightColorMods extends State<LightColorMods> {
           getWhiteModeWidget()
         else if (colorMode == ColorMode.rgb)
           getHsvColorModeWidget(),
-        const SeparatorAtom(variant: SeparatorVariant.reletedElements),
+        const SeparatorAtom(variant: SeparatorVariant.relatedElements),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

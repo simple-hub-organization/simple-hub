@@ -7,8 +7,6 @@ import 'package:integrations_controller/src/domain/generic_entities/generic_blin
 import 'package:integrations_controller/src/domain/generic_entities/generic_blinds_entity/generic_blinds_value_objects.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_boiler_entity/generic_boiler_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_boiler_entity/generic_boiler_value_objects.dart';
-import 'package:integrations_controller/src/domain/generic_entities/generic_dimmable_light_entity/generic_dimmable_light_entity.dart';
-import 'package:integrations_controller/src/domain/generic_entities/generic_dimmable_light_entity/generic_dimmable_light_value_objects.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_light_entity/generic_light_entity.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_light_entity/generic_light_value_objects.dart';
 import 'package:integrations_controller/src/domain/generic_entities/generic_rgbw_light_entity/generic_rgbw_light_entity.dart';
@@ -93,7 +91,7 @@ class DemoConnectionController {
         '90d20fc3-434a-11ed-bd96-f573a00b65aa',
       ),
       compUuid: DeviceCompUuid('34asdfrsd23gggg'),
-      switchState: GenericSwitchSwitchState(EntityActions.on.toString()),
+      switchState: GenericSwitchSwitchState(EntityActions.on.name),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),
@@ -142,7 +140,7 @@ class DemoConnectionController {
         '90d20fc3-434a-11ed-bd96-f573a00b65aa',
       ),
       compUuid: DeviceCompUuid('34asdfrsd23gggg'),
-      switchState: GenericSwitchSwitchState(EntityActions.on.toString()),
+      switchState: GenericSwitchSwitchState(EntityActions.on.name),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),
@@ -194,7 +192,7 @@ class DemoConnectionController {
         '65d84b11-434d-11ed-817a-7d350fb52f91',
       ),
       compUuid: DeviceCompUuid('34asdfrsd23gggg'),
-      boilerSwitchState: GenericBoilerSwitchState(EntityActions.off.toString()),
+      boilerSwitchState: GenericBoilerSwitchState(EntityActions.on.name),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),
@@ -229,7 +227,7 @@ class DemoConnectionController {
       uniqueId:
           CoreUniqueId.fromUniqueString('7189ed76-4351-11ed-b249-63fd7e165c16'),
       entityUniqueId: EntityUniqueId('bf4bccdaf68347e31dhiut'),
-      cbjDeviceVendor: CbjDeviceVendor(VendorsAndServices.lifx),
+      cbjDeviceVendor: CbjDeviceVendor(VendorsAndServices.matter),
       deviceVendor: DeviceVendor(),
       deviceNetworkLastUpdate: DeviceNetworkLastUpdate(),
       cbjEntityName: CbjEntityName(value: 'Dining Area Ceiling'),
@@ -243,14 +241,14 @@ class DemoConnectionController {
         '7189ed77-4351-11ed-b249-63fd7e165c16',
       ),
       compUuid: DeviceCompUuid('34asdfrsd23gggg'),
-      lightSwitchState:
-          GenericRgbwLightSwitchState(EntityActions.off.toString()),
+      lightSwitchState: GenericRgbwLightSwitchState(EntityActions.on.name),
       lightBrightness: GenericRgbwLightBrightness('100'),
       lightColorAlpha: GenericRgbwLightColorAlpha('1.0'),
       lightColorHue: GenericRgbwLightColorHue('0.0'),
       lightColorSaturation: GenericRgbwLightColorSaturation('1.0'),
       lightColorTemperature: GenericRgbwLightColorTemperature('8129'),
       lightColorValue: GenericRgbwLightColorValue('1.0'),
+      colorMode: GenericLightModeState(ColorMode.white),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),
@@ -268,7 +266,6 @@ class DemoConnectionController {
           LastResponseFromDeviceTimeStamp('lastResponseFromDeviceTimeStamp'),
       entityCbjUniqueId:
           CoreUniqueId.fromUniqueString('sd3fgbns-64as-1gd2-gfdw-dgghks325as6'),
-      colorMode: GenericLightModeState(ColorMode.white),
     );
 
     devicesList.addEntries(
@@ -282,8 +279,8 @@ class DemoConnectionController {
 
     /// RGBLight
 
-    final GenericDimmableLightDE allRemoteCommandsDimmableLight1 =
-        GenericDimmableLightDE(
+    final GenericRgbwLightDE allRemoteCommandsDimmableLight1 =
+        GenericRgbwLightDE(
       uniqueId:
           CoreUniqueId.fromUniqueString('sfds344t-sdf3-fd3d-24s4-bd2sdf3n5rfd'),
       entityUniqueId: EntityUniqueId('dn2fs1sgnxzzx34sh53qdf'),
@@ -301,9 +298,14 @@ class DemoConnectionController {
         'askf3gd7-nb21-fg2d-bvw9-xcbsd24sdgd6',
       ),
       compUuid: DeviceCompUuid('sn45sd1fcn5532d'),
-      lightSwitchState:
-          GenericDimmableLightSwitchState(EntityActions.off.toString()),
-      lightBrightness: GenericDimmableLightBrightness('100'),
+      lightSwitchState: GenericRgbwLightSwitchState(EntityActions.on.name),
+      lightBrightness: GenericRgbwLightBrightness('100'),
+      lightColorAlpha: GenericRgbwLightColorAlpha('1.0'),
+      lightColorHue: GenericRgbwLightColorHue('0.0'),
+      lightColorSaturation: GenericRgbwLightColorSaturation('1.0'),
+      lightColorTemperature: GenericRgbwLightColorTemperature('8129'),
+      lightColorValue: GenericRgbwLightColorValue('1.0'),
+      colorMode: GenericLightModeState(ColorMode.white),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),
@@ -332,8 +334,8 @@ class DemoConnectionController {
       ],
     );
 
-    final GenericDimmableLightDE allRemoteCommandsDimmableLight2 =
-        GenericDimmableLightDE(
+    final GenericRgbwLightDE allRemoteCommandsDimmableLight2 =
+        GenericRgbwLightDE(
       uniqueId:
           CoreUniqueId.fromUniqueString('gcvweg3y-bv2s-cvwe-bdmf-7h4f3f2dw2d1'),
       entityUniqueId: EntityUniqueId('4gj76jykeg3fsdf2dsq11f'),
@@ -351,9 +353,14 @@ class DemoConnectionController {
         'f23gg2d2-h6j7-k8ky-6ugh-6t574ty47yj5',
       ),
       compUuid: DeviceCompUuid('dg23esbh4eghrer'),
-      lightSwitchState:
-          GenericDimmableLightSwitchState(EntityActions.off.toString()),
-      lightBrightness: GenericDimmableLightBrightness('100'),
+      lightSwitchState: GenericRgbwLightSwitchState(EntityActions.on.name),
+      lightBrightness: GenericRgbwLightBrightness('100'),
+      lightColorAlpha: GenericRgbwLightColorAlpha('1.0'),
+      lightColorHue: GenericRgbwLightColorHue('0.0'),
+      lightColorSaturation: GenericRgbwLightColorSaturation('1.0'),
+      lightColorTemperature: GenericRgbwLightColorTemperature('8129'),
+      lightColorValue: GenericRgbwLightColorValue('1.0'),
+      colorMode: GenericLightModeState(ColorMode.white),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),
@@ -402,7 +409,7 @@ class DemoConnectionController {
         'ffb3rg2s-cvns-awre-bmkp-yityueyertbe',
       ),
       compUuid: DeviceCompUuid('erbvnr34yh4627i'),
-      lightSwitchState: GenericLightSwitchState(EntityActions.off.toString()),
+      lightSwitchState: GenericLightSwitchState(EntityActions.on.name),
       powerConsumption: DevicePowerConsumption('0'),
       deviceUniqueId: DeviceUniqueId('deviceUniqueId'),
       devicePort: DevicePort(value: 'devicePort'),

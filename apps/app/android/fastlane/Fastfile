@@ -1,0 +1,92 @@
+private_lane :get_last_version_code do
+  if ENV["GITHUB_ACTIONS"] == "true"
+    UI.message("Running in GitHub Actions")
+    json_key_path = "/tmp/file.json"
+  else
+    UI.message("Running locally")
+    json_key_path = "../../../../passwords/youtube_helper/play_store/file.json"
+  end
+
+  track = "production"
+
+  version_codes = google_play_track_version_codes(
+    json_key: json_key_path,
+    package_name: Actions.lane_context[:PACKAGE_NAME],
+    track: track
+  )
+
+  last_version_code = version_codes.max
+  UI.message("Last version code: #{last_version_code}")
+
+  Actions.lane_context[:LAST_VERSION_CODE] = last_version_code
+end
+
+private_lane :clean_folder do
+  folder_path = "metadata/android/en-US/images/phoneScreenshots"
+
+  if Dir.exist?(folder_path)
+    Dir.foreach(folder_path) do |file|
+      file_path = File.join(folder_path, file)
+      File.delete(file_path) if File.file?(file_path)
+    end
+    UI.message("✅ All files in '#{folder_path}' have been removed.")
+  else
+    UI.message("❌ Folder '#{folder_path}' does not exist.")
+  end
+end
+
+private_lane :populate_metadata do
+
+  unless File.exist?("./fastlane/metadata")
+    puts "Running 'fastlane supply init' to initialize supply metadata..."
+    Dir.chdir("../") do
+      UI.message("✅ Now in folder: #{Dir.pwd}")
+      system("fastlane supply init")
+    end
+  else
+    puts "Supply metadata already initialized."
+  end
+
+  screenshots_src = '/tmp/flutter_app_screenshots'  # Source folder with images
+  screenshots_dest = 'metadata/android/en-US/images/phoneScreenshots'  # Destination folder (for phone screenshots)
+
+  clean_folder
+
+  # Create the folder structure for screenshots if not already created
+  require 'fileutils'
+  FileUtils.mkdir_p(screenshots_dest)  # Create the phone folder inside fastlane/screenshots
+
+  # Move all images from the source folder to the 'phone' folder
+  Dir.foreach(screenshots_src) do |filename|
+      next if filename == '.' || filename == '..'
+      src_file = File.join(screenshots_src, filename)
+      dest_file = File.join(screenshots_dest, filename)
+      FileUtils.mv(src_file, dest_file)
+  end
+end
+
+
+lane :deploy do
+  Actions.lane_context[:PACKAGE_NAME] = "com.mysimplehub"
+
+  get_last_version_code
+
+  new_version_code = Actions.lane_context[:LAST_VERSION_CODE] + 1
+
+  populate_metadata
+
+  # Build the Flutter app
+  sh("flutter clean")
+  sh("flutter build appbundle --release --build-number=#{new_version_code}")
+
+  aab_path = "../build/app/outputs/bundle/release/app-release.aab"
+
+  # Upload to Play Store new version and screenshots
+  supply(
+    track: 'production',
+    package_name: Actions.lane_context[:PACKAGE_NAME],
+    skip_upload_changelogs: true,
+    aab: aab_path
+  )
+
+end

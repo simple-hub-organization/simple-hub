@@ -12,16 +12,16 @@ class DevicesListViewOrganism extends StatelessWidget {
   const DevicesListViewOrganism(
     this.entities,
     this.onTap, {
-    this.varient = DevicesListViewOrganismVarient.list,
+    this.variant = DevicesListViewOrganismVarient.list,
     this.foldByType = true,
   });
 
   final HashSet<DeviceEntityBase> entities;
   final Function(HashSet<EntityTypes>) onTap;
-  final DevicesListViewOrganismVarient varient;
+  final DevicesListViewOrganismVarient variant;
   final bool foldByType;
 
-  HashSet<EntityTypes> getReleatedTypes(EntityTypes type) {
+  HashSet<EntityTypes> getRelatedTypes(EntityTypes type) {
     if (type == EntityTypes.light ||
         type == EntityTypes.rgbwLights ||
         type == EntityTypes.dimmableLight) {
@@ -40,7 +40,7 @@ class DevicesListViewOrganism extends StatelessWidget {
         HashMap();
 
     for (final DeviceEntityBase entity in entities) {
-      final EntityTypes type = getReleatedTypes(entity.entityTypes.type).first;
+      final EntityTypes type = getRelatedTypes(entity.entityTypes.type).first;
       HashSet<DeviceEntityBase>? entitiesForType = entitiesByType[type];
       entitiesForType ??= HashSet();
       entitiesForType.add(entity);
@@ -82,7 +82,7 @@ class DevicesListViewOrganism extends StatelessWidget {
           ),
         ),
       ),
-      onTap: () => onTap(getReleatedTypes(type)),
+      onTap: () => onTap(getRelatedTypes(type)),
     );
   }
 
@@ -91,7 +91,7 @@ class DevicesListViewOrganism extends StatelessWidget {
     final HashMap<EntityTypes, HashSet<DeviceEntityBase>> entitiesByType =
         geEntitiesByType();
 
-    switch (varient) {
+    switch (variant) {
       case DevicesListViewOrganismVarient.list:
         return ListViewMolecule(
           ListViewVeriant.separated,

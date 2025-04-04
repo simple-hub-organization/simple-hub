@@ -11,7 +11,7 @@ late String currentEnvApp;
 @injectableInit
 void configureDependencies(String env) {
   currentEnvApp = env;
-  logger.i('Current CyBear Jinni App environment name: $currentEnvApp');
+  logger.i('Current Simple Hub App environment name: $currentEnvApp');
   getIt.init(environment: env);
 }
 

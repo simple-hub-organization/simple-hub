@@ -119,7 +119,7 @@ class SearchDevices {
 
     mdnsReceivePort.listen((data) {
       if (data is GenericUnsupportedDE) {
-        VendorsConnectorConjecture().setMdnsDevice(data);
+        VendorConnectorConjectureController.instance.setMdnsDevice(data);
       }
     });
 
@@ -154,7 +154,8 @@ class SearchDevices {
 
     pingReceivePort.listen((data) {
       if (data is GenericUnsupportedDE) {
-        VendorsConnectorConjecture().setHostNameDeviceByCompany(data);
+        VendorConnectorConjectureController.instance
+            .setHostNameDeviceByCompany(data);
       }
     });
     pingIsolate.errors.listen((event) {
@@ -173,7 +174,7 @@ class SearchDevices {
     SystemCommandsBaseClassD? systemCommandsTemp,
   }) async {
     final HashMap<VendorsAndServices, List<int>>? ports =
-        VendorsConnectorConjecture().portsToScan();
+        VendorConnectorConjectureController.instance.portsToScan();
     final ReceivePort portReceivePort = ReceivePort();
     final SendToIsolate searchDevices = SendToIsolate(
       sendPort: portReceivePort.sendPort,
@@ -191,7 +192,7 @@ class SearchDevices {
 
     portReceivePort.listen((data) {
       if (data is BackFromIsolate) {
-        VendorsConnectorConjecture().setHostNameDeviceByPort(
+        VendorConnectorConjectureController.instance.setHostNameDeviceByPort(
           data.vendorsAndServices,
           data.genericUnsupportedDE,
         );
@@ -227,7 +228,7 @@ class SearchDevices {
 
     receivePort.listen((data) {
       if (data is GenericUnsupportedDE) {
-        VendorsConnectorConjecture().setUpnpDevice(data);
+        VendorConnectorConjectureController.instance.setUpnpDevice(data);
       }
     });
 
@@ -297,8 +298,8 @@ class SearchDevices {
             }
             sendPort.send(temp);
           } catch (e, stack) {
-            print('ERROR: $e - ${client.location}');
-            print(stack);
+            icLogger.e('ERROR: $e - ${client.location}');
+            icLogger.e(stack);
           }
         }
 
@@ -315,8 +316,8 @@ class SearchDevices {
             }
             sendPort.send(temp);
           } catch (e, stack) {
-            print('ERROR: $e - ${client.location}');
-            print(stack);
+            icLogger.e('ERROR: $e - ${client.location}');
+            icLogger.e(stack);
           }
         }
         await Future.delayed(const Duration(seconds: 10));
@@ -327,7 +328,9 @@ class SearchDevices {
   }
 
   Future<DeviceEntityBase?> pnpToDeviceEntity(
-      DiscoveredClient client, int port) async {
+    DiscoveredClient client,
+    int port,
+  ) async {
     final device = await client.getDevice();
     if (device == null) {
       return null;

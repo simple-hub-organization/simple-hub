@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:collection';
 
+import 'package:integrations_controller/src/domain/controllers/controllers.dart';
 import 'package:integrations_controller/src/domain/core/request_action_object.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
@@ -23,10 +24,9 @@ import 'package:integrations_controller/src/infrastructure/devices/unseported_ve
 import 'package:integrations_controller/src/infrastructure/devices/yeelight/yeelight_connector_conjecture.dart';
 import 'package:integrations_controller/src/infrastructure/entities_service.dart';
 
-class VendorsConnectorConjecture {
-  factory VendorsConnectorConjecture() => _instance;
-
-  VendorsConnectorConjecture._singletonConstructor() {
+class VendorsConnectorConjecture extends VendorConnectorConjectureController {
+  @override
+  Future asyncConstructor() async {
     UnseportedVendorOrDeviceConnectorConjecture();
     YeelightConnectorConjecture();
     TasmotaIpConnectorConjecture();
@@ -40,25 +40,23 @@ class VendorsConnectorConjecture {
     SensiboConnectorConjecture();
   }
 
-  static final VendorsConnectorConjecture _instance =
-      VendorsConnectorConjecture._singletonConstructor();
-
   HashMap<String, VendorsAndServices> entitiesToVendor = HashMap();
 
+  @override
   List<VendorEntityInformation> getVendors() =>
       VendorConnectorConjectureService.instanceMapByType.values
           .map((e) => e.vendorEntityInformation)
           .toList();
+  @override
   void loginVendor(VendorLoginEntity vendorLoginService) =>
       VendorConnectorConjectureService
           .instanceMapByType[vendorLoginService.vendor]
           ?.login(vendorLoginService);
 
-  // When vendor need more information from entity it using this list
-  List<DeviceEntityBase> moreInformationForEntity = [];
 
   /// Getting ActiveHost that contain MdnsInfo property and activate it inside
   /// The correct company.
+  @override
   Future setMdnsDevice(GenericUnsupportedDE entity) async {
     final String? mdnsDeviceIp = entity.deviceLastKnownIp.getOrCrash();
     final String? mdnsName = entity.deviceMdns.getOrCrash();
@@ -140,6 +138,7 @@ class VendorsConnectorConjecture {
     );
   }
 
+  @override
   void setUpnpDevice(GenericUnsupportedDE entity) {
     final String? friendlyName =
         entity.deviceOriginalName.getOrCrash()?.toLowerCase();
@@ -149,7 +148,8 @@ class VendorsConnectorConjecture {
 
     for (final VendorConnectorConjectureService connectorConjecture
         in VendorConnectorConjectureService.instanceMapByType.values) {
-      for (String upnpName in connectorConjecture.deviceUpnpNameLowerCaseList) {
+      for (final String upnpName
+          in connectorConjecture.deviceUpnpNameLowerCaseList) {
         if ((friendlyName?.contains(upnpName) ?? false) ||
             (manufacturer?.contains(upnpName) ?? false)) {
           vendorConjecture = connectorConjecture;
@@ -162,7 +162,8 @@ class VendorsConnectorConjecture {
     }
     if (vendorConjecture == null) {
       icLogger.w(
-          'No Vendor Connector Conjecture for pnp $friendlyName $manufacturer');
+        'No Vendor Connector Conjecture for pnp $friendlyName $manufacturer',
+      );
       return;
     }
     foundEntityOfVendor(
@@ -172,6 +173,7 @@ class VendorsConnectorConjecture {
     );
   }
 
+  @override
   Future setHostNameDeviceByCompany(GenericUnsupportedDE entity) async {
     // For existing entities that require more data from the scan
     for (final DeviceEntityBase requestEntity in moreInformationForEntity) {
@@ -235,6 +237,7 @@ class VendorsConnectorConjecture {
     vendorConnectorConjectureService.addMoreInformationOnEntity(entity);
   }
 
+  @override
   Future setHostNameDeviceByPort(
     VendorsAndServices vendor,
     DeviceEntityBase entity,
@@ -253,6 +256,7 @@ class VendorsConnectorConjecture {
     );
   }
 
+  @override
   Future loadEntitiesFromDb({
     required VendorConnectorConjectureService vendorConnectorConjectureService,
     required DeviceEntityBase entity,
@@ -274,6 +278,7 @@ class VendorsConnectorConjecture {
     }
   }
 
+  @override
   Future foundEntityOfVendor({
     required VendorConnectorConjectureService vendorConnectorConjectureService,
     required DeviceEntityBase entity,
@@ -307,10 +312,12 @@ class VendorsConnectorConjecture {
     EntitiesService().addDiscoveredEntity(handledEntity);
   }
 
+  @override
   HashMap<VendorsAndServices, List<int>>? portsToScan() {
     return VendorConnectorConjectureService.portsUsedByVendor;
   }
 
+  @override
   VendorConnectorConjectureService? getVendorConnectorConjecture(
     VendorsAndServices vendor,
   ) {
@@ -326,6 +333,7 @@ class VendorsConnectorConjecture {
     return null;
   }
 
+  @override
   void setEntitiesState(RequestActionObject action) {
     for (final String entityId in action.entityIds) {
       final VendorsAndServices? vendor = entitiesToVendor[entityId];
@@ -343,6 +351,7 @@ class VendorsConnectorConjecture {
     }
   }
 
+  @override
   HashMap<String, DeviceEntityBase> getEntities() =>
       VendorConnectorConjectureService.instanceMapByType.values.fold(
         HashMap<String, DeviceEntityBase>(),
@@ -350,6 +359,7 @@ class VendorsConnectorConjecture {
             previousValue..addAll(element.vendorEntities),
       );
 
+  @override
   HashMap<String, EntityTypes> getTypesForEntities(HashSet<String> entities) =>
       entities
           .map(

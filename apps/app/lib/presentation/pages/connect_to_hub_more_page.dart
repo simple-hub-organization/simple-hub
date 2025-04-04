@@ -58,7 +58,7 @@ class ConnectToHubMorePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: () async {
+                    onPressed: () {
                       context.router.maybePop();
                     },
                     style: TextButton.styleFrom(
@@ -90,7 +90,7 @@ class _ConnectToHubMoreWidgetState extends State<ConnectToHubMoreWidget> {
   bool isLoading = false;
 
   Future _connectInDemoMode() async {
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
       logger.e('Please set up network');
       return;

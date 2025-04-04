@@ -85,25 +85,7 @@ class _HubServerController extends IHubServerController {
         return MapEntry(id, jsonEncode(d.toInfrastructure().toJson()));
       });
     } else {
-      final SceneEntity emptyScene = SceneEntity(
-        uniqueId: UniqueId.empty(),
-        name: SceneCbjName('Empty'),
-        backgroundColor: SceneCbjBackgroundColor(000.toString()),
-        image: SceneCbjBackgroundImage(null),
-        iconCodePoint: SceneCbjIconCodePoint(null),
-        nodeRedFlowId: SceneCbjNodeRedFlowId(null),
-        firstNodeId: SceneCbjFirstNodeId(null),
-        lastDateOfExecute: SceneCbjLastDateOfExecute(null),
-        entityStateGRPC: SceneCbjDeviceStateGRPC(EntityStateGRPC.ack.name),
-        senderDeviceModel: SceneCbjSenderDeviceModel(null),
-        senderDeviceOs: SceneCbjSenderDeviceOs(null),
-        senderId: SceneCbjSenderId(null),
-        compUuid: SceneCbjCompUuid(null),
-        stateMassage: SceneCbjStateMassage(null),
-        actions: [],
-        areaPurposeType: AreaPurposesTypes.undefined,
-        entitiesWithAutomaticPurpose: EntitiesWithAutomaticPurpose(HashSet()),
-      );
+      final SceneEntity emptyScene = SceneEntity.empty();
       final RequestsAndStatusFromHub request = RequestsAndStatusFromHub(
         sendingType: SendingType.sceneType.name,
         allRemoteCommands: jsonEncode(emptyScene.toInfrastructure().toJson()),

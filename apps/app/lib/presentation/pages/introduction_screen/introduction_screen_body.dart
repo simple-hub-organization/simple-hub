@@ -71,12 +71,12 @@ class _IntroductionScreenBodyState extends State<IntroductionScreenBody> {
                       child: Column(
                         children: [
                           TextAtom(
-                            'CyBear Jinni',
+                            'Simple Hub',
                             style: textTheme.displaySmall!
                                 .copyWith(color: Colors.white),
                           ),
                           const SeparatorAtom(
-                            variant: SeparatorVariant.farAppart,
+                            variant: SeparatorVariant.farApart,
                           ),
                           IntroductionScreenBodyWelcomePage(),
                         ],
@@ -110,7 +110,7 @@ class _IntroductionScreenBodyState extends State<IntroductionScreenBody> {
           'Done',
           style: textTheme.titleMedium!.copyWith(color: Colors.white),
         ),
-        onDone: () async {
+        onDone: () {
           // final HashMap<String, DeviceEntityBase> entities =
           //     await ConnectionsService.instance.getEntities;
           if (!mounted) {

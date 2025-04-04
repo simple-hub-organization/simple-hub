@@ -11,7 +11,7 @@ late String currentEnv;
 @injectableInit
 void configureDependencies(String env) {
   currentEnv = env;
-  logger.i('Current CyBear Jinni Site environment name: $currentEnv');
+  logger.i('Current Simple Hub Site environment name: $currentEnv');
   $initGetIt(getIt, environment: env);
 }
 

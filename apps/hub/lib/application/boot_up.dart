@@ -9,10 +9,10 @@ class BootUp {
   }
 
   Future setup() async {
-    HubVendorsConnectorConjecture();
+    HubVendorsConnectorConjecture().asyncConstructor();
 
     HubJavascriptWebSocket.instance.connect();
-    NetworksManager();
+    NetworksManager.instance;
     SearchDevices()
         .startSearchIsolate(networkUtilitiesType: NetworkUtilities());
 

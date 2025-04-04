@@ -38,7 +38,7 @@ class EntitiesByAreaTab extends StatelessWidget {
                   'Areas',
                   style: textTheme.headlineLarge,
                 ),
-                const SeparatorAtom(variant: SeparatorVariant.farAppart),
+                const SeparatorAtom(variant: SeparatorVariant.farApart),
                 MarginedExpandedAtom(
                   child: AreasListViewWidget(
                     entities: entities,

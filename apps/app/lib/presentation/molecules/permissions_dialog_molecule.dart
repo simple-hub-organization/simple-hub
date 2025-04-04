@@ -25,15 +25,15 @@ class PermsissionsDialogMolecule extends StatelessWidget {
           children: <Widget>[
             Text(
               '1. Make sure you are connected to home WiFi\n'
-              '2. Please make sure location is on and permission grented.',
+              '2. Please make sure location is on and permission granted.',
               style: textTheme.labelLarge,
               textAlign: TextAlign.center,
               // ).tr(),
             ),
             const SeparatorAtom(),
-            ButtonWidgetAtom(
-              variant: ButtonVariant.primary,
-              onPressed: () async {
+            ButtonAtom(
+              variant: ButtonVariant.highEmphasisFilled,
+              onPressed: () {
                 exit(0);
               },
               text: 'exit',

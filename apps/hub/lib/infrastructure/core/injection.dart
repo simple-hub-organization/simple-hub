@@ -10,7 +10,7 @@ late String currentEnv;
 @injectableInit
 Future configureInjection(String environment) async {
   currentEnv = environment;
-  logger.i('Current CyBear Jinni Hub environment name: $currentEnv');
+  logger.i('Current Simple Hub hub environment name: $currentEnv');
   // getItCbj.init(environment: environment);
 }
 

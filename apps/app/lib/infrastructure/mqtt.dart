@@ -102,9 +102,7 @@ class MqttServerRepository extends IMqttServerRepository {
   Future publishMessage(String topic, String message) async {}
 
   @override
-  Future<List<ChangeRecord>?> readingFromMqttOnce(String topic) async {
-    return null;
-  }
+  Future<List<ChangeRecord>?> readingFromMqttOnce(String topic) async => null;
 
   @override
   Future sendToApp() async {}

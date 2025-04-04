@@ -41,8 +41,8 @@ void networkHelper() {
     type: null,
     uniqueId: 'home',
   );
-  NetworksManager().addNetwork(network);
-  NetworksManager().setCurrentNetwork(network.uniqueId);
+  NetworksManager.instance.addNetwork(network);
+  NetworksManager.instance.setCurrentNetwork(network.uniqueId);
 }
 
 Future<String> dbPath() async {

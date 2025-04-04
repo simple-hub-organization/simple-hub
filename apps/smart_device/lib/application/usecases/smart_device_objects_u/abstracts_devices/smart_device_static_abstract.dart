@@ -45,7 +45,7 @@ abstract class SmartDeviceStaticAbstract extends SmartDeviceBase {
   Future<String> executeDeviceAction(
     CbjDeviceActions deviceAction,
     CbjDeviceStateGRPC deviceState,
-  ) async {
+  ) {
     return wishInStaticClass(deviceAction, deviceState);
   }
 

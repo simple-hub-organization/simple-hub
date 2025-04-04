@@ -1,18 +1,10 @@
 import 'dart:async';
 import 'dart:collection';
 
-import 'package:integrations_controller/src/domain/area/area_entity.dart';
+import 'package:integrations_controller/integrations_controller.dart';
 import 'package:integrations_controller/src/domain/area/i_area_repository.dart';
-import 'package:integrations_controller/src/domain/core/request_action_object.dart';
-import 'package:integrations_controller/src/domain/core/request_action_types.dart';
-import 'package:integrations_controller/src/domain/generic_entities/abstract_entity/device_entity_base.dart';
-import 'package:integrations_controller/src/domain/generic_entities/vendor_entity_information.dart';
-import 'package:integrations_controller/src/domain/networks_manager.dart';
-import 'package:integrations_controller/src/domain/scene/scene_cbj_entity.dart';
-import 'package:integrations_controller/src/domain/vendor_login_entity.dart';
 import 'package:integrations_controller/src/infrastructure/automations_service.dart';
 import 'package:integrations_controller/src/infrastructure/entities_service.dart';
-import 'package:integrations_controller/src/infrastructure/vendors_connector_conjecture.dart';
 
 /// Creating a common front out side of integrations controller.
 /// Also makes sure to notify the services for changes that relayed to each other
@@ -26,7 +18,7 @@ class IcSynchronizer {
 
   // Networks are beiseparatelyng loaded separately before calling this function
   Future loadAllFromDb() async {
-    final String? homeId = NetworksManager().currentNetwork?.uniqueId;
+    final String? homeId = NetworksManager.instance.currentNetwork?.uniqueId;
     if (homeId == null) {
       return;
     }
@@ -54,15 +46,16 @@ class IcSynchronizer {
       EntitiesService().loadFromDb(homeId);
 
   Future loginVendor(VendorLoginEntity value) async =>
-      VendorsConnectorConjecture().loginVendor(value);
+      VendorConnectorConjectureController.instance.loginVendor(value);
 
   List<VendorEntityInformation> getVendors() =>
-      VendorsConnectorConjecture().getVendors();
+      VendorConnectorConjectureController.instance.getVendors();
 
   static HashMap<String, EntityTypes> getTypesForEntities(
     HashSet<String> entities,
   ) =>
-      VendorsConnectorConjecture().getTypesForEntities(entities);
+      VendorConnectorConjectureController.instance
+          .getTypesForEntities(entities);
 
   //  -------------------- IAreaRepository --------------------
 
@@ -92,8 +85,7 @@ class IcSynchronizer {
       IAreaRepository.instance.setEtitiesToArea(area, entities);
 
   //  ------------------ AutomationService --------------------
-  HashMap<String, SceneEntity> getScenes() =>
-      AutomationService().getScenes();
+  HashMap<String, SceneEntity> getScenes() => AutomationService().getScenes();
 
   Future addScene(SceneEntity scene) async {
     IAreaRepository.instance.addSceneToDiscover(scene.uniqueId.getOrCrash());

@@ -14,7 +14,7 @@ class WishClassesD {
   Future<ProcessResult> turnOnLocalPhysicalPin(
     PinSetupMethodEnum pinSetupMethodEnum,
     String pinNumber,
-  ) async {
+  ) {
     switch (pinSetupMethodEnum) {
       case PinSetupMethodEnum.wiringPiSetup:
         {
@@ -42,7 +42,7 @@ class WishClassesD {
   Future<ProcessResult> turnOffLocalPhysicalPin(
     PinSetupMethodEnum pinSetupMethodEnum,
     String pinNumber,
-  ) async {
+  ) {
     switch (pinSetupMethodEnum) {
       case PinSetupMethodEnum.wiringPiSetup:
         {

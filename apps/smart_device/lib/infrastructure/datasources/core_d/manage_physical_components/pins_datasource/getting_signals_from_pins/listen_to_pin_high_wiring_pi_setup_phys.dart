@@ -4,7 +4,7 @@ import 'package:integrations_controller/integrations_controller.dart';
 
 class ListenToPinHighWiringPiSetupPhys {
   ///  Listen to button press once and return exist code
-  Future<int> listenToButtonPress(String pinNumber) async {
+  Future<int> listenToButtonPress(String pinNumber) {
     return Process.run(
       '${SharedVariables().getProjectRootDirectoryPath()}/scripts/cScripts/phisicalComponents/gettingSignals/listenToPinHighWiringPiSetupPhys',
       <String>[pinNumber],

@@ -39,19 +39,19 @@ class HiveRepository extends ILocalDbRepository {
   }
 
   @override
-  Future<Either<LocalDbFailures, String>> getHubEntityLastKnownIp() async {
+  Future<Either<LocalDbFailures, String>> getHubEntityLastKnownIp() {
     // TODO: implement getHubEntityLastKnownIp
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<LocalDbFailures, String>> getHubEntityNetworkBssid() async {
+  Future<Either<LocalDbFailures, String>> getHubEntityNetworkBssid() {
     // TODO: implement getHubEntityNetworkBssid
     throw UnimplementedError();
   }
 
   @override
-  Future<Either<LocalDbFailures, String>> getHubEntityNetworkName() async {
+  Future<Either<LocalDbFailures, String>> getHubEntityNetworkName() {
     // TODO: implement getHubEntityNetworkName
     throw UnimplementedError();
   }
@@ -89,7 +89,7 @@ class HiveRepository extends ILocalDbRepository {
     required String hubNetworkBssid,
     required String networkName,
     required String lastKnownIp,
-  }) async {
+  }) {
     // TODO: implement saveHubEntity
     throw UnimplementedError();
   }

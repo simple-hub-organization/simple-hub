@@ -158,7 +158,7 @@ class SmartServerU extends CbjHubServiceBase {
   /// Starting the local server that listen to hub and app calls
   Future startLocalServer() async {
     try {
-      final server = Server([SmartServerU()]);
+      final server = Server.create(services: [SmartServerU()]);
       await server.serve(port: 50056);
       logger.v('Server listening on port ${server.port}...');
     } catch (e) {

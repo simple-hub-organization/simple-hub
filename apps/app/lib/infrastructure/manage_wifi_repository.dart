@@ -148,8 +148,8 @@ class _ManageWiFiRepository implements IManageNetworkRepository {
         remotePipe: null,
         type: null,
       );
-      NetworksManager().addNetwork(network);
-      NetworksManager().setCurrentNetwork(network.uniqueId);
+      NetworksManager.instance.addNetwork(network);
+      NetworksManager.instance.setCurrentNetwork(network.uniqueId);
       return true;
     }
 
@@ -204,8 +204,8 @@ class _ManageWiFiRepository implements IManageNetworkRepository {
       remotePipe: null,
       type: null,
     );
-    NetworksManager().addNetwork(network);
-    NetworksManager().setCurrentNetwork(network.uniqueId);
+    NetworksManager.instance.addNetwork(network);
+    NetworksManager.instance.setCurrentNetwork(network.uniqueId);
     return true;
   }
 

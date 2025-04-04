@@ -1,0 +1,87 @@
+name: Deploy Android App
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  flutter_channel: 'stable'
+  flutter_version: '3.29.2'
+
+
+jobs:
+  integration-tests:
+    name: Run Integration Tests with Android Emulator
+    runs-on: macos-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Flutter
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: ${{ env.flutter_channel }}
+          flutter-version: ${{ env.flutter_version }}
+
+      # Install dependencies
+      - name: Install dependencies
+        working-directory: frontend
+        run: |
+          dart run build_runner build --delete-conflicting-outputs
+          flutter pub get
+
+      # Open ios simulator
+      - uses: futureware-tech/simulator-action@v4
+        with:
+          model: 'iPhone 15'
+          wait_for_boot: true
+
+      # Run Flutter Integration Tests
+      - name: Run Integration Tests
+        working-directory: frontend
+        run: flutter test integration_test
+
+
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+
+      # Set up Ruby for Fastlane
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - name: Install Fastlane
+        run: gem install fastlane
+
+      # Build and deploy using Fastlane
+      - name: Build and deploy to Play Store
+        working-directory: apps/app
+        env:
+          GOOGLE_PLAY_JSON_KEY: ${{ secrets.GOOGLE_PLAY_JSON_KEY }}
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEY_PROPERTIES: ${{ secrets.KEY_PROPERTIES }}
+        run: |
+          # Decode the .jks file
+          echo $ANDROID_KEYSTORE_BASE64 | base64 -d > /tmp/simple_hub_play_store.jks
+
+          # Set google play json key
+          echo $GOOGLE_PLAY_JSON_KEY > /tmp/file.json
+          
+          # Create key.properties
+          cd android
+          echo "$KEY_PROPERTIES" > key.properties
+          
+          export GITHUB_ACTIONS=true
+          
+          fastlane deploy

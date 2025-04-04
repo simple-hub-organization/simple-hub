@@ -89,7 +89,7 @@ class _SwitchAtomState extends State<SwitchAtom> {
               toggleValue ? activeIcon : inactiveIcon,
               color: tempColor,
             ),
-            const SeparatorAtom(variant: SeparatorVariant.reletedElements),
+            const SeparatorAtom(variant: SeparatorVariant.relatedElements),
             TextAtom(toggleValue ? 'On' : 'Off'),
           ],
         ),

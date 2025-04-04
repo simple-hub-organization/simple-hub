@@ -5,7 +5,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-// ignore: depend_on_referenced_packages because this is our pacakge
+// ignore: depend_on_referenced_packages because this is our package
 import 'package:integrations_controller/integrations_controller.dart';
 import 'package:integrations_controller/src/infrastructure/node_red/node_red_repository.dart';
 import 'package:path_provider/path_provider.dart';
@@ -33,13 +33,18 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future initializeApp() async {
-    await NetworkUtilitiesFlutter().configureNetworkTools(
-      (await getApplicationDocumentsDirectory()).path,
-    );
+    VendorConnectorConjectureController.instance.asyncConstructor();
+    // Set if not running as test
+    if (INetworkUtilities.instance.runtimeType == NetworkUtilities) {
+      INetworkUtilities.instance = NetworkUtilitiesFlutter();
+      await INetworkUtilities.instance.configureNetworkTools(
+        (await getApplicationDocumentsDirectory()).path,
+      );
+    }
     SystemCommandsBaseClassD.instance = AppCommands();
     await Hive.initFlutter();
     await IDbRepository.instance.asyncConstructor();
-    NetworksManager().loadFromDb();
+    NetworksManager.instance.loadFromDb();
     final bool success = await IManageNetworkRepository.instance.loadWifi();
     if (!success) {
       if (mounted) {
@@ -47,16 +52,18 @@ class _SplashPageState extends State<SplashPage> {
       }
       return;
     }
-    final String? bssid = NetworksManager().currentNetwork?.bssid;
+    final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
     if (bssid == null) {
-      logger.e('Please set up network');
+      logger.e('(initializeApp) Please set up network');
       return;
     }
     await IcSynchronizer().loadAllFromDb();
-    ConnectionsService.setCurrentConnectionType(
-      networkBssid: bssid,
-      connectionType: ConnectionType.hub,
-    );
+    if (ConnectionsService.getCurrentConnectionType() == ConnectionType.none) {
+      ConnectionsService.setCurrentConnectionType(
+        networkBssid: bssid,
+        connectionType: ConnectionType.hub,
+      );
+    }
 
     // ConnectionsService.instance.searchDevices();
 
@@ -74,16 +81,18 @@ class _SplashPageState extends State<SplashPage> {
       return;
     }
     if (entities.isNotEmpty) {
-      final String? bssid = NetworksManager().currentNetwork?.bssid;
+      final String? bssid = NetworksManager.instance.currentNetwork?.bssid;
       if (bssid == null) {
-        logger.e('Please set up network');
+        logger.e('(_navigate) Please set up network');
         return;
       }
-
-      ConnectionsService.setCurrentConnectionType(
-        networkBssid: bssid,
-        connectionType: ConnectionType.hub,
-      );
+      if (ConnectionsService.getCurrentConnectionType() ==
+          ConnectionType.none) {
+        ConnectionsService.setCurrentConnectionType(
+          networkBssid: bssid,
+          connectionType: ConnectionType.hub,
+        );
+      }
       await ConnectionsService.instance.connect();
       if (!mounted) {
         return;
@@ -95,6 +104,8 @@ class _SplashPageState extends State<SplashPage> {
       context.router.replace(const ConnectToHubRoute());
       return;
     }
+    logger.i('Route to route page');
+
     context.router.replace(const IntroductionRouteRoute());
     return;
   }

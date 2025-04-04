@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:integrations_controller/src/domain/core/request_action_object.dart';
 import 'package:integrations_controller/src/domain/core/request_action_types.dart';
 import 'package:integrations_controller/src/domain/core/value_objects.dart';
@@ -6,7 +8,7 @@ import 'package:integrations_controller/src/infrastructure/scenes/scene_cbj_dtos
 
 class SceneEntity {
   const SceneEntity({
-    /// The unique id of the scene, will alsow be used as the flow/tab id.
+    /// The unique id of the scene, will also be used as the flow/tab id.
     required this.uniqueId,
 
     /// Name of the automation, will be shown to the user.
@@ -34,6 +36,25 @@ class SceneEntity {
     required this.areaPurposeType,
     required this.entitiesWithAutomaticPurpose,
   });
+  factory SceneEntity.empty() => SceneEntity(
+        uniqueId: UniqueId.empty(),
+        name: SceneCbjName('Empty'),
+        backgroundColor: SceneCbjBackgroundColor(000.toString()),
+        image: SceneCbjBackgroundImage(null),
+        iconCodePoint: SceneCbjIconCodePoint(null),
+        nodeRedFlowId: SceneCbjNodeRedFlowId(null),
+        firstNodeId: SceneCbjFirstNodeId(null),
+        lastDateOfExecute: SceneCbjLastDateOfExecute(null),
+        entityStateGRPC: SceneCbjDeviceStateGRPC(EntityStateGRPC.ack.name),
+        senderDeviceModel: SceneCbjSenderDeviceModel(null),
+        senderDeviceOs: SceneCbjSenderDeviceOs(null),
+        senderId: SceneCbjSenderId(null),
+        compUuid: SceneCbjCompUuid(null),
+        stateMassage: SceneCbjStateMassage(null),
+        actions: [],
+        areaPurposeType: AreaPurposesTypes.undefined,
+        entitiesWithAutomaticPurpose: EntitiesWithAutomaticPurpose(HashSet()),
+      );
 
   final UniqueId uniqueId;
   final SceneCbjName name;

@@ -35,7 +35,7 @@ class NetworkUtilitiesFlutter extends NetworkUtilities {
       );
 
   @override
-  Future configureNetworkTools(String dbDirectory) async =>
+  Future configureNetworkTools(String dbDirectory) =>
       configureNetworkToolsFlutter(dbDirectory);
   // TODO: Add support for mdns using for ios
   //   mdnsSearch(){
