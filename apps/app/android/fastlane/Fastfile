@@ -1,10 +1,10 @@
 private_lane :get_last_version_code do
   if ENV["GITHUB_ACTIONS"] == "true"
     UI.message("Running in GitHub Actions")
-    json_key_path = "/tmp/file.json"
+    json_key_path = "/tmp/google_play_key.json"
   else
     UI.message("Running locally")
-    json_key_path = "../../../../passwords/youtube_helper/play_store/file.json"
+    json_key_path = "../../../../../Smart-home-passwords/simple_hub/googlePlayStore/google_play_key.json"
   end
 
   track = "production"

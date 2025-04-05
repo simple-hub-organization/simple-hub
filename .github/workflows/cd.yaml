@@ -73,10 +73,10 @@ jobs:
           KEY_PROPERTIES: ${{ secrets.KEY_PROPERTIES }}
         run: |
           # Decode the .jks file
-          echo $ANDROID_KEYSTORE_BASE64 | base64 -d > /tmp/simple_hub_play_store.jks
+          echo $ANDROID_KEYSTORE_BASE64 | base64 -d > /tmp/android_keystore.jks
 
           # Set google play json key
-          echo $GOOGLE_PLAY_JSON_KEY > /tmp/file.json
+          echo $GOOGLE_PLAY_JSON_KEY > /tmp/google_play_key.json
           
           # Create key.properties
           cd android
