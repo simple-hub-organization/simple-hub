@@ -2,8 +2,9 @@ name: Deploy Android App
 
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 env:
   flutter_channel: 'stable'
