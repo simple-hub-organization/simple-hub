@@ -29,7 +29,7 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        working-directory: frontend
+        working-directory: apps/app
         run: |
           dart run build_runner build --delete-conflicting-outputs
           flutter pub get
@@ -42,7 +42,7 @@ jobs:
 
       # Run Flutter Integration Tests
       - name: Run Integration Tests
-        working-directory: frontend
+        working-directory: apps/app
         run: flutter test integration_test
 
 
