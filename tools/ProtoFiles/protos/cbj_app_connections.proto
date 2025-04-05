@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package CBJAppConnections;
+
+
+service CyBearJinniApp {
+  rpc CBJAppGetSmartDeviceInformation (CompInfoSB) returns (CBJCommendStatus);
+
+  /// Get computer yaml and protoc version and more info about the computer
+  rpc getCompAppInfo (CompAppInfo) returns (CompAppInfo);
+}
+
+message CompInfoSB {
+  string compIP = 2;
+}
+
+// Did the commend arrived (true) or not (false)
+message CBJCommendStatus {
+  bool success = 1;
+}
+
+message CompAppInfo {
+  CbjAppIno cbjInfo = 3;
+  CompAppSpecs compSpecs = 4;
+}
+
+message CbjAppIno {
+  string deviceName = 5;
+  string pubspecYamlVersion = 6;
+  string pubspecYamlBuildNumber = 14;
+  string protoLastGenDate = 7;
+  string dartSdkVersion = 15;
+}
+
+message CompAppSpecs {
+  string compId = 8;
+  string compUuid = 9;
+  string compOs = 10;
+  string compModel = 11;
+  string compType = 12;
+  string compIp = 13;
+}

@@ -1,0 +1,45 @@
+name: Main Branch CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - uses: dart-lang/setup-dart@9a04e6d73cca37bd455e0608d7e5092f881fd603
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: generate_all_files
+        run: dart run build_runner build --delete-conflicting-outputs
+
+      - name: Perform formatting
+        run: find . -name "*.dart" ! -path '*/gen/*' | tr '\n' ' ' | xargs dart format
+
+      # Consider passing '--fatal-infos' for slightly stricter analysis.
+      - name: Analyze project source
+        run: dart analyze
+
+      # package:test for this step to succeed.
+      - name: Run tests
+        run: dart test
+
+      # Perform the commit at the end to make sure tests above don't fail
+      - name: Commit formatting changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || (git commit -m 'Automatic formatting' && git push)

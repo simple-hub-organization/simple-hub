@@ -1,0 +1,97 @@
+name: cbj-smart-device
+base: core20
+version: '0.1.3'  # Just for humans, typically '1.2+git' or '1.3.2'
+summary: CyBear Jinni Smart Device snap that can comunicate with the CyBear Jinni Hub.
+description: |
+  A CyBear Jinni Smart Device snap for CyBear Jinni Hub.
+
+  Using this snap you can make your device smart and control lamp or blind or computer that talks with the Hub.
+  You will be able to control it using physical buttons and even from your phones using CyBear Jinni app.
+
+  Our goal here at CyBear Jinni is to raise the quality of life for everyone.
+  We are doing this by making Smart-Home accessible for the common person.
+
+  This is open source project so feel free to take a look at the code and join us advancing the world forward.
+
+grade: devel  # devel/stable
+confinement: devmode  # devmode/classic/strict
+
+architectures:
+#  - build-on: armhf
+#    run-on: armhf
+#
+#  - build-on: arm64
+#    run-on: arm64
+
+  - build-on: amd64
+    run-on: amd64
+
+parts:
+  wiring-pi:
+    plugin: dump
+    source: .
+    build-attributes: [keep-execstack]
+    override-build: |
+      # This part wokes if you put the correct libwiringPi.so files in the lib dir but will compit with WiringNP lib
+      #git clone https://github.com/WiringPi/WiringPi.git
+      #cd WiringPi/
+      #chmod 755 build
+      #./build
+      #cd ..
+
+    build-packages:
+      - git
+      - make
+
+  wiring-np:
+    after: [wiring-pi]
+    plugin: dump
+    source: .
+    build-attributes: [keep-execstack]
+    override-build: |
+      git clone https://github.com/CyBear-Jinni/WiringNP.git
+      # git clone https://github.com/friendlyarm/WiringNP  // Does not work on the armbian os,  https://forum.armbian.com/topic/13889-nanopiduo2-wiringnp-unable-to-determine-board-revision/
+      cd WiringNP/
+      chmod 755 build
+      ./build
+      cd ..
+    build-packages:
+      - git
+      - make
+
+  scripts-files:
+    after: [wiring-np]
+    source: .
+    plugin: dump
+    override-build: |
+      rm README.md
+
+  cbj-smart-device:
+    after: [scripts-files]
+    source: https://github.com/CyBear-Jinni/cbj_smart-device.git
+    plugin: dump
+    override-build: |
+
+      mv ../../scripts-files/src/scripts .
+      scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
+
+      cd scripts/bashScripts/
+      ./compileAllCFiles.sh # Have to be executed when working directory is this file location
+      cd ../../
+
+      snapcraftctl build
+
+    build-packages:
+      - wget
+      - unzip
+      - gcc
+      - g++
+    stage-packages:
+      - libatlas-base-dev
+      - libevent-dev
+
+apps:
+  cbj-smart-device:
+    command: Cbj-Smart-Device $SNAP
+    daemon: simple
+    plugs: [network, network-bind, gpio, hardware-observe]

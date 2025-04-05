@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=CyBear Jinni
+Comment=App to control your smart device through CyBear Jinni Hub
+Exec=cybear-jinni
+Icon=${SNAP}/meta/gui/icon.png
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=Flutter;
+StartupNotify=false

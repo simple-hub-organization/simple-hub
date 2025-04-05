@@ -1,0 +1,75 @@
+name: hub
+description: Easy to use open source Hub to control your smart devices from one app.
+version: 1.3.0+6
+homepage: https://mysimplehub.com
+issue_tracker: https://github.com/CyBear-Jinni/cbj_hub/issues
+publish_to: none
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  # Contains utility classes in the style of dart:async to work with asynchronous computations.
+  async: ^2.11.0
+  # Package to create, convert, alter, and compare colors in a variety of colorspaces.
+  color: ^3.0.0
+  # Compute function made available for all non-Flutter Dart programs
+  compute: ^1.0.2
+  # Collection of cyclic redundancy check (CRC) routines as Dart converters.
+  crclib: ^3.0.0
+  # Functional programming thingies, let you use multiple return types
+  dartz: ^0.10.1
+  # Allow returning more than one type of object
+  equatable: ^2.0.5
+  # Annotations for freezed
+  freezed_annotation: ^2.4.1
+  # High performance, open-source universal RPC framework
+  grpc: ^3.2.4
+  # Lightweight and blazing fast key-value database
+  hive: ^2.2.3
+  # Library for making HTTP requests.
+  http: ^1.1.0
+  # Convenient code generator for get_it
+  injectable: ^2.3.2
+  integrations_controller:
+    path: ../../packages/integrations_controller
+  #    git: https://github.com/CyBear-Jinni/integrations_controller.git
+  # Utility library that checks for an Active Internet connection
+  internet_connection_checker: ^1.0.0+1
+  # Extremely fast, easy to use, and fully async NoSQL database.
+  #  isar: ^3.0.5
+  # Defines the annotations used by json_serializable to create code for JSON serialization and deserialization.
+  json_annotation: ^4.8.1
+  # Dart Build System builders for handling JSON.
+  json_serializable: ^6.7.1
+  # Port of Kotlin's Kotlin Standard library for Dart/Flutter projects
+  kt_dart: ^1.1.0
+  # Small, easy to use and extensible logger which prints beautiful logs.
+  logger: ^2.0.2+1
+  # Server and browser based MQTT client
+  mqtt_client: ^10.0.0
+  # Provides runtime support for a Dart implementation of protobufs.
+  protobuf: ^3.1.0
+  # Extends the capabilities of Dart Streams and StreamControllers.
+  rxdart: ^0.27.7
+  web_socket_channel: ^3.0.2
+
+dev_dependencies:
+  # A build system for Dart code generation and modular compilation.
+  build_runner:
+
+  # A generator for injectable library
+  # Code generator for unions/pattern-matching/copy.
+  freezed: ^2.4.5
+  # Automatically generates Hive TypeAdapters to store any class
+  hive_generator: ^2.0.1
+  # Code generator for the Isar Database. Finds classes annotated with @Collection.
+  #  isar_generator: ^3.0.5
+  # Convenient code generator for get_it.
+  injectable_generator: ^2.4.1
+  # Collection of lint rules for Dart and Flutter projects
+  lint: ^2.2.0
+  # Library for mocks
+  mockito: ^5.4.2
+  # A full featured library for writing and running Dart tests across platforms.
+  test: ^1.24.9

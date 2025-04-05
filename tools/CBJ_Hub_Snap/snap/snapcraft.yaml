@@ -1,0 +1,249 @@
+name: cbj-hub
+base: core24
+version: '1.4.4'
+summary: Hub to control smart device from different vendors with one app.
+description: |
+  CyBear Jinni Hub to control smart devices from different vendors with one easy-to-use app.
+
+  It is an open-source Hub that keeps your data local by default.
+
+  The Hub will extend the devices basic functionality by acting as a leader and sending signals
+  to the devices according to the logic you set it to be.
+
+  The functionality will include activating routines, saving different scense, binding devices so
+  that action in one device will trigger other actions in different devices and more.
+
+  You can control the Hub from your android phone
+
+  https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home
+
+  For the hub to work please install MQTT broker https://snapcraft.io/mosquitto and configure it to be open for requests.
+
+  If you have any questions you can ask in the CyBear Jinni discord server https://discord.gg/mUXfwUY.
+
+grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
+confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
+
+platforms:
+  armhf:
+    build-on: armhf
+  arm64:
+    build-on: arm64
+  amd64:
+    build-on: amd64
+
+parts:
+  include-snaps:
+    source: .
+    plugin: nil
+    stage-snaps:
+      # https://github.com/dceejay/nodered.snap/tree/master/snap
+      - node-red
+      # https://github.com/eclipse-mosquitto/mosquitto/blob/master/snap/snapcraft.yaml
+      - mosquitto
+    stage-packages:
+      - python3
+      - libatomic1
+      - python3
+      - libatomic1
+      - ca-certificates
+      - libcjson1
+      - libssl3t64
+      - libwebsockets19t64
+
+
+  security-bear:
+    plugin: nil
+    source: .
+    after:
+      - hub
+    override-build: |
+      echo "Security Bear build"
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/../../hub/build/apps/security_bear"
+      
+      MAIN_FILE=bin/main.dart
+      EXECUTABLE_NAME=Security-Bear
+
+      cd "$SNAPCRAFT_PROJECT_DIR"      
+      
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME" "$SNAPCRAFT_PROJECT_DIR"
+      mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
+      snapcraftctl build
+
+    build-packages:
+      - wget
+      - unzip
+      - git
+    stage-packages:
+      - iputils-arping
+      - iw
+      - libbluetooth3
+      - libcap2-bin
+      - libgudev-1.0-0
+      - libjansson4
+      - libmbim-glib4
+      - libmbim-proxy
+      - libmm-glib0
+      - libndp0
+      - libnewt0.52
+      - libnl-3-200
+      - libnl-genl-3-200
+      - libnm0
+      - libpam-cap
+      - libpcsclite1
+      - libpolkit-agent-1-0
+      - libpolkit-gobject-1-0
+      - libqmi-glib5
+      - libqmi-proxy
+      - libslang2
+      - libteamdctl0
+      - libusb-1.0-0
+      - modemmanager
+      - policykit-1
+      - ppp
+      - pptp-linux
+      - usb-modeswitch
+      - usb-modeswitch-data
+      - wireless-regdb
+      - wpasupplicant
+      - network-manager-pptp
+      - network-manager
+
+      - wireless-tools
+    #      - libatm1
+    #  - libpcap0.8
+
+  hub-js:
+    after: [include-snaps, hub]
+    plugin: nil
+    source: .
+    override-build: |
+      set -x
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/../../hub/build/apps/hub_javascript"
+      
+      MAIN_FILE=src/app.ts
+      EXECUTABLE_NAME=hub-js
+      cd "$SNAPCRAFT_PART_INSTALL"
+
+      cp -r "$PROJECT_PATH" .
+
+      cd hub_javascript
+      rm -rf node_modules/
+      rm -rf dist/
+      rm -rf package-lock.json
+      #      npm config set registry https://registry.npmjs.org/
+      npm install
+      #      0
+      cd ..
+      #      mv hub_javascript "$SNAPCRAFT_PART_INSTALL/"
+
+    build-packages:
+      - curl
+      - libavahi-compat-libdnssd-dev
+    stage-packages:
+      - libavahi-compat-libdnssd-dev
+  #      - python3
+  #      - libatomic1
+
+  hub:
+    source: https://github.com/simple-hub-organization/simple-hub.git
+    plugin: dump
+    override-build: |
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_App_Snap"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_Smart-Device-Snap"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/cbj-kubernetes-files"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/smart_device"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/site"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/remote_pipes_routing"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/remote-pipes"
+      rm -rf "$SNAPCRAFT_PART_BUILD/node_modules"
+      rm -rf "$SNAPCRAFT_PART_BUILD/.idea"
+      rm -rf "$SNAPCRAFT_PART_BUILD/package.json"
+      rm -rf "$SNAPCRAFT_PART_BUILD/package-lock.json"
+      rm -rf "$SNAPCRAFT_PART_BUILD/README.md"
+
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/hub"
+      MAIN_FILE=bin/cbj_hub.dart
+      EXECUTABLE_NAME=CyBear-Jinni_Hub
+      cd "$SNAPCRAFT_PROJECT_DIR"
+      
+      #      # Define output file
+      #      OUTPUT_FILE="directory_contents.txt"
+      #      
+      #      # Get the current directory path
+      #      CURRENT_DIR=$(pwd)
+      #      
+      #      # Write to file
+      #      echo "Current Directory: $CURRENT_DIR" > "$OUTPUT_FILE"
+      #      echo "" >> "$OUTPUT_FILE"
+      #      echo "Files inside:" >> "$OUTPUT_FILE"
+      #      ls -la >> "$OUTPUT_FILE"
+      #      
+      #      # Print confirmation
+      #      echo "Directory contents saved to $OUTPUT_FILE"
+      
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME" "$SNAPCRAFT_PROJECT_DIR"
+      mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
+      snapcraftctl build
+
+    build-packages:
+      - wget
+      - unzip
+      - gcc
+      - g++
+    stage-packages:
+      - libatlas-base-dev
+      - libevent-dev
+      # For the ping command to work, become redundant if network-observe plug is introduced in the future
+      - iputils-ping
+      # For arp command to work
+      - net-tools
+      - coreutils
+      - iputils-ping
+      - mdns-scan
+      - avahi-utils
+
+apps:
+  npm:
+    command: bin/npm
+    plugs:
+      - home
+      - network
+
+  security-bear:
+    command: Security-Bear $SNAP
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind, network-manager, network-observe]
+
+  hub-js:
+    command: tools/CBJ_Hub_Snap/scripts/bashScripts/start_hub_js.sh
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind]
+
+  hub:
+    command: CyBear-Jinni_Hub $SNAP
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [network, network-bind, network-observe, home, hardware-observe, system-observe, avahi-control, avahi-observe]
+    # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
+
+  node-red:
+    command: bin/startNR
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs:
+      - network
+      - network-bind
+
+  mosquitto:
+    command: launcher.sh
+    daemon: simple
+    install-mode: enable
+    restart-condition: always
+    plugs: [ home, network, network-bind ]

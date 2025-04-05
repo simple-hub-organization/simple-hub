@@ -1,0 +1,9 @@
+json_key_file(
+  if ENV["GITHUB_ACTIONS"] == "true"
+    "/tmp/file.json"
+  else
+    "../../../../passwords/youtube_helper/play_store/file.json"
+  end
+)
+
+package_name("com.mysimplehub")

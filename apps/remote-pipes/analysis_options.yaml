@@ -1,0 +1,36 @@
+# Defines a default set of lint rules enforced for
+# projects at Google. For details and rationale,
+# see https://github.com/dart-lang/pedantic#enabled-lints.
+#include: package:pedantic/analysis_options.yaml
+
+# lint analysis
+include: package:lint/analysis_options.yaml
+
+
+analyzer:
+  errors:
+    depend_on_referenced_packages: ignore
+    missing_required_param: error
+    missing_return: error
+    must_be_immutable: error
+    prefer_constructors_over_static_methods: ignore
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.pb.dart"
+    - "**/*.pbenum.dart"
+    - "**/*.pbgrpc.dart"
+    - "**/*.pbjson.dart"
+    - "**/*.gr.dart"
+    - "**/*.config.dart"
+    - "lib/infrastructure/gen/**"
+    - "**/*.py"
+
+linter:
+  rules:
+    # Use parameter order as in json response
+    always_put_required_named_parameters_first: true
+
+    avoid_classes_with_only_static_members: false
+
+    sort_constructors_first: true

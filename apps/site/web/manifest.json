@@ -1,0 +1,23 @@
+{
+  "name": "CyBear Jinni Smart Home",
+  "short_name": "CyBear Jinni",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0175C2",
+  "theme_color": "#0175C2",
+  "description": "\uD83E\uDDBE\uD83D\uDC3C\uD83E\uDDDE Improving lives through technology in an affordable manner.",
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/cbj_app_logo_no_bg_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/cbj_app_icon_no_bg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

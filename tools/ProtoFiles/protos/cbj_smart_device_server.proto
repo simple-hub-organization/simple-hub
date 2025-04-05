@@ -1,0 +1,181 @@
+syntax = "proto3";
+
+package CbjSmartDeviceConnections;
+
+/// The greeting service definition.
+service CbjSmartDeviceConnections {
+  /// Sends a greeting
+  rpc FirstSetup(CbjFirstSetupMessage) returns (CbjCommendStatus);
+  rpc GetCompInfo(CbjCommendStatus) returns (CbjCompSmartDeviceInfo);
+  rpc SetCompInfo(CbjCompSmartDeviceInfo) returns (CbjCommendStatus);
+  rpc SetFirebaseAccountInformation(CbjFirebaseAccountInformation)
+      returns (CbjCommendStatus);
+  rpc GetStatus(CbjSmartDeviceInfo) returns (CbjSmartDeviceStatus);
+  rpc UpdateDeviceName(CbjSmartDeviceUpdateDetails) returns (CbjCommendStatus);
+  rpc SetOnDevice(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+  rpc SetOffDevice(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+  rpc setBlindsUp(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+  rpc setBlindsDown(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+  rpc setBlindsStop(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+
+  /// Client side sending requests for the hub like turn entrance light on,
+  /// and updating about it status like client opened movie (for the hub to
+  /// process). Getting requests from the hub like play music on the phone, and
+  /// status of devices that have been changed like update layout to show
+  /// entrance lights on.
+  rpc RegisterClient(stream CbjClientStatusRequests)
+      returns (stream CbjRequestsAndStatusFromHub);
+
+  /// Hub side sending requests for the clients like turn on music, and updated
+  /// status of devices like entrance light got turned on. Getting request like
+  /// to turn on lights, and getting client updated status to process like
+  /// client opened a move.
+  rpc RegisterHub(stream CbjRequestsAndStatusFromHub)
+      returns (stream CbjClientStatusRequests);
+
+  /// Suspending the computer
+  rpc suspendComputer(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+
+  /// Shutdown the computer
+  rpc shutdownComputer(CbjSmartDeviceInfo) returns (CbjCommendStatus);
+}
+
+enum CbjDeviceTypes {
+  typeNotSupported = 0;
+  light = 1;
+  blinds = 2;
+  boiler = 3;
+  button = 4;
+  buttonWithLight = 5;
+  hub = 7;
+  phoneApp = 8;
+  computerApp = 9;
+  browserApp = 10;
+  smartComputer = 11;
+  smart_camera = 12;
+}
+
+enum CbjDeviceActions {
+  actionNotSupported = 0;
+  on = 1;
+  off = 2;
+  moveUp = 3;
+  stop = 4;
+  moveDown = 5;
+  pressed = 6;   // for buttons
+  longPress = 7; // for buttons
+  doubleTap = 8; // for buttons
+  position = 9;  // Example: for blinds height
+  suspend = 10;  // Suspend the computer
+  shutdown = 11; // Shut down the computer
+  itIsFalse = 12;
+  itIsTrue = 13;
+  startVideoStream = 14;
+  motionDetected = 15;
+}
+
+enum CbjWhenToExecute {
+  undefined = 0;
+  onOddNumberPress = 1;
+  evenNumberPress = 2;
+  betweenSelectedTime = 3;
+  doNotBetweenSelectedTime = 4;
+  allTheTime = 5;
+  never = 6;
+  onceNow = 7;
+  onceInSelectedTime = 8;
+  onlyIfDeviceListIsAreInActionListState = 9;
+  atHome = 10;
+  outOfHome = 11;
+}
+
+enum CbjDeviceStateGRPC {
+  stateNotSupported = 0;
+  /// Cancel if not ack yet
+  cancelStateInProcess = 1;
+  /// Acknowledge that the state was updated
+  ack = 2;
+  /// New State was failed to execute
+  newStateFailed = 3;
+  /// Comp/Hub is trying to execute and waiting ack
+  waitingInComp = 4;
+}
+
+message CbjClientStatusRequests { CbjAllRemoteCommands allRemoteCommands = 41; }
+
+message CbjRequestsAndStatusFromHub {
+  CbjAllRemoteCommands allRemoteCommands = 42;
+}
+
+message CbjAllRemoteCommands { CbjSmartDeviceInfo smartDeviceInfo = 40; }
+
+message CbjFirstSetupMessage {
+  CbjCompSmartDeviceInfo compInfo = 38;
+  CbjFirebaseAccountInformation firebaseAccountInformation = 39;
+}
+
+message CbjCompSmartDeviceInfo {
+  CbjCompSpecs compSpecs = 21;
+  repeated CbjSmartDeviceInfo smartDevicesInComp = 28;
+}
+
+message CbjCompSpecs {
+  string compId = 22;
+  string compUuid = 23;
+  string compOs = 24;
+  string compModel = 25;
+  string compType = 26;
+  string pubspecYamlVersion = 27;
+}
+
+message CbjMicrocontrollerSpecs {
+  string microcontrollerModel = 31;
+  string microcontrollerType = 32;
+  string softwareVersion = 33;
+}
+
+/// The request message containing the user's name.
+message CbjSmartDeviceInfo {
+  string id = 1;
+  string state = 3;
+  string defaultName = 14;
+  string areaId = 15;
+  string senderDeviceModel = 16;
+  string senderDeviceOs = 17;
+  string senderId = 18;
+  string serverTimeStamp = 19;
+  string stateMassage = 20;
+
+  bool isComputer = 29;
+
+  CbjCompSpecs compSpecs = 30;
+
+  CbjMicrocontrollerSpecs microcontrollerSpecsSpecs = 31;
+
+  CbjDeviceTypesActions deviceTypesActions = 34;
+}
+
+/// The response message containing the greetings
+message CbjSmartDeviceStatus { bool onOffState = 4; }
+
+/// Did the commend succeeded (true) or not (false)
+message CbjCommendStatus { bool success = 5; }
+
+message CbjSmartDeviceUpdateDetails {
+  CbjSmartDeviceInfo smartDevice = 6;
+  string newName = 7;
+}
+
+message CbjFirebaseAccountInformation {
+  string fireBaseProjectId = 8;
+  string fireBaseApiKey = 9;
+  string userEmail = 10;
+  string userPassword = 11;
+  string homeId = 12;
+}
+
+message CbjDeviceTypesActions {
+  CbjDeviceTypes deviceType = 35;
+  CbjDeviceActions deviceAction = 36;
+  CbjDeviceStateGRPC deviceStateGRPC = 37;
+}

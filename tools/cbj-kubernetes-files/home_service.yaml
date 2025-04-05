@@ -1,0 +1,15 @@
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: testservice # this one needs to change dynamically without -
+  labels:
+    app: homeservice-one-label
+spec:
+  selector:
+    app: pod-test # this one needs to change dynamically
+  ports:
+    - protocol: TCP
+      port: 50051
+      targetPort: 50051

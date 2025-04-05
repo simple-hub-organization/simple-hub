@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# snapcraft related
+/parts/
+prime/
+stage/
+*.snap
+*_armhf.txt
+*_amd64.txt
+*_arm64.txt
+*_i386.txt
+Dart_Packages.xml

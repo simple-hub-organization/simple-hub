@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CBJ_App.iml" filepath="$PROJECT_DIR$/.idea/CBJ_App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/hub/melos_hub.iml" filepath="$PROJECT_DIR$/apps/hub/melos_hub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/integrations_controller/melos_integrations_controller.iml" filepath="$PROJECT_DIR$/packages/integrations_controller/melos_integrations_controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/remote-pipes/melos_remote_pipes.iml" filepath="$PROJECT_DIR$/apps/remote-pipes/melos_remote_pipes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/security_bear/melos_security_bear.iml" filepath="$PROJECT_DIR$/apps/security_bear/melos_security_bear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/app/melos_simple_hub.iml" filepath="$PROJECT_DIR$/apps/app/melos_simple_hub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apps/site/melos_site.iml" filepath="$PROJECT_DIR$/apps/site/melos_site.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packages/smart_device_flutter/melos_smart_device_flutter.iml" filepath="$PROJECT_DIR$/packages/smart_device_flutter/melos_smart_device_flutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_simple-hub.iml" filepath="$PROJECT_DIR$/melos_simple-hub.iml" />
     </modules>
   </component>
 </project>

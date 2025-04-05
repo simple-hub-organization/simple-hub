@@ -1,0 +1,1 @@
+export 'package:integrations_controller/src/domain/controllers/vendor_connector_conjecture_controller.dart';

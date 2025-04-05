@@ -1,0 +1,40 @@
+{
+    "name": "hub_js",
+    "version": "0.0.1",
+    "description": "CyBear Jinni hub helper in javascript in order to use javascript dependencies",
+    "main": "src/app.js",
+    "type": "module",
+    "scripts": {
+        "start": "ts-node src/app.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/guyluz11/hub_js.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/guyluz11/hub_js/issues"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "homepage": "https://github.com/guyluz11/hub_js#readme",
+    "dependencies": {
+        "@matter/main": "^0.11.9",
+        "@project-chip/matter.js": "^0.11.9",
+        "bravia": "^1.3.3",
+        "express": "^4.21.2",
+        "uuid": "^11.1.0",
+        "ws": "^8.18.1"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.0",
+        "@types/node": "^22.13.10",
+        "@types/uuid": "^10.0.0",
+        "@types/ws": "^8.5.14",
+        "pkg": "^5.8.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2"
+    }
+}

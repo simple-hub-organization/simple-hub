@@ -1,0 +1,24 @@
+name: simple-hub
+
+packages:
+  - "packages/integrations_controller"
+  - "apps/smart-device"
+  - "packages/smart_device_flutter"
+  - "apps/app"
+  - "apps/hub"
+
+  # Not necessary for regular builds
+  - "apps/security_bear"
+  - "apps/remote-pipes"
+  - "apps/remote-pipes_routing"
+  - "apps/site"
+
+dependencyOverridePaths:
+  - "packages/integrations_controller"
+  - "apps/smart-device"
+  - "packages/smart_device_flutter"
+  - "apps/security_bear"
+
+command:
+  bootstrap:
+    usePubspecOverrides: true

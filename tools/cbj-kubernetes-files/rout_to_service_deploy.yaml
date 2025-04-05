@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: remote-pipes-routing-deployment
+  labels:
+    app: remote-pipes-routing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: remote-pipes-routing
+  template:
+    metadata:
+      labels:
+        app: remote-pipes-routing
+    spec:
+      containers:
+      - name: remote-pipes-routing
+        image: guyluz11/cbj_rp_routing
+        ports:
+        - containerPort: 50051
