@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="wip integration test of for the app">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="wip run on iOS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/app/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,33 +60,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Dart Command Line App.cbj_hub.dart.executor&quot;: &quot;Debug&quot;,
-    &quot;Dart Command Line App.main.dart.executor&quot;: &quot;Debug&quot;,
-    &quot;Flutter Test.tests in app_test.dart.executor&quot;: &quot;Debug&quot;,
-    &quot;Flutter Test.tests in integration_test.executor&quot;: &quot;Run&quot;,
-    &quot;Flutter.Flutter Run -&gt; 'simple_hub'.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/guyc/Documents/git/simple-hub/apps/app/lib/domain/controllers&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Dart Command Line App.cbj_hub.dart.executor": "Debug",
+    "Dart Command Line App.main.dart.executor": "Debug",
+    "Flutter Test.tests in app_test.dart.executor": "Debug",
+    "Flutter Test.tests in integration_test.executor": "Run",
+    "Flutter.Flutter Run -> 'simple_hub'.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "run__on__ios",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/guyc/Documents/git/simple-hub/apps/app/lib/domain/controllers",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "flutter.settings",
+    "show.migrate.to.gradle.popup": "false",
+    "structure.view.defaults.are.configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/app/lib/domain/controllers" />
@@ -428,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743696806838</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="wip run on iOS">
+      <option name="closed" value="true" />
+      <created>1744040693712</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1744040693712</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -453,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="More naming change" />
     <MESSAGE value="Fixed new entities from javascript hub to the hub not being added properly" />
     <MESSAGE value="Hub load db entities. Some analysis fix" />
     <MESSAGE value="Wip compiling snapcraft.yaml" />
@@ -478,7 +477,8 @@
     <MESSAGE value="Sony TV now search for mac address" />
     <MESSAGE value="Re added support for auto generated scenes for area by purpose" />
     <MESSAGE value="wip integration test of for the app" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip integration test of for the app" />
+    <MESSAGE value="wip run on iOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip run on iOS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

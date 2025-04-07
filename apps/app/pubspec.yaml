@@ -21,9 +21,9 @@ flutter:
 
 dependencies:
   # A action bottom sheet that adapts to the platform
-  adaptive_action_sheet: ^2.0.2
+  adaptive_action_sheet: ^2.0.4
   # Collection of some cool and awesome text animations.
-  animated_text_kit: ^4.2.2
+  animated_text_kit: ^4.2.3
   # More customization when notifying your user.
   another_flushbar: ^1.12.30
   # Utility classes to work with asynchronous computations.
@@ -32,7 +32,7 @@ dependencies:
   auto_route: ^8.3.0
   # Automatically resizes text to fit perfectly within its bounds.
   auto_size_text: ^3.0.0
-  bonsoir: ^5.1.1
+  bonsoir: ^5.1.11
   # Copy text from and to clipboard
   clipboard: ^0.1.3
   # Package to create, convert, alter, and compare colors in a variety of colorspaces.
@@ -41,13 +41,13 @@ dependencies:
   connectivity_plus: ^6.1.3
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
   # Functional programming thingies, let you use multiple return types
   dartz: ^0.10.1
   # A day night time picker.
-  day_night_time_picker: ^1.3.0+1
+  day_night_time_picker: ^1.3.1
   # Helps us to select days in a week.
-  day_picker: ^2.2.0
+  day_picker: ^2.3.0
   # Get current device information
   device_info_plus: ^10.1.2
   #  # Internationalization (Easy translations)
@@ -57,7 +57,7 @@ dependencies:
   flutter:
     sdk: flutter
   # HSV(HSB)/HSL/RGB/Material color picker
-  flutter_colorpicker: ^1.0.3
+  flutter_colorpicker: ^1.1.0
   # A cross platform plugin for displaying local notifications.
   flutter_local_notifications: ^19.0.0
   # An easy to implement custom switch
@@ -65,7 +65,7 @@ dependencies:
   # Getting the local timezone of the os.
   flutter_timezone: ^4.1.0
   # Font Awesome Icon pack available as Flutter Icons.
-  font_awesome_flutter: ^10.6.0
+  font_awesome_flutter: ^10.8.0
   # Annotations for freezed
   freezed_annotation: ^2.4.4
   # Service locator
@@ -83,19 +83,19 @@ dependencies:
   # Hive db flutter extension
   hive_flutter: ^1.1.0
   # A composable, multi-platform, Future-based API for HTTP requests.
-  http: ^1.1.0
+  http: ^1.3.0
   # Open source icon sets for flutter
-  iconify_flutter: ^0.0.5
+  iconify_flutter: ^0.0.7
   # Convenient code generator for get_it
-  injectable: ^2.3.2
+  injectable: ^2.5.0
   # Allow you to have a screen at launcher for example
-  introduction_screen: ^3.1.12
+  introduction_screen: ^3.1.17
   # Extremely fast, easy to use, and fully async NoSQL database for Flutter.
   isar: ^3.1.0+1
   # Isar Core binaries for the Isar Database. Needs to be included for Flutter apps.
   isar_flutter_libs: ^3.1.0+1
   # Defines the annotations used by json_serializable to create code for JSON serialization and deserialization.
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
   # Dart Build System builders for handling JSON.
   json_serializable: ^6.7.1
   # Port of Kotlin's Kotlin Standard library for Dart/Flutter projects
@@ -109,7 +109,7 @@ dependencies:
   # The Material Design Icons designed by the community for Flutter
   material_design_icons_flutter: ^7.0.7296
   # Creating multi-select widgets in a variety of ways
-  mqtt_client: ^10.0.0
+  mqtt_client: ^10.8.0
   multi_select_flutter: ^4.1.3
   # Discover network info and configure themselves accordingly
   network_info_plus: ^6.1.3
@@ -122,13 +122,13 @@ dependencies:
   #    ref: "adding_mdns_ios_support"
   package_info_plus: ^8.3.0
   # Finding commonly used locations on the filesystem
-  path_provider: ^2.1.1
+  path_provider: ^2.1.5
   # Popup that ask for the requested permission
-  permission_handler: ^11.0.1
+  permission_handler: ^11.4.0
   # Provides runtime support for a Dart implementation of protobufs.
   protobuf: ^3.1.0
   # A wrapper around InheritedWidget to make them easier to use and more reusable.
-  provider: ^6.1.1
+  provider: ^6.1.4
   rounded_loading_button_plus:
     git:
       url: https://github.com/guyluz11/flutter_rounded_loading_button_plus.git
@@ -136,7 +136,7 @@ dependencies:
   # Implementation of the popular reactiveX api for asynchronous programming
   rxdart: ^0.27.7
   # Reading and writing simple key-value pairs
-  shared_preferences: ^2.2.2
+  shared_preferences: ^2.5.3
   # Highly customizable circular slider/progress bar & spinner.
   sleek_circular_slider: ^2.0.1
   smart_device_flutter:
@@ -144,12 +144,12 @@ dependencies:
     path: ../../packages/smart_device_flutter
   # Plugin for launching a URL
   timezone: ^0.10.0
-  url_launcher: ^6.2.1
-  vibration: ^2.0.1
+  url_launcher: ^6.3.1
+  vibration: ^3.1.3
   # Get available wifi ssid list, user can connect to wifi with ssid and password, and create hotspot
-  wifi_iot: ^0.3.18+1
+  wifi_iot: ^0.3.19+2
   # Scan for nearby visible WiFi access points.
-  wifi_scan: ^0.4.0+2
+  wifi_scan: ^0.4.1+2
 
 dev_dependencies:
   # Generator for auto_route library.
