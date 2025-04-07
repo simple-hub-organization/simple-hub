@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Updated all packages to last version">
-      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/hive_d/hive_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/hive_d/hive_d.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melos_simple-hub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/melos_simple-hub.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/simple-hub-organization/simple-hub.git&quot;,
-    &quot;accountId&quot;: &quot;8ba83b48-3d44-4c79-a80e-18570d54799e&quot;
+    &quot;accountId&quot;: &quot;3c7d9bf7-75f3-416c-a29f-943bbda0d8d6&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -73,7 +74,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "run__on__ios",
+    "git-widget-placeholder": "dev",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/guyc/Documents/git/simple-hub/apps/app/lib/domain/controllers",
