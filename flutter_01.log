@@ -1,0 +1,117 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color pub get
+
+## exception
+
+PathNotFoundException: PathNotFoundException: Cannot open file, path = '/Users/guylol/Documents/programs/flutter/version' (OS Error: No such file or directory, errno = 2)
+
+```
+#0      _File.throwIfError (dart:io/file_impl.dart:675:7)
+#1      _File.openSync (dart:io/file_impl.dart:490:5)
+#2      _File.readAsBytesSync (dart:io/file_impl.dart:574:18)
+#3      _File.readAsStringSync (dart:io/file_impl.dart:624:18)
+#4      ForwardingFile.readAsStringSync (package:file/src/forwarding/forwarding_file.dart:99:16)
+#5      ErrorHandlingFile.readAsStringSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:230:22)
+#6      _runSync (package:flutter_tools/src/base/error_handling_io.dart:600:14)
+#7      ErrorHandlingFile.readAsStringSync (package:flutter_tools/src/base/error_handling_io.dart:229:12)
+#8      _DefaultPub._updateVersionAndPackageConfig (package:flutter_tools/src/dart/pub.dart:720:50)
+#9      _DefaultPub.interactively (package:flutter_tools/src/dart/pub.dart:597:13)
+<asynchronous suspension>
+#10     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:349:7)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1450:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:421:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:131:9)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#19     main (package:flutter_tools/executable.dart:94:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[☠] Flutter (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    ✗ Exception: Could not find directory at /Users/guylol/Documents/programs/flutter/bin/cache/dart-sdk/bin/resources/devtools
+    • #0      Cache.devToolsVersion (package:flutter_tools/src/cache.dart:387:9)
+      #1      _DefaultDoctorValidatorsProvider.validators.<anonymous closure> (package:flutter_tools/src/doctor.dart:134:46)
+      #2      FlutterValidator.validate (package:flutter_tools/src/doctor.dart:553:84)
+      #3      Doctor.startValidatorTasks.<anonymous closure> (package:flutter_tools/src/doctor.dart:245:72)
+      #4      asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:111:32)
+      #5      _rootRun (dart:async/zone.dart:1414:13)
+      #6      _CustomZone.run (dart:async/zone.dart:1317:19)
+      #7      _runZoned (dart:async/zone.dart:1838:10)
+      #8      runZonedGuarded (dart:async/zone.dart:1826:12)
+      #9      runZoned (dart:async/zone.dart:1774:12)
+      #10     asyncGuard (package:flutter_tools/src/base/async_guard.dart:109:3)
+      #11     Doctor.startValidatorTasks (package:flutter_tools/src/doctor.dart:237:9)
+      #12     DoctorText._validatorTasks (package:flutter_tools/src/doctor.dart:766:60)
+      #13     DoctorText._validatorTasks (package:flutter_tools/src/doctor.dart)
+      #14     DoctorText._runDiagnosis (package:flutter_tools/src/doctor.dart:770:53)
+      #15     DoctorText.text (package:flutter_tools/src/doctor.dart:762:36)
+      #16     DoctorText.text (package:flutter_tools/src/doctor.dart)
+      #17     _createLocalCrashReport (package:flutter_tools/runner.dart:284:51)
+      #18     _handleToolError (package:flutter_tools/runner.dart:246:31)
+      <asynchronous suspension>
+      #19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+      <asynchronous suspension>
+      #20     main (package:flutter_tools/executable.dart:94:3)
+      <asynchronous suspension>
+
+
+[!] Android toolchain - develop for Android devices (Android SDK version 35.0.0-rc3)
+    • Android SDK at /Users/guylol/Library/Android/sdk
+    • Platform android-35, build-tools 35.0.0-rc3
+    ✗ Android SDK file not found: /Users/guylol/Library/Android/sdk/build-tools/35.0.0-rc3/aapt.
+    • Try re-installing or updating your Android SDK,
+      visit https://flutter.dev/to/macos-android-setup for detailed instructions.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 15.4)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 15F31d
+    • CocoaPods version 1.15.2
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2024.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.11+0-17.0.11b1207.24-11852314)
+
+[✓] VS Code (version 1.88.1)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.86.0
+
+[✓] Connected device (4 available)
+    • iPhone 15 Pro Max (mobile)      • 565E6606-D062-4801-9FCE-F8F6B3FACACB • ios            • com.apple.CoreSimulator.SimRuntime.iOS-17-5 (simulator)
+    • macOS (desktop)                 • macos                                • darwin-arm64   • macOS 14.6.1 23G93 darwin-arm64
+    • Mac Designed for iPad (desktop) • mac-designed-for-ipad                • darwin         • macOS 14.6.1 23G93 darwin-arm64
+    • Chrome (web)                    • chrome                               • web-javascript • Google Chrome 131.0.6778.265
+    ! Error: Browsing on the local area network for Guy’s iPhone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```

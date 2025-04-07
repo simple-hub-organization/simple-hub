@@ -5,31 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="wip integration test of for the app">
-      <change afterPath="$PROJECT_DIR$/apps/app/integration_test/domain_test/test_vendor_connector_conjecture_repository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/controllers/controllers.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/controllers/vendor_connector_conjecture_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_23_25__2_18_AM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/integration_test/app_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/integration_test/app_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/infrastructure/core/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/infrastructure/core/injection.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/introduction_screen/introduction_screen_body.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/lib/presentation/pages/splash_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/application/boot_up.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/application/boot_up.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/core/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/core/injection.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/devices/sony/sony_helpers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/hub_vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/hub_vendors_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/hub/lib/infrastructure/web_socket/hub_javascript_web_socket.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/site/lib/injection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/site/lib/injection.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/integrations_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/integrations_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/domain/ic_synchronizer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/lifx/lifx_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/lifx/lifx_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/sensibo/sensibo_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/sensibo/sensibo_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/switcher/switcher_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/switcher/switcher_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/yeelight/yeelight_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/devices/yeelight/yeelight_connector_conjecture.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/entities_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/search_devices.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/lib/src/infrastructure/vendors_connector_conjecture.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner/AppDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Runner/Info.plist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,14 +83,14 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ci/cd__app__upload__to__play__store&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/guyc/Documents/git/simple-hub/apps/app/lib/domain/controllers&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
     &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;
   }

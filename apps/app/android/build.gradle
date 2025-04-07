@@ -23,7 +23,7 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 
-// To Fix "Namespace not specified" for isar_flutter_libs pacakge
+// To Fix "Namespace not specified" for isar_flutter_libs package
 subprojects {
     afterEvaluate { project ->
         if (project.hasProperty('android')) {
