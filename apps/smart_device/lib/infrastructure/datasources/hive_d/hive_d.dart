@@ -1,6 +1,3 @@
-import 'package:integrations_controller/integrations_controller.dart';
-import 'package:isar/isar.dart';
-import 'package:smart_device/core/my_singleton.dart';
 import 'package:smart_device/infrastructure/datasources/hive_d/hive_objects_d/isar_database_information_d.dart';
 import 'package:smart_device/infrastructure/datasources/hive_d/hive_objects_d/isar_devices_d.dart';
 import 'package:smart_device/utils.dart';
@@ -23,39 +20,39 @@ class IsarD {
   static const String cellDatabaseInformationInSmartDeviceBox =
       'databaseInformation';
 
-  late Isar isar;
+  // late Isar isar;
 
   Future<bool?> contractorAsync() async {
     try {
-      if (finishedInitializing == null) {
-        final String? snapCommonEnvironmentVariablePath =
-            await SystemCommandsBaseClassD.instance
-                .getSnapCommonEnvironmentVariable();
-        if (snapCommonEnvironmentVariablePath == null) {
-          final String? currentUserName =
-              await MySingleton().getCurrentUserName();
-          isarFolderPath = '/home/$currentUserName/Documents/isar';
-        } else {
-          // /var/snap/cybear-jinni/common/isar
-          isarFolderPath = '$snapCommonEnvironmentVariablePath/isar';
-        }
-        logger.i('Path of isar (deprecated): $isarFolderPath');
-
-        await Isar.initializeIsarCore(download: true);
-        if (isarFolderPath == null) {
-          return false;
-        }
-
-        isar = await Isar.open(
-          [
-            IsarDevicesDSchema,
-            IsarDatabaseInformationDSchema,
-          ],
-          directory: isarFolderPath!,
-        );
-
-        finishedInitializing = true;
-      }
+      //   if (finishedInitializing == null) {
+      //     final String? snapCommonEnvironmentVariablePath =
+      //         await SystemCommandsBaseClassD.instance
+      //             .getSnapCommonEnvironmentVariable();
+      //     if (snapCommonEnvironmentVariablePath == null) {
+      //       final String? currentUserName =
+      //           await MySingleton().getCurrentUserName();
+      //       isarFolderPath = '/home/$currentUserName/Documents/isar';
+      //     } else {
+      //       // /var/snap/cybear-jinni/common/isar
+      //       isarFolderPath = '$snapCommonEnvironmentVariablePath/isar';
+      //     }
+      //     logger.i('Path of isar (deprecated): $isarFolderPath');
+      //
+      //     await Isar.initializeIsarCore(download: true);
+      //     if (isarFolderPath == null) {
+      //       return false;
+      //     }
+      //
+      //     isar = await Isar.open(
+      //       [
+      //         IsarDevicesDSchema,
+      //         IsarDatabaseInformationDSchema,
+      //       ],
+      //       directory: isarFolderPath!,
+      //     );
+      //
+      //     finishedInitializing = true;
+      //   }
     } catch (error) {
       logger.e('Error contractorAsync: $error');
     }
@@ -66,8 +63,8 @@ class IsarD {
     try {
       await contractorAsync();
 
-      final List<IsarDevicesD> isarDeviceD =
-          await isar.isarDevicesDs.where().findAll();
+      final List<IsarDevicesD> isarDeviceD = [];
+      // await isar.isarDevicesDs.where().findAll();
 
       final Map<String, List<String?>> tempListToMap = {};
 
@@ -92,8 +89,8 @@ class IsarD {
     try {
       await contractorAsync();
 
-      final List<IsarDatabaseInformationD> firebaseAccountsInformationMap =
-          await isar.isarDatabaseInformationDs.where().findAll();
+      final List<IsarDatabaseInformationD> firebaseAccountsInformationMap = [];
+      // await isar.isarDatabaseInformationDs.where().findAll();
 
       final Map<String, String?> tempListToMap = {};
 
@@ -138,10 +135,10 @@ class IsarD {
         isarDeviceDList.add(isarDevicesDTemp);
       }
 
-      await isar.writeTxn(() async {
-        await isar.isarDevicesDs.clear();
-        await isar.isarDevicesDs.putAll(isarDeviceDList);
-      });
+      // await isar.writeTxn(() async {
+      //   await isar.isarDevicesDs.clear();
+      //   await isar.isarDevicesDs.putAll(isarDeviceDList);
+      // });
     } catch (error) {
       logger.e('Error saveAllDevices: $error');
     }
@@ -165,10 +162,10 @@ class IsarD {
         databaseInformationList.add(isarDevicesDTemp);
       }
 
-      await isar.writeTxn(() async {
-        await isar.isarDatabaseInformationDs.clear();
-        await isar.isarDatabaseInformationDs.putAll(databaseInformationList);
-      });
+      // await isar.writeTxn(() async {
+      //   await isar.isarDatabaseInformationDs.clear();
+      //   await isar.isarDatabaseInformationDs.putAll(databaseInformationList);
+      // });
     } catch (error) {
       logger.e('Error saveListOfDatabaseInformation: $error');
     }

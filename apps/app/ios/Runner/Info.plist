@@ -60,5 +60,9 @@
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Need Location permission</string>
 
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 </dict>
 </plist>

@@ -260,7 +260,9 @@ class SearchDevices {
           // we need to replace this part with check that return true if
           // there is local internet connection/ device is connected to
           // local network.
-          final bool result = await InternetConnectionChecker().hasConnection;
+          final InternetConnectionChecker internetConnectionChecker =
+              InternetConnectionChecker.createInstance();
+          final bool result = await internetConnectionChecker.hasConnection;
           if (result) {
             break;
           }
