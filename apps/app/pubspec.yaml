@@ -26,8 +26,6 @@ dependencies:
   animated_text_kit: ^4.2.3
   # More customization when notifying your user.
   another_flushbar: ^1.12.30
-  # Utility classes to work with asynchronous computations.
-  async: ^2.11.0
   # Declarative routing solution, where everything needed for navigation is automatically generated for you.
   auto_route: ^8.3.0
   # Automatically resizes text to fit perfectly within its bounds.
@@ -74,8 +72,6 @@ dependencies:
   google_mobile_ads: ^5.3.1
   # Secure authentication system for signing in with a Google account on Android and iOS
   #  google_sign_in: ^5.0.4
-  # A high performance, open source, general RPC framework that puts mobile and HTTP/2 first.
-  grpc: ^3.2.4
   # Add hex color codes to your flutter projects
   hexcolor: ^3.0.1
   # key-value database
@@ -133,8 +129,6 @@ dependencies:
     git:
       url: https://github.com/guyluz11/flutter_rounded_loading_button_plus.git
       ref: border_color
-  # Implementation of the popular reactiveX api for asynchronous programming
-  rxdart: ^0.27.7
   # Reading and writing simple key-value pairs
   shared_preferences: ^2.5.3
   # Highly customizable circular slider/progress bar & spinner.
@@ -161,7 +155,7 @@ dev_dependencies:
   # Code generator for unions/pattern-matching/copy.
   flutter_test:
     sdk: flutter
-  freezed: ^2.4.5
+  freezed: ^2.5.2
   # Convenient code generator for get_it.
   injectable_generator: ^2.4.1
   integration_test:
