@@ -13,7 +13,7 @@ dependencies:
   async: ^2.12.0
   # Discover and connect with Chromecast devices 
   cast: 
-    git: 
+    git:
       url: "https://github.com/guyluz11/flutter_cast.git"
       ref: "multicast_version"
   collection: ^1.19.1
@@ -33,7 +33,7 @@ dependencies:
   # For the injection, allow accessing an object from anywhere in an App
   get_it: ^8.0.3
   # High performance, open-source universal RPC framework
-  grpc: ^4.0.1
+  grpc: ^4.0.4
   # Lightweight and blazing fast key-value database
   hive: ^2.2.3
   # Library for making HTTP requests.
@@ -46,8 +46,6 @@ dependencies:
   injectable: ^2.5.0
   # Utility library that checks for an Active Internet connection
   internet_connection_checker: ^3.0.1
-  # Extremely fast, easy to use, and fully async NoSQL database for Flutter.
-  isar: ^3.1.0+1
   # Defines the annotations used by json_serializable to create code for JSON serialization and deserialization.
   json_annotation: ^4.9.0
   # Dart Build System builders for handling JSON.
@@ -71,7 +69,7 @@ dependencies:
   nodered:
     git: "https://github.com/guyluz11/nodered.git"
   # Provides runtime support for a Dart implementation of protobufs.
-  protobuf: ^3.1.0
+  protobuf: ^4.0.0
   # Extends the capabilities of Dart Streams and StreamControllers.
   rxdart: ^0.28.0
   # Control Sensibo accessories 

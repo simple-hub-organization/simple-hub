@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="wip run on iOS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/.metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/smart_device_flutter/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smart_device_flutter/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/smart_device_flutter/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/packages/smart_device_flutter/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Updated all packages to last version">
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/hive_d/hive_d.dart" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/lib/infrastructure/datasources/hive_d/hive_d.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/smart_device/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +65,7 @@
     "Dart Command Line App.main.dart.executor": "Debug",
     "Flutter Test.tests in app_test.dart.executor": "Debug",
     "Flutter Test.tests in integration_test.executor": "Run",
-    "Flutter.Flutter Run -> 'simple_hub'.executor": "Debug",
+    "Flutter.Flutter Run -> 'simple_hub'.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -447,7 +442,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744047192412</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Updated all packages to last version">
+      <option name="closed" value="true" />
+      <created>1744053920575</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1744053920575</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -472,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed new entities from javascript hub to the hub not being added properly" />
     <MESSAGE value="Hub load db entities. Some analysis fix" />
     <MESSAGE value="Wip compiling snapcraft.yaml" />
     <MESSAGE value="Updating Security Bear packages.&#10;Wip on snapcraft for the hub." />
@@ -497,7 +499,8 @@
     <MESSAGE value="Re added support for auto generated scenes for area by purpose" />
     <MESSAGE value="wip integration test of for the app" />
     <MESSAGE value="wip run on iOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="wip run on iOS" />
+    <MESSAGE value="Updated all packages to last version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated all packages to last version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
