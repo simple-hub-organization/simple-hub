@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Connected the ios app to registered app on apple website">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Fixed injection.config is missing">
       <change beforePath="$PROJECT_DIR$/.github/workflows/cd.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cd.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,7 +457,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744059070181</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fixed injection.config is missing">
+      <option name="closed" value="true" />
+      <created>1744061945252</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1744061945252</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -484,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Wip compiling snapcraft.yaml" />
     <MESSAGE value="Updating Security Bear packages.&#10;Wip on snapcraft for the hub." />
     <MESSAGE value="Fixed security bear missing dev dependency freez" />
     <MESSAGE value="Snap getting built successfully" />
@@ -509,7 +514,8 @@
     <MESSAGE value="wip run on iOS" />
     <MESSAGE value="Updated all packages to last version" />
     <MESSAGE value="Connected the ios app to registered app on apple website" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected the ios app to registered app on apple website" />
+    <MESSAGE value="Fixed injection.config is missing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed injection.config is missing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
