@@ -55,8 +55,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # Annotations for freezed
-  freezed_annotation: ^2.4.1
   # HSV(HSB)/HSL/RGB/Material color picker
   flutter_colorpicker: ^1.1.0
   # A cross platform plugin for displaying local notifications.
@@ -83,8 +81,6 @@ dependencies:
   http: ^1.3.0
   # Open source icon sets for flutter
   iconify_flutter: ^0.0.7
-  # Convenient code generator for get_it
-  injectable: ^2.5.0
   # Allow you to have a screen at launcher for example
   introduction_screen: ^3.1.17
   # Port of Kotlin's Kotlin Standard library for Dart/Flutter projects
@@ -153,5 +149,7 @@ dev_dependencies:
   injectable_generator: ^2.4.1
   integration_test:
     sdk: flutter
+  # Dart Build System builders for handling JSON.
+  json_serializable: ^6.7.1
   # Collection of lint rules for Dart and Flutter projects.
   lint: ^2.8.0

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Fixed injection.config is missing">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Fixed freezed is missing">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/packages/integrations_controller/pubspec.yaml" afterDir="false" />
@@ -27,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +75,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "master",
     "io.flutter.reload.alreadyRun": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/guyc/Documents/git/simple-hub/apps/app/lib/domain/controllers",
@@ -124,9 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.tests in integration_test" />
+        <item itemvalue="Flutter Test.tests in app_test.dart" />
+        <item itemvalue="Dart Command Line App.cbj_hub.dart" />
         <item itemvalue="Flutter Test.tests in app_test.dart" />
         <item itemvalue="Flutter Test.tests in integration_test" />
-        <item itemvalue="Dart Command Line App.cbj_hub.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -475,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744061977202</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Fixed freezed is missing">
+      <option name="closed" value="true" />
+      <created>1744062901973</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1744062901973</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -500,7 +511,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updating Security Bear packages.&#10;Wip on snapcraft for the hub." />
     <MESSAGE value="Fixed security bear missing dev dependency freez" />
     <MESSAGE value="Snap getting built successfully" />
     <MESSAGE value="Trying to fix snap" />
@@ -525,7 +535,8 @@
     <MESSAGE value="Updated all packages to last version" />
     <MESSAGE value="Connected the ios app to registered app on apple website" />
     <MESSAGE value="Fixed injection.config is missing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed injection.config is missing" />
+    <MESSAGE value="Fixed freezed is missing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed freezed is missing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

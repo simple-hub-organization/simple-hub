@@ -761,6 +761,7 @@
         <entry key="freezed">
           <value>
             <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/freezed-2.5.8/lib" />
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/freezed-2.5.7/lib" />
             </list>
           </value>
@@ -2265,6 +2266,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_timezone-4.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/font_awesome_flutter-10.8.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/freezed-2.5.7/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/freezed-2.5.8/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/freezed_annotation-2.4.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dev/get_it-8.0.3/lib" />

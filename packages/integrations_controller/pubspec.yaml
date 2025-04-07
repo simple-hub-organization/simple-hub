@@ -48,8 +48,6 @@ dependencies:
   internet_connection_checker: ^3.0.1
   # Defines the annotations used by json_serializable to create code for JSON serialization and deserialization.
   json_annotation: ^4.9.0
-  # Dart Build System builders for handling JSON.
-  json_serializable: ^6.7.1
   # Port of Kotlin's Kotlin Standard library for Dart/Flutter projects
   kt_dart: ^1.1.0
   # Implementation of the LIFX HTTP API
@@ -103,5 +101,7 @@ dev_dependencies:
   injectable_generator: ^2.4.1
   # Collection of lint rules for Dart and Flutter projects
   lint: ^2.8.0
+  # Dart Build System builders for handling JSON.
+  json_serializable: ^6.7.1
   # A full featured library for writing and running Dart tests across platforms.
   test: ^1.25.15
