@@ -31,8 +31,9 @@ jobs:
       - name: Install dependencies
         working-directory: apps/app
         run: |
-          dart run build_runner build --delete-conflicting-outputs
           flutter pub get
+          dart run build_runner build --delete-conflicting-outputs
+          
 
       # Open ios simulator
       - uses: futureware-tech/simulator-action@v4

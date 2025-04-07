@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Updated all packages to last version">
+    <list default="true" id="fd8470a0-af96-4190-9f65-d2c5f0e59911" name="Changes" comment="Connected the ios app to registered app on apple website">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/cd.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/cd.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/app/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/melos_simple-hub.iml" beforeDir="false" afterPath="$PROJECT_DIR$/melos_simple-hub.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/apps/app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     "Dart Command Line App.main.dart.executor": "Debug",
     "Flutter Test.tests in app_test.dart.executor": "Debug",
     "Flutter Test.tests in integration_test.executor": "Run",
-    "Flutter.Flutter Run -> 'simple_hub'.executor": "Run",
+    "Flutter.Flutter Run -> 'simple_hub'.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -451,7 +451,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744053920575</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Connected the ios app to registered app on apple website">
+      <option name="closed" value="true" />
+      <created>1744059070180</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1744059070181</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -476,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Hub load db entities. Some analysis fix" />
     <MESSAGE value="Wip compiling snapcraft.yaml" />
     <MESSAGE value="Updating Security Bear packages.&#10;Wip on snapcraft for the hub." />
     <MESSAGE value="Fixed security bear missing dev dependency freez" />
@@ -501,7 +508,8 @@
     <MESSAGE value="wip integration test of for the app" />
     <MESSAGE value="wip run on iOS" />
     <MESSAGE value="Updated all packages to last version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated all packages to last version" />
+    <MESSAGE value="Connected the ios app to registered app on apple website" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected the ios app to registered app on apple website" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
