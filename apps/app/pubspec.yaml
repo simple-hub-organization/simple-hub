@@ -54,6 +54,9 @@ dependencies:
   expansion_tile_card: ^3.0.0
   flutter:
     sdk: flutter
+
+  # Annotations for freezed
+  freezed_annotation: ^2.4.1
   # HSV(HSB)/HSL/RGB/Material color picker
   flutter_colorpicker: ^1.1.0
   # A cross platform plugin for displaying local notifications.
@@ -144,6 +147,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # Code generator for unions/pattern-matching/copy.
+  freezed: ^2.4.5
   # Injectable is a convenient code generator for get_it.
   injectable_generator: ^2.4.1
   integration_test:
