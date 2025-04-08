@@ -68,7 +68,7 @@ dependencies:
   # Service locator
   get_it: ^8.0.3
   # Google Mobile Ads
-  google_mobile_ads: ^5.3.1
+#  google_mobile_ads: ^5.3.1
   # Secure authentication system for signing in with a Google account on Android and iOS
   #  google_sign_in: ^5.0.4
   # Add hex color codes to your flutter projects
@@ -136,7 +136,7 @@ dev_dependencies:
   # Generator for auto_route library.
   auto_route_generator: ^10.0.1
   # A build system for Dart code generation and modular compilation.
-  build_runner: ^2.4.12
+  build_runner:
   # Package which simplifies the task of updating your Flutter app's launcher icon.
   flutter_launcher_icons: ^0.14.3
   # Code generator for unions/pattern-matching/copy.
@@ -144,12 +144,12 @@ dev_dependencies:
     sdk: flutter
 
   # Code generator for unions/pattern-matching/copy.
-  freezed: ^2.4.5
+  freezed:
   # Injectable is a convenient code generator for get_it.
-  injectable_generator: ^2.4.1
+  injectable_generator:
   integration_test:
     sdk: flutter
   # Dart Build System builders for handling JSON.
-  json_serializable: ^6.7.1
+  json_serializable:
   # Collection of lint rules for Dart and Flutter projects.
-  lint: ^2.8.0
+  lint:
