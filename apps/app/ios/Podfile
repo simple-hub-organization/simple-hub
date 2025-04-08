@@ -1,5 +1,5 @@
+# Uncomment this line to define a global platform for your project
 platform :ios, '13.0'
-use_modular_headers!
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -31,32 +31,13 @@ target 'Runner' do
   use_frameworks!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
 end
-
-
-# add the Firebase pod for Google Analytics
-pod 'Firebase/Analytics'
-# add pods for any other desired Firebase products
-# https://firebase.google.com/docs/ios/setup#available-pods
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
-
-    target.build_configurations.each do |config|
-      definitions = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] || ['$(inherited)']
-
-      definitions += [
-        ## dart: PermissionGroup.location
-        'PERMISSION_LOCATION=1',
-
-        ## Enable more as needed
-        # 'PERMISSION_CAMERA=1',
-      ]
-
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = definitions
-
-      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
-    end # <-- closes config.build_settings.each
-  end   # <-- closes installer.pods_project.targets.each
-end     # <-- closes post_install
+  end
+end
