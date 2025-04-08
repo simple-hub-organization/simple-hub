@@ -1,8 +1,8 @@
 json_key_file(
   if ENV["GITHUB_ACTIONS"] == "true"
-    "/tmp/file.json"
+    "/tmp/google_play_key.json"
   else
-    "../../../../passwords/youtube_helper/play_store/file.json"
+    "../../../../passwords/youtube_helper/play_store/google_play_key.json"
   end
 )
 
