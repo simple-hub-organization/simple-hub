@@ -38,15 +38,9 @@ end
 private_lane :populate_metadata do
   metadata_path = "metadata"
 
-  metadata_full_path = File.expand_path(metadata_path, Dir.pwd)
-
   unless File.exist?(metadata_path)
-    UI.message("Running 'fastlane supply init' from android folder...")
-
-    # Change directory to android and run init there
-    Dir.chdir("android") do
-      sh("fastlane supply init --metadata_path #{metadata_path}")
-    end
+    UI.message("Running 'fastlane supply init' to initialize supply metadata...")
+    sh("fastlane supply init --metadata_path #{metadata_path}")
   else
     UI.message("✅ Supply metadata already initialized.")
   end
@@ -66,7 +60,6 @@ private_lane :populate_metadata do
     FileUtils.mv(src_file, dest_file)
   end
 end
-
 
 
 lane :deploy do
@@ -90,7 +83,8 @@ lane :deploy do
     package_name: Actions.lane_context[:PACKAGE_NAME],
     skip_upload_changelogs: true,
     aab: aab_path,
-    metadata_path: 'metadata'
+    metadata_path: 'metadata',
+    skip_upload_changelogs: true
   )
 
 end
