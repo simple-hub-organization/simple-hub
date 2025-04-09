@@ -36,34 +36,31 @@ private_lane :clean_folder do
 end
 
 private_lane :populate_metadata do
+  metadata_path = "metadata"
 
-  unless File.exist?("./fastlane/metadata")
-    puts "Running 'fastlane supply init' to initialize supply metadata..."
-    Dir.chdir("../") do
-      UI.message("✅ Now in folder: #{Dir.pwd}")
-      system("fastlane supply init")
-    end
+  unless File.exist?(metadata_path)
+    UI.message("Running 'fastlane supply init' to initialize supply metadata...")
+    system("fastlane supply init")
   else
-    puts "Supply metadata already initialized."
+    UI.message("✅ Supply metadata already initialized.")
   end
 
-  screenshots_src = '/tmp/flutter_app_screenshots'  # Source folder with images
-  screenshots_dest = 'metadata/android/en-US/images/phoneScreenshots'  # Destination folder (for phone screenshots)
+  screenshots_src = '/tmp/flutter_app_screenshots'
+  screenshots_dest = File.join(metadata_path, 'android/en-US/images/phoneScreenshots')
 
   clean_folder
 
-  # Create the folder structure for screenshots if not already created
   require 'fileutils'
-  FileUtils.mkdir_p(screenshots_dest)  # Create the phone folder inside fastlane/screenshots
+  FileUtils.mkdir_p(screenshots_dest)
 
-  # Move all images from the source folder to the 'phone' folder
   Dir.foreach(screenshots_src) do |filename|
-      next if filename == '.' || filename == '..'
-      src_file = File.join(screenshots_src, filename)
-      dest_file = File.join(screenshots_dest, filename)
-      FileUtils.mv(src_file, dest_file)
+    next if filename == '.' || filename == '..'
+    src_file = File.join(screenshots_src, filename)
+    dest_file = File.join(screenshots_dest, filename)
+    FileUtils.mv(src_file, dest_file)
   end
 end
+
 
 
 lane :deploy do
@@ -89,6 +86,5 @@ lane :deploy do
     aab: aab_path,
     metadata_path: 'metadata'
   )
-
 
 end
