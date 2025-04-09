@@ -38,11 +38,15 @@ end
 private_lane :populate_metadata do
   metadata_path = "metadata"
 
-  unless File.exist?(metadata_path)
-    UI.message("Running 'fastlane supply init' to initialize supply metadata...")
+  metadata_full_path = File.expand_path(metadata_path, Dir.pwd)
 
-    # Run supply init in the correct context
-    sh("fastlane supply init --metadata_path #{metadata_path}")
+  unless File.exist?(metadata_path)
+    UI.message("Running 'fastlane supply init' from android folder...")
+
+    # Change directory to android and run init there
+    Dir.chdir("android") do
+      sh("fastlane supply init --metadata_path #{metadata_path}")
+    end
   else
     UI.message("✅ Supply metadata already initialized.")
   end
