@@ -40,7 +40,9 @@ private_lane :populate_metadata do
 
   unless File.exist?(metadata_path)
     UI.message("Running 'fastlane supply init' to initialize supply metadata...")
-    system("fastlane supply init")
+
+    # Run supply init in the correct context
+    sh("fastlane supply init --metadata_path #{metadata_path}")
   else
     UI.message("✅ Supply metadata already initialized.")
   end
