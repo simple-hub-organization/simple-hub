@@ -86,7 +86,9 @@ lane :deploy do
     track: 'production',
     package_name: Actions.lane_context[:PACKAGE_NAME],
     skip_upload_changelogs: true,
-    aab: aab_path
+    aab: aab_path,
+    metadata_path: 'metadata'
   )
+
 
 end
