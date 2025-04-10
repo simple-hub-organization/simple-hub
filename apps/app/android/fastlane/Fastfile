@@ -48,19 +48,24 @@ private_lane :populate_metadata do
   end
 
   screenshots_src = '/tmp/flutter_app_screenshots'
-  screenshots_dests = ["./metadata/en-US/images/phoneScreenshots", "./metadata/en-US/images/sevenInchScreenshots", "./metadata/en-US/images/tenInchScreenshots"]
+  # Define all screenshot destination folders
+  screenshot_folders = [ 'phoneScreenshots', 'sevenInchScreenshots', 'tenInchScreenshots']
 
   clean_folder
 
   require 'fileutils'
-  screenshots_dests.each do |screenshots_dest|
+  
+  # Copy screenshots to each destination folder
+  screenshot_folders.each do |folder|
+    screenshots_dest = File.join(metadata_path, 'en-US/images', folder)
     FileUtils.mkdir_p(screenshots_dest)
-
+    
     Dir.foreach(screenshots_src) do |filename|
       next if filename == '.' || filename == '..'
       src_file = File.join(screenshots_src, filename)
       dest_file = File.join(screenshots_dest, filename)
-      FileUtils.mv(src_file, dest_file)
+      UI.message("Copying #{filename} to #{folder}")
+      FileUtils.cp(src_file, dest_file)
     end
   end
 end

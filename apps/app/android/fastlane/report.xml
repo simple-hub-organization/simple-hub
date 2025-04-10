@@ -5,34 +5,37 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Switch to get_last_version_code lane" time="0.000376964">
+      <testcase classname="fastlane.lanes" name="0: Switch to get_last_version_code lane" time="0.000551105">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: google_play_track_version_codes" time="1.813850158">
+      <testcase classname="fastlane.lanes" name="1: google_play_track_version_codes" time="2.752454966">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: Switch to populate_metadata lane" time="0.000380574">
+      <testcase classname="fastlane.lanes" name="2: Switch to populate_metadata lane" time="0.000281188">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: Switch to clean_folder lane" time="0.000313473">
+      <testcase classname="fastlane.lanes" name="3: fastlane supply init --metadata_path ./metadata" time="12.463101403">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: flutter clean" time="1.421575716">
+      <testcase classname="fastlane.lanes" name="4: Switch to clean_folder lane" time="0.000658393">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: flutter build appbundle --release --build-number=5" time="640.45806567">
+      <testcase classname="fastlane.lanes" name="5: flutter clean" time="1.973785832">
         
-          <failure message="/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/actions/actions_helper.rb:67:in `execute_action&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/fast_file.rb:224:in `sh&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/fast_file.rb:216:in `sh&apos;&#10;Fastfile:76:in `block in parsing_binding&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/lane.rb:41:in `call&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/runner.rb:45:in `chdir&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/runner.rb:45:in `execute&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/lane_manager.rb:46:in `cruise_lane&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/command_line_handler.rb:34:in `handle&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/commands_generator.rb:110:in `block (2 levels) in run&apos;&#10;/var/lib/gems/3.2.0/gems/commander-4.6.0/lib/commander/command.rb:187:in `call&apos;&#10;/var/lib/gems/3.2.0/gems/commander-4.6.0/lib/commander/command.rb:157:in `run&apos;&#10;/var/lib/gems/3.2.0/gems/commander-4.6.0/lib/commander/runner.rb:444:in `run_active_command&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:124:in `run!&apos;&#10;/var/lib/gems/3.2.0/gems/commander-4.6.0/lib/commander/delegates.rb:18:in `run!&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/commands_generator.rb:363:in `run&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/commands_generator.rb:43:in `start&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/fastlane/lib/fastlane/cli_tools_distributor.rb:123:in `take_off&apos;&#10;/var/lib/gems/3.2.0/gems/fastlane-2.225.0/bin/fastlane:23:in `&lt;top (required)&gt;&apos;&#10;/usr/local/bin/fastlane:25:in `load&apos;&#10;/usr/local/bin/fastlane:25:in `&lt;main&gt;&apos;&#10;&#10;Exit status of command &apos;flutter build appbundle --release --build-number=5&apos; was 1 instead of 0.&#10;Changing current working directory to: /home/guyc/Documents/git/simple-hub/apps/app&#10;Resolving dependencies...&#10;Downloading packages...&#10;  async 2.12.0 (2.13.0 available)&#10;  chopper 7.4.0 (8.1.0 available)&#10;  fake_async 1.3.2 (1.3.3 available)&#10;  freezed 2.5.8 (3.0.6 available)&#10;  freezed_annotation 2.4.4 (3.0.0 available)&#10;  js 0.6.7 (0.7.2 available)&#10;  leak_tracker 10.0.8 (10.0.9 available)&#10;  material_color_utilities 0.11.1 (0.12.0 available)&#10;  permission_handler 11.4.0 (12.0.0 available)&#10;  permission_handler_android 12.1.0 (13.0.1 available)&#10;  vm_service 14.3.1 (15.0.0 available)&#10;  webdriver 3.0.4 (3.1.0 available)&#10;Got dependencies!&#10;12 packages have newer versions incompatible with dependency constraints.&#10;Try `flutter pub outdated` for more information.&#10;&#10;Running Gradle task &apos;bundleRelease&apos;...                          &#10;Both settings.gradle and settings.gradle.kts exist, so settings.gradle.kts is ignored. This is likely a mistake.&#10;Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.&#10;Note: Some input files use or override a deprecated API.&#10;Note: Recompile with -Xlint:deprecation for details.&#10;Note: Some input files use or override a deprecated API.&#10;Note: Recompile with -Xlint:deprecation for details.&#10;Font asset &quot;fa-solid-900.ttf&quot; was tree-shaken, reducing it from 423676 to 7824 bytes (98.2% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.&#10;Font asset &quot;MaterialIcons-Regular.otf&quot; was tree-shaken, reducing it from 1645184 to 4280 bytes (99.7% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.&#10;Font asset &quot;materialdesignicons-webfont.ttf&quot; was tree-shaken, reducing it from 1279992 to 1034252 bytes (19.2% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.&#10;Font asset &quot;fa-regular-400.ttf&quot; was tree-shaken, reducing it from 67976 to 1464 bytes (97.8% reduction). Tree-shaking can be disabled by providing the --no-tree-shake-icons flag when building your app.&#10;&#10;FAILURE: Build failed with an exception.&#10;&#10;* What went wrong:&#10;Execution failed for task &apos;:app:signReleaseBundle&apos;.&#10;&gt; A failure occurred while executing com.android.build.gradle.internal.tasks.FinalizeBundleTask$BundleToolRunnable&#10;   &gt; java.lang.NullPointerException (no error message)&#10;&#10;* Try:&#10;&gt; Run with --stacktrace option to get the stack trace.&#10;&gt; Run with --info or --debug option to get more log output.&#10;&gt; Run with --scan to get full insights.&#10;&gt; Get more help at https://help.gradle.org.&#10;&#10;BUILD FAILED in 10m 27s&#10;Running Gradle task &apos;bundleRelease&apos;...                            628.8s&#10;Gradle task bundleRelease failed with exit code 1&#10;" />
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: flutter build appbundle --release --build-number=6" time="80.188893627">
         
       </testcase>
     
