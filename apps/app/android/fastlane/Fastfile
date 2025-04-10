@@ -22,7 +22,7 @@ private_lane :get_last_version_code do
 end
 
 private_lane :clean_folder do
-  folder_path = "metadata/android/en-US/images/phoneScreenshots"
+  folder_path = "./metadata/android/en-US/images/phoneScreenshots"
 
   if Dir.exist?(folder_path)
     Dir.foreach(folder_path) do |file|
@@ -36,7 +36,7 @@ private_lane :clean_folder do
 end
 
 private_lane :populate_metadata do
-  metadata_path = "metadata"
+  metadata_path = "./metadata"
 
   unless File.exist?(metadata_path)
     UI.message("Running 'fastlane supply init' to initialize supply metadata...")
@@ -77,13 +77,21 @@ lane :deploy do
 
   aab_path = "../build/app/outputs/bundle/release/app-release.aab"
 
+  # Debug information to show current path and files
+  current_dir = Dir.pwd
+  UI.message("Current directory: #{current_dir}")
+  UI.message("Files in current directory:")
+  sh("ls -la")
+  UI.message("Files in metadata directory:")
+  sh("ls -la metadata") rescue UI.message("metadata directory not found")
+
   # Upload to Play Store new version and screenshots
   supply(
     track: 'production',
     package_name: Actions.lane_context[:PACKAGE_NAME],
     skip_upload_changelogs: true,
     aab: aab_path,
-    metadata_path: 'metadata',
+    metadata_path: './metadata',
     skip_upload_changelogs: true
   )
 
