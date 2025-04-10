@@ -11,3 +11,4 @@ gradle-wrapper.jar
 key.properties
 **/*.keystore
 **/*.jks
+*/metadata

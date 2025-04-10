@@ -2,7 +2,7 @@ json_key_file(
   if ENV["GITHUB_ACTIONS"] == "true"
     "/tmp/google_play_key.json"
   else
-    "../../../../passwords/youtube_helper/play_store/google_play_key.json"
+    "../../../../../Smart-home-passwords/simple_hub/googlePlayStore/google_play_key.json"
   end
 )
 

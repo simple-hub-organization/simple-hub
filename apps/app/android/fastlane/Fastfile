@@ -4,7 +4,7 @@ private_lane :get_last_version_code do
     json_key_path = "/tmp/google_play_key.json"
   else
     UI.message("Running locally")
-    json_key_path = "../../../../../Smart-home-passwords/simple_hub/googlePlayStore/google_play_key.json"
+    json_key_path = "../../../../Smart-home-passwords/simple_hub/googlePlayStore/google_play_key.json"
   end
 
   track = "production"
@@ -22,7 +22,7 @@ private_lane :get_last_version_code do
 end
 
 private_lane :clean_folder do
-  folder_path = "./metadata/android/en-US/images/phoneScreenshots"
+  folder_path = "./metadata/en-US/images/phoneScreenshots"
 
   if Dir.exist?(folder_path)
     Dir.foreach(folder_path) do |file|
@@ -46,7 +46,7 @@ private_lane :populate_metadata do
   end
 
   screenshots_src = '/tmp/flutter_app_screenshots'
-  screenshots_dest = File.join(metadata_path, 'android/en-US/images/phoneScreenshots')
+  screenshots_dest = File.join(metadata_path, 'en-US/images/phoneScreenshots')
 
   clean_folder
 
@@ -91,8 +91,6 @@ lane :deploy do
     package_name: Actions.lane_context[:PACKAGE_NAME],
     skip_upload_changelogs: true,
     aab: aab_path,
-    metadata_path: './metadata',
-    skip_upload_changelogs: true
+    metadata_path: './fastlane/metadata',
   )
-
 end
