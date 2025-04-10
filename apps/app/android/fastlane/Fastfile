@@ -22,16 +22,18 @@ private_lane :get_last_version_code do
 end
 
 private_lane :clean_folder do
-  folder_path = "./metadata/en-US/images/phoneScreenshots"
+  folders = ["./metadata/en-US/images/phoneScreenshots", "./metadata/en-US/images/sevenInchScreenshots", "./metadata/en-US/images/tenInchScreenshots"]
 
-  if Dir.exist?(folder_path)
-    Dir.foreach(folder_path) do |file|
-      file_path = File.join(folder_path, file)
-      File.delete(file_path) if File.file?(file_path)
+  folders.each do |folder_path|
+    if Dir.exist?(folder_path)
+      Dir.foreach(folder_path) do |file|
+        file_path = File.join(folder_path, file)
+        File.delete(file_path) if File.file?(file_path)
+      end
+      UI.message("✅ All files in '#{folder_path}' have been removed.")
+    else
+      UI.message("❌ Folder '#{folder_path}' does not exist.")
     end
-    UI.message("✅ All files in '#{folder_path}' have been removed.")
-  else
-    UI.message("❌ Folder '#{folder_path}' does not exist.")
   end
 end
 
@@ -46,18 +48,20 @@ private_lane :populate_metadata do
   end
 
   screenshots_src = '/tmp/flutter_app_screenshots'
-  screenshots_dest = File.join(metadata_path, 'en-US/images/phoneScreenshots')
+  screenshots_dests = ["./metadata/en-US/images/phoneScreenshots", "./metadata/en-US/images/sevenInchScreenshots", "./metadata/en-US/images/tenInchScreenshots"]
 
   clean_folder
 
   require 'fileutils'
-  FileUtils.mkdir_p(screenshots_dest)
+  screenshots_dests.each do |screenshots_dest|
+    FileUtils.mkdir_p(screenshots_dest)
 
-  Dir.foreach(screenshots_src) do |filename|
-    next if filename == '.' || filename == '..'
-    src_file = File.join(screenshots_src, filename)
-    dest_file = File.join(screenshots_dest, filename)
-    FileUtils.mv(src_file, dest_file)
+    Dir.foreach(screenshots_src) do |filename|
+      next if filename == '.' || filename == '..'
+      src_file = File.join(screenshots_src, filename)
+      dest_file = File.join(screenshots_dest, filename)
+      FileUtils.mv(src_file, dest_file)
+    end
   end
 end
 
