@@ -1,6 +1,6 @@
 {
-  "name": "CyBear Jinni Smart Home",
-  "short_name": "CyBear Jinni",
+  "name": "Simple Hub Smart Home",
+  "short_name": "Simple Hub",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",

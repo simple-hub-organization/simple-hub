@@ -28,46 +28,46 @@ dependencies:
   # Automatically resizes text to fit perfectly within its bounds
   auto_size_text: ^3.0.0
   # Helps implement the BLoC pattern.
-  bloc: ^8.1.1
+  bloc: ^9.0.0
   # Show images from the internet and keep them in the cache directory.
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.4.1
   # Spotlight Bottom Navigation Bar
-  cool_nav: ^0.1.0
+  cool_nav: ^0.1.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.5
+  cupertino_icons: ^1.0.8
   # Internationalization (Easy translations)
-  easy_localization: ^3.0.1
+  easy_localization: ^3.0.7+1
   # Widget that can be expanded or collapsed by the user.
   expandable: ^5.0.1
   flutter:
     sdk: flutter
   # Bloc for state management, replace StatefulWidget
-  flutter_bloc: ^8.1.2
+  flutter_bloc: ^9.1.0
   # staggered grid view which supports multiple columns with rows of varying sizes.
-  flutter_staggered_grid_view: ^0.6.2
+  flutter_staggered_grid_view: ^0.7.0
   # The Font Awesome Icon pack available as set of Flutter Icons. https://fontawesome.com/
-  font_awesome_flutter: ^10.4.0
+  font_awesome_flutter: ^10.8.0
   # Annotations for freezed
-  freezed_annotation: ^2.2.0
+  freezed_annotation: ^3.0.0
   # Service locator
-  get_it: ^7.2.0
+  get_it: ^8.0.3
   # Add hex color codes to your flutter projects
   hexcolor: ^3.0.1
   # Convenient code generator for get_it
-  injectable: ^2.1.0
+  injectable: ^2.5.0
   # Links to your text.
-  linkable: ^3.0.1
+  linkable: ^3.0.2
   # Small, easy to use and extensible logger which prints beautiful logs.
-  logger: ^1.2.2
+  logger: ^2.5.0
   # Popup that ask for the requested permission
-  permission_handler: ^10.2.0
+  permission_handler: ^12.0.0+1
   # Allows you to create a readable responsive UI
   responsive_builder: ^0.7.1
   # Launching a URL in the mobile platform
-  url_launcher: ^6.1.10
+  url_launcher: ^6.3.1
   # YouTube iFrame player
-  youtube_player_iframe: ^4.0.4
+  youtube_player_iframe: ^5.2.1
 
 dev_dependencies:
   # A build system for Dart code generation and modular compilation.
@@ -76,9 +76,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   # Code generator for unions/pattern-matching/copy.
-  freezed: ^2.3.2
+  freezed: ^3.0.6
   # Convenient code generator for get_it.
-  injectable_generator: ^2.1.4
+  injectable_generator: ^2.7.0
   # Collection of lint rules for Dart and Flutter projects.
-  lint: ^2.0.1
+  lint: ^2.8.0
 
