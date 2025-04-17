@@ -26,7 +26,7 @@ class AreaEntity {
 
   factory AreaEntity.empty() => AreaEntity(
         uniqueId: AreaUniqueId.discovered(),
-        cbjEntityName: AreaDefaultName('New Devices'),
+        cbjEntityName: AreaDefaultName('New Entities'),
         background: AreaBackground(
           'https://live.staticflickr.com/5220/5486044345_f67abff3e9_h.jpg',
         ),

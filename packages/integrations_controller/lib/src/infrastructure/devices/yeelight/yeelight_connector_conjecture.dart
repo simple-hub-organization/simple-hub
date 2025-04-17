@@ -52,12 +52,12 @@ class YeelightConnectorConjecture extends VendorConnectorConjectureService {
       return;
     }
 
-    for (final MapEntry<String, DeviceEntityBase> entery
+    for (final MapEntry<String, DeviceEntityBase> entity
         in enitityList.entries) {
       await VendorConnectorConjectureController.instance.foundEntityOfVendor(
         vendorConnectorConjectureService: this,
-        entity: entery.value,
-        entityCbjUniqueId: entery.value.entityCbjUniqueId.getOrCrash(),
+        entity: entity.value,
+        entityCbjUniqueId: entity.value.entityCbjUniqueId.getOrCrash(),
       );
     }
   }
@@ -85,6 +85,8 @@ class YeelightConnectorConjecture extends VendorConnectorConjectureService {
       );
       enitityList.addAll(addDevice);
     }
+    enitityList.removeWhere((key, value) => vendorEntities.containsKey(key));
+
     return enitityList;
   }
 }
