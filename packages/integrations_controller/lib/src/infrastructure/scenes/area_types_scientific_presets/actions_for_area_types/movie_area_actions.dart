@@ -32,7 +32,7 @@ class MovieAreaActions {
           entityId,
         );
       case EntityTypes.smartTV:
-        return CommonDevicesScenesPresetsForDevices.smartTvOffPreset(entityId);
+        return CommonDevicesScenesPresetsForDevices.smartTvOnPreset(entityId);
       case EntityTypes.switch_:
         return CommonDevicesScenesPresetsForDevices.switchOffPreset(entityId);
       case EntityTypes.smartComputer:
